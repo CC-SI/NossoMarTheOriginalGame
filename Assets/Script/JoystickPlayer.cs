@@ -22,5 +22,13 @@ public class Joy : MonoBehaviour
         Vector2 direcao = new Vector2(horizontal, vertical).normalized;
 
         rb.linearVelocity = direcao * velocidadeMovimento;
+
+        if (horizontal > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        } else if (horizontal < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }
