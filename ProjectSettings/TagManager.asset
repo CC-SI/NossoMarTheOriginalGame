@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Limits
   layers:
   - Default
   - TransparentFX
@@ -36,8 +37,11 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - EditorOnly
   m_SortingLayers:
+  - name: BG
+    uniqueID: 1014682861
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
