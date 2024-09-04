@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Joy : MonoBehaviour
 {
+    private Animator animator;
     [SerializeField] private FixedJoystick joystick;
     [SerializeField] private float velocidadeMovimento = 5f;
     
@@ -10,6 +11,7 @@ public class Joy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -22,7 +24,8 @@ public class Joy : MonoBehaviour
         Vector2 direcao = new Vector2(horizontal, vertical).normalized;
 
         rb.linearVelocity = direcao * velocidadeMovimento;
-
+        animator.SetFloat("speed", Mathf.Abs(horizontal));
+        
         if (horizontal > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
