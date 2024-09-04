@@ -1,3 +1,4 @@
+using NM.Player;
 using System;
 using UnityEngine;
 
@@ -23,7 +24,10 @@ public class Duck : MonoBehaviour, IInteractable
     
     public void StartFollowing() // Função para o pato começar a seguir o jogador.
     {
-        isFollowing = true; 
+		if (PlayerBehaviour.Instance)
+			alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
+
+		isFollowing = true; 
         areaInteracao.enabled = false; // Desabilitando a área de interação com o jogador.
     }
 
