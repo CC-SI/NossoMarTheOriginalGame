@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/vila.unity
+    guid: cb412ba1fad97db4f873a91e0c082e6f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
