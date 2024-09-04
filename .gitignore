@@ -109,3 +109,7 @@ Assets/Inputs/PlayerInputsActions.cs
 /[Aa]ssets/Plugins/iOS/
 /[Aa]ssets/Plugins/tvOS/
 /[Aa]ssets/Plugins/Android/
+
+# Outros
+.idea/
+.utmp/
