@@ -1,5 +1,5 @@
-using NM.Player;
 using Actors;
+using Player;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -50,19 +50,6 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
 
         rb.linearVelocity = direcao;
         OnMoved.Invoke(direcao);
-        FlipSprite();
-    }
-
-    private void FlipSprite() // Função para virar o sprite do pato.
-    {
-        if (this.rb.linearVelocity.x > 0)
-        {
-            this.sprite.flipX = false;
-        }
-        else if (this.rb.linearVelocity.x < 0)
-        {
-            this.sprite.flipX = true; // Virando o sprite do pato.
-        }
     }
     
     void OnTriggerStay2D(Collider2D colisor) // Função para quando o jogador estiver dentro na área de interação.
