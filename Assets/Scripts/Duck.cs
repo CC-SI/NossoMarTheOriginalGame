@@ -1,8 +1,9 @@
 using NM.Player;
-using System;
+using Actors;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Duck : MonoBehaviour, IInteractable
+public class Duck : MonoBehaviour, IInteractable, IMovement
 {
     [SerializeField] private float velocidadePato; // Velocidade de movimento do pato.
     [SerializeField] private float distanciaMinima; // Distancia mínima do pato para o jogador.
@@ -11,6 +12,8 @@ public class Duck : MonoBehaviour, IInteractable
     [SerializeField] private Collider2D areaInteracao; // Área de interação com o jogador.
     [SerializeField] private SpriteRenderer sprite; // Sprite do pato.
     [SerializeField] private Animator animator; // Animator do pato.
+    [field: Header("Eventos")]
+    [field: SerializeField] public UnityEvent<Vector2> OnMoved {get; private set;} 
 
     private bool isFollowing; // Variável para saber se o pato está seguindo o jogador.
     
@@ -33,24 +36,20 @@ public class Duck : MonoBehaviour, IInteractable
 
     private void FollowPlayer() // Função para o pato seguir o jogador.
     {
-        Vector2 posicaoAlvo = this.alvo.position;
-        Vector2 posicaoPato = this.transform.position;
+        Vector2 posicaoAlvo = alvo.position;
+        Vector2 posicaoPato = transform.position;
             
         float distancia = Vector2.Distance(posicaoPato, posicaoAlvo); // Calculando a distância entre o pato e o jogador.
+        var direcao = Vector2.zero;
 
         if (distancia >= this.distanciaMinima) // Se o pato estiver distante do jogador.
         {
-            Vector2 direcao = (posicaoAlvo - posicaoPato).normalized; // Definindo e normalizando a direção para o pato seguir.
-            this.rb.linearVelocity = (direcao * velocidadePato); // Movendo o pato.
-            
-            this.animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            this.rb.linearVelocity = Vector2.zero;
-            this.animator.SetBool("isWalking", false);
+            direcao = (posicaoAlvo - posicaoPato).normalized; // Definindo e normalizando a direção para o pato seguir.
+            direcao *= velocidadePato;
         }
 
+        rb.linearVelocity = direcao;
+        OnMoved.Invoke(direcao);
         FlipSprite();
     }
 
