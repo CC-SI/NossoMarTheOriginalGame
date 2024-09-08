@@ -1,22 +1,24 @@
+using Actors;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Joy : MonoBehaviour
+public class Joy : MonoBehaviour, IMovement
 {
-    private Animator animator;
     [SerializeField] private FixedJoystick joystick;
     [SerializeField] private float velocidadeMovimento = 5f;
+    [field: Header("Eventos")]
+    [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
     
     private Rigidbody2D rb;
     
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
@@ -24,14 +26,6 @@ public class Joy : MonoBehaviour
         Vector2 direcao = new Vector2(horizontal, vertical).normalized;
 
         rb.linearVelocity = direcao * velocidadeMovimento;
-        animator.SetFloat("speed", Mathf.Abs(horizontal));
-        
-        if (horizontal > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        } else if (horizontal < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+        OnMoved.Invoke(direcao * velocidadeMovimento);
     }
 }

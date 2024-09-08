@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NM.Player
+namespace Player
 {
 	public class PlayerBehaviour : MonoBehaviour
 	{
