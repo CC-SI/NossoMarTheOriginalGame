@@ -1,5 +1,6 @@
 using Actors;
 using Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,9 +13,12 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     [SerializeField] private Collider2D areaInteracao; // Área de interação com o jogador.
     [SerializeField] private SpriteRenderer sprite; // Sprite do pato.
     [SerializeField] private Animator animator; // Animator do pato.
+    [SerializeField] private TMP_Text countDucks; // Referência ao texto que mostra o número de patos seguindo. 
+    
     [field: Header("Eventos")]
     [field: SerializeField] public UnityEvent<Vector2> OnMoved {get; private set;} 
 
+    private static int currentDuck = 0; // Variável estática para contar quantos patos estão seguindo
     private bool isFollowing; // Variável para saber se o pato está seguindo o jogador.
     
     void Update() // Função de atualização.
@@ -29,9 +33,12 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     {
 		if (PlayerBehaviour.Instance)
 			alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
-
+        
 		isFollowing = true; 
         areaInteracao.enabled = false; // Desabilitando a área de interação com o jogador.
+        
+        currentDuck++; // Incrementa a contagem de patos.
+        countDucks.text = currentDuck.ToString(); // Atualizando o texto para mostrar a nova contagem.
     }
 
     private void FollowPlayer() // Função para o pato seguir o jogador.
