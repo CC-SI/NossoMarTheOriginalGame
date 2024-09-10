@@ -14,6 +14,7 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     [SerializeField] private SpriteRenderer sprite; // Sprite do pato.
     [SerializeField] private Animator animator; // Animator do pato.
     [SerializeField] private TMP_Text countDucks; // Referência ao texto que mostra o número de patos seguindo. 
+    [SerializeField] private AudioSource audioSource; // Referência ao AudioSource do pato.
     
     [field: Header("Eventos")]
     [field: SerializeField] public UnityEvent<Vector2> OnMoved {get; private set;} 
@@ -39,6 +40,8 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
         
         currentDuck++; // Incrementa a contagem de patos.
         countDucks.text = currentDuck.ToString(); // Atualizando o texto para mostrar a nova contagem.
+        
+        audioSource.Play(); // Toca o áudio quando o pato começa a seguir o jogador.
     }
 
     private void FollowPlayer() // Função para o pato seguir o jogador.
