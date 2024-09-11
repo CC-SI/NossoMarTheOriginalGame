@@ -1,3 +1,4 @@
+using System;
 using Actors;
 using Player;
 using TMPro;
@@ -14,14 +15,22 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     [SerializeField] private SpriteRenderer sprite; // Sprite do pato.
     [SerializeField] private Animator animator; // Animator do pato.
     [SerializeField] private TMP_Text countDucks; // Referência ao texto que mostra o número de patos seguindo. 
-    [SerializeField] private AudioSource audioSource; // Referência ao AudioSource do pato.
+    [SerializeField] private AudioClip clip; // Referência ao AudioClip que será tocado.
     
     [field: Header("Eventos")]
     [field: SerializeField] public UnityEvent<Vector2> OnMoved {get; private set;} 
 
     private static int currentDuck = 0; // Variável estática para contar quantos patos estão seguindo
     private bool isFollowing; // Variável para saber se o pato está seguindo o jogador.
-    
+    private AudioSource audioSource; // Referência ao AudioSource criado dinamicamente.
+
+    private void Start()
+    {
+        // Adiciona um AudioSource ao GameObject se ele ainda não tiver um
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = clip; // Atribui o AudioClip ao AudioSource
+    }
+
     void Update() // Função de atualização.
     {
         if (isFollowing) 
