@@ -1,24 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlaySoundOnClick : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Button btn;
+    [SerializeField] private AudioClip clip;
+    private AudioSource source;
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        source = gameObject.AddComponent<AudioSource>();
+        
+        btn.onClick.AddListener(OnButtonClick);
     }
-
-    // Update is called once per frame
     public void OnButtonClick()
     {
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }  
-        else
-        {
-            Debug.LogWarning("Nenhum AudioSource foi encontrado no GameObject.");
-        } 
+        source.clip = clip;
+        source.Play();
     }
 }
