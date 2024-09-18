@@ -12,7 +12,7 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     [SerializeField] private Transform alvo;
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private TMP_Text countDucks;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip clip;
     
     [field: Header("Componentes Internos")]
     private Rigidbody2D rb;
@@ -26,7 +26,8 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     [field: Header("Lógicos")]
     private static int currentDuck = 0;
     private bool isFollowing; 
-
+    private AudioSource audioSource; // Referência ao AudioSource criado dinamicamente.
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +37,9 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
         
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = clip;
     }
 
     void Update()
