@@ -492,8 +492,24 @@ PrefabInstance:
       value: Duck (6)
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -544,6 +560,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -553,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo
@@ -746,8 +766,24 @@ PrefabInstance:
       value: Duck (7)
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -798,6 +834,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -807,7 +847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo
@@ -956,8 +996,24 @@ PrefabInstance:
       value: Duck (5)
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1008,6 +1064,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -1017,7 +1077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo
@@ -1546,7 +1606,7 @@ Transform:
   m_GameObject: {fileID: 529783562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8093677, y: -3.2900004, z: -10}
+  m_LocalPosition: {x: -3.52, y: -3.2900002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2669,8 +2729,24 @@ PrefabInstance:
       value: Duck (1)
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2721,6 +2797,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -2730,7 +2810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo
@@ -3629,8 +3709,24 @@ PrefabInstance:
       value: Duck (4)
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3681,6 +3777,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -3690,7 +3790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo
@@ -3814,8 +3914,24 @@ PrefabInstance:
       value: Duck (3)
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3866,6 +3982,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -3875,7 +3995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo
@@ -4579,8 +4699,24 @@ PrefabInstance:
       value: Duck
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4659,6 +4795,10 @@ PrefabInstance:
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -4668,7 +4808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo
@@ -4949,8 +5089,24 @@ PrefabInstance:
       value: Duck (2)
       objectReference: {fileID: 0}
     - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980695356295815961, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5001,6 +5157,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
@@ -5010,7 +5170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051348936664332833, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_SpriteSortPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: alvo

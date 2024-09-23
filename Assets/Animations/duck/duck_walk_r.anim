@@ -23,7 +23,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -42,13 +42,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 797654621453268184, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
+      value: {fileID: 1288127244, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
     - time: 0.1
-      value: {fileID: -2757409009402566821, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
+      value: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
     - time: 0.2
-      value: {fileID: 1723938381448903904, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
+      value: {fileID: 1288127244, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
     - time: 0.3
-      value: {fileID: -2631070732416202683, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
+      value: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
     attribute: m_Sprite
     path: Grafico
     classID: 212
@@ -80,10 +80,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 797654621453268184, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
-    - {fileID: -2757409009402566821, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
-    - {fileID: 1723938381448903904, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
-    - {fileID: -2631070732416202683, guid: 226e943ebef3d914cb646b418e617f3d, type: 3}
+    - {fileID: 1288127244, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - {fileID: 1288127244, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+    - {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -111,7 +111,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
