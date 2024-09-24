@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260046280328896352}
   - component: {fileID: 4243492833230575452}
-  - component: {fileID: 7079124625811369417}
+  - component: {fileID: 8063682653043679452}
   - component: {fileID: 514335745977830189}
   - component: {fileID: 7925294919694570575}
   - component: {fileID: 8003984980887760023}
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &7079124625811369417
-CircleCollider2D:
+--- !u!61 &8063682653043679452
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,7 +100,17 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.4, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!95 &514335745977830189
 Animator:
   serializedVersion: 7
@@ -136,12 +146,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 0}
-  sprite: {fileID: 6051348936664332833}
   countDucks: {fileID: 0}
-  audioSource: {fileID: 8003984980887760023}
+  clip: {fileID: 8300000, guid: d395acf7fae35fb4aa748dd9434a7ac5, type: 3}
   <OnMoved>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  isFollowing: 0
 --- !u!82 &8003984980887760023
 AudioSource:
   m_ObjectHideFlags: 0
@@ -288,9 +298,9 @@ Transform:
   m_GameObject: {fileID: 7764689697556676703}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1260046280328896352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -354,7 +364,7 @@ SpriteRenderer:
   m_SortingLayerID: 2115649195
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4477536695919437510, guid: 14e3bb9cc70094741a6725537c4ed5a0, type: 3}
+  m_Sprite: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -364,4 +374,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
