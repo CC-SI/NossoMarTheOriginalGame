@@ -6,17 +6,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class Duck : MonoBehaviour, IInteractable, IMovement
+public class Duck : MonoBehaviour, IInteractableObjects, IMovement
 {
     [field: Header("Componentes Externos")]
     [SerializeField] private Transform alvo;
-    [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private TMP_Text countDucks;
     [SerializeField] private AudioClip clip;
     
     [field: Header("Componentes Internos")]
     private Rigidbody2D rb;
-    private Collider2D areaInteracao;
+    private Collider2D colisor;
     private Animator animator; 
     private NavMeshAgent agent;
     
@@ -25,13 +24,13 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     
     [field: Header("Lógicos")]
     private static int currentDuck = 0;
-    private bool isFollowing; 
+    public bool isFollowing; 
     private AudioSource audioSource; // Referência ao AudioSource criado dinamicamente.
     
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        areaInteracao = GetComponent<Collider2D>();
+        colisor = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         
@@ -59,7 +58,6 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
 			alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
         
 		isFollowing = true;
-        areaInteracao.enabled = false;
         
         currentDuck++;
         countDucks.text = currentDuck.ToString();
@@ -75,8 +73,6 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
         Vector2 posicaoAlvo = alvo.position;
         Vector2 posicaoPato = transform.position;
         
-        float distancia = Vector2.Distance(posicaoPato, posicaoAlvo); 
-        
         var direcao = ((posicaoAlvo - posicaoPato).normalized) * agent.velocity.magnitude;
         
         agent.SetDestination(posicaoAlvo);
@@ -85,33 +81,9 @@ public class Duck : MonoBehaviour, IInteractable, IMovement
     }
     
     /// <summary>
-    /// Função para quando o jogador estiver dentro na área de interação, chamando a função para mostrar o botão.
-    /// </summary>
-    /// <param name="colisor"></param>
-    void OnTriggerStay2D(Collider2D colisor) 
-    {
-        if (colisor.CompareTag("Player") && !isFollowing)
-        {
-            UIActionButton.instance.ShowButton(this); 
-        }
-    }
-    
-    /// <summary>
-    /// Função para quando o jogador sair da área de interação, chamando a função para esconder o botão.
-    /// </summary>
-    /// <param name="colisor"></param>
-    void OnTriggerExit2D(Collider2D colisor)
-    {
-        if (colisor.CompareTag("Player") && !isFollowing)
-        {
-            UIActionButton.instance.HideButton();
-        }
-    }
-
-    /// <summary>
     /// Função que o ActionButton usa para interagir com o pato. Definindo que nessa interação o pato deve seguir o jogador.
     /// </summary>
-    public void OnInteract() // Função para interagir com o pato.
+    public void OnPlayerInteract() // Função para interagir com o pato.
     {
         StartFollowing();
     }
