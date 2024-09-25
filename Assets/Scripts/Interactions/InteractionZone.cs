@@ -16,10 +16,10 @@ public class InteractionZone : MonoBehaviour
         button.onClick.AddListener(OnButtonClicked);
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         IInteractableObjects interactable = other.GetComponent<IInteractableObjects>();
-        if (interactable != null)
+        if (interactable != null && interactable.CanInteract())
         {
             currentInteractable = interactable;
             button.gameObject.SetActive(true);

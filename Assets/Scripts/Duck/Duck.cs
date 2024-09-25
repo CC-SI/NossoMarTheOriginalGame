@@ -80,11 +80,16 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         OnMoved.Invoke(direcao);
     }
     
-    /// <summary>
-    /// Função que o ActionButton usa para interagir com o pato. Definindo que nessa interação o pato deve seguir o jogador.
-    /// </summary>
-    public void OnPlayerInteract() // Função para interagir com o pato.
+    public void OnPlayerInteract()
     {
-        StartFollowing();
+        if (!isFollowing)
+        {
+            StartFollowing();
+        }
+    }
+    
+    public bool CanInteract()
+    {
+        return !isFollowing;
     }
 }
