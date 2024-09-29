@@ -49,6 +49,14 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         movement.OnMoved.AddListener(OnMovedHandler);
     }
 
+    public void Update()
+    {
+        if (isFollowing)
+        {
+            FollowPlayer();
+        }
+    }
+
     /// <summary>
     /// Função para o pato começar a seguir o jogador.
     /// </summary>
@@ -71,6 +79,15 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         movement.SetFollowTarget(alvo);
     }
 
+    public void FollowPlayer()
+    {
+        // Se o alvo não for nulo, segue o alvo
+        if (alvo != null)
+        {
+            agent.SetDestination(alvo.position);
+        }
+    }
+    
     public void OnPlayerInteract()
     {
         // Inicia o seguimento se o pato ainda não estiver seguindo

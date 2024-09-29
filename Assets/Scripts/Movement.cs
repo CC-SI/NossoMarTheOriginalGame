@@ -73,6 +73,9 @@ public class Movement : MonoBehaviour, IMovement
             navMeshAgent.SetDestination(posicaoAlvo);
 
             OnMoved.Invoke(direcao);
+            
+            // Atualiza a animação de movimento
+            animator.SetBool("isWalking", navMeshAgent.velocity.magnitude > 0);
         }
     }
 }
