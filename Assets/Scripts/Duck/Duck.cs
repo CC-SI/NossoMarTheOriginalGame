@@ -1,5 +1,6 @@
 using System;
 using Actors;
+using Interactions;
 using Player;
 using TMPro;
 using UnityEngine;
@@ -39,6 +40,8 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
+        
+        this.AddObject(colisor);
     }
 
     void Update()
@@ -85,11 +88,7 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         if (!isFollowing)
         {
             StartFollowing();
+            colisor.RemoveObject();
         }
-    }
-    
-    public bool CanInteract()
-    {
-        return !isFollowing;
     }
 }

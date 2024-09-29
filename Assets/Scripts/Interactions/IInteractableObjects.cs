@@ -1,7 +1,7 @@
-using UnityEngine;
-
-public interface IInteractableObjects
+namespace Interactions
 {
-    void OnPlayerInteract();
-    bool CanInteract();
+    public interface IInteractableObjects
+    {
+        void OnPlayerInteract();
+    }
 }
