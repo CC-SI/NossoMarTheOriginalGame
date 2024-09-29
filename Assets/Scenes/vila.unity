@@ -608,6 +608,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1580133556}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1580133563}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!4 &142785964 stripped
 Transform:
@@ -886,6 +889,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 270852376}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 270852383}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!4 &270852369 stripped
 Transform:
@@ -938,6 +944,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &270852383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &295128825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1065,11 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &307243489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4921332446758901547, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+  m_PrefabInstance: {fileID: 2986196824405490937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &341123329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1166,6 +1194,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1498796205}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1498796212}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!4 &341123330 stripped
 Transform:
@@ -2627,6 +2658,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &920679091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793050559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &982605855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
@@ -2964,6 +3012,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1075464560}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1075464567}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!4 &1075464553 stripped
 Transform:
@@ -3016,6 +3067,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1075464567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519627507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1113191476
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,6 +4078,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1469309755}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1469309762}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!4 &1469309748 stripped
 Transform:
@@ -4062,6 +4133,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1469309762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982605855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1476505033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,6 +4280,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1498796212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498796198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1546603941
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,6 +4430,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1580133563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580133549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1619567792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4449,6 +4571,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1874636892}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874636899}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!4 &1619567793 stripped
 Transform:
@@ -4643,6 +4768,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1669194252054867004, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
   m_PrefabInstance: {fileID: 2986196824405490937}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1787951754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307243489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 1452045079}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1787951755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307243489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7938d63d76fb6de42a60b3455b0e330b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &1787951756
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307243489}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1824838320
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,6 +5157,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1874636899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874636885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1941875320
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,6 +5506,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 920679085}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 920679091}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!1 &2009613117
 GameObject:
@@ -5683,6 +5879,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       insertIndex: 2
       addedObject: {fileID: 2105156343}
+    - targetCorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2105156350}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
 --- !u!4 &2105156336 stripped
 Transform:
@@ -5735,6 +5934,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &2105156350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342921893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4440149917b60dc41a0e3c63071b7f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  velocidadeMovimento: 5
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2115293903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6098,10 +6314,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 510572830}
     m_Modifications:
+    - target: {fileID: 340901142483474292, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 859004329041298081, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1452045079}
+    - target: {fileID: 859004329041298081, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1669194252054867004, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.52
@@ -6140,6 +6364,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1669194252054867004, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646808987587861060, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3753114165796877209, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
@@ -6194,13 +6422,31 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8804005678329522906, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 8804005678329522906, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+    - {fileID: 859004329041298081, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+    - {fileID: 3646808987587861060, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1669194252054867004, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1546603942}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4921332446758901547, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1787951754}
+    - targetCorrespondingSourceObject: {fileID: 4921332446758901547, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1787951755}
+    - targetCorrespondingSourceObject: {fileID: 4921332446758901547, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1787951756}
   m_SourcePrefab: {fileID: 100100000, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

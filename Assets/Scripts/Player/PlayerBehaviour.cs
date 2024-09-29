@@ -3,39 +3,46 @@ using UnityEngine;
 
 namespace Player
 {
-	public class PlayerBehaviour : MonoBehaviour
-	{
-		readonly List<Duck> ducks = new();
+    public class PlayerBehaviour : MonoBehaviour
+    {
+        // Lista de patos seguindo o jogador
+        readonly List<Duck> ducks = new();
 
-		public static PlayerBehaviour Instance { get; private set; }
+        // Instância singleton da classe PlayerBehaviour
+        public static PlayerBehaviour Instance { get; private set; }
 
-		public Transform GetFollowTarget(Duck duck)
-		{
-			Transform target = GetFollowTarget();
+        public Transform GetFollowTarget(Duck duck)
+        {
+            // Obtém o alvo a ser seguido
+            Transform target = GetFollowTarget();
 
-			if (!ducks.Contains(duck))
-				ducks.Add(duck);
+            // Adiciona o pato à lista se ainda não estiver nela
+            if (!ducks.Contains(duck))
+                ducks.Add(duck);
 
-			return target;
-		}
+            return target;
+        }
 
-		public Transform GetFollowTarget()
-		{
-			if (ducks.Count < 1)
-				return transform;
+        public Transform GetFollowTarget()
+        {
+            // Se não há patos, retorna a posição do jogador
+            if (ducks.Count < 1)
+                return transform;
 
-			return ducks[^1].transform;
-		}
+            // Retorna a posição do último pato na lista
+            return ducks[^1].transform;
+        }
 
-		void Awake()
-		{
-			if (!Instance)
-			{
-				Instance = this;
-				return;
-			}
+        void Awake()
+        {
+            // Configura a instância singleton
+            if (!Instance)
+            {
+                Instance = this;
+                return;
+            }
 
-			Destroy(gameObject);
-		}
-	}
+            Destroy(gameObject);
+        }
+    }
 }
