@@ -1,12 +1,13 @@
 using System;
 using Actors;
+using Interaction;
 using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class Duck : MonoBehaviour, IInteractableObjects, IMovement
+public class Duck : InteractableObject, IInteraction, IMovement
 {
     [field: Header("Componentes Externos")]
     [SerializeField] private Transform alvo;
@@ -39,6 +40,8 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
+        
+        AddObject(colisor, this);
     }
 
     void Update()
@@ -80,16 +83,12 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         OnMoved.Invoke(direcao);
     }
     
-    public void OnPlayerInteract()
+    public void OnPlayerInteraction()
     {
         if (!isFollowing)
         {
             StartFollowing();
+            RemoveObject(colisor);
         }
-    }
-    
-    public bool CanInteract()
-    {
-        return !isFollowing;
     }
 }
