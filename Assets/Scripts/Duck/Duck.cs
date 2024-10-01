@@ -1,13 +1,13 @@
 using System;
 using Actors;
-using Interactions;
+using Interaction;
 using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class Duck : InteractableObject, IInteractable, IMovement
+public class Duck : InteractableObject, IInteraction, IMovement
 {
     [field: Header("Componentes Externos")]
     [SerializeField] private Transform alvo;

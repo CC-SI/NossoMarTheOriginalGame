@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace Interactions
+namespace Interaction
 {
-    public class InteractionZone : MonoBehaviour
+    public class InteractableZone : MonoBehaviour
     {
         [FormerlySerializedAs("button")] [SerializeField] private Button actionButton;
 
-        private readonly List<IInteractable> interactableQueue = new();
+        private readonly List<IInteraction> interactableQueue = new();
     
         private void Awake()
         {

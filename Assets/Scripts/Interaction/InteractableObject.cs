@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Interactions
+namespace Interaction
 {
     public abstract class InteractableObject : MonoBehaviour
     {
-        private static readonly Dictionary<Collider2D, IInteractable> interactableObjects = new();
+        private static readonly Dictionary<Collider2D, IInteraction> interactableObjects = new();
 
-        protected static void AddObject(Collider2D collider, IInteractable interactable)
+        protected static void AddObject(Collider2D collider, IInteraction interactable)
         {
             interactableObjects.TryAdd(collider, interactable);
         }
@@ -17,7 +17,7 @@ namespace Interactions
             interactableObjects.Remove(collider);
         }
 
-        public static IInteractable GetInteractable(Collider2D collider)
+        public static IInteraction GetInteractable(Collider2D collider)
         {
             return interactableObjects.GetValueOrDefault(collider);
         }
