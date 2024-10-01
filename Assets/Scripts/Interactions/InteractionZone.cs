@@ -1,68 +1,52 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Interactions
 {
     public class InteractionZone : MonoBehaviour
     {
-        [SerializeField] private Button button;
+        [FormerlySerializedAs("button")] [SerializeField] private Button actionButton;
+
+        private readonly List<IInteractable> interactableQueue = new();
     
-        private readonly List<IInteractableObjects> objectsQueue = new();
-        
         private void Awake()
         {
-            button.onClick.AddListener(OnButtonClicked);
-            button.gameObject.SetActive(false);
+            actionButton.onClick.AddListener(OnButtonClicked);
+            actionButton.gameObject.SetActive(false);
         }
-
-        /// <summary>
-        /// Adicionando um objeto na fila quando ele entra na zona de interação, está indexado no dicionário e permite interagir.
-        /// </summary>
-        /// <param name="other"></param>
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
-            IInteractableObjects interactable = InteractableObjects.GetInteractable(other);
-        
+            var interactable = InteractableObject.GetInteractable(other);
+    
             if(interactable is null) return;
+            if (interactableQueue.Contains(interactable)) return;
         
-            if (!objectsQueue.Contains(interactable))
-            {
-                Debug.Log("Objeto na fila");
-                objectsQueue.Add(interactable);
-                UpdateButton();
-            }
+            interactableQueue.Add(interactable);
+            UpdateButton();
         }
-
-        /// <summary>
-        /// Removendo um objeto da fila quando ele sai da zona de interação.
-        /// </summary>
-        /// <param name="other"></param>
+        
         private void OnTriggerExit2D(Collider2D other)
         {
-            IInteractableObjects interactable = InteractableObjects.GetInteractable(other);
-        
-            if(objectsQueue.Remove(interactable))
-                UpdateButton();
-        }
+            var interactable = InteractableObject.GetInteractable(other);
 
-        /// <summary>
-        /// Exibindo o botão quando tem objetos na fila.
-        /// </summary>
+            interactableQueue.Remove(interactable);
+            UpdateButton();
+        }
+        
         private void UpdateButton()
         {
-            button.gameObject.SetActive(objectsQueue.Count > 0);
+            actionButton.gameObject.SetActive(interactableQueue.Count > 0);
         }
-
-        /// <summary>
-        /// Quando clicar no botão, será pego o primeiro objeto da fila e chamada a sua interação. Depois, o objeto é removido da fila.
-        /// </summary>
-        public void OnButtonClicked()
-        {
-            if (objectsQueue.Count <= 0) return;
         
-            objectsQueue[0].OnPlayerInteract();
-            objectsQueue.RemoveAt(0);
+        private void OnButtonClicked()
+        {
+            if (interactableQueue.Count <= 0) return;
+    
+            interactableQueue[0].OnPlayerInteraction();
+            interactableQueue.RemoveAt(0);
             UpdateButton();
         }
     }

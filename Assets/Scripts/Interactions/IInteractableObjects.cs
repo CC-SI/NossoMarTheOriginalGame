@@ -1,7 +1,7 @@
 namespace Interactions
 {
-    public interface IInteractableObjects
+    public interface IInteractable
     {
-        void OnPlayerInteract();
+        void OnPlayerInteraction();
     }
 }
