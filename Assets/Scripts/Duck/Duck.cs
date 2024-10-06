@@ -13,6 +13,7 @@ public class Duck : InteractableObject, IInteraction, IMovement
     [SerializeField] private Transform alvo;
     [SerializeField] private TMP_Text countDucks;
     [SerializeField] private AudioClip clip;
+    private Movement movement;
     
     [field: Header("Componentes Internos")]
     private Rigidbody2D rb;
@@ -34,22 +35,21 @@ public class Duck : InteractableObject, IInteraction, IMovement
         colisor = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+
+        movement = GetComponent<Movement>();
         
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        
+    
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
-        
+    
         AddObject(colisor, this);
-    }
-
-    void Update()
-    {
-        if (isFollowing) 
+        
+        if (movement != null)
         {
-           FollowPlayer(); 
-        }
+            movement.OnMoved.AddListener(OnMovedHandler);
+        }   
     }
     
     /// <summary>
@@ -66,21 +66,8 @@ public class Duck : InteractableObject, IInteraction, IMovement
         countDucks.text = currentDuck.ToString();
         
         audioSource.Play(); 
-    }
-
-    /// <summary>
-    /// Função para a movimentação e chamada da animação do pato.
-    /// </summary>
-    private void FollowPlayer() 
-    {
-        Vector2 posicaoAlvo = alvo.position;
-        Vector2 posicaoPato = transform.position;
         
-        var direcao = ((posicaoAlvo - posicaoPato).normalized) * agent.velocity.magnitude;
-        
-        agent.SetDestination(posicaoAlvo);
-        
-        OnMoved.Invoke(direcao);
+        movement.SetFollowTarget(alvo);
     }
     
     public void OnPlayerInteraction()
