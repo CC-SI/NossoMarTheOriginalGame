@@ -26,7 +26,6 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
     [field: Header("Lógicos")]
     private static int currentDuck = 0;
     public bool isFollowing;
-    private AudioSource audioSource;
 
     private void Start()
     {
@@ -42,9 +41,6 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
         
-        movement.OnMoved.AddListener(OnMovedHandler);
-
-        AddObject(colisor, this); 
     }
 
     public void Update()
