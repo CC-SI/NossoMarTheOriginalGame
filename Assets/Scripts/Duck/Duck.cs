@@ -47,6 +47,8 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         
         // Adiciona um listener para o evento OnMoved do componente Movement
         movement.OnMoved.AddListener(OnMovedHandler);
+        
+        AddObject(colisor, this);
     }
 
     /// <summary>
@@ -77,6 +79,7 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         if (!isFollowing)
         {
             StartFollowing();
+            RemoveObject(colisor);
         }
     }
 
