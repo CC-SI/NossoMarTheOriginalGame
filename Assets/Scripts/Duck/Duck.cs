@@ -30,27 +30,23 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
 
     private void Start()
     {
+        // Inicializa os componentes do pato
         rb = GetComponent<Rigidbody2D>();
         colisor = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         movement = GetComponent<Movement>();
 
+        // Configura o NavMeshAgent para não atualizar a rotação e o eixo Y
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        // Adiciona um AudioSource dinamicamente e configura o clip de áudio
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
-
-        AddObjecj(colisor, this); 
-    }
-
-    public void Update()
-    {
-        if (isFollowing)
-        {
-            FollowPlayer();
-        }
+        
+        // Adiciona um listener para o evento OnMoved do componente Movement
+        movement.OnMoved.AddListener(OnMovedHandler);
     }
 
     /// <summary>
@@ -67,22 +63,17 @@ public class Duck : MonoBehaviour, IInteractableObjects, IMovement
         // Atualiza a contagem de patos seguindo o jogador
         currentDuck++;
         countDucks.text = currentDuck.ToString();
+
+        // Toca o som de seguir
         audioSource.Play();
 
         // Define o alvo de movimentação no componente Movement
         movement.SetFollowTarget(alvo);
     }
 
-    public void FollowPlayer()
-    {
-        if (alvo != null)
-        {
-            agent.SetDestination(alvo.position);
-        }
-    }
-    
     public void OnPlayerInteract()
     {
+        // Inicia o seguimento se o pato ainda não estiver seguindo
         if (!isFollowing)
         {
             StartFollowing();
