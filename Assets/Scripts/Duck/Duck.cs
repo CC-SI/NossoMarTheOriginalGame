@@ -26,7 +26,7 @@ public class Duck : InteractableObject, IInteraction, IMovement
     [field: Header("Lógicos")]
     private static int currentDuck = 0;
     public bool isFollowing; 
-    private AudioSource audioSource; // Referência ao AudioSource criado dinamicamente.
+    private AudioSource audioSource;
     
     private void Start()
     {
@@ -89,6 +89,23 @@ public class Duck : InteractableObject, IInteraction, IMovement
         {
             StartFollowing();
             RemoveObject(colisor);
+        }
+    }
+    
+    public bool CanInteract()
+    {
+        // Retorna se o pato pode ser interagido (se não estiver seguindo)
+        return !isFollowing;
+    }
+
+    private void OnMovedHandler(Vector2 direction)
+    {
+        // Gira o pato para a esquerda ou direita com base na direção do movimento
+        if (direction.x != 0)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Sign(direction.x) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
 }
