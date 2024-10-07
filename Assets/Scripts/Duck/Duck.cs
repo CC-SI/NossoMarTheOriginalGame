@@ -69,7 +69,15 @@ public class Duck : InteractableObject, IInteraction, IMovement
         
         movement.SetFollowTarget(alvo);
     }
-    
+
+    private void FixedUpdate()
+    {
+        if (isFollowing)
+        {
+            movement.FollowTarget();
+        }
+    }
+
     public void OnPlayerInteraction()
     {
         if (!isFollowing)
@@ -77,12 +85,6 @@ public class Duck : InteractableObject, IInteraction, IMovement
             StartFollowing();
             RemoveObject(colisor);
         }
-    }
-    
-    public bool CanInteract()
-    {
-        // Retorna se o pato pode ser interagido (se não estiver seguindo)
-        return !isFollowing;
     }
 
     private void OnMovedHandler(Vector2 direction)
