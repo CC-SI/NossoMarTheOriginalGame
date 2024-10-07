@@ -1,0 +1,28 @@
+﻿{ 
+  "dialogueGroups": [
+    {
+      "id": "patoenterrado", 
+      "groupName": "Dialogo do pato enterrado",
+      "dialogues": [
+        {
+          "speaker": "Player",
+          "text": "Por que você está enterrado, pato?"
+        },
+        {
+          "speaker": "Pato",
+          "text": "Uma corrente me deixou preso aqui, por favor me ajude!!"
+        }
+      ]
+    },
+    {
+      "id": "patosalvo",
+      "groupName": "Dialogo do pato salvo",
+      "dialogues": [
+        {
+          "speaker": "Pato",
+          "text": "Obrigado por me salvar!!"
+        }
+      ]
+    }
+  ]
+}
