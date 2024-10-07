@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Movement : MonoBehaviour, IMovement
 {
     [SerializeField] private FixedJoystick joystick;
-    [SerializeField] private float velocidadeMovimento = 5f;
+    [SerializeField] private float velocidadeMovimento = 30f;
     [field: Header("Eventos")]
     [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
 
@@ -40,19 +40,22 @@ public class Movement : MonoBehaviour, IMovement
 
             if (direcao.magnitude >= 0.1f)
             {
-                // Move o agente na direção do joystick
-                navMeshAgent.Move(direcao * velocidadeMovimento * Time.fixedDeltaTime);
+                Vector3 targetPosition = transform.position + (direcao * velocidadeMovimento * Time.deltaTime);
+                navMeshAgent.SetDestination(targetPosition);
                 OnMoved.Invoke(new Vector2(horizontal, vertical) * velocidadeMovimento);
             }
             else
             {
-                // Para o movimento se o joystick não estiver sendo usado
                 navMeshAgent.velocity = Vector3.zero;
                 navMeshAgent.ResetPath();
                 OnMoved.Invoke(Vector2.zero);
             }
+
+            // Atualiza a animação de movimento
+            animator.SetBool("isWalking", navMeshAgent.velocity.magnitude > 0);
         }
     }
+
 
     public void SetFollowTarget(Transform target)
     {
@@ -60,22 +63,21 @@ public class Movement : MonoBehaviour, IMovement
         followTarget = target;
     }
 
-    private void FollowTarget()
+    public void FollowTarget()
     {
         if (followTarget != null)
         {
-            // Calcula a direção para o alvo e move o agente
             Vector2 posicaoAlvo = followTarget.position;
             Vector2 posicaoPato = transform.position;
 
             var direcao = ((posicaoAlvo - posicaoPato).normalized) * navMeshAgent.velocity.magnitude;
 
             navMeshAgent.SetDestination(posicaoAlvo);
-
-            OnMoved.Invoke(direcao);
             
             // Atualiza a animação de movimento
             animator.SetBool("isWalking", navMeshAgent.velocity.magnitude > 0);
+            
+            OnMoved.Invoke(direcao);
         }
     }
 }
