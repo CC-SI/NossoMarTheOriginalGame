@@ -34,6 +34,7 @@ namespace Dialog
     [Serializable]
     public class Dialogue
     {
+        public string id;
         public string speaker;
         public string text;
 
@@ -44,10 +45,11 @@ namespace Dialog
         /// </summary>
         /// <param name="speaker">Nome do falante.</param>
         /// <param name="text">Texto do diálogo.</param>
-        public Dialogue(string speaker, string text)
+        public Dialogue(string speaker, string text, string id)
         {
             this.speaker = speaker;
             this.text = text;
+            this.id = id;
         }
     }
 }
