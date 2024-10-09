@@ -21,7 +21,9 @@ namespace Interaction
             if (obj.CompareTag("DuckBuriedTag"))
             {
                 // Se a tag corresponder, exibe o diálogo associado à ID "patoenterrado"
-                dialogManager.ShowDialogForId("patoenterrado");
+                dialogManager.StartDialogue("patoenterrado");
+                
+                
             } 
         }
         
