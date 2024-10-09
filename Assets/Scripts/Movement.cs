@@ -25,12 +25,11 @@ public class Movement : MonoBehaviour, IMovement
 
     void FixedUpdate()
     {
-        // Se há um alvo a seguir, chama FollowTarget
         if (followTarget != null)
         {
             FollowTarget();
         }
-        // Caso contrário, usa o joystick para movimentação
+        
         else if (joystick != null)
         {
             float horizontal = joystick.Horizontal;
@@ -42,7 +41,15 @@ public class Movement : MonoBehaviour, IMovement
             {
                 Vector3 targetPosition = transform.position + (direcao * velocidadeMovimento * Time.deltaTime);
                 navMeshAgent.SetDestination(targetPosition);
-                OnMoved.Invoke(new Vector2(horizontal, vertical) * velocidadeMovimento);
+                
+                OnMoved.Invoke(new Vector2(horizontal, vertical));
+
+                if (horizontal != 0)
+                {
+                    Vector3 scale = transform.localScale;
+                    scale.x = -Mathf.Sign(horizontal) * Mathf.Abs(scale.x);  
+                    transform.localScale = scale;
+                }
             }
             else
             {
@@ -50,11 +57,11 @@ public class Movement : MonoBehaviour, IMovement
                 navMeshAgent.ResetPath();
                 OnMoved.Invoke(Vector2.zero);
             }
-
-            // Atualiza a animação de movimento
+            
             animator.SetBool("isWalking", navMeshAgent.velocity.magnitude > 0);
         }
     }
+
 
 
     public void SetFollowTarget(Transform target)
@@ -80,4 +87,5 @@ public class Movement : MonoBehaviour, IMovement
             OnMoved.Invoke(direcao);
         }
     }
+    
 }
