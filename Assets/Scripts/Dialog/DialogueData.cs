@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
 
 namespace Dialog
 {
@@ -52,4 +54,5 @@ namespace Dialog
             this.id = id;
         }
     }
+    
 }
