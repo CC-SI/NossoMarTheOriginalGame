@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1260046280328896352}
-  - component: {fileID: 4243492833230575452}
   - component: {fileID: 8063682653043679452}
   - component: {fileID: 514335745977830189}
   - component: {fileID: 7925294919694570575}
   - component: {fileID: 8003984980887760023}
   - component: {fileID: 5077117201620869165}
+  - component: {fileID: 192423504008066649}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -38,33 +38,6 @@ Transform:
   - {fileID: 980695356295815961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &4243492833230575452
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286831910162110128}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &8063682653043679452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,12 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae660862ffb84640a643c2ef8a5bec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: {fileID: 0}
-  countDucks: {fileID: 0}
-  clip: {fileID: 8300000, guid: d395acf7fae35fb4aa748dd9434a7ac5, type: 3}
   <OnMoved>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  alvo: {fileID: 0}
+  countDucks: {fileID: 0}
+  clip: {fileID: 8300000, guid: d395acf7fae35fb4aa748dd9434a7ac5, type: 3}
   isFollowing: 0
 --- !u!82 &8003984980887760023
 AudioSource:
@@ -271,6 +244,22 @@ NavMeshAgent:
   m_BaseOffset: 0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &192423504008066649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286831910162110128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9ab8c0e84a91b4aa87a79773b7f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <OnMoved>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  joystick: {fileID: 0}
 --- !u!1 &7764689697556676703
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +287,7 @@ Transform:
   m_GameObject: {fileID: 7764689697556676703}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -374,4 +363,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
