@@ -1,5 +1,6 @@
 using System;
 using Actors;
+using Dialog;
 using Interaction;
 using Player;
 using TMPro;
@@ -22,12 +23,18 @@ public class Duck : InteractableObject, IInteraction, IMovement
     private NavMeshAgent agent;
     
     [field: Header("Eventos")]
-    [field: SerializeField] public UnityEvent<Vector2> OnMoved {get; private set;}
+    [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
     
     [field: Header("Lógicos")]
     private static int currentDuck = 0;
     public bool isFollowing; 
     private AudioSource audioSource;
+
+    [field: Header("Dialogo")]
+    // private DialogManager dialogManager;
+    
+    private int currentDialogueIndex = 0;
+    private int previousDialogueIndex = -1;
     
     private void Start()
     {
@@ -57,16 +64,40 @@ public class Duck : InteractableObject, IInteraction, IMovement
     /// </summary>
     public void StartFollowing() 
     {
-		if (PlayerBehaviour.Instance)
-			alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
+        if (PlayerBehaviour.Instance)
+        {
+            if (gameObject.CompareTag("DuckDefault"))
+            {
+                CapturaPatoSemNarrativa();
+            }
+            else
+            {
+               Debug.Log("Pato não encontrado");
+            }
+        }
+    }
+    
+    private void CapturaPatoComNarrativa()
+    {
+            alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
+            isFollowing = true;
+    
+            currentDuck++;
+            countDucks.text = currentDuck.ToString();
         
-		isFollowing = true;
-        
+            audioSource.Play(); 
+            movement.SetFollowTarget(alvo);
+    }
+
+    private void CapturaPatoSemNarrativa()
+    {
+        alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
+        isFollowing = true;
+
         currentDuck++;
         countDucks.text = currentDuck.ToString();
-        
+    
         audioSource.Play(); 
-        
         movement.SetFollowTarget(alvo);
     }
 
@@ -81,7 +112,7 @@ public class Duck : InteractableObject, IInteraction, IMovement
     public void OnPlayerInteraction()
     {
         if (!isFollowing)
-        {
+        {   
             StartFollowing();
             RemoveObject(colisor);
         }
