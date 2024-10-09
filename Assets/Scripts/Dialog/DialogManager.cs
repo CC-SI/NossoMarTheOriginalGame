@@ -1,71 +1,57 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
 
 namespace Dialog
 {
-    /// <summary>
-    /// Classe responsável por gerenciar diálogos no jogo, 
-    /// incluindo exibição de texto e controle de fluxo de diálogos.
-    /// </summary>
     public class DialogManager : MonoBehaviour
     {
         [Header("Componentes de Interface")]
-        [SerializeField] private GameObject dialogManager;
-        [SerializeField] private Text speakerName;
-        [SerializeField] private Text dialogueText;
-        [SerializeField] private GameObject joystick;
-        [SerializeField] private GameObject helpDuck;
+        [SerializeField] private GameObject dialogBox;
+        [SerializeField] private Button btnClosedDialog;
 
-        [Header("Botões de Navegação")]
-        [SerializeField] private Button advanceButton;
-        [SerializeField] private Button backButton;
-        [SerializeField] private GameObject navNextGameObject;
-        [SerializeField] private GameObject navBackGameObject;
-        [SerializeField] private Button closedDialog;
+        [Header("Botões de Decisão")]
+        [SerializeField] private Button btnSim;
+        [SerializeField] private Button btnNao;
 
-        [Header("Decisões de Diálogo")]
-        [SerializeField] private GameObject dialogOptions;
-        [SerializeField] private Button btnYes;
-        [SerializeField] private Button btnNo;
+        [Header("Componentes de Texto")]
+        [SerializeField] private TextMeshProUGUI dialogoText;
+        [SerializeField] private TextMeshProUGUI whoSpeaks;
 
-        [Header("Mensagens Especiais")]
-        [SerializeField] private GameObject messageFindFri;
-        
-        private List<DialogueGroup> dialogueGroups = new List<DialogueGroup>(); // Lista de grupos de diálogos.
-        private int currentDialogueIndex = 0; // Índice do diálogo atual dentro do grupo atual.
+        private List<DialogueGroup> dialogueGroups = new List<DialogueGroup>();
         private int currentGroupIndex = 0; // Índice do grupo de diálogos atual.
-
-        private bool isFriCollect = false; // Verifica se o jogador coletou a pá.
+        private int currentDialogueIndex = 0; // Índice do diálogo atual dentro do grupo atual.
+        private int indiceDialogo = -1;
         
-        /// <summary>
-        /// Inicializa o gerenciador de diálogos ao iniciar o jogo.
-        /// </summary>
+        private bool avancarDialogo = true;
+        
+        public bool IsDialogActive { get; private set; }
+
+        public bool pa; // Variável pa configurada como false.
+        
         private void Start()
         {
-            HideDialog();
-            messageFindFri.SetActive(false);
-            LoadDialogues();
-            advanceButton.onClick.AddListener(OnAdvanceButtonClicked);
-            btnYes.onClick.AddListener(OnAdvanceButtonClicked);
-            btnNo.onClick.AddListener(HideDialog);
-            backButton.onClick.AddListener(ShowPreviousDialog);
-            closedDialog.onClick.AddListener(HideDialog);
+            dialogBox.SetActive(false);
+            btnSim.gameObject.SetActive(false);
+            btnNao.gameObject.SetActive(false);
+
+            btnClosedDialog.onClick.AddListener(HideDialog);
+            btnSim.onClick.AddListener(ShowNextDialog); // Avança para o próximo diálogo ao clicar em sim.
+            btnNao.onClick.AddListener(HideDialog); // Oculta o diálogo ao clicar em não.
+
+            LoadDialogues(); // Carrega os diálogos ao iniciar.
         }
-        
-        /// <summary>
-        /// Método chamado quando o botão de avanço é clicado.
-        /// Avança para o próximo diálogo.
-        /// </summary>
-        private void OnAdvanceButtonClicked()
+
+        private void Update()
         {
-            ShowNextDialog();
+            if (dialogBox.activeSelf && avancarDialogo && Input.GetMouseButtonDown(0))
+            {
+                ShowNextDialog();
+            }
         }
-        
+
         /// <summary>
         /// Carrega os diálogos de um arquivo JSON no diretório de streaming assets.
         /// </summary>
@@ -82,170 +68,94 @@ namespace Dialog
         }
 
         /// <summary>
-        /// Volta para o diálogo anterior da lista.
+        /// Inicia o diálogo de um grupo de diálogos pelo ID.
         /// </summary>
-        private void ShowPreviousDialog()
+        public void StartDialogue(string id)
         {
-            if (currentDialogueIndex > 0)
-            {
-                currentDialogueIndex -= 2;
-                ShowNextDialog();
-            }
-            else
-            {
-                HideDialog();
-            }
-        }
-        
-        /// <summary>
-        /// Mostra o próximo diálogo da lista.
-        /// </summary>
-        private void ShowNextDialog()
-        {
-            // Verifica se o gerenciador de diálogo está ativo e se há grupos de diálogos disponíveis.
-            if (dialogManager != null && currentGroupIndex < dialogueGroups.Count)
-            {
-                var currentGroup = dialogueGroups[currentGroupIndex]; // Obtém o grupo de diálogos atual.
-
-                // Verifica se ainda há diálogos no grupo atual.
-                if (currentDialogueIndex < currentGroup.dialogues.Count)
-                {
-                    dialogManager.SetActive(true); // Ativa o painel de diálogo.
-                    joystick.SetActive(false); // Oculta o joystick durante o diálogo.
-                    messageFindFri.SetActive(false);
-                    
-                    var currentDialogue = currentGroup.dialogues[currentDialogueIndex]; // Obtém o diálogo atual.
-                    
-                    // Atualiza o texto do falante.
-                    if (speakerName != null)
-                    {
-                        speakerName.text = currentDialogue.speaker; 
-                    }
-
-                    // Atualiza o texto do diálogo.
-                    if (dialogueText != null)
-                    {
-                        dialogueText.text = currentDialogue.text; 
-                    }
-
-                    // Verifica se o diálogo atual é sobre o pato enterrado e ativa o objeto de ajuda, se necessário.
-                    if (currentDialogue.id == "pato_enterrado_pedindo_ajuda")
-                    {
-                        helpDuck.SetActive(true);
-                        dialogOptions.SetActive(true);
-                        navNextGameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        helpDuck.SetActive(false);
-                        dialogOptions.SetActive(false);
-                        navNextGameObject.SetActive(true);
-                    }
-
-                    // Pula em 6 segundos caso o player não pulou pelo botão de avançar
-                    if (currentDialogue.id == "pato_enterrado_pedindo_ajuda")
-                    {
-                        StartCoroutine(CountAndAdvanceDialog());
-                    }
-
-                    // Se o diálogo atual for "encontrar_pa" e isFriCollect for false, não avança.
-                    if (currentDialogue.id == "encontrar_pa")
-                    {
-                        if (isFriCollect)
-                        {
-                            navBackGameObject.SetActive(true); // Permite voltar.
-                            helpDuck.SetActive(false); // Oculta o objeto de ajuda.
-                            dialogOptions.SetActive(false); // Oculta as opções de diálogo.
-                            messageFindFri.SetActive(false); // Oculta a mensagem que o player precisa encontrar a pá.
-                            currentDialogueIndex++; // Avança para o próximo diálogo se isFriCollect for true.
-                        }
-                        else
-                        {
-                            navNextGameObject.SetActive(false); // Desativa o botão de avanço.
-                            navBackGameObject.SetActive(true); // Permite voltar.
-                            helpDuck.SetActive(false); // Oculta o objeto de ajuda.
-                            dialogOptions.SetActive(false); // Oculta as opções de diálogo.
-                            messageFindFri.SetActive(true); // Exibe a mensagem que o player precisa encontrar a pá.
-                        }
-                    }
-                    else
-                    {
-                        currentDialogueIndex++; // Avança para o próximo diálogo, exceto para "encontrar_pa".
-                    }
-                }
-                else
-                {
-                    // Se todos os diálogos do grupo foram exibidos, avança para o próximo grupo.
-                    currentGroupIndex++;
-                    currentDialogueIndex = 0;
-
-                    // Verifica se ainda há grupos de diálogos disponíveis.
-                    if (currentGroupIndex >= dialogueGroups.Count)
-                    {
-                        HideDialog(); // Se não houver mais grupos, oculta o diálogo.
-                    }
-                }
-            }
-            else
-            {
-                HideDialog(); // Oculta o diálogo se o gerenciador não estiver ativo.
-            }
-        }
-
-        /// <summary>
-        /// Conta 6 segundos e avança o diálogo.
-        /// </summary>
-        private IEnumerator CountAndAdvanceDialog()
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                yield return new WaitForSeconds(1f); // Aguarda 1 segundo.
-            }
-            
-            ShowNextDialog();
-        }
-        
-        /// <summary>
-        /// Oculta o painel de diálogo e redefine os índices dos diálogos.
-        /// </summary>
-        public void HideDialog()
-        {
-            if (dialogManager != null)
-            {
-                dialogManager.SetActive(false); // Oculta o painel de diálogo.
-                currentDialogueIndex = 0; // Reseta o índice do diálogo atual.
-                currentGroupIndex = 0; // Reseta o índice do grupo de diálogos.
-                
-                joystick.SetActive(true); // Exibe o joystick.
-                helpDuck.SetActive(false); // Oculta o objeto de ajuda.
-                dialogOptions.SetActive(false); // Oculta as opções de diálogo.
-
-                if (isFriCollect == false && messageFindFri.activeSelf) // Se a pá não foi coletada e a mensagem está ativa.
-                {
-                    messageFindFri.SetActive(true); // Exibe a mensagem que o player precisa encontrar a pá.
-                }
-                else
-                {
-                    messageFindFri.SetActive(false); // Oculta a mensagem que o player precisa encontrar a pá.
-                }
-            }
-        }
-        
-        /// <summary>
-        /// Exibe o diálogo correspondente a um ID específico.
-        /// </summary>
-        /// <param name="id">ID do grupo de diálogos a ser exibido.</param>
-        public void ShowDialogForId(string id)
-        {
+            // Encontra o grupo de diálogos pelo ID
             for (int i = 0; i < dialogueGroups.Count; i++)
             {
-                if (dialogueGroups[i].id == id) 
+                if (dialogueGroups[i].id == id)
                 {
                     currentGroupIndex = i;
                     currentDialogueIndex = 0;
+                    indiceDialogo = currentDialogueIndex;
                     ShowNextDialog();
                     return;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Mostra o próximo diálogo da lista.
+        /// </summary>
+        public void ShowNextDialog()
+        {
+            var currentGroup = dialogueGroups[currentGroupIndex]; // Obtém o grupo de diálogos atual
+            if (currentDialogueIndex < currentGroup.dialogues.Count)
+            {
+                var currentDialogue = currentGroup.dialogues[currentDialogueIndex]; // Obtém o diálogo atual
+                dialogBox.SetActive(true); // Ativa o painel de diálogo
+                IsDialogActive = false;
+                whoSpeaks.text = currentDialogue.speaker; // Atualiza o nome do falante
+                dialogoText.text = currentDialogue.text; // Atualiza o texto do diálogo
+
+                btnSim.gameObject.SetActive(false);
+                btnNao.gameObject.SetActive(false);
+                avancarDialogo = true;
+
+                HandleDuckDialogue(currentDialogue);
+                
+                indiceDialogo = currentDialogueIndex;
+                currentDialogueIndex++; // Avança para o próximo diálogo
+            }
+            else
+            {
+                // Finaliza o diálogo e sinaliza que o pato pode seguir o jogador
+                HideDialog(); // Oculta o diálogo se não houver mais diálogos
+            }
+        }
+
+        private void HandleDuckDialogue(Dialogue currentDialogue)
+        {
+            switch (currentDialogue.id)
+            {
+                case "pato_enterrado_pedindo_ajuda":
+                    btnSim.gameObject.SetActive(true);
+                    btnNao.gameObject.SetActive(true);
+                    avancarDialogo = false;
+                    break;
+                case "aceitar_ajuda":
+                    // Lógica para aceitar ajuda
+                    break;
+                case "encontrar_pa":
+                    // Lógica para encontrar pa
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Oculta o painel de diálogo.
+        /// </summary>
+        private void HideDialog()
+        {
+            dialogBox.SetActive(false); // Oculta o painel de diálogo
+            IsDialogActive = false;
+            currentDialogueIndex = 0; // Reseta o índice do diálogo atual apenas ao iniciar um novo diálogo
+            avancarDialogo = true; // Permite que o diálogo reinicie quando necessário
+            btnSim.gameObject.SetActive(false); 
+            btnNao.gameObject.SetActive(false);
+        }
+        
+        /// <summary>
+        /// Mostra o diálogo anterior.
+        /// </summary>
+        public void ShowDialogPrevious(int previousIndex)
+        {
+            if (previousIndex >= 0 && previousIndex < dialogueGroups[currentGroupIndex].dialogues.Count)
+            {
+                currentDialogueIndex = previousIndex; 
+                ShowNextDialog(); 
             }
         }
     }
