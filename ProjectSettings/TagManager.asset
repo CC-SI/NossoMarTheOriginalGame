@@ -9,6 +9,7 @@ TagManager:
   - DialogueTextTag
   - BoxDialogueTag
   - DuckBuriedTag
+  - DuckDefault
   layers:
   - Default
   - TransparentFX
