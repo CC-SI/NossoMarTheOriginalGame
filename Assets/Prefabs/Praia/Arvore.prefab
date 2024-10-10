@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8950429303981364116}
   - component: {fileID: 5821456093141332764}
+  - component: {fileID: 6956784350735671110}
   m_Layer: 0
   m_Name: Grafico
   m_TagString: Untagged
@@ -87,6 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &6956784350735671110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113838655589401848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.4429183, y: 0.5712879, z: 4}
+  m_Center: {x: 0.95868635, y: 0.47623307, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &9161116019652764471
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,8 +129,8 @@ Transform:
   m_GameObject: {fileID: 9161116019652764471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -12.05, y: -6.18, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8950429303981364116}
