@@ -100,7 +100,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d182d28f533efb34aae9edf5d45c6154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  startPoint: {fileID: 0}
-  endPoint: {fileID: 0}
-  moveOpposite: 0
