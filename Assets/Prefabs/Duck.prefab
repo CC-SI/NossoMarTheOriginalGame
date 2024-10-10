@@ -72,7 +72,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.17}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -118,10 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae660862ffb84640a643c2ef8a5bec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <OnMoved>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  alvo: {fileID: 0}
   countDucks: {fileID: 0}
   clip: {fileID: 8300000, guid: d395acf7fae35fb4aa748dd9434a7ac5, type: 3}
   isFollowing: 0
@@ -231,17 +227,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 286831910162110128}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.1
+  m_Radius: 0.13
   m_Speed: 5
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 0
-  m_StoppingDistance: 1.1
+  m_StoppingDistance: 1.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.2
-  m_BaseOffset: 0.1
+  m_Height: 0.1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &192423504008066649
@@ -287,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 7764689697556676703}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -353,12 +349,12 @@ SpriteRenderer:
   m_SortingLayerID: 2115649195
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -162970848, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+  m_Sprite: {fileID: -2102694387, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.26}
+  m_Size: {x: 5.95, y: 6.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
