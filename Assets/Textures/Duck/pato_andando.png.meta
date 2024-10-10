@@ -123,45 +123,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixilart-sprite-pato_0
+      name: pato_0
       rect:
         serializedVersion: 2
-        x: 150
-        y: 167
-        width: 606
-        height: 648
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 156
+        y: 172
+        width: 595
+        height: 641
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d381deaf52102f439f1897f8689da2d
-      internalID: -162970848
+      spriteID: 474f9299182ccba4eb4b869817e9ccdd
+      internalID: 1173138274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixilart-sprite-pato_1
+      name: pato_1
       rect:
         serializedVersion: 2
-        x: 1089
-        y: 173
-        width: 606
-        height: 648
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1094
+        y: 172
+        width: 595
+        height: 641
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f45a9875e0feab0409de59e096c87257
-      internalID: 1288127244
+      spriteID: e2e8473a89b611e47a01ecfc013c50cc
+      internalID: -2102694387
       vertices: []
       indices: 
       edges: []
@@ -180,8 +180,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixilart-sprite-pato_0: -162970848
-      pixilart-sprite-pato_1: 1288127244
+      pato_0: 1173138274
+      pato_1: -2102694387
+      pato_2: 483437829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
