@@ -1,17 +1,18 @@
-﻿{ 
+﻿{
   "dialogueGroups": [
     {
-      "id": "patoenterrado", 
-      "groupName": "Dialogo do pato enterrado",
+      "id": "patoenterrado",
+      "groupName": "Diálogo do Pato Enterrado",
       "dialogues": [
         {
+          "id" : "player_perguntando_pato_enterrado",
           "speaker": "Player",
-          "text": "Por que você está enterrado, pato?"
+          "text": "O que você está fazendo enterrado na areia, pato? Está tudo bem?"
         },
         {
           "id": "pato_enterrado_pedindo_ajuda",
           "speaker": "Pato",
-          "text": "Uma corrente me deixou preso aqui, por favor me ajude!!"
+          "text": "A correnteza me deixou preso aqui! Estou tão preocupado! Por favor, me ajude!!"
         },
         {
           "id": "aceitou_ajudar_pato",
@@ -19,19 +20,19 @@
           "text": "Claro, vou te ajudar!!"
         },
         {
-            "id": "encontrar_pa",
-            "speaker": "Pato",
-            "text": "Então encontre uma pá para me tirar daqui!!"
+          "id": "encontrar_pa",
+          "speaker": "Pato",
+          "text": "Ótimo! Então encontre uma pá para me tirar daqui!!"
         }
       ]
     },
     {
       "id": "patosalvo",
-      "groupName": "Dialogo do pato salvo",
+      "groupName": "Diálogo do Pato Salvo",
       "dialogues": [
         {
           "speaker": "Pato",
-          "text": "Obrigado por me salvar!!"
+          "text": "Muito obrigado por me salvar!!"
         }
       ]
     }
