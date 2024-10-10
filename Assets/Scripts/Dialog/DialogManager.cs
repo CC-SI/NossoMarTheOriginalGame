@@ -8,31 +8,59 @@ namespace Dialog
 {
     public class DialogManager : MonoBehaviour
     {
-        [Header("Componentes de Interface")]
-        [SerializeField] private GameObject dialogBox;
+        [Header("Componentes de Interface")] 
+        [SerializeField]
+        private GameObject dialogBox;
+
         [SerializeField] private Button btnClosedDialog;
 
-        [Header("Botões de Decisão")]
-        [SerializeField] private Button btnSim;
+        [Header("Botões de Decisão")] 
+        [SerializeField]
+        private Button btnSim;
+
         [SerializeField] private Button btnNao;
 
-        [Header("Componentes de Texto")]
-        [SerializeField] private TextMeshProUGUI dialogoText;
+        [Header("Componentes de Texto")] 
+        [SerializeField]
+        private TextMeshProUGUI dialogoText;
+
         [SerializeField] private TextMeshProUGUI whoSpeaks;
 
         private List<DialogueGroup> dialogueGroups = new List<DialogueGroup>();
         private int currentGroupIndex = 0; // Índice do grupo de diálogos atual.
         private int currentDialogueIndex = 0; // Índice do diálogo atual dentro do grupo atual.
-        private int indiceDialogo = -1;
-        
+        private int indiceDialogo = 1;
+
+        public int IndiceDialogo => indiceDialogo;
+
         private bool avancarDialogo = true;
-        
+
         public bool IsDialogActive { get; private set; }
 
-        public bool pa; // Variável pa configurada como false.
-        
+        public bool pa;
+
+        public bool IsDialogFinshed { get; private set; }
+
+        private string lastClosedDialogueId;
+
+        public static DialogManager Instance { get; private set; }
+
+        private void Awake()
+        {
+            // Garante que exista apenas uma instância do DialogManager.
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
+
         private void Start()
         {
+            // Inicializa o estado da interface e carrega os diálogos.
             dialogBox.SetActive(false);
             btnSim.gameObject.SetActive(false);
             btnNao.gameObject.SetActive(false);
@@ -46,6 +74,7 @@ namespace Dialog
 
         private void Update()
         {
+            // Avança o diálogo ao clicar na tela se o diálogo estiver ativo.
             if (dialogBox.activeSelf && avancarDialogo && Input.GetMouseButtonDown(0))
             {
                 ShowNextDialog();
@@ -96,26 +125,32 @@ namespace Dialog
             {
                 var currentDialogue = currentGroup.dialogues[currentDialogueIndex]; // Obtém o diálogo atual
                 dialogBox.SetActive(true); // Ativa o painel de diálogo
-                IsDialogActive = false;
+                IsDialogActive = true; // Marque o diálogo como ativo
+
+                // Atualiza a interface com o falante e o texto
                 whoSpeaks.text = currentDialogue.speaker; // Atualiza o nome do falante
                 dialogoText.text = currentDialogue.text; // Atualiza o texto do diálogo
+
+                Debug.Log(currentDialogue.id);
 
                 btnSim.gameObject.SetActive(false);
                 btnNao.gameObject.SetActive(false);
                 avancarDialogo = true;
 
-                HandleDuckDialogue(currentDialogue);
-                
-                indiceDialogo = currentDialogueIndex;
+                HandleDuckDialogue(currentDialogue); // Lógica específica para diálogos do pato
+
                 currentDialogueIndex++; // Avança para o próximo diálogo
             }
             else
             {
-                // Finaliza o diálogo e sinaliza que o pato pode seguir o jogador
-                HideDialog(); // Oculta o diálogo se não houver mais diálogos
+                // Finaliza o diálogo se não houver mais diálogos
+                HideDialog(); 
             }
         }
 
+        /// <summary>
+        /// Manipula diálogos específicos relacionados ao pato.
+        /// </summary>
         private void HandleDuckDialogue(Dialogue currentDialogue)
         {
             switch (currentDialogue.id)
@@ -135,28 +170,46 @@ namespace Dialog
         }
 
         /// <summary>
+        /// Retoma o diálogo que estava ativo antes de ser fechado.
+        /// </summary>
+        public void ResumeDialog()
+        {
+            // Encontra o diálogo que estava ativo antes de ser fechado
+            for (int i = 0; i < dialogueGroups[currentGroupIndex].dialogues.Count; i++)
+            {
+                if (dialogueGroups[currentGroupIndex].dialogues[i].id == lastClosedDialogueId)
+                {
+                    currentDialogueIndex = i; // Define o índice do diálogo atual
+                    break;
+                }
+            }
+
+            // Verifica se o índice atual do diálogo está dentro dos limites
+            if (currentDialogueIndex < dialogueGroups[currentGroupIndex].dialogues.Count)
+            {
+                ShowNextDialog(); // Mostra o próximo diálogo
+            }
+            else
+            {
+                HideDialog(); // Se o índice estiver fora do limite, oculta o diálogo
+            }
+        }
+
+        /// <summary>
         /// Oculta o painel de diálogo.
         /// </summary>
         private void HideDialog()
         {
+            if (currentDialogueIndex > 0)
+            {
+                lastClosedDialogueId = dialogueGroups[currentGroupIndex].dialogues[currentDialogueIndex - 1].id; // Salva o ID do diálogo fechado
+            }
+    
             dialogBox.SetActive(false); // Oculta o painel de diálogo
             IsDialogActive = false;
-            currentDialogueIndex = 0; // Reseta o índice do diálogo atual apenas ao iniciar um novo diálogo
             avancarDialogo = true; // Permite que o diálogo reinicie quando necessário
-            btnSim.gameObject.SetActive(false); 
+            btnSim.gameObject.SetActive(false);
             btnNao.gameObject.SetActive(false);
-        }
-        
-        /// <summary>
-        /// Mostra o diálogo anterior.
-        /// </summary>
-        public void ShowDialogPrevious(int previousIndex)
-        {
-            if (previousIndex >= 0 && previousIndex < dialogueGroups[currentGroupIndex].dialogues.Count)
-            {
-                currentDialogueIndex = previousIndex; 
-                ShowNextDialog(); 
-            }
         }
     }
 }
