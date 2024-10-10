@@ -19,7 +19,7 @@ namespace Player
 			return target;
 		}
 
-		public Transform GetFollowTarget()
+		private Transform GetFollowTarget()
 		{
 			if (ducks.Count < 1)
 				return transform;
@@ -27,7 +27,7 @@ namespace Player
 			return ducks[^1].transform;
 		}
 
-		void Awake()
+		private void Awake()
 		{
 			if (!Instance)
 			{
