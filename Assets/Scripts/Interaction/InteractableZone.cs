@@ -56,8 +56,24 @@ namespace Interaction
         /// </summary>
         private void UpdateButton()
         {
+            // Atualiza o estado do botão de ação com base na fila de interações
             actionButton.gameObject.SetActive(interactableQueue.Count > 0);
+    
+            // Verifica se há interações na fila
+            if (interactableQueue.Count > 0)
+            {
+                // Obtém o primeiro item interativo da fila
+                var interactable = interactableQueue[0];
+
+                // Verifica se o objeto interativo tem a tag "DuckDefault"
+                if (interactable.GameObject.CompareTag("DuckDefault"))
+                {
+                    // Ativa o botão de ação se o objeto interativo for do tipo "DuckDefault"
+                    actionButton.gameObject.SetActive(true);
+                }
+            }
         }
+
         
         /// <summary>
         /// Trata a interação do jogador com o primeiro objeto interagível na fila quando o botão é clicado.
