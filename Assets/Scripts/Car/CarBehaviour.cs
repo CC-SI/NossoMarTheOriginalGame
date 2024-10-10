@@ -4,12 +4,16 @@ public class CarBehaviour : MonoBehaviour
 {
     private Vector2 destination;
     private const float Speed = 4f;
+    private CarSpawner spawner;
 
     private void Start()
     {
-        destination = transform.position.y > 0 ? new Vector2((float)-33.8, (float)-22.9) : new Vector2((float)-32.33, (float)21.58);
-
         RotateCar();
+    }
+    
+    public void SetDestination(Vector2 target)
+    {
+        destination = target;
     }
     
     private void RotateCar()

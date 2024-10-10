@@ -7,9 +7,11 @@ public class CarSpawner : MonoBehaviour
 
     [field: Header("Direção na mão esquerda")]
     [SerializeField] private Transform leftSpawn;
-
+    [SerializeField] private Transform leftDestroyer;
+    
     [field: Header("Direção na mão direita")]
     [SerializeField] private Transform rightSpawn;
+    [SerializeField] private Transform rightDestroyer;
     
     private float spawnTimer;
     private float spawnInterval;
@@ -25,15 +27,27 @@ public class CarSpawner : MonoBehaviour
 
         if (!(spawnTimer >= spawnInterval)) return;
         
+        SpawnCar();
         spawnTimer = 0;
         spawnInterval = Random.Range(2, 5);
+    }
+    
+    private void SpawnCar()
+    {
+        Transform spawnPoint, endPoint;
         
         if (Random.Range(0, 2) == 0)
         {
-            Instantiate(car, leftSpawn.position, Quaternion.identity);
-            return;
+            spawnPoint = leftSpawn;
+            endPoint = leftDestroyer;
+        }
+        else
+        {
+            spawnPoint = rightSpawn;
+            endPoint = rightDestroyer;
         }
         
-        Instantiate(car, rightSpawn.position, Quaternion.identity);
+        GameObject newCar = Instantiate(car, spawnPoint.position, Quaternion.identity);
+        newCar.GetComponent<CarBehaviour>().SetDestination(endPoint.position);
     }
 }
