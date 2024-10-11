@@ -3,39 +3,53 @@ using UnityEngine;
 
 namespace Player
 {
-	public class PlayerBehaviour : MonoBehaviour
-	{
-		readonly List<Duck> ducks = new();
+    public class PlayerBehaviour : MonoBehaviour
+    {
+        readonly List<Duck.Duck> ducks = new();
+        readonly List<Shovel.Shovel> shovels = new(); 
 
-		public static PlayerBehaviour Instance { get; private set; }
+        public static PlayerBehaviour Instance { get; private set; }
 
-		public Transform GetFollowTarget(Duck duck)
-		{
-			Transform target = GetFollowTarget();
+        public Transform GetFollowTarget(Duck.Duck duck)
+        {
+            Transform target = GetFollowTarget();
 
-			if (!ducks.Contains(duck))
-				ducks.Add(duck);
+            if (!ducks.Contains(duck))
+                ducks.Add(duck);
 
-			return target;
-		}
+            return target;
+        }
 
-		public Transform GetFollowTarget()
-		{
-			if (ducks.Count < 1)
-				return transform;
+        public Transform GetFollowTarget(Shovel.Shovel shovel)
+        {
+            Transform target = GetFollowTarget();
 
-			return ducks[^1].transform;
-		}
+            if (!shovels.Contains(shovel))
+                shovels.Add(shovel);
 
-		void Awake()
-		{
-			if (!Instance)
-			{
-				Instance = this;
-				return;
-			}
+            return target;
+        }
 
-			Destroy(gameObject);
-		}
-	}
+        public Transform GetFollowTarget()
+        {
+            if (ducks.Count + shovels.Count < 1)
+                return transform;
+
+            if (shovels.Count > 0)
+                return shovels[^1].transform; 
+
+            return ducks[^1].transform; 
+        }
+
+        void Awake()
+        {
+            if (!Instance)
+            {
+                Instance = this;
+                return;
+            }
+
+            Destroy(gameObject);
+        }
+    }
 }
