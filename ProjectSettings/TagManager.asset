@@ -10,6 +10,7 @@ TagManager:
   - BoxDialogueTag
   - DuckBuriedTag
   - DuckDefault
+  - PaTag
   layers:
   - Default
   - TransparentFX
