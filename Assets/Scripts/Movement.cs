@@ -19,14 +19,14 @@ public class Movement : MonoBehaviour, IMovement
     {
         // Inicializa o NavMeshAgent e o Animator
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
-        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
-        // Se há um alvo a seguir, chama FollowTarget
+        CheckAreaMask();
         if (followTarget)
         {
             FollowTarget();
@@ -41,9 +41,9 @@ public class Movement : MonoBehaviour, IMovement
 
         if (direcao.magnitude >= 0.1f)
         {
-            Vector3 targetPosition = transform.position + (direcao * (navMeshAgent.speed * Time.deltaTime));
+            Vector3 targetPosition = transform.position + (direcao * (navMeshAgent.speed * Time.fixedDeltaTime));
             navMeshAgent.SetDestination(targetPosition);
-            OnMoved.Invoke(new Vector2(horizontal, vertical) * navMeshAgent.speed);
+            OnMoved.Invoke(direcao * navMeshAgent.velocity.magnitude);
         }
         else
         {
@@ -51,15 +51,11 @@ public class Movement : MonoBehaviour, IMovement
             navMeshAgent.ResetPath();
             OnMoved.Invoke(Vector2.zero);
         }
-
-        // Atualiza a animação de movimento
-        animator.SetBool("isWalking", navMeshAgent.velocity.magnitude > 0);
     }
 
 
     public void SetFollowTarget(Transform target)
     {
-        // Define o alvo a ser seguido
         followTarget = target;
     }
 
@@ -71,7 +67,20 @@ public class Movement : MonoBehaviour, IMovement
         var direcao = ((posicaoAlvo - posicaoPato).normalized) * navMeshAgent.velocity.magnitude;
 
         navMeshAgent.SetDestination(posicaoAlvo);
-            
+        
         OnMoved.Invoke(direcao);
+    }
+    
+    private void CheckAreaMask()
+    {
+        int WaterMask = 1 << 3;
+
+        if (NavMesh.SamplePosition(navMeshAgent.transform.position, out NavMeshHit hit, 0.1f, WaterMask))
+        {
+            animator.SetBool("isSwimming", true);
+            return;
+        }
+        
+        animator.SetBool("isSwimming", false);
     }
 }
