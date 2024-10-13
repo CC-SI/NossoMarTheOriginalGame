@@ -27,12 +27,13 @@ public class Movement : MonoBehaviour, IMovement
     private void FixedUpdate()
     {
         CheckAreaMask();
+        
         if (followTarget)
         {
             FollowTarget();
             return;
         }
-        // Caso contrário, usa o joystick para movimentação
+        
         if (!joystick) return;
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
@@ -43,14 +44,13 @@ public class Movement : MonoBehaviour, IMovement
         {
             Vector3 targetPosition = transform.position + (direcao * (navMeshAgent.speed * Time.fixedDeltaTime));
             navMeshAgent.SetDestination(targetPosition);
-            OnMoved.Invoke(direcao * navMeshAgent.velocity.magnitude);
         }
         else
         {
-            navMeshAgent.velocity = Vector3.zero;
             navMeshAgent.ResetPath();
-            OnMoved.Invoke(Vector2.zero);
         }
+        
+        OnMoved.Invoke(direcao * navMeshAgent.velocity.magnitude);
     }
 
 
