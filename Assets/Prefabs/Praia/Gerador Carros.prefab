@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7400080761142523783}
   - component: {fileID: 3901313448231193324}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: LeftSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
