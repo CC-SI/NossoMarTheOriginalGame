@@ -5,21 +5,19 @@ using UnityEngine.Events;
 
 public class Movement : MonoBehaviour, IMovement
 {
-    
     [field: Header("Eventos")]
-    [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
+    [field: SerializeField] public UnityEvent<Vector2, bool> OnMoved { get; private set; }
     
     [SerializeField] private FixedJoystick joystick;
 
     private NavMeshAgent navMeshAgent;
     private Transform followTarget;
-    private Animator animator;
+    private bool isInWater;
 
     private void Start()
     {
         // Inicializa o NavMeshAgent e o Animator
         navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
     }
@@ -50,7 +48,7 @@ public class Movement : MonoBehaviour, IMovement
             navMeshAgent.ResetPath();
         }
         
-        OnMoved.Invoke(direcao * navMeshAgent.velocity.magnitude);
+        OnMoved.Invoke(direcao * navMeshAgent.velocity.magnitude, isInWater);
     }
 
 
@@ -68,7 +66,7 @@ public class Movement : MonoBehaviour, IMovement
 
         navMeshAgent.SetDestination(posicaoAlvo);
         
-        OnMoved.Invoke(direcao);
+        OnMoved.Invoke(direcao, isInWater);
     }
     
     private void CheckAreaMask()
@@ -77,10 +75,10 @@ public class Movement : MonoBehaviour, IMovement
 
         if (NavMesh.SamplePosition(navMeshAgent.transform.position, out NavMeshHit hit, 0.1f, WaterMask))
         {
-            animator.SetBool("isSwimming", true);
+            isInWater = true;
             return;
         }
         
-        animator.SetBool("isSwimming", false);
+        isInWater = false;
     }
 }

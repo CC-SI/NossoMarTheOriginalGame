@@ -5,6 +5,6 @@ namespace Actors
 {
     public interface IMovement
     {
-        UnityEvent<Vector2> OnMoved { get; }
+        UnityEvent<Vector2, bool> OnMoved { get; }
     }
 }

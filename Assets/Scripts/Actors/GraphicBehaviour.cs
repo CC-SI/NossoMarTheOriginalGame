@@ -7,6 +7,7 @@ namespace Actors
         [SerializeField] private Animator animator;
         [Header("Parametros")]
         [SerializeField] private string _moveParameter;
+        [SerializeField] private string _swimParameter;
         [SerializeField] private string _xParameter;
         [SerializeField] private string _yParameter;
 
@@ -30,10 +31,17 @@ namespace Actors
             get => animator.GetBool(_moveParameter);
             set => animator.SetBool(_moveParameter, value);
         }
+        
+        public bool IsSwimming
+        {
+            get => animator.GetBool(_swimParameter);
+            set => animator.SetBool(_swimParameter, value);
+        }
 
-        private void OnMove(Vector2 velocity)
+        private void OnMove(Vector2 velocity, bool isOnWater)
         {
             IsMoving = velocity.sqrMagnitude != 0;
+            IsSwimming = isOnWater;
             Direction = velocity.normalized;
         }
 
