@@ -219,7 +219,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,7 +241,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -346,9 +346,9 @@ TextureImporter:
       name: Gatinhos_10
       rect:
         serializedVersion: 2
-        x: 746
+        x: 744
         y: 6
-        width: 70
+        width: 72
         height: 88
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -368,9 +368,9 @@ TextureImporter:
       name: Gatinhos_11
       rect:
         serializedVersion: 2
-        x: 822
+        x: 820
         y: 6
-        width: 70
+        width: 72
         height: 88
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -395,7 +395,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -417,7 +417,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
