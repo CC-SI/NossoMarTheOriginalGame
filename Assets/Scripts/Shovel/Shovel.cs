@@ -1,4 +1,5 @@
 using Actors;
+using Dialog;
 using Interaction;
 using Player;
 using UnityEngine;
@@ -23,7 +24,8 @@ namespace Shovel
 
         [field: Header("Lógicos")]
         public bool isFollowing;
-
+        
+        private bool isCollected = false;
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -44,7 +46,7 @@ namespace Shovel
         {
             if (PlayerBehaviour.Instance)
             {
-                alvo = PlayerBehaviour.Instance.GetFollowTarget(this); 
+                alvo = PlayerBehaviour.Instance.transform; 
                 isFollowing = true;
                 movement.SetFollowTarget(alvo); 
             }
@@ -60,10 +62,13 @@ namespace Shovel
 
         public void OnPlayerInteraction()
         {
-            if (!isFollowing)
+            if (!isFollowing && !isCollected)
             {
                 StartFollowing(); 
-                RemoveObject(colisor); 
+                RemoveObject(colisor);
+            
+                DialogManager.Instance.CollectPa();
+                isCollected = true;
             }
         }
     }
