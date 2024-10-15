@@ -663,7 +663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (6)
+      value: pato enterrado
       objectReference: {fileID: 0}
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_TagString
@@ -787,6 +787,17 @@ MonoBehaviour:
   <OnMoved>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &142785976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 142785963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121222611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae660862ffb84640a643c2ef8a5bec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &155037982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1307,6 +1318,10 @@ PrefabInstance:
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: audioSource
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: isFollowing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: dialogManager
@@ -2833,10 +2848,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7925294919694570575, guid: 5bc60266cfc28cf4ebe069f19e97718c, type: 3}
+      propertyPath: alvo
+      value: 
+      objectReference: {fileID: 1787951744}
+    - target: {fileID: 7925294919694570575, guid: 5bc60266cfc28cf4ebe069f19e97718c, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7925294919694570575, guid: 5bc60266cfc28cf4ebe069f19e97718c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6675,6 +6695,7 @@ MonoBehaviour:
   dialogoText: {fileID: 843651798}
   whoSpeaks: {fileID: 583727847}
   pa: {fileID: 274644216}
+  pato: {fileID: 142785976}
 --- !u!1 &1759548866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
