@@ -12,7 +12,7 @@ public class Duck : InteractableObject, IInteraction, IMovement
 {
     [field: Header("Componentes Externos")]
     [SerializeField] private Transform alvo; 
-    [SerializeField] private TMP_Text countDucks; 
+    [SerializeField] private TMP_Text countDucks;
     [SerializeField] private AudioClip clip; 
     private Movement movement; 
 
@@ -31,24 +31,22 @@ public class Duck : InteractableObject, IInteraction, IMovement
     private AudioSource audioSource; 
 
     [field: Header("Dialogo")]
-    private int tentativasDeCaptura = 0; // Contador de tentativas de captura.
-    
+    private int tentativasDeCaptura = 0; 
 
     private void Start()
     {
-        // Inicializa os componentes e configura o pato.
         rb = GetComponent<Rigidbody2D>();
-        colisor = GetComponent<Collider2D>();
-        animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
-        movement = GetComponent<Movement>();
+        colisor = GetComponent<Collider2D>(); 
+        animator = GetComponent<Animator>(); 
+        agent = GetComponent<NavMeshAgent>(); 
+        movement = GetComponent<Movement>(); 
         
         agent.updateRotation = false; 
         agent.updateUpAxis = false; 
-    
+        
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = clip; 
-
+        
         AddObject(colisor, this); 
         
         if (movement != null)
@@ -62,16 +60,19 @@ public class Duck : InteractableObject, IInteraction, IMovement
     /// </summary>
     public void StartFollowing() 
     {
-        // Inicia o seguimento do pato ao jogador.
+        // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
         if (PlayerBehaviour.Instance)
         {
+            alvo = PlayerBehaviour.Instance.transform; 
+            isFollowing = true; 
+            
             if (gameObject.CompareTag("DuckDefault"))
             {
-                CapturaPatoSemNarrativa(); // Captura o pato sem diálogo.
+                CapturaPatoSemNarrativa();
             }
             else
             {
-                TentativasDeCapturas(); // Incrementa a tentativa de captura.
+                TentativasDeCapturas(); 
             }
         }
     }
@@ -80,27 +81,31 @@ public class Duck : InteractableObject, IInteraction, IMovement
     {
         // Incrementa o contador de tentativas de captura.
         tentativasDeCaptura++;
-        Debug.Log(tentativasDeCaptura);
+        Debug.Log(tentativasDeCaptura); // Log da quantidade de tentativas de captura.
     }
     
-    private void CapturaPatoComNarrativa()
+    public void CaptureDuck()
     {
-        alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
-        isFollowing = true;
-        currentDuck++;
-        countDucks.text = currentDuck.ToString(); 
+        // Captura o pato e atualiza a contagem de patos.
+        isFollowing = true; 
+        currentDuck++; 
+        countDucks.text = currentDuck.ToString();
         audioSource.Play(); 
         movement.SetFollowTarget(alvo); 
+
+        colisor.enabled = false; // Desabilita o colisor após a captura.
     }
+    
 
     private void CapturaPatoSemNarrativa()
     {
-        alvo = PlayerBehaviour.Instance.GetFollowTarget(this);
-        isFollowing = true;
-        currentDuck++;
-        countDucks.text = currentDuck.ToString(); 
-        audioSource.Play(); 
-        movement.SetFollowTarget(alvo); 
+        // Captura o pato sem narrativa e atualiza o alvo e contagem.
+        alvo = PlayerBehaviour.Instance.GetFollowTarget(this); // Obtém o alvo do jogador.
+        isFollowing = true; 
+        currentDuck++; 
+        countDucks.text = currentDuck.ToString();
+        audioSource.Play();
+        movement.SetFollowTarget(alvo);
     }
 
     private void FixedUpdate()
@@ -108,7 +113,7 @@ public class Duck : InteractableObject, IInteraction, IMovement
         // Atualiza a movimentação do pato se estiver seguindo o jogador.
         if (isFollowing)
         {
-            movement.FollowTarget(); 
+            movement.FollowTarget(); // Chama o método para seguir o alvo.
         }
     }
 
@@ -125,13 +130,15 @@ public class Duck : InteractableObject, IInteraction, IMovement
             }
             else
             {
+                // Verifica se o diálogo foi finalizado antes de capturar o pato.
                 if (DialogManager.Instance.IsDialogFinshed)
                 {
-                    Debug.Log("O diálogo está finalizado."); // Log se o diálogo foi finalizado.
+                    CaptureDuck(); // Captura o pato.
+                    RemoveObject(colisor); // Remove o pato após captura.
                 }
                 else
                 {
-                    Debug.Log("O diálogo não está finalizado."); // Log se o diálogo não foi finalizado.
+                    Debug.Log("O diálogo não está finalizado."); 
                 }
             }
         }
@@ -143,8 +150,8 @@ public class Duck : InteractableObject, IInteraction, IMovement
         if (direction.x != 0)
         {
             Vector3 scale = transform.localScale;
-            scale.x = Mathf.Sign(direction.x) * Mathf.Abs(scale.x); // Inverte a escala no eixo X.
-            transform.localScale = scale; // Aplica a nova escala.
+            scale.x = Mathf.Sign(direction.x) * Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
 }
