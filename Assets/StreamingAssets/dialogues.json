@@ -23,16 +23,11 @@
           "id": "encontrar_pa",
           "speaker": "Pato",
           "text": "Ótimo! Então encontre uma pá para me tirar daqui!!"
-        }
-      ]
-    },
-    {
-      "id": "patosalvo",
-      "groupName": "Diálogo do Pato Salvo",
-      "dialogues": [
+        },
         {
-          "speaker": "Pato",
-          "text": "Muito obrigado por me salvar!!"
+            "id": "pato_enterrado_agradecendo",
+            "speaker": "Pato",
+            "text": "Muito obrigado por me salvar!!"
         }
       ]
     }
