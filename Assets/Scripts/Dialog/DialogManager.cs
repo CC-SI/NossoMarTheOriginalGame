@@ -8,36 +8,30 @@ namespace Dialog
 {
     public class DialogManager : MonoBehaviour
     {
-        [Header("Componentes de Interface")] 
-        [SerializeField]
+        [Header("Componentes de Interface")] [SerializeField]
         private GameObject dialogBox;
 
         [SerializeField] private Button btnClosedDialog;
 
-        [Header("Botões de Decisão")] 
-        [SerializeField]
-        private Button btnSim;
-
+        [Header("Botões de Decisão")]
+        [SerializeField] private Button btnSim;
         [SerializeField] private Button btnNao;
 
         [Header("Componentes de Texto")] 
         [SerializeField]
         private TextMeshProUGUI dialogoText;
-
         [SerializeField] private TextMeshProUGUI whoSpeaks;
 
+        [Header("Pá")] 
+        [SerializeField] private GameObject pa;
+        
         private List<DialogueGroup> dialogueGroups = new List<DialogueGroup>();
         private int currentGroupIndex = 0; // Índice do grupo de diálogos atual.
         private int currentDialogueIndex = 0; // Índice do diálogo atual dentro do grupo atual.
-        private int indiceDialogo = 1;
-
-        public int IndiceDialogo => indiceDialogo;
 
         private bool avancarDialogo = true;
 
         public bool IsDialogActive { get; private set; }
-
-        public bool pa;
 
         public bool IsDialogFinshed { get; private set; }
 
@@ -65,6 +59,8 @@ namespace Dialog
             btnSim.gameObject.SetActive(false);
             btnNao.gameObject.SetActive(false);
 
+            pa.gameObject.SetActive(false);
+            
             btnClosedDialog.onClick.AddListener(HideDialog);
             btnSim.onClick.AddListener(ShowNextDialog); // Avança para o próximo diálogo ao clicar em sim.
             btnNao.onClick.AddListener(HideDialog); // Oculta o diálogo ao clicar em não.
@@ -108,7 +104,6 @@ namespace Dialog
                 {
                     currentGroupIndex = i;
                     currentDialogueIndex = 0;
-                    indiceDialogo = currentDialogueIndex;
                     ShowNextDialog();
                     return;
                 }
@@ -160,11 +155,8 @@ namespace Dialog
                     btnNao.gameObject.SetActive(true);
                     avancarDialogo = false;
                     break;
-                case "aceitar_ajuda":
-                    // Lógica para aceitar ajuda
-                    break;
                 case "encontrar_pa":
-                    // Lógica para encontrar pa
+                    pa.gameObject.SetActive(true);
                     break;
             }
         }
