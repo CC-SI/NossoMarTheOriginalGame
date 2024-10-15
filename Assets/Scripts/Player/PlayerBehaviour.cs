@@ -5,27 +5,17 @@ namespace Player
 {
     public class PlayerBehaviour : MonoBehaviour
     {
-        readonly List<Duck.Duck> ducks = new();
+        readonly List<Duck> ducks = new();
         readonly List<Shovel.Shovel> shovels = new(); 
 
         public static PlayerBehaviour Instance { get; private set; }
 
-        public Transform GetFollowTarget(Duck.Duck duck)
+        public Transform GetFollowTarget(Duck duck)
         {
             Transform target = GetFollowTarget();
 
             if (!ducks.Contains(duck))
                 ducks.Add(duck);
-
-            return target;
-        }
-
-        public Transform GetFollowTarget(Shovel.Shovel shovel)
-        {
-            Transform target = GetFollowTarget();
-
-            if (!shovels.Contains(shovel))
-                shovels.Add(shovel);
 
             return target;
         }
