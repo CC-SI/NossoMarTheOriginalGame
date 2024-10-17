@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour, IMovement
 
     private void FixedUpdate()
     {
-        CheckAreaMask();
+        CheckWaterMask();
         
         if (followTarget)
         {
@@ -50,8 +50,7 @@ public class Movement : MonoBehaviour, IMovement
         
         OnMoved.Invoke(direcao * navMeshAgent.velocity.magnitude, isInWater);
     }
-
-
+    
     public void SetFollowTarget(Transform target)
     {
         followTarget = target;
@@ -59,26 +58,20 @@ public class Movement : MonoBehaviour, IMovement
 
     public void FollowTarget()
     {
-        Vector2 posicaoAlvo = followTarget.position;
-        Vector2 posicaoPato = transform.position;
+        var posicaoAlvo = followTarget.position;
+        var posicaoPato = transform.position;
 
         var direcao = ((posicaoAlvo - posicaoPato).normalized) * navMeshAgent.velocity.magnitude;
 
-        navMeshAgent.SetDestination(posicaoAlvo);
+        _ = navMeshAgent.SetDestination(posicaoAlvo);
         
         OnMoved.Invoke(direcao, isInWater);
     }
     
-    private void CheckAreaMask()
+    private void CheckWaterMask()
     {
-        int WaterMask = 1 << 3;
+        var waterMask = NavMesh.GetAreaFromName("Water");
 
-        if (NavMesh.SamplePosition(navMeshAgent.transform.position, out NavMeshHit hit, 0.1f, WaterMask))
-        {
-            isInWater = true;
-            return;
-        }
-        
-        isInWater = false;
+        isInWater = !NavMesh.SamplePosition(navMeshAgent.transform.position, out _, 0.1f, waterMask);
     }
 }
