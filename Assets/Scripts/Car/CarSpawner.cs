@@ -1,20 +1,20 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CarSpawner : MonoBehaviour
 {
-    [SerializeField] private  GameObject car;
+    [SerializeField] private  CarBehaviour car;
 
     [field: Header("Direção na mão esquerda")]
     [SerializeField] private Transform leftSpawn;
-    [SerializeField] private Transform leftDestroyer;
     
     [field: Header("Direção na mão direita")]
     [SerializeField] private Transform rightSpawn;
-    [SerializeField] private Transform rightDestroyer;
+    
+    [SerializeField] private int maxCars;
     
     private float spawnTimer;
     private float spawnInterval;
+    private int spawnCount;
 
     private void Start()
     {
@@ -23,31 +23,27 @@ public class CarSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (spawnCount == maxCars) return;
+        
         spawnTimer += Time.deltaTime;
 
         if (!(spawnTimer >= spawnInterval)) return;
         
+        spawnCount++;
         SpawnCar();
+        
         spawnTimer = 0;
-        spawnInterval = Random.Range(2, 5);
+        spawnInterval = Random.Range(2, 4);
     }
     
     private void SpawnCar()
     {
-        Transform spawnPoint, endPoint;
-        
-        if (Random.Range(0, 2) == 0)
+        if (spawnCount % 2 == 0)
         {
-            spawnPoint = leftSpawn;
-            endPoint = leftDestroyer;
-        }
-        else
-        {
-            spawnPoint = rightSpawn;
-            endPoint = rightDestroyer;
+            Instantiate(car, leftSpawn.position, leftSpawn.rotation);
+            return;
         }
         
-        GameObject newCar = Instantiate(car, spawnPoint.position, Quaternion.identity);
-        newCar.GetComponent<CarBehaviour>().SetDestination(endPoint.position);
+        Instantiate(car, rightSpawn.position, rightSpawn.rotation);
     }
 }
