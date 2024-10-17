@@ -8,11 +8,17 @@ public class Movement : MonoBehaviour, IMovement
     [field: Header("Eventos")]
     [field: SerializeField] public UnityEvent<Vector2, bool> OnMoved { get; private set; }
     
-    [SerializeField] private FixedJoystick joystick;
+    //[SerializeField] private FixedJoystick joystick;
 
     private NavMeshAgent navMeshAgent;
     private Transform followTarget;
     private bool isInWater;
+    Vector3 direcao;
+    
+    public void Move(Vector2 direction)
+    {
+        direcao = direction;
+    }
 
     private void Start()
     {
@@ -32,11 +38,11 @@ public class Movement : MonoBehaviour, IMovement
             return;
         }
         
-        if (!joystick) return;
-        float horizontal = joystick.Horizontal;
-        float vertical = joystick.Vertical;
-
-        var direcao = new Vector3(horizontal, vertical, 0).normalized;
+        // if (!joystick) return;
+        // float horizontal = joystick.Horizontal;
+        // float vertical = joystick.Vertical;
+        //
+        // var direcao = new Vector3(horizontal, vertical, 0).normalized;
 
         if (direcao.magnitude >= 0.1f)
         {
@@ -73,5 +79,10 @@ public class Movement : MonoBehaviour, IMovement
         var waterMask = NavMesh.GetAreaFromName("Water");
 
         isInWater = !NavMesh.SamplePosition(navMeshAgent.transform.position, out _, 0.1f, waterMask);
+    }
+
+    void OnDisable()
+    {
+        direcao = Vector3.zero;
     }
 }
