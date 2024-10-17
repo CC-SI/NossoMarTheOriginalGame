@@ -1,20 +1,38 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace Interaction
 {
     public class InteractableZone : MonoBehaviour
     {
-        [FormerlySerializedAs("button")] [SerializeField] private Button actionButton;
-
         private readonly List<IInteraction> interactableQueue = new();
-    
-        private void Awake()
+
+        bool canInteract = false;
+        
+        [field: Header("Eventos")]
+        [field: SerializeField]
+        public UnityEvent<bool> OnCanInteractChanged { get; private set; }
+
+        public bool CanInteract
         {
-            actionButton.onClick.AddListener(OnButtonClicked);
-            actionButton.gameObject.SetActive(false);
+            get => canInteract;
+            private set
+            {
+                canInteract = value;
+                OnCanInteractChanged.Invoke(canInteract);
+            }
+        }
+
+        public void Interact()
+        {
+            if (!CanInteract)
+                return;
+    
+            interactableQueue[0].OnPlayerInteraction();
+            interactableQueue.RemoveAt(0);
+            
+            OnQueueUpdated();
         }
         
         private void OnTriggerEnter2D(Collider2D other)
@@ -25,7 +43,7 @@ namespace Interaction
             if (interactableQueue.Contains(interactable)) return;
         
             interactableQueue.Add(interactable);
-            UpdateButton();
+            OnQueueUpdated();
         }
         
         private void OnTriggerExit2D(Collider2D other)
@@ -33,21 +51,12 @@ namespace Interaction
             var interactable = InteractableObject.GetInteractable(other);
 
             interactableQueue.Remove(interactable);
-            UpdateButton();
+            OnQueueUpdated();
         }
         
-        private void UpdateButton()
+        void OnQueueUpdated()
         {
-            actionButton.gameObject.SetActive(interactableQueue.Count > 0);
-        }
-        
-        private void OnButtonClicked()
-        {
-            if (interactableQueue.Count <= 0) return;
-    
-            interactableQueue[0].OnPlayerInteraction();
-            interactableQueue.RemoveAt(0);
-            UpdateButton();
+            CanInteract = interactableQueue.Count > 0;
         }
     }
 }
