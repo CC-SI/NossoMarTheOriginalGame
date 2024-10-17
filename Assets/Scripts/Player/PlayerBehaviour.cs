@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Interaction;
 using UnityEngine;
 
 namespace Player
@@ -7,6 +8,12 @@ namespace Player
 	{
 		readonly List<Duck> ducks = new();
 
+		[field: Header("Componentes")]
+		[field: SerializeField]
+		public Movement Movement { get; private set; }
+		[field: SerializeField]
+		public InteractableZone InteractableZone { get; private set; }
+		
 		public static PlayerBehaviour Instance { get; private set; }
 
 		public Transform GetFollowTarget(Duck duck)
@@ -27,7 +34,7 @@ namespace Player
 			return ducks[^1].transform;
 		}
 
-		private void Awake()
+		void Awake()
 		{
 			if (!Instance)
 			{
@@ -37,5 +44,13 @@ namespace Player
 
 			Destroy(gameObject);
 		}
+		
+#if UNITY_EDITOR
+	void Reset()
+	{
+		Movement = GetComponent<Movement>();
+		InteractableZone = GetComponentInChildren<InteractableZone>(true);
+	}
+#endif
 	}
 }
