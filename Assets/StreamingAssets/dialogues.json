@@ -1,0 +1,35 @@
+﻿{
+  "dialogueGroups": [
+    {
+      "id": "patoenterrado",
+      "groupName": "Diálogo do Pato Enterrado",
+      "dialogues": [
+        {
+          "id" : "player_perguntando_pato_enterrado",
+          "speaker": "Player",
+          "text": "O que você está fazendo enterrado na areia, pato? Está tudo bem?"
+        },
+        {
+          "id": "pato_enterrado_pedindo_ajuda",
+          "speaker": "Pato",
+          "text": "A correnteza me deixou preso aqui! Estou tão preocupado! Por favor, me ajude!!"
+        },
+        {
+          "id": "aceitou_ajudar_pato",
+          "speaker": "Player",
+          "text": "Claro, vou te ajudar!!"
+        },
+        {
+          "id": "encontrar_pa",
+          "speaker": "Pato",
+          "text": "Ótimo! Então encontre uma pá para me tirar daqui!!"
+        },
+        {
+            "id": "pato_enterrado_agradecendo",
+            "speaker": "Pato",
+            "text": "Muito obrigado por me salvar!!"
+        }
+      ]
+    }
+  ]
+}

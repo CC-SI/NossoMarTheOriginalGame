@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Limits
+  - NameWhoSpeaksTag
+  - DialogueTextTag
+  - BoxDialogueTag
+  - DuckBuriedTag
+  - DuckDefault
+  - PaTag
   layers:
   - Default
   - TransparentFX

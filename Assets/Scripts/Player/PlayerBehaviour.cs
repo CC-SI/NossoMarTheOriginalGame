@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using Interaction;
+using Interaction;
 using UnityEngine;
 
 namespace Player
 {
-	public class PlayerBehaviour : MonoBehaviour
-	{
-		readonly List<Duck> ducks = new();
+    public class PlayerBehaviour : MonoBehaviour
+    {
+        readonly List<Duck> ducks = new();
+        readonly List<Shovel.Shovel> shovels = new(); 
 
 		[field: Header("Componentes")]
 		[field: SerializeField]
@@ -26,13 +28,16 @@ namespace Player
 			return target;
 		}
 
-		private Transform GetFollowTarget()
-		{
-			if (ducks.Count < 1)
-				return transform;
+        public Transform GetFollowTarget()
+        {
+            if (ducks.Count + shovels.Count < 1)
+                return transform;
 
-			return ducks[^1].transform;
-		}
+            if (shovels.Count > 0)
+                return shovels[^1].transform; 
+
+            return ducks[^1].transform; 
+        }
 
 		void Awake()
 		{
