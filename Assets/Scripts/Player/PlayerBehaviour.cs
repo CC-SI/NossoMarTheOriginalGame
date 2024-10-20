@@ -7,7 +7,7 @@ namespace Player
 {
     public class PlayerBehaviour : MonoBehaviour
     {
-        readonly List<Duck> ducks = new();
+        readonly List<DuckBehavior> ducks = new();
         readonly List<Shovel.Shovel> shovels = new(); 
 
 		[field: Header("Componentes")]
@@ -18,12 +18,12 @@ namespace Player
 		
 		public static PlayerBehaviour Instance { get; private set; }
 
-		public Transform GetFollowTarget(Duck duck)
+		public Transform GetFollowTarget(DuckBehavior duckBehavior)
 		{
 			Transform target = GetFollowTarget();
 
-			if (!ducks.Contains(duck))
-				ducks.Add(duck);
+			if (!ducks.Contains(duckBehavior))
+				ducks.Add(duckBehavior);
 
 			return target;
 		}
