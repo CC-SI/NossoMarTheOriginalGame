@@ -89,6 +89,11 @@ namespace Interaction
 
 			IsShowing = isShowing;
 		}
+
+		public void HideButton()
+		{
+			IsShowing = false;
+		}
 		
 #if UNITY_EDITOR
 		void Reset()
