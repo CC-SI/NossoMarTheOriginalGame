@@ -21,12 +21,8 @@ namespace Interaction
         {
             return interactableObjects.GetValueOrDefault(collider);
         }
-
-        public GameObject GameObject => this.gameObject;
         
-        public void OnPlayerInteraction()
-        {
-            Debug.Log("Interagindo com " + this.gameObject.name);
-        }
+        
+        public void OnPlayerInteraction() {}
     }
 }
