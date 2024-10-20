@@ -20,7 +20,7 @@ namespace Shovel
         private NavMeshAgent agent;
 
         [field: Header("Eventos")]
-        [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
+        [field: SerializeField] public UnityEvent<Vector2, bool> OnMoved { get; private set; }
 
         [field: Header("Lógicos")]
         public bool isFollowing;
@@ -69,6 +69,8 @@ namespace Shovel
             
                 DialogManager.Instance.CollectPa();
                 isCollected = true;
+                
+                gameObject.SetActive(false);
             }
         }
     }
