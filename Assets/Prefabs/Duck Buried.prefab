@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5077117201620869165}
   - component: {fileID: 192423504008066649}
   m_Layer: 0
-  m_Name: Duck
+  m_Name: Duck Buried
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,8 +266,8 @@ Transform:
   m_GameObject: {fileID: 7764689697556676703}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.05, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalPosition: {x: -0.0428, y: 0.1482, z: 0}
+  m_LocalScale: {x: 0.23670228, y: 0.2636543, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1260046280328896352}
@@ -285,11 +285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 514335745977830189}
-  _moveParameter: isWalking
+  _moveParameter: isMoving
   _swimParameter: isSwimming
+  _buriedParameter: isBuried
   _xParameter: x
   _yParameter: y
-  _isBuried: isBuried
 --- !u!212 &6051348936664332833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ SpriteRenderer:
   m_SortingLayerID: 2115649195
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2102694387, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
+  m_Sprite: {fileID: -1138858011, guid: 76eb5360745952b4a91bea76bfcbe51a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
