@@ -20,7 +20,6 @@ namespace Dialog
         [SerializeField] private TextMeshProUGUI dialogoText; 
         [SerializeField] private TextMeshProUGUI whoSpeaks;
         [SerializeField] private GameObject pa;
-        [SerializeField] private GameObject messagePaColetada;
         
         private List<DialogueGroup> dialogueGroups = new List<DialogueGroup>(); 
         private int currentGroupIndex = 0; 
@@ -68,7 +67,6 @@ namespace Dialog
             btnNao.gameObject.SetActive(false);
             
             pa.SetActive(false);
-            messagePaColetada.SetActive(false);
             
             btnClosedDialog.onClick.AddListener(HideDialog);
             btnSim.onClick.AddListener(ShowNextDialog);
@@ -252,14 +250,15 @@ namespace Dialog
         public void CollectPa()
         {
             isCollectPa = true;
-            messagePaColetada.SetActive(true);
-            StartCoroutine(HidePaColetadaMessageAfterDelay(5f));
+           // StartCoroutine(HidePaColetadaMessageAfterDelay(5f));
         }
         
+        /*
         private IEnumerator HidePaColetadaMessageAfterDelay(float delay)
         {
             yield return new WaitForSeconds(delay); 
             messagePaColetada.SetActive(false);
         }
+        */
     }
 }
