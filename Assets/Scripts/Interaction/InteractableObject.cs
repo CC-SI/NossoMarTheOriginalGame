@@ -21,8 +21,5 @@ namespace Interaction
         {
             return interactableObjects.GetValueOrDefault(collider);
         }
-        
-        
-        public void OnPlayerInteraction() {}
     }
 }
