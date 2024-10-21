@@ -20,7 +20,6 @@ public class DuckBehavior : InteractableObject, IInteraction
     private Rigidbody2D rb;
 
     private Collider2D colisor;
-    private Animator animator;
     private NavMeshAgent agent;
 
     [field: Header("Eventos")]
@@ -35,7 +34,6 @@ public class DuckBehavior : InteractableObject, IInteraction
     {
         rb = GetComponent<Rigidbody2D>();
         colisor = GetComponent<Collider2D>();
-        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         movement = GetComponent<Movement>();
 
