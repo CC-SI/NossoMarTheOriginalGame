@@ -8,9 +8,10 @@ namespace Actors
         [Header("Parametros")]
         [SerializeField] private string _moveParameter;
         [SerializeField] private string _swimParameter;
+        [SerializeField] private string _buriedParameter;
         [SerializeField] private string _xParameter;
         [SerializeField] private string _yParameter;
-
+        
         private IMovement movement;
         
         public Vector2 Direction
@@ -37,6 +38,17 @@ namespace Actors
             get => animator.GetBool(_swimParameter);
             set => animator.SetBool(_swimParameter, value);
         }
+        
+        public bool IsBuried
+        {
+            get => animator.GetBool(_buriedParameter);
+            set => animator.SetBool(_buriedParameter, value);
+        }
+
+        public void BuriedDuck()
+        {
+            IsBuried = true;
+        }
 
         private void OnMove(Vector2 velocity, bool isOnWater)
         {
@@ -44,7 +56,7 @@ namespace Actors
             IsSwimming = isOnWater;
             Direction = velocity.normalized;
         }
-
+        
         private void Awake()
         {
             movement = GetComponentInParent<IMovement>(true);
