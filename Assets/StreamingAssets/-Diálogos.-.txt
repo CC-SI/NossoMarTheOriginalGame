@@ -1,0 +1,42 @@
+﻿•Diálogos•
+
+
+
+
+Cenário Praia
+
+
+[Pato1]: (observando a ilha) Olá, amigos! Olhem essa bagunça! É inacreditável como o ser humano consegue criar tanta sujeira. Precisamos fazer algo urgentemente!
+
+
+[Pato2]: (explorando o ambiente) É verdade, Pato1. Mas o que podemos fazer? Parece um problema sem solução. (Observando a ilha do lixo.)
+
+
+[Personagem 1]: (segurando uma escultura feita de plástico reciclado) Esperem! Não vamos desanimar. Podemos transformar essa "ilha" em algo positivo! Estou criando arte com o lixo que encontramos aqui. (Ela mostra a escultura.)
+
+
+[Pato1]: (sorrindo) Isso é uma ideia incrível, Personagem 1! A arte pode realmente chamar a atenção para o problema. Mas precisamos também educar as pessoas sobre a importância da reciclagem.
+
+
+[Personagem 1]: (pensativo) Eu sempre joguei meu lixo no cesto. Mas nunca pensei muito sobre onde ele vai parar depois. O que podemos fazer para mudar isso?
+
+
+[Personagem 1]: Que tal começarmos um desafio? Vamos coletar lixo e criar algo novo juntos! Podemos fazer oficinas de reciclagem na nossa comunidade! 
+
+
+O jogador deve coletar 10 itens de lixo ao redor da ilha | E ganhara recompensas
+
+
+[Pato1]: E ao mesmo tempo, vamos organizar mutirões para limpar essa ilha! Quanto mais pessoas se envolverem, maior será nosso impacto.
+
+
+O jogador pode interagir com outros habitantes da ilha para convidá-los a participar.
+
+
+[Pato2]: Isso parece ótimo! Vou usar minhas habilidades para divulgar isso nas redes sociais do jogo. Quanto mais gente souber, melhor!
+
+
+O jogador pode acessar um auto falante em um canto da ilha para fazer a divulgação.
+
+
+[Personagem 1]: Perfeito! Vamos unir forças e transformar esse lugar em um símbolo de esperança e mudança! Agora, vamos começar nossa missão!
