@@ -39,7 +39,8 @@ namespace Dialog
         public string id;
         public string speaker;
         public string text;
-
+        public TipoDeDialogoEnum tipoDeDialogoEnum;
+        
         public Dialogue() {} 
         
         /// <summary>
@@ -54,5 +55,4 @@ namespace Dialog
             this.id = id;
         }
     }
-    
 }

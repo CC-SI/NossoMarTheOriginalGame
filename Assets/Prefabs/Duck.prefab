@@ -285,11 +285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 514335745977830189}
-  _moveParameter: isWalking
+  _moveParameter: isMoving
   _swimParameter: isSwimming
+  _buriedParameter: 
   _xParameter: x
   _yParameter: y
-  _isBuried: isBuried
 --- !u!212 &6051348936664332833
 SpriteRenderer:
   m_ObjectHideFlags: 0
