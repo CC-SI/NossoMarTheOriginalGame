@@ -126,12 +126,12 @@ TextureImporter:
       name: ondinhas_0
       rect:
         serializedVersion: 2
-        x: 146
-        y: 192
-        width: 66
-        height: 14
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 80
+        y: 100
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -148,12 +148,12 @@ TextureImporter:
       name: ondinhas_1
       rect:
         serializedVersion: 2
-        x: 542
-        y: 187
-        width: 66
-        height: 14
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 480
+        y: 100
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: ondinhas_2
       rect:
         serializedVersion: 2
-        x: 948
-        y: 186
-        width: 66
-        height: 14
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 880
+        y: 100
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
