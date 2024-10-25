@@ -3,18 +3,16 @@ using Actors;
 using Dialog;
 using Interaction;
 using UnityEngine;
+using UnityEngine.WSA;
 
 namespace Duck
 {
     public class DuckDialog : DuckBehavior
     {
-        public static DuckDialog Instance { get; private set; }
-        
-        private Dictionary<string, string> mapDialogues = new Dictionary<string, string>()
-        {
-            { "DuckBuriedTag", "patoenterrado" }
-        };
+        private static DuckDialog Instance { get; set; }
 
+        [SerializeField] private DialogObject dialogObject;
+        
         private void Awake()
         {
             if (Instance == null)
@@ -31,16 +29,21 @@ namespace Duck
         {
             if (!isFollowing)
             {
-                if (mapDialogues.TryGetValue(tag, out string dialogueId))
-                {
-                    DialogManager.Instance.StartDialogue(dialogueId);
+                WhichThisIsDialogue dialogueType = GetDialogueTypeByTag(tag);
 
-                    if (DialogManager.Instance.IsDialogFinshed)
-                    {
-                        StartFollowing();
-                    }
+                if (dialogueType == WhichThisIsDialogue.DUCK_BURIED)
+                {
+                    DialogManager.Instance.StartDialog(dialogObject);
                 }
             }
+        }
+
+        private WhichThisIsDialogue GetDialogueTypeByTag(string tag)
+        {
+            return tag switch
+            {
+                "DuckBuriedTag" => WhichThisIsDialogue.DUCK_BURIED
+            };
         }
 
         public void StartFollowing()
