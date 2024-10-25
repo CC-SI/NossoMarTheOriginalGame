@@ -1,11 +1,12 @@
-using UnityEngine;
 using System.Collections.Generic;
+using NUnit.Framework;
+using UnityEngine;
 
-[CreateAssetMenu]
-public class DialogObject : ScriptableObject
+namespace Dialog
 {
-        public List<Dialog.Dialogue> falas = new();
-        
-        
+    [CreateAssetMenu] public class DialogObject : ScriptableObject
+    {
+        public WhichThisIsDialogue WhichThisIsDialogue;
+        public List<Dialogo> Dialogos = new();
+    }
 }
-
