@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1260046280328896352}
   - component: {fileID: 8063682653043679452}
   - component: {fileID: 514335745977830189}
-  - component: {fileID: 7925294919694570575}
   - component: {fileID: 8003984980887760023}
   - component: {fileID: 5077117201620869165}
   - component: {fileID: 192423504008066649}
@@ -106,25 +105,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7925294919694570575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286831910162110128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae660862ffb84640a643c2ef8a5bec4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alvo: {fileID: 0}
-  countDucks: {fileID: 0}
-  clip: {fileID: 8300000, guid: d395acf7fae35fb4aa748dd9434a7ac5, type: 3}
-  <OnMoved>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  isFollowing: 0
 --- !u!82 &8003984980887760023
 AudioSource:
   m_ObjectHideFlags: 0
@@ -251,13 +231,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286831910162110128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb9ab8c0e84a91b4aa87a79773b7f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
-  velocidadeMovimento: 30
   <OnMoved>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -306,8 +284,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23495f104e8349b29819231cb1815fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 514335745977830189}
-  _moveParameter: isWalking
+  animator: {fileID: 0}
+  _moveParameter: 
+  _swimParameter: 
+  _buriedParameter: 
   _xParameter: x
   _yParameter: y
 --- !u!212 &6051348936664332833
