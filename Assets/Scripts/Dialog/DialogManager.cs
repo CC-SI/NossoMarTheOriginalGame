@@ -1,18 +1,23 @@
 ﻿using System;
-using TMPro;
+using Dialog.Repository;
 using UnityEngine;
 
 namespace Dialog
 {
+    /// <summary>
+    /// Gerencia a lógica de exibição e navegação pelos diálogos.
+    /// </summary>
     public class DialogManager : MonoBehaviour
     {
         public static DialogManager Instance { get; private set; }
 
-        [Header("Componentes Graficos")]
-        [SerializeField] private DialogUIManager dialogUIManager;
-
-        public DialogObject dialogObject;
-
+        [Header("Componentes Gráficos")]
+        [SerializeField] public DialogUIManager dialogUIManager;
+        [SerializeField] private DialogRepository dialogRepository;
+        
+        public event Action<Dialogo> OnDialogShown;
+        
+        private DialogObject dialogObject;
         private DialogoController dialogoController;
         private DialogStateEnum dialogState = DialogStateEnum.Iniciando;
 
@@ -28,30 +33,19 @@ namespace Dialog
             }
         }
 
-        private void Update()
-        {
-     
-            if (dialogState == DialogStateEnum.EmAndamento)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    NextDialog();
-                }
-                
-                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-                {
-                    NextDialog();
-                }
-            }
-        }
-
         public void Start()
         {
             dialogUIManager.InitComponents();
         }
-
+        
+        /// <summary>
+        /// Inicia um diálogo com o objeto de diálogo fornecido.
+        /// </summary>
+        /// <param name="dialogObject">O objeto de diálogo a ser iniciado.</param>
         public void StartDialog(DialogObject dialogObject)
         {
+            if (dialogObject == null) return;
+
             this.dialogObject = dialogObject;
             
             if (dialogoController == null)
@@ -62,7 +56,10 @@ namespace Dialog
             dialogState = DialogStateEnum.EmAndamento;
             ShowCurrentDialog();
         }
-
+        
+        /// <summary>
+        /// Exibe o diálogo atual na interface do usuário.
+        /// </summary>
         private void ShowCurrentDialog()
         {
             Dialogo currentDialog = dialogoController.GetDialogActual();
@@ -70,39 +67,66 @@ namespace Dialog
             {
                 dialogUIManager.UpdateDialogUI(currentDialog.speaker, currentDialog.texto);
                 dialogUIManager.ShowDialogUI(true);
+                
+                OnDialogShown?.Invoke(currentDialog);
             }
             else
             {
-                dialogState = DialogStateEnum.Concluido;
-                HideDialog();
+                EndDialog();
+            }
+        }
+        
+        /// <summary>
+        /// Obtém o diálogo atual.
+        /// </summary>
+        /// <returns>O diálogo atual.</returns>
+        public Dialogo GetCurrentDialog()
+        {
+            return dialogoController.GetDialogActual();
+        }
+        
+        /// <summary>
+        /// Avança o diálogo sem exibir a interface do usuário.
+        /// </summary>
+        public void AdvanceDialogWithoutUI()
+        {
+            var currentDialog = dialogoController.GetDialogActual();
+            if (currentDialog != null && currentDialog.canAdvance)
+            {
+                dialogoController.NextDialog();
             }
         }
 
+        /// <summary>
+        /// Avança para o próximo diálogo.
+        /// </summary>
         public void NextDialog()
         {
-            if (dialogState != DialogStateEnum.EmAndamento) return;
-
-            if (dialogoController.NextDialog() != null)
+            var currentDialog = dialogoController.GetDialogActual();
+            if (currentDialog != null && currentDialog.canAdvance)
             {
-                ShowCurrentDialog();
+                if (dialogoController.NextDialog() != null)
+                {
+                    ShowCurrentDialog();
+                }
+                else
+                {
+                    EndDialog();
+                }
             }
             else
             {
-                dialogState = DialogStateEnum.Concluido;
-                HideDialog();
+                EndDialog();
             }
         }
-
-        public void HideDialog()
+        
+        /// <summary>
+        /// Finaliza o diálogo e oculta a interface do usuário.
+        /// </summary>
+        public void EndDialog()
         {
+            dialogState = DialogStateEnum.Concluido;
             dialogUIManager.ShowDialogUI(false);
-        }
-
-        public void RestartDialog()
-        {
-            dialogoController.ResetDialog();
-            dialogState = DialogStateEnum.EmAndamento;
-            ShowCurrentDialog();
         }
     }
 }
