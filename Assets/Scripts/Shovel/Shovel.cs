@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Dialog;
 using Interaction;
 using UnityEngine;
@@ -27,9 +29,12 @@ using UnityEngine;
                 
                 isCollected = true;
                 
+                DialogUIManager.Instance.ShowMensagemDePaColetada(true);
+                
                 gameObject.SetActive(false);
                 
                 DialogManager.Instance.AdvanceDialogWithoutUI();
             }
         }
+        
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using TMPro;
@@ -17,6 +18,7 @@ namespace Dialog
         [SerializeField] private Button fecharDialogo;
         [SerializeField] private Button btnSim;
         [SerializeField] private Button btnNao;
+        [SerializeField] private GameObject mensagemDePaColetada;
         
         [Header("Lista de botões de avançar diálogo")]
         [SerializeField] private List<Button> ListDeAvancarDialogo;
@@ -30,6 +32,18 @@ namespace Dialog
         public event Action OnYesClicked;
         public event Action OnNoClicked;
         
+        public static DialogUIManager Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
         
         /// <summary>
         /// Inicializa os componentes da interface do usuário do diálogo.
@@ -41,6 +55,7 @@ namespace Dialog
             fecharDialogo.gameObject.SetActive(false);
             btnSim.gameObject.SetActive(false);
             btnNao.gameObject.SetActive(false);
+            mensagemDePaColetada.SetActive(false);
          
             foreach (var btn in ListDeAvancarDialogo)
             {
@@ -114,5 +129,21 @@ namespace Dialog
             pa.SetActive(show);
         }
         
+        public void ShowMensagemDePaColetada(bool show)
+        {
+            mensagemDePaColetada.SetActive(show);
+            Debug.Log("Ativou");
+
+            if (mensagemDePaColetada.activeSelf)
+            {
+                Invoke(nameof(HideMensagemDePaColetada), 5f);
+            }
+           
+        }
+        
+        private void HideMensagemDePaColetada()
+        {
+            mensagemDePaColetada.SetActive(false);
+        }
     }
 }
