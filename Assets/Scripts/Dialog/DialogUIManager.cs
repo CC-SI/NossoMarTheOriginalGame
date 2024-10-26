@@ -17,7 +17,9 @@ namespace Dialog
         [SerializeField] private Button fecharDialogo;
         [SerializeField] private Button btnSim;
         [SerializeField] private Button btnNao;
-        [SerializeField] private Button btnAvancarDialogo;
+        
+        [Header("Lista de botões de avançar diálogo")]
+        [SerializeField] private List<Button> ListDeAvancarDialogo;
         
         [Header("Componentes de Dialogo")]
         [SerializeField] private TextMeshProUGUI textoDialogo;
@@ -39,7 +41,12 @@ namespace Dialog
             fecharDialogo.gameObject.SetActive(false);
             btnSim.gameObject.SetActive(false);
             btnNao.gameObject.SetActive(false);
-            btnAvancarDialogo.gameObject.SetActive(false);
+         
+            foreach (var btn in ListDeAvancarDialogo)
+            {
+                btn.gameObject.SetActive(false);
+            }
+            
             
             pa.SetActive(false);
             
@@ -48,7 +55,10 @@ namespace Dialog
             btnSim.onClick.AddListener(() => OnYesClicked?.Invoke());
             btnNao.onClick.AddListener(() => OnNoClicked?.Invoke());
             
-            btnAvancarDialogo.onClick.AddListener(DialogManager.Instance.NextDialog);
+            foreach (var btn in ListDeAvancarDialogo)
+            {
+                btn.onClick.AddListener(DialogManager.Instance.NextDialog);
+            }
         }
 
         /// <summary>
@@ -70,7 +80,11 @@ namespace Dialog
         {
             caixaDialogo.SetActive(show);
             fecharDialogo.gameObject.SetActive(show);
-            btnAvancarDialogo.gameObject.SetActive(show);
+            
+            foreach (var btn in ListDeAvancarDialogo)
+            {
+                btn.gameObject.SetActive(show);
+            }
         }
         
         /// <summary>
@@ -79,7 +93,10 @@ namespace Dialog
         /// <param name="show">Indica se o botão deve ser mostrado.</param>
         public void ShowAvancarButton(bool show)
         {
-            btnAvancarDialogo.gameObject.SetActive(show);
+            foreach (var btn in ListDeAvancarDialogo)
+            {
+                btn.gameObject.SetActive(show);
+            }
         }
         
         /// <summary>
