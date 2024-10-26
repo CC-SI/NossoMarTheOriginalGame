@@ -352,7 +352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1803994831738305830, guid: 0df0c4ac289fdd04d8411e96c0a5e653, type: 3}
       propertyPath: m_Name
-      value: Cadeira 1 Variant
+      value: Cadeira 2
       objectReference: {fileID: 0}
     - target: {fileID: 1938232493107425415, guid: 0df0c4ac289fdd04d8411e96c0a5e653, type: 3}
       propertyPath: m_LocalScale.x
