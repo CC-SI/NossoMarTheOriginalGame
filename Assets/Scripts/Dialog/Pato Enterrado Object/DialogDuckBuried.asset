@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51db7c983b74433a6c41ff499e99dd3, type: 3}
+  m_Name: DialogDuckBuried
+  m_EditorClassIdentifier: 
+  WhichThisIsDialogue: 0
+  Dialogos:
+  - id: player1
+    speaker: Player
+    texto: "O que voc\xEA est\xE1 fazendo enterrado na areia, pato? Est\xE1 tudo
+      bem?"
+    typeDialog: 0
+    canAdvance: 1
+  - id: pato1_pedindo_ajuda
+    speaker: Pato
+    texto: "Ah, foi a correnteza! Ela me arrastou e fiquei preso aqui! Estou t\xE3o
+      assustado... Por favor, voc\xEA pode me ajudar?"
+    typeDialog: 1
+    canAdvance: 1
+  - id: player2
+    speaker: Player
+    texto: "Claro, vou te ajudar! N\xE3o se preocupe."
+    typeDialog: 0
+    canAdvance: 1
+  - id: pato2_encontrar_pa
+    speaker: Pato
+    texto: "Ufa, que al\xEDvio! Mas para me tirar daqui, voc\xEA vai precisar encontrar
+      uma p\xE1. S\xF3 assim conseguir\xE1 me desenterrar!"
+    typeDialog: 0
+    canAdvance: 1
+  - id: player3_procurando_pa
+    speaker: Player
+    texto: "Vou achar uma p\xE1 e voltar rapidinho. Fique firme!"
+    typeDialog: 0
+    canAdvance: 1
+  - id: pato3
+    speaker: 'Pato '
+    texto: "Voc\xEA conseguiu! Obrigado, de verdade! N\xE3o sei o que teria feito
+      sem sua ajuda!"
+    typeDialog: 0
+    canAdvance: 1
