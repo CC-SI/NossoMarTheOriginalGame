@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,13 +15,20 @@ namespace Dialog
         [Header("Componentes Graficos")]
         [SerializeField] private GameObject caixaDialogo;
         [SerializeField] private Button fecharDialogo;
-        [SerializeField] private GameObject btnSim;
-        [SerializeField] private GameObject btnNao;
-
+        [SerializeField] private Button btnSim;
+        [SerializeField] private Button btnNao;
+        [SerializeField] private Button btnAvancarDialogo;
+        
         [Header("Componentes de Dialogo")]
         [SerializeField] private TextMeshProUGUI textoDialogo;
         [SerializeField] private TextMeshProUGUI whoSpeak;
 
+        [Header("Objetos que tem que procurar")] 
+        [SerializeField] private GameObject pa;
+        public event Action OnYesClicked;
+        public event Action OnNoClicked;
+        
+        
         /// <summary>
         /// Inicializa os componentes da interface do usuário do diálogo.
         /// Esconde todos os elementos do UI inicialmente.
@@ -28,11 +37,18 @@ namespace Dialog
         {
             caixaDialogo.SetActive(false);
             fecharDialogo.gameObject.SetActive(false);
-            btnSim.SetActive(false);
-            btnNao.SetActive(false);
-
-            // Adiciona listener ao botão de fechar
-            fecharDialogo.onClick.AddListener(OnFecharDialogo);
+            btnSim.gameObject.SetActive(false);
+            btnNao.gameObject.SetActive(false);
+            btnAvancarDialogo.gameObject.SetActive(false);
+            
+            pa.SetActive(false);
+            
+            fecharDialogo.onClick.AddListener(DialogManager.Instance.EndDialog);
+            
+            btnSim.onClick.AddListener(() => OnYesClicked?.Invoke());
+            btnNao.onClick.AddListener(() => OnNoClicked?.Invoke());
+            
+            btnAvancarDialogo.onClick.AddListener(DialogManager.Instance.NextDialog);
         }
 
         /// <summary>
@@ -54,22 +70,32 @@ namespace Dialog
         {
             caixaDialogo.SetActive(show);
             fecharDialogo.gameObject.SetActive(show);
+            btnAvancarDialogo.gameObject.SetActive(show);
         }
-
+        
         /// <summary>
-        /// Esconde a caixa de diálogo.
+        /// Mostra ou oculta o botão "Avançar".
         /// </summary>
-        private void HideDialog()
+        /// <param name="show">Indica se o botão deve ser mostrado.</param>
+        public void ShowAvancarButton(bool show)
         {
-            DialogManager.Instance.HideDialog();
+            btnAvancarDialogo.gameObject.SetActive(show);
         }
-
+        
         /// <summary>
-        /// Método chamado pelo botão de fechar.
+        /// Mostra ou oculta os botões de "Sim" e "Não".
         /// </summary>
-        public void OnFecharDialogo()
+        /// <param name="show">Indica se os botões devem ser mostrados.</param>
+        public void ShowYesNoButtons(bool show)
         {
-            HideDialog(); 
+            btnSim.gameObject.SetActive(show);
+            btnNao.gameObject.SetActive(show);
         }
+        
+        public void ShowPA(bool show)
+        {
+            pa.SetActive(show);
+        }
+        
     }
 }
