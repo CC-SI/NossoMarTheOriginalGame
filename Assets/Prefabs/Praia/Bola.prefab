@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 4256746241582985980}
   - component: {fileID: 3409272286532882134}
   m_Layer: 0
-  m_Name: Bola 1
+  m_Name: Bola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4758266239874462729}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.18
+  m_Radius: 0.15
   m_Speed: 3.5
   m_Acceleration: 100
   avoidancePriority: 99
