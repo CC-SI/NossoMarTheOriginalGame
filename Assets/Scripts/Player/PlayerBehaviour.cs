@@ -8,7 +8,7 @@ namespace Player
     public class PlayerBehaviour : MonoBehaviour
     {
         readonly List<DuckBehavior> ducks = new();
-        readonly List<Shovel.Shovel> shovels = new(); 
+        readonly List<Shovel> shovels = new(); 
 
 		[field: Header("Componentes")]
 		[field: SerializeField]
