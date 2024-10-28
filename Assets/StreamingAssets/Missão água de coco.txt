@@ -1,0 +1,39 @@
+﻿Missão: O Pato da Água de Coco
+
+
+O Pato está com sede desejando beber uma água de coco e precisa de sua ajuda para encontrar 3 cocos frescos. Vá até o coqueiro e responda às perguntas que ele tem para receber os cocos.
+
+
+[Pato]: Olá! Estou morrendo de sede e preciso de 3 cocos frescos. Por favor, vá até o coqueiro e pegue-os para mim.
+
+
+[Personagem]: (Vai até o coqueiro)
+
+
+[Coqueiro]: Bem-vindo! Estou aqui para testar seu conhecimento. Responda às minhas perguntas e receberá um coco por cada resposta correta.
+
+
+[Personagem]: Vamos nessa!
+
+
+[Coqueiro]: “Qual é a cor primária que você obtém ao misturar azul e amarelo?”
+Resposta: “Verde”
+
+
+[Coqueiro]: “Quantos lados tem um hexágono?”
+Resposta: “Seis”
+
+
+[Coqueiro]: “Qual é o nome do artista famoso por pintar a Mona Lisa?”
+Resposta: “Leonardo da Vinci”
+
+
+Reações
+[Coqueiro] (Resposta Correta): “Isso mesmo! Você acertou! Parabéns!”
+
+
+[Coqueiro] (Resposta Errada): “Ops, não foi dessa vez. Mas não desanime, tente novamente!”
+
+
+Despedida
+[Coqueiro]: “Parabéns pelo seu desempenho, pegue suas recompensas! Até a próxima!”
