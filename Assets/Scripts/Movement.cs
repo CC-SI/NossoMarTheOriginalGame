@@ -46,17 +46,19 @@ public class Movement : MonoBehaviour, IMovement
 
         if (direcao.magnitude >= 0.1f)
         {
-            Vector3 targetPosition = transform.position + (direcao * (navMeshAgent.speed * Time.fixedDeltaTime));
-            navMeshAgent.SetDestination(targetPosition);
+            //Vector3 targetPosition = transform.position + direcao;
+            //navMeshAgent.SetDestination(targetPosition);
+            
+            navMeshAgent.velocity = direcao * navMeshAgent.speed;
         }
         else
         {
             navMeshAgent.ResetPath();
         }
         
-        OnMoved.Invoke(direcao * navMeshAgent.velocity.magnitude, isInWater);
+        OnMoved.Invoke(navMeshAgent.velocity, isInWater);
     }
-    
+
     public void SetFollowTarget(Transform target)
     {
         followTarget = target;
@@ -67,11 +69,14 @@ public class Movement : MonoBehaviour, IMovement
         var posicaoAlvo = followTarget.position;
         var posicaoPato = transform.position;
 
-        var direcao = ((posicaoAlvo - posicaoPato).normalized) * navMeshAgent.velocity.magnitude;
-
         _ = navMeshAgent.SetDestination(posicaoAlvo);
         
-        OnMoved.Invoke(direcao, isInWater);
+        OnMoved.Invoke(navMeshAgent.velocity, isInWater);
+    }
+
+    public bool IsPlayerWalking()
+    {
+        return navMeshAgent.velocity.magnitude > 0.1f;
     }
     
     private void CheckWaterMask()

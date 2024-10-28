@@ -1,71 +1,77 @@
-
-using Dialog;
+using System.Collections.Generic;
+using Actors;
 using Interaction;
 using Player;
 using TMPro;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class DuckBehavior : InteractableObject, IInteraction
+namespace Duck
 {
-    [field: Header("Componentes Externos")] [SerializeField]
-    private Transform alvo;
+    public class DuckBehavior : InteractableObject, IInteraction
+    {
+        [field: Header("Eventos")]
+        [field: SerializeField]
+        public UnityEvent<Vector2> OnMoved { get; private set; }
 
-    [SerializeField] private TMP_Text countDucks;
-    [SerializeField] private AudioClip clip;
-    private Movement movement;
+        [SerializeField] private TMP_Text countDucks;
+        [SerializeField] private AudioClip clip;
+        
+        private Movement movement;
+        private Collider2D colisor;
+        public GraphicBehaviour playerGraphic;
+        
+        private readonly Dictionary<string, Transform> alvos = new();
 
-    [field: Header("Componentes Internos")]
-    private Rigidbody2D rb;
-
-    private Collider2D colisor;
-    private NavMeshAgent agent;
-
-    [field: Header("Eventos")]
-    [field: SerializeField]
-    public UnityEvent<Vector2> OnMoved { get; private set; }
-
-    [field: Header("Lógicos")] private static int currentDuck = 0;
-    public bool isFollowing;
-    private AudioSource audioSource;
+        private static int currentDuck = 0;
+        protected bool isFollowing;
+        private AudioSource audioSource;
+        
+        PlayerBehaviour Player => PlayerBehaviour.Instance;
     
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        colisor = GetComponent<Collider2D>();
-        agent = GetComponent<NavMeshAgent>();
-        movement = GetComponent<Movement>();
-
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.clip = clip;
-
-        AddObject(colisor, this);
-    }
-
-    public void StartFollowing()
-    {
-        // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
-        if (PlayerBehaviour.Instance)
+        private void Start()
         {
-            alvo = PlayerBehaviour.Instance.transform;
-            movement.SetFollowTarget(alvo);
+            colisor = GetComponent<Collider2D>();
+            movement = GetComponent<Movement>();
+
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.clip = clip;
+
+            AddObject(colisor, this);
+        }
+
+        public void StartFollowing(PlayerBehaviour player)
+        {
+            isFollowing = true;
+            alvos.TryAdd("alvodafrente",  player.GetFollowTarget(this));
+            alvos.TryAdd("jogador", player.transform);
             currentDuck++;
             countDucks.text = currentDuck.ToString();
-            audioSource.Play();
-            movement.SetFollowTarget(alvo);
-            isFollowing = true;
+            Grasnar();
         }
-    }
 
-    public virtual void  OnPlayerInteraction()
-    {
-        if (!isFollowing)
+        private void Update()
         {
-            StartFollowing(); 
+            if (!isFollowing) return;
+        
+            if (playerGraphic.IsMoving)
+            {
+                movement.SetFollowTarget(alvos.GetValueOrDefault("alvodafrente"));
+                return;
+            }
+        
+            movement.SetFollowTarget(alvos.GetValueOrDefault("jogador"));
+        }
+
+        private void Grasnar()
+        {
+            audioSource.Play();
+        }
+
+        public virtual void OnPlayerInteraction()
+        {
+            if (isFollowing) return;
+            StartFollowing(Player); 
             RemoveObject(colisor);
         }
     }
