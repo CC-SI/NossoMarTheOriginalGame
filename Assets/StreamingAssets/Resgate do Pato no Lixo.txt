@@ -1,0 +1,19 @@
+﻿Resgate do Pato do Lixo
+
+
+Missão: O Pato do Lixo está preso em um monte de lixo e precisa de sua ajuda para escapar. Encontre-o e resgate-o para ganhar sua gratidão.
+
+
+[Pato do Lixo]: Socorro! Estou preso aqui! Por favor, me ajude a sair deste lugar horrível!
+
+
+[Personagem]: Claro, estou aqui para ajudar!
+
+
+[Pato do Lixo]: Obrigado! Você é um herói! Estava passeando e acabei caindo neste lugar.
+
+
+(Resgate do pato no lixo)
+
+
+[Pato do Lixo]: Muito obrigado! Aqui está sua recompensa.
