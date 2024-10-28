@@ -1,5 +1,6 @@
 ﻿using System;
 using Dialog.Repository;
+using Duck;
 using UnityEngine;
 
 namespace Dialog
@@ -20,7 +21,6 @@ namespace Dialog
         private DialogObject dialogObject;
         private DialogoController dialogoController;
         private DialogStateEnum dialogState = DialogStateEnum.Iniciando;
-
         private void Awake()
         {
             if (Instance == null)
@@ -125,8 +125,22 @@ namespace Dialog
         /// </summary>
         public void EndDialog()
         {
-            dialogState = DialogStateEnum.Concluido;
+            if (dialogoController != null && dialogoController.HasNextDialog())
+            {
+                PauseDialog();
+            } 
+            else
+            {
+                dialogUIManager.ShowDialogUI(false);
+                dialogState = DialogStateEnum.Concluido;
+                DuckDialog.Instance.StartFollowing();
+            }
+        }
+
+        public void PauseDialog()
+        {
             dialogUIManager.ShowDialogUI(false);
+            dialogState = DialogStateEnum.EmAndamento;
         }
     }
 }

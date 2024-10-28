@@ -61,5 +61,10 @@ namespace Dialog
         {
             currentIndex = 0;
         }
+        
+        public bool HasNextDialog()
+        {
+            return currentIndex < dialogos.Count - 1;
+        }
     }
 }

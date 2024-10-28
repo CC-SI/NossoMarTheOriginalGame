@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
-using Actors;
+﻿using Actors;
 using Dialog;
 using Interaction;
 using UnityEngine;
-using UnityEngine.WSA;
 
 namespace Duck
 {
     public class DuckDialog : DuckBehavior
     {
-        private static DuckDialog Instance { get; set; }
+        public static DuckDialog Instance { get; private set; }
 
         [SerializeField] private DialogObject dialogObject;
         
