@@ -1,0 +1,13 @@
+﻿Pato Professor: Desafio de Conhecimento
+
+
+ Missão: O Pato Professor está procurando por alguém que possa colocar seus conhecimentos em prática. Se você responder corretamente às suas perguntas, ele seguirá em frente e recompensará você com  tesouros.
+
+
+[Pato Professor]: Ah, um novo aluno! Estou ansioso para testar seu conhecimento. Estou preparado para fazer três perguntas. Se você responder corretamente, você será recompensado!
+
+
+[Personagem]: Eba, adoro ganhar recompensas. Vamos nessa!
+
+
+[Pato Professor]: (perguntas)....

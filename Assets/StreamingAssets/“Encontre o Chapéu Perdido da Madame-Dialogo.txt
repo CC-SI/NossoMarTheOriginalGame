@@ -1,0 +1,28 @@
+﻿“Encontre o Chapéu Perdido da Madame"
+
+
+
+
+[Missão:] "Madame perdeu seu chapéu de praia favorito na areia. Ela precisa da sua ajuda para recuperá-lo. Encontre o chapéu e devolva-o a Madame para continuar sua jornada."
+
+
+
+
+
+
+Madame: "Oh não! Meu chapéu de praia! Eu o perdi na areia e agora não consigo encontrá-lo em lugar nenhum. Você pode me ajudar a encontrar?"
+
+
+Player 
+
+
+"Claro, Madame! Vamos procurar pelo seu chapéu."
+
+
+Player 
+
+
+“Encontrei, aqui está seu chapéu madame”
+
+
+Madame: "Você encontrou! Muito obrigada, agora posso continuar minha jornada. Você é um verdadeiro herói! Aqui está uma recompensa para você."
