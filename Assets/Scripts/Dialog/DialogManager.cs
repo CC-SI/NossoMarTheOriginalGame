@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Dialog.Repository;
 using Duck;
+using NUnit.Framework;
 using UnityEngine;
 
 namespace Dialog
@@ -16,6 +18,7 @@ namespace Dialog
         [SerializeField] public DialogUIManager dialogUIManager;
         [SerializeField] private DialogRepository dialogRepository;
         
+        [SerializeField] private List<DuckDialog> duckDialogs;
         public event Action<Dialogo> OnDialogShown;
         
         private DialogObject dialogObject;
@@ -133,11 +136,15 @@ namespace Dialog
             {
                 dialogUIManager.ShowDialogUI(false);
                 dialogState = DialogStateEnum.Concluido;
-                DuckDialog.Instance.StartFollowing();
+
+                foreach (var duckDialog in duckDialogs)
+                {
+                    duckDialog.StartFollowing();
+                }
             }
         }
 
-        public void PauseDialog()
+        private void PauseDialog()
         {
             dialogUIManager.ShowDialogUI(false);
             dialogState = DialogStateEnum.EmAndamento;

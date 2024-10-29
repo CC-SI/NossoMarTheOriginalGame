@@ -11,6 +11,7 @@ TagManager:
   - DuckBuriedTag
   - DuckDefault
   - PaTag
+  - DuckMadameTag
   layers:
   - Default
   - TransparentFX

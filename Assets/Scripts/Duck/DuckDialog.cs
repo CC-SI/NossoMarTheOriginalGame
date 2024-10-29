@@ -7,29 +7,14 @@ namespace Duck
 {
     public class DuckDialog : DuckBehavior
     {
-        public static DuckDialog Instance { get; private set; }
-
         [SerializeField] private DialogObject dialogObject;
-        
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(this);
-            }
-        }
-
         public override void OnPlayerInteraction()
         {
             if (!isFollowing)
             {
                 WhichThisIsDialogue dialogueType = GetDialogueTypeByTag(tag);
 
-                if (dialogueType == WhichThisIsDialogue.DUCK_BURIED)
+                if (dialogueType == WhichThisIsDialogue.DUCK_BURIED || dialogueType == WhichThisIsDialogue.DUCK_MADAME)
                 {
                     DialogManager.Instance.StartDialog(dialogObject);
                 }
@@ -40,7 +25,8 @@ namespace Duck
         {
             return tag switch
             {
-                "DuckBuriedTag" => WhichThisIsDialogue.DUCK_BURIED
+                "DuckBuriedTag" => WhichThisIsDialogue.DUCK_BURIED,
+                "DuckMadameTag" => WhichThisIsDialogue.DUCK_BURIED
             };
         }
 

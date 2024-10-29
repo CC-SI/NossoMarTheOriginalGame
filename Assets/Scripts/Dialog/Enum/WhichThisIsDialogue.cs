@@ -2,6 +2,6 @@
 {
     public enum WhichThisIsDialogue
     {
-        DUCK_BURIED, DUCK_COCO
+        DUCK_BURIED, DUCK_MADAME, UNKNOWN
     }
 }
