@@ -46,7 +46,7 @@ public class DuckBehavior : InteractableObject, IInteraction
         AddObject(colisor, this);
     }
 
-    public void StartFollowing()
+    public virtual void StartFollowing()
     {
         // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
         if (PlayerBehaviour.Instance)

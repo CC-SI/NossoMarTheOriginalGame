@@ -9,17 +9,5 @@ namespace Dialog
         public string speaker;
         public string texto;
         public TypeDialogEnum typeDialog;
-        
-        public bool canAdvance = true;
-
-        public bool CanAdvance()
-        {
-            return canAdvance;
-        }
-        
-        public void SetCanAdvance(bool canAdvance)
-        {
-            this.canAdvance = canAdvance;
-        }
     }
 }

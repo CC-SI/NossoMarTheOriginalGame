@@ -1,13 +1,60 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 
 namespace Dialog
 {
-    [CreateAssetMenu] public class DialogObject : ScriptableObject
+    [CreateAssetMenu]
+    public class DialogObject : ScriptableObject
     {
-        public WhichThisIsDialogue WhichThisIsDialogue;
         public List<Dialogo> Dialogos = new();
+        private int dialogIndex = 0;
+
+        public Dialogo GetDialogoAtual()
+        {
+            if (Dialogos.Count == 0)
+            {
+                return null;
+            }
+
+            return Dialogos[dialogIndex];
+        }
+
+        public bool AvancarDialogo()
+        {
+            if (dialogIndex < Dialogos.Count - 1)
+            {
+                dialogIndex++;
+                return true; 
+            }
+            
+            return false; 
+        }
+
+        public bool AvancarDialogoSilenciosamente()
+        {
+            if (dialogIndex < Dialogos.Count - 1)
+            {
+                dialogIndex++;
+                return true; 
+            }
+            
+            return false; 
+        }
+
+        public void ResetDialog()
+        {
+            dialogIndex = 0;
+        }
+
+        public string GetCurrentDialogId()
+        {
+            var currentDialog = GetDialogoAtual();
+            return currentDialog.id;
+        }
         
+        public int GetCurrentDialogIndex()
+        {
+            return dialogIndex;
+        }
     }
 }

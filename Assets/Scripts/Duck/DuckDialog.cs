@@ -1,32 +1,35 @@
-﻿using Dialog;
+﻿using Dialog.Manager;
+using Interaction;
 using UnityEngine;
 
 namespace Duck
 {
     public class DuckDialog : DuckBehavior
     {
-        [SerializeField] private DialogObject dialogObject;
         [SerializeField] private DialogManager dialogManager;
         
         public override void OnPlayerInteraction()
         {
             if (!isFollowing)
             {
-                if (dialogManager != null && dialogObject != null)
-                {
-                    dialogManager.SetDialogObject(dialogObject, true);
-                    dialogManager.StartDialog();
-                }
-                else
-                {
-                    Debug.LogWarning("DialogManager ou DialogObject não foi atribuído.");
-                }
+                dialogManager.StartDialog();
             }
         }
-        
+
         public override void StartFollowing()
         {
+            Debug.Log("DuckDialog: StartFollowing");
             base.StartFollowing();
+            HideCaptureButton();
+        }
+        
+        private void HideCaptureButton()
+        {
+            InteractionUIButton interactionUIButton = FindObjectOfType<InteractionUIButton>();
+            if (interactionUIButton != null)
+            {
+                interactionUIButton.HideButton();
+            }
         }
     }
 }

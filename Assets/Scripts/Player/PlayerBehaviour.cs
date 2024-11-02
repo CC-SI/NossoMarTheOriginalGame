@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Interaction;
-using Interaction;
 using UnityEngine;
 
 namespace Player
@@ -8,7 +7,7 @@ namespace Player
     public class PlayerBehaviour : MonoBehaviour
     {
         readonly List<DuckBehavior> ducks = new();
-        readonly List<Shovel> shovels = new(); 
+        readonly List<ObjectToBeCaptured> objectToBeCaptureds = new(); 
 
 		[field: Header("Componentes")]
 		[field: SerializeField]
@@ -30,11 +29,11 @@ namespace Player
 
         public Transform GetFollowTarget()
         {
-            if (ducks.Count + shovels.Count < 1)
+            if (ducks.Count + objectToBeCaptureds.Count < 1)
                 return transform;
 
-            if (shovels.Count > 0)
-                return shovels[^1].transform; 
+            if (objectToBeCaptureds.Count > 0)
+                return objectToBeCaptureds[^1].transform; 
 
             return ducks[^1].transform; 
         }
