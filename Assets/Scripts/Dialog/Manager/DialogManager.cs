@@ -61,11 +61,11 @@ namespace Dialog.Manager
         private void ShowCurrentDialog()
         {
             var currentDialog = dialogObject.GetDialogoAtual();
-            if (currentDialog != null)
-            {
-                dialogUIManager.ShowDialog(true);
-                dialogUIManager.SetSpeaches(currentDialog.speaker, currentDialog.texto);
-            }
+            
+            if (currentDialog == null) return;
+            
+            dialogUIManager.ShowDialog(true);
+            dialogUIManager.SetSpeaches(currentDialog.speaker, currentDialog.texto);
         }
 
         public void EndDialog()
@@ -73,7 +73,7 @@ namespace Dialog.Manager
             dialogUIManager.ShowDialog(false);
         }
 
-        public void ResetDialog()
+        private void ResetDialog()
         {
             dialogObject.ResetDialog();
         }
