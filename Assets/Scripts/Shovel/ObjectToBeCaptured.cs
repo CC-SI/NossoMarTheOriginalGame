@@ -1,4 +1,3 @@
-using System;
 using Dialog.Manager;
 using Interaction;
 using UnityEngine;
@@ -22,6 +21,9 @@ public class ObjectToBeCaptured : InteractableObject, IInteraction
     public void OnPlayerInteraction()
     {
         Debug.Log(gameObject.name + " foi capturado");
+        
         dialogManager.AvancarDialogoSilenciosamente();
+        
+        dialogUIManager.ShowMensagemObjetoPego(true);
     } 
 }

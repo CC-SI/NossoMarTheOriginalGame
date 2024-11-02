@@ -417,7 +417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d8f718583b2ffdc44b8600bbe864749f, type: 3}
+  m_Sprite: {fileID: -263830902, guid: 13060f36e2b5230408642decb71fa387, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1138,6 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 7327096734810460774}
+  dialogUIManager: {fileID: 7327096734810460773}
 --- !u!1 &292844747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,7 +3792,7 @@ MonoBehaviour:
   buttonAjudarPato: {fileID: 364944421}
   buttonIgnorarPato: {fileID: 1068319003}
   PaOuChapeuOuCoco: {fileID: 974983091}
-  mensagemObjetoPego: {fileID: 0}
+  mensagemObjetoPego: {fileID: 911898797}
 --- !u!114 &868623274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3941,7 +3942,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 633.82056, y: 434.00186}
+  m_AnchoredPosition: {x: 633.82, y: 434}
   m_SizeDelta: {x: 566.2449, y: 89.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &917149587 stripped
@@ -4174,6 +4175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 868623274}
+  dialogUIManager: {fileID: 868623273}
 --- !u!61 &974983095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4426,7 +4428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pa Coletada
+  m_text: Chapeu Coletado
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6051,7 +6053,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519268435}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6059,11 +6061,11 @@ RectTransform:
   - {fileID: 1072998929}
   - {fileID: 1906351491}
   - {fileID: 660198472}
-  m_Father: {fileID: 1192347551583397281}
+  m_Father: {fileID: 1953879982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 633.82, y: 434}
+  m_AnchoredPosition: {x: 633.82043, y: 434.00186}
   m_SizeDelta: {x: 566.2449, y: 89.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1522699013
@@ -6100,7 +6102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15813, y: 0.00025558}
+  m_AnchoredPosition: {x: 0.15761, y: 0.00025558}
   m_SizeDelta: {x: 566.56, y: 89.097}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522699015
@@ -7888,6 +7890,7 @@ RectTransform:
   - {fileID: 1192347551583397281}
   - {fileID: 868623268}
   - {fileID: 911898798}
+  - {fileID: 1519268436}
   m_Father: {fileID: 48117146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9117,9 +9120,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6040225947456368177, guid: 360486db37cbd8a4bbf9bbef374e3b8e, type: 3}
       insertIndex: 2
       addedObject: {fileID: 2051749557}
-    - targetCorrespondingSourceObject: {fileID: 6040225947456368177, guid: 360486db37cbd8a4bbf9bbef374e3b8e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1519268436}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2408012828649672259, guid: 360486db37cbd8a4bbf9bbef374e3b8e, type: 3}
       insertIndex: -1
@@ -9390,7 +9390,7 @@ MonoBehaviour:
   buttonAjudarPato: {fileID: 9110779809372601140}
   buttonIgnorarPato: {fileID: 5052788255309618163}
   PaOuChapeuOuCoco: {fileID: 274644216}
-  mensagemObjetoPego: {fileID: 0}
+  mensagemObjetoPego: {fileID: 1519268435}
 --- !u!114 &7327096734810460774
 MonoBehaviour:
   m_ObjectHideFlags: 0
