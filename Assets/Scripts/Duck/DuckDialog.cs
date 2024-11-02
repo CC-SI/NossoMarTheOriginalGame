@@ -23,9 +23,9 @@ namespace Duck
             HideCaptureButton();
         }
         
-        private void HideCaptureButton()
+        private static void HideCaptureButton()
         {
-            InteractionUIButton interactionUIButton = FindObjectOfType<InteractionUIButton>();
+            var interactionUIButton = FindObjectOfType<InteractionUIButton>();
             if (interactionUIButton != null)
             {
                 interactionUIButton.HideButton();
