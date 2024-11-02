@@ -14,8 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WhichThisIsDialogue: 1
   Dialogos:
-  - id: swsws
-    speaker: swswsw
-    texto: wswswswsw
+  - id: pata_madame1
+    speaker: Pata
+    texto: "Oh n\xE3o! Meu chap\xE9u de praia! Eu o perdi na areia e agora n\xE3o
+      consigo encontr\xE1-lo em lugar nenhum. Voc\xEA pode me ajudar a encontrar?"
     typeDialog: 0
-    canAdvance: 0
+  - id: player_madame1
+    speaker: Player
+    texto: "Claro, Madame! Vamos procurar pelo seu chap\xE9u."
+    typeDialog: 0
+  - id: pata_madame_agradecendo
+    speaker: Pata
+    texto: "Voc\xEA encontrou! Muito obrigada agora posso continuar minha jornada.
+      Voc\xEA \xE9 um verdadeiro her\xF3i! Aqui est\xE1 uma recompensa\_para\_voc\xEA."
+    typeDialog: 0
