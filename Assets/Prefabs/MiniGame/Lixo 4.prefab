@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8962220097119631290
+--- !u!1001 &5019456171165789992
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,66 +11,26 @@ PrefabInstance:
     - target: {fileID: 359098424608768299, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 418613968, guid: 149e6acbecb81f64a959012a30f86c8d, type: 3}
-    - target: {fileID: 845596992327276573, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_Size.x
-      value: 0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 845596992327276573, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 845596992327276573, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 845596992327276573, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 845596992327276573, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_EdgeRadius
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 960722471, guid: 17ffbb3a28cddd840aa4ab982e45bbb3, type: 3}
     - target: {fileID: 2317814615846680912, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Size.x
-      value: 0.42
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2317814615846680912, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Size.y
-      value: 1.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2317814615846680912, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_Center.x
-      value: -0.02
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2317814615846680912, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Center.y
-      value: -0.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 3112364340877519091, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3112364340877519091, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3112364340877519091, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3112364340877519091, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.231
+      value: 0.145
       objectReference: {fileID: 0}
     - target: {fileID: 3112364340877519091, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.092
-      objectReference: {fileID: 0}
-    - target: {fileID: 3112364340877519091, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 0.089
       objectReference: {fileID: 0}
     - target: {fileID: 4087800760067055220, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,29 +72,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6181217126740297376, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181217126740297376, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7047172475867240421, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 418613968, guid: 149e6acbecb81f64a959012a30f86c8d, type: 3}
-    - target: {fileID: 7047172475867240421, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7520597314045266252, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 960722471, guid: 17ffbb3a28cddd840aa4ab982e45bbb3, type: 3}
     - target: {fileID: 9124796682831113197, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Name
-      value: Lixo 2
+      value: Lixo 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
