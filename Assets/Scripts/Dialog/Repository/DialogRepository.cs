@@ -2,108 +2,61 @@
 
 namespace Dialog.Repository
 {
-    /// <summary>
-    /// Responsável por gerenciar a lógica dos diálogos e a interação com a interface do usuário de diálogos.
-    /// </summary>
     public class DialogRepository : MonoBehaviour
     {
         [SerializeField] private DialogObject dialogObject;
         [SerializeField] private DialogUIManager dialogUIManager;
 
-        private const WhichThisIsDialogue enumDuckBuried = WhichThisIsDialogue.DUCK_BURIED;
-        private DialogStateEnum currentDialogStateEnum = DialogStateEnum.AwaitingResponse;
-
-        public void Start()
+        public void LogDialog(Dialogo dialogo)
         {
-            if (DialogManager.Instance != null)
+            if (dialogObject.WhichThisIsDialogue == WhichThisIsDialogue.DUCK_BURIED)
             {
-                DialogManager.Instance.OnDialogShown += LogDialog;
-                DialogManager.Instance.StartDialog(dialogObject);
+                dialogUIManager.ShowAvancarButton(false);
+                
+                switch (dialogo.id)
+                {
+                    case "pato1_pedindo_ajuda":
+                        dialogUIManager.ShowYesNoButtons(true);
+                        dialogUIManager.ShowAvancarButton(false);
+                        break;
+                    case "pato2_encontrar_pa":
+                        dialogUIManager.ShowPaColetada(true);
+                        break;
+                    case "player3_procurando_pa":
+                        dialogUIManager.ShowAvancarButton(false);
+                        break;
+                    default:
+                        dialogUIManager.ShowPaColetada(false);
+                        dialogUIManager.ShowAvancarButton(true);
+                        dialogUIManager.ShowYesNoButtons(false);
+                        break;
+                }    
             }
 
-            dialogUIManager.OnYesClicked += OnYesClicked;
-            dialogUIManager.OnNoClicked += OnNoClicked;
-        }
-
-        /// <summary>
-        /// Registra e processa o diálogo exibido.
-        /// </summary>
-        /// <param name="dialogo">O diálogo que foi exibido.</param>
-        private void LogDialog(Dialogo dialogo)
-        {
-            if (dialogObject.WhichThisIsDialogue == enumDuckBuried)
+            if (dialogObject.WhichThisIsDialogue == WhichThisIsDialogue.DUCK_MADAME)
             {
-                if (dialogo.id == "pato1_pedindo_ajuda")
-                {
-                    dialogUIManager.ShowYesNoButtons(true);
-                    currentDialogStateEnum = DialogStateEnum.AwaitingResponse;
-                    dialogo.SetCanAdvance(false);
-                    dialogUIManager.ShowAvancarButton(false);
-                }
-                else if (dialogo.id == "pato2_encontrar_pa")
-                {
-                    dialogUIManager.ShowPA(true);
-                }
-                else if (dialogo.id == "player3_procurando_pa")
-                {
-                    dialogUIManager.ShowAvancarButton(false);
-                }
-                else
-                {
-                    dialogUIManager.ShowAvancarButton(true);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Lida com a resposta do jogador ao clicar em "Sim".
-        /// </summary>
-        private void OnYesClicked()
-        {
-            HandleResponse(true);
-        }
-
-        /// <summary>
-        /// Lida com a resposta do jogador ao clicar em "Não".
-        /// </summary>
-        private void OnNoClicked()
-        {
-            HandleResponse(false);
-        }
-
-        /// <summary>
-        /// Processa a resposta do jogador com base na opção escolhida.
-        /// </summary>
-        /// <param name="isYes">Indica se a resposta foi "Sim".</param>
-        private void HandleResponse(bool isYes)
-        {
-            if (currentDialogStateEnum == DialogStateEnum.AwaitingResponse)
-            {
-                currentDialogStateEnum = DialogStateEnum.AwaitingResponse;
+                dialogUIManager.ShowAvancarButton(false); 
                 dialogUIManager.ShowYesNoButtons(false);
-
-                if (isYes)
+                dialogUIManager.ShowPaColetada(false);
+    
+                switch (dialogo.id)
                 {
-                    var currentDialog = DialogManager.Instance.GetCurrentDialog();
-                    if (currentDialog != null)
-                    {
-                        currentDialog.SetCanAdvance(true);
-                    }
-                    DialogManager.Instance.NextDialog();
-                }
-                else
-                {
-                    DialogManager.Instance.EndDialog();
+                    case "pata_madame1":
+                        dialogUIManager.ShowYesNoButtons(true);
+                        break;
+                    case "player_madame1":
+                        dialogUIManager.ShowPaColetada(true);
+                        dialogo.SetCanAdvance(false);
+                        dialogUIManager.ShowAvancarButton(false);
+                        break;
+                    default:
+                        dialogUIManager.ShowPaColetada(false);
+                        dialogUIManager.ShowYesNoButtons(false);
+                        break;
                 }
             }
-        }
 
-        private void OnDestroy()
-        {
-            if (DialogManager.Instance != null)
-            {
-                DialogManager.Instance.OnDialogShown -= LogDialog;
-            }
+
         }
     }
 }

@@ -8,5 +8,6 @@ namespace Dialog
     {
         public WhichThisIsDialogue WhichThisIsDialogue;
         public List<Dialogo> Dialogos = new();
+        
     }
 }

@@ -1,153 +1,79 @@
-﻿using System;
-using System.Collections.Generic;
-using Dialog.Repository;
-using Duck;
-using NUnit.Framework;
+﻿using Dialog.Repository;
 using UnityEngine;
 
 namespace Dialog
 {
-    /// <summary>
-    /// Gerencia a lógica de exibição e navegação pelos diálogos.
-    /// </summary>
     public class DialogManager : MonoBehaviour
     {
-        public static DialogManager Instance { get; private set; }
+        [SerializeField] private DialogUIManager dialogUIManager;
+        [SerializeField] private DialogoController dialogoController;
+        [SerializeField] private DialogRepository _dialogRepository;
+        
+        private Dialogo indexDialogo;
 
-        [Header("Componentes Gráficos")]
-        [SerializeField] public DialogUIManager dialogUIManager;
-        [SerializeField] private DialogRepository dialogRepository;
-        
-        [SerializeField] private List<DuckDialog> duckDialogs;
-        public event Action<Dialogo> OnDialogShown;
-        
-        private DialogObject dialogObject;
-        private DialogoController dialogoController;
-        private DialogStateEnum dialogState = DialogStateEnum.Iniciando;
-        private void Awake()
+        private void Start()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(this);
-            }
+            dialogUIManager.InitComponent();
         }
 
-        public void Start()
+        public void SetDialogObject(DialogObject dialogObject, bool retomarUltimoDialogo = false)
         {
-            dialogUIManager.InitComponents();
-        }
-        
-        /// <summary>
-        /// Inicia um diálogo com o objeto de diálogo fornecido.
-        /// </summary>
-        /// <param name="dialogObject">O objeto de diálogo a ser iniciado.</param>
-        public void StartDialog(DialogObject dialogObject)
-        {
-            if (dialogObject == null) return;
-
-            this.dialogObject = dialogObject;
-            
-            if (dialogoController == null)
-            {
-                dialogoController = new DialogoController(dialogObject.Dialogos);
-            }
-
-            dialogState = DialogStateEnum.EmAndamento;
-            ShowCurrentDialog();
-        }
-        
-        /// <summary>
-        /// Exibe o diálogo atual na interface do usuário.
-        /// </summary>
-        private void ShowCurrentDialog()
-        {
-            Dialogo currentDialog = dialogoController.GetDialogActual();
-            if (currentDialog != null)
-            {
-                dialogUIManager.UpdateDialogUI(currentDialog.speaker, currentDialog.texto);
-                dialogUIManager.ShowDialogUI(true);
-                
-                OnDialogShown?.Invoke(currentDialog);
-            }
-            else
-            {
-                EndDialog();
-            }
-        }
-        
-        /// <summary>
-        /// Obtém o diálogo atual.
-        /// </summary>
-        /// <returns>O diálogo atual.</returns>
-        public Dialogo GetCurrentDialog()
-        {
-            return dialogoController.GetDialogActual();
-        }
-        
-        /// <summary>
-        /// Avança o diálogo sem exibir a interface do usuário.
-        /// </summary>
-        public void AdvanceDialogWithoutUI()
-        {
-            var currentDialog = dialogoController.GetDialogActual();
-            if (currentDialog != null && currentDialog.canAdvance)
-            {
-                dialogoController.NextDialog();
-            }
+            dialogoController.SetDialogObject(dialogObject, retomarUltimoDialogo);
         }
 
-        /// <summary>
-        /// Avança para o próximo diálogo.
-        /// </summary>
+        public void StartDialog()
+        {
+            ShowDialog();
+        }
+
         public void NextDialog()
         {
-            var currentDialog = dialogoController.GetDialogActual();
-            if (currentDialog != null && currentDialog.canAdvance)
+            if (indexDialogo != null && indexDialogo.CanAdvance())
             {
-                if (dialogoController.NextDialog() != null)
-                {
-                    ShowCurrentDialog();
-                }
-                else
-                {
-                    EndDialog();
-                }
+                ShowDialog();
             }
-            else
-            {
-                EndDialog();
-            }
+            dialogoController.NextDialog();
+            ShowDialog();
         }
-        
-        /// <summary>
-        /// Finaliza o diálogo e oculta a interface do usuário.
-        /// </summary>
+
+        public void AdvanceDialogWithoutUI()
+        {
+            var dialogoAtual = dialogoController.NextDialog();
+            if (dialogoAtual != null)
+            {
+                dialogoController.SaveLastDialogIndex(); 
+            }
+            Debug.Log("Diálogo avançado sem mostrar na UI");
+            indexDialogo = PositionIndex(); 
+        }
+
         public void EndDialog()
         {
-            if (dialogoController != null && dialogoController.HasNextDialog())
-            {
-                PauseDialog();
-            } 
-            else
-            {
-                dialogUIManager.ShowDialogUI(false);
-                dialogState = DialogStateEnum.Concluido;
+            dialogUIManager.ShowDialogUI(false);
+            dialogoController.SaveLastDialogIndex();
+            indexDialogo = PositionIndex();
+        }
 
-                foreach (var duckDialog in duckDialogs)
-                {
-                    duckDialog.StartFollowing();
-                }
+        private void ShowDialog()
+        {
+            dialogUIManager.ShowDialogUI(true);
+            var dialogAtual = PositionIndex();
+            if (dialogAtual != null)
+            {
+                UpdateDialogUI(dialogAtual.speaker, dialogAtual.texto);
+                dialogoController.SaveLastDialogIndex();
+                _dialogRepository.LogDialog(dialogAtual);
             }
         }
 
-        private void PauseDialog()
+        private Dialogo PositionIndex()
         {
-            dialogUIManager.ShowDialogUI(false);
-            dialogState = DialogStateEnum.EmAndamento;
+            return dialogoController.GetDialogoAtual();
+        }
+
+        private void UpdateDialogUI(string speaker, string texto)
+        {
+            dialogUIManager.UpdateDialogUI(speaker, texto);
         }
     }
 }

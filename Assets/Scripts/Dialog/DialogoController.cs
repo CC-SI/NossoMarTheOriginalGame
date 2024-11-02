@@ -1,70 +1,66 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Dialog
 {
-    /// <summary>
-    /// Controla a lógica de navegação pelos diálogos.
-    /// </summary>
-    public class DialogoController
+    public class DialogoController : MonoBehaviour
     {
-        private List<Dialogo> dialogos;
-        private int currentIndex;
+        private DialogObject dialogObject;
+        private int indexDialogo;
 
-        public DialogoController(List<Dialogo> dialogos)
+        public bool IsDialogoFinalizado;
+
+        private int ultimoDialogoVisto;
+        
+        public void SetDialogObject(DialogObject dialogObject, bool retomar = false)
         {
-            this.dialogos = dialogos;
-            currentIndex = 0;
-        }
-
-        /// <summary>
-        /// Avança para o próximo diálogo na lista.
-        /// </summary>
-        /// <returns>O próximo diálogo, ou null se não houver mais diálogos.</returns>
-        public Dialogo NextDialog()
-        {
-            if (currentIndex < dialogos.Count - 1)
-            {
-                currentIndex++;
-                return dialogos[currentIndex];
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Obtém o diálogo atual na lista.
-        /// </summary>
-        /// <returns>O diálogo atual, ou null se não houver mais diálogos.</returns>
-        public Dialogo GetDialogActual()
-        {
-            return currentIndex < dialogos.Count ? dialogos[currentIndex] : null;
-        }
-
-        /// <summary>
-        /// Obtém o último diálogo visualizado.
-        /// </summary>
-        /// <returns>O último diálogo, ou o diálogo atual se não houver um anterior.</returns>
-        public Dialogo GetLastDialog()
-        {
-            if (currentIndex > 0)
-            {
-                return dialogos[currentIndex - 1];
-            }
-
-            return GetDialogActual();
-        }
-
-        /// <summary>
-        /// Reinicia o controlador de diálogos, voltando ao início da lista de diálogos.
-        /// </summary>
-        public void ResetDialog()
-        {
-            currentIndex = 0;
+            this.dialogObject = dialogObject;
+            indexDialogo = retomar ? ultimoDialogoVisto : 0;
+            IsDialogoFinalizado = false;
         }
         
-        public bool HasNextDialog()
+        public Dialogo NextDialog()
         {
-            return currentIndex < dialogos.Count - 1;
+            if (dialogObject == null || dialogObject.Dialogos == null || dialogObject.Dialogos.Count == 0)
+            {
+                Debug.LogWarning("dialogObject ou sua lista de Dialogos não está inicializada.");
+                return null;
+            }
+
+            if (indexDialogo < dialogObject.Dialogos.Count - 1)
+            {
+                Debug.Log(dialogObject.Dialogos[indexDialogo].speaker);
+                Debug.Log(dialogObject.Dialogos[indexDialogo].texto);
+                return dialogObject.Dialogos[indexDialogo++];
+            }
+            else
+            {
+                Debug.Log("Dialogo Finalizado");
+                IsDialogoFinalizado = true;
+                return null;
+            }
+        }
+        
+        public Dialogo GetDialogoAtual()
+        {
+            if (dialogObject == null || dialogObject.Dialogos == null || dialogObject.Dialogos.Count == 0)
+            {
+                Debug.LogWarning("dialogObject ou sua lista de Dialogos não está inicializada.");
+                return null;
+            }
+
+            if (indexDialogo < dialogObject.Dialogos.Count)
+            {
+                return dialogObject.Dialogos[indexDialogo]; 
+            }
+
+            return null; // Retorna nulo se o índice estiver fora do limite
+        }
+
+
+        public void SaveLastDialogIndex()
+        {
+            ultimoDialogoVisto = indexDialogo;
         }
     }
 }

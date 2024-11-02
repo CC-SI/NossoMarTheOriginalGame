@@ -9,7 +9,7 @@ namespace Dialog
         public string speaker;
         public string texto;
         public TypeDialogEnum typeDialog;
-
+        
         public bool canAdvance = true;
 
         public bool CanAdvance()

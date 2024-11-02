@@ -1,6 +1,4 @@
-﻿using Actors;
-using Dialog;
-using Interaction;
+﻿using Dialog;
 using UnityEngine;
 
 namespace Duck
@@ -8,45 +6,27 @@ namespace Duck
     public class DuckDialog : DuckBehavior
     {
         [SerializeField] private DialogObject dialogObject;
+        [SerializeField] private DialogManager dialogManager;
+        
         public override void OnPlayerInteraction()
         {
             if (!isFollowing)
             {
-                WhichThisIsDialogue dialogueType = GetDialogueTypeByTag(tag);
-
-                if (dialogueType == WhichThisIsDialogue.DUCK_BURIED || dialogueType == WhichThisIsDialogue.DUCK_MADAME)
+                if (dialogManager != null && dialogObject != null)
                 {
-                    DialogManager.Instance.StartDialog(dialogObject);
+                    dialogManager.SetDialogObject(dialogObject, true);
+                    dialogManager.StartDialog();
+                }
+                else
+                {
+                    Debug.LogWarning("DialogManager ou DialogObject não foi atribuído.");
                 }
             }
         }
-
-        private WhichThisIsDialogue GetDialogueTypeByTag(string tag)
+        
+        public override void StartFollowing()
         {
-            return tag switch
-            {
-                "DuckBuriedTag" => WhichThisIsDialogue.DUCK_BURIED,
-                "DuckMadameTag" => WhichThisIsDialogue.DUCK_BURIED
-            };
-        }
-
-        public void StartFollowing()
-        {
-            base.OnPlayerInteraction();
-            HideCaptureButton();
-
-            var graphicBehavior = GetComponentInChildren<GraphicBehaviour>();
-            
-            graphicBehavior.BuriedDuck();
-        }
-
-        private void HideCaptureButton()
-        {
-            InteractionUIButton interactionUIButton = FindObjectOfType<InteractionUIButton>();
-            if (interactionUIButton != null)
-            {
-                interactionUIButton.HideButton();
-            }
+            base.StartFollowing();
         }
     }
 }
