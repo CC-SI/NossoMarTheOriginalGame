@@ -7,6 +7,7 @@ namespace Dialog
     public class DialogObject : ScriptableObject
     {
         public List<Dialogo> Dialogos = new();
+        
         private int dialogIndex = 0;
 
         public Dialogo GetDialogoAtual()

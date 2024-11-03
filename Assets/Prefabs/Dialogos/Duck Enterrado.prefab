@@ -122,13 +122,9 @@ GameObject:
   - component: {fileID: 4271882238016640653}
   - component: {fileID: 9047571545320897547}
   - component: {fileID: 2003842690053494149}
-  - component: {fileID: 5196131793188129721}
-  - component: {fileID: 583664722166657411}
-  - component: {fileID: 6516628626462647682}
-  - component: {fileID: 5300813192037585563}
   m_Layer: 0
   m_Name: Duck Enterrado
-  m_TagString: DuckBuriedTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,8 +366,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isFollowing: 0
-  dialogObject: {fileID: 11400000, guid: 39c58dac0fedf8444ad3c67fb428a611, type: 2}
-  dialogManager: {fileID: 5196131793188129721}
+  dialogManager: {fileID: 0}
 --- !u!212 &2003842690053494149
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -427,70 +422,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5196131793188129721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236629080229823504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11aca78378d6485989e16b1724afe39c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogUIManager: {fileID: 6516628626462647682}
-  dialogoController: {fileID: 583664722166657411}
-  _dialogRepository: {fileID: 5300813192037585563}
---- !u!114 &583664722166657411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236629080229823504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e0e12346da4cf2b9044d0009642186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsDialogoFinalizado: 0
---- !u!114 &6516628626462647682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236629080229823504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c041bb8469a846a9b0a9e4ca3047b5e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caixaDialogo: {fileID: 0}
-  fecharDialogo: {fileID: 0}
-  btnSim: {fileID: 0}
-  btnNao: {fileID: 0}
-  ListDeAvancarDialogo:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  textoDialogo: {fileID: 0}
-  whoSpeak: {fileID: 0}
-  dialogManager: {fileID: 5196131793188129721}
-  pa: {fileID: 0}
-  mensagemDePaColetada: {fileID: 0}
---- !u!114 &5300813192037585563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8236629080229823504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e26f1342842843b083a4423fd83c6b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogObject: {fileID: 11400000, guid: 39c58dac0fedf8444ad3c67fb428a611, type: 2}
-  dialogUIManager: {fileID: 6516628626462647682}

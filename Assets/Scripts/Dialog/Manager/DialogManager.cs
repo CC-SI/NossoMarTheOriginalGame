@@ -9,6 +9,7 @@ namespace Dialog.Manager
         [SerializeField] private DialogObject dialogObject;
         [SerializeField] private ControllerDialogIdSpeeches controllerDialogIdSpeeches;
         [SerializeField] private DuckDialog _duckDialog;
+        [SerializeField] private PerguntaManager perguntaManager;
         
         private void Start()
         {
@@ -22,6 +23,11 @@ namespace Dialog.Manager
         
             ShowCurrentDialog();
             controllerDialogIdSpeeches.ControllerActionsForId(); 
+            
+            if (perguntaManager != null)
+            {
+                perguntaManager.StartPerguntas();
+            }
         }
         
         public void AvancarDialogo()
@@ -40,6 +46,12 @@ namespace Dialog.Manager
                 EndDialog();
                 _duckDialog.StartFollowing();
             }
+        }
+
+        public void EndDialogAndCaptureDuck()
+        {
+            EndDialog();
+            _duckDialog.StartFollowing();
         }
 
         public void AvancarDialogoSilenciosamente()

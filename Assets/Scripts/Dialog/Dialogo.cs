@@ -1,4 +1,5 @@
 ﻿using System;
+using Dialog.Pergunta;
 
 namespace Dialog
 {
@@ -8,6 +9,6 @@ namespace Dialog
         public string id;
         public string speaker;
         public string texto;
-        public TypeDialogEnum typeDialog;
+        public PerguntaObject pergunta;
     }
 }

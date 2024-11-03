@@ -20,32 +20,54 @@ namespace Dialog.Manager
         [SerializeField] private Button zonasDeAvancarDialogo;
         [SerializeField] private DialogManager dialogManager;
 
-        [Header("Botões de Decisão")] 
+        [Header("Botões de Decisão (Opcional)")] 
         [SerializeField] private Button buttonAjudarPato;
         [SerializeField] private Button buttonIgnorarPato;
 
-        [Header("Objetos que deve procurar")] 
+        [Header("Objetos que deve procurar (Opcional)")] 
         [SerializeField] private GameObject PaOuChapeuOuCoco;
         
-        [Header("Mensagem de Objeto pego")]
+        [Header("Mensagem de Objeto pego (Opicional)")]
         [SerializeField] private GameObject mensagemObjetoPego;
         
         public void InitComponent()
         {
-            boxDialog.SetActive(false);
+            SetupDialogMain(false);
+            SetupOnClick();
+        }
+
+        private void SetupDialogMain(bool show)
+        {
+            boxDialog.SetActive(show);
             
-            textSpeaker.gameObject.SetActive(false);
-            textDialog.gameObject.SetActive(false);
+            textSpeaker.gameObject.SetActive(show);
+            textDialog.gameObject.SetActive(show);
             
-            fecharDialogo.gameObject.SetActive(false);
-            
-            buttonAjudarPato.gameObject.SetActive(false);
-            buttonIgnorarPato.gameObject.SetActive(false);
-            
-            PaOuChapeuOuCoco.gameObject.SetActive(false);
-            
-            mensagemObjetoPego.SetActive(false);
-            
+            fecharDialogo.gameObject.SetActive(show);
+
+            if (mensagemObjetoPego != null)
+                mensagemObjetoPego.SetActive(show);
+            else
+                Debug.LogWarning("mensagemObjetoPego não foi atribuído, mas é opcional.");
+
+            if (PaOuChapeuOuCoco != null)
+                PaOuChapeuOuCoco.gameObject.SetActive(show);
+            else
+                Debug.LogWarning("PaOuChapeuOuCoco não foi atribuído, mas é opcional.");
+
+            if (buttonAjudarPato != null)
+                buttonAjudarPato.gameObject.SetActive(show);
+            else
+                Debug.LogWarning("buttonAjudarPato não foi atribuído, mas é opcional.");
+
+            if (buttonIgnorarPato != null)
+                buttonIgnorarPato.gameObject.SetActive(show);
+            else
+                Debug.LogWarning("buttonIgnorarPato não foi atribuído, mas é opcional.");
+        }
+
+        private void SetupOnClick()
+        {
             zonasDeAvancarDialogo.onClick.AddListener(() =>
             {
                 dialogManager.AvancarDialogo();
@@ -98,7 +120,10 @@ namespace Dialog.Manager
 
         public void ShowPaOuChapeuOuCoco(bool show)
         {
-            PaOuChapeuOuCoco.gameObject.SetActive(show);
+            if (PaOuChapeuOuCoco != null)
+            {
+                PaOuChapeuOuCoco.gameObject.SetActive(show);
+            }
         }
         
         public void ShowMensagemObjetoPego(bool show)
