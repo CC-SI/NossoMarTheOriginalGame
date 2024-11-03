@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51db7c983b74433a6c41ff499e99dd3, type: 3}
+  m_Name: Pato Professor
+  m_EditorClassIdentifier: 
+  Dialogos:
+  - id: pato_professor1
+    speaker: Pato Professor
+    texto: "Ah, um novo aluno! Estou ansioso para testar seu conhecimento. Estou
+      preparado para fazer tr\xEAs perguntas. Se voc\xEA acertar pelo menos duas,
+      voc\xEA ser\xE1 recompensado!"
+    pergunta: {fileID: 0}
+  - id: player
+    speaker: Personagem
+    texto: Eba, adoro ganhar recompensas. Vamos nessa!
+    pergunta: {fileID: 0}
+  - id: pergunta
+    speaker: 
+    texto: 
+    pergunta: {fileID: 11400000, guid: 7a58e6bf34091654f9f644c4b866fa7a, type: 2}
+  - id: pato_professor2
+    speaker: 'Pato Professor '
+    texto: "Parab\xE9ns!! Voc\xEA conseguiu acertar as quest\xF5es! A recompensa
+      sou EU! Irei te dar \xF3timos conselhos daqui em diante."
+    pergunta: {fileID: 11400000, guid: 7a58e6bf34091654f9f644c4b866fa7a, type: 2}
