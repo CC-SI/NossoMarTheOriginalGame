@@ -30,6 +30,8 @@ namespace Dialog.Manager
         [Header("Mensagem de Objeto pego (Opicional)")]
         [SerializeField] private GameObject mensagemObjetoPego;
         
+        [SerializeField] private GameObject coqueiro;
+        
         public void InitComponent()
         {
             SetupDialogMain(false);
@@ -44,26 +46,22 @@ namespace Dialog.Manager
             textDialog.gameObject.SetActive(show);
             
             fecharDialogo.gameObject.SetActive(show);
-
+            
+            if (coqueiro != null)
+                coqueiro.SetActive(show);
+            
             if (mensagemObjetoPego != null)
                 mensagemObjetoPego.SetActive(show);
-            else
-                Debug.LogWarning("mensagemObjetoPego não foi atribuído, mas é opcional.");
 
             if (PaOuChapeuOuCoco != null)
                 PaOuChapeuOuCoco.gameObject.SetActive(show);
-            else
-                Debug.LogWarning("PaOuChapeuOuCoco não foi atribuído, mas é opcional.");
 
             if (buttonAjudarPato != null)
                 buttonAjudarPato.gameObject.SetActive(show);
-            else
-                Debug.LogWarning("buttonAjudarPato não foi atribuído, mas é opcional.");
 
             if (buttonIgnorarPato != null)
                 buttonIgnorarPato.gameObject.SetActive(show);
-            else
-                Debug.LogWarning("buttonIgnorarPato não foi atribuído, mas é opcional.");
+                
         }
 
         private void SetupOnClick()
@@ -98,7 +96,6 @@ namespace Dialog.Manager
             
             zonasDeAvancarDialogo.gameObject.SetActive(show);
             fecharDialogo.gameObject.SetActive(show);
-            
         }
         
         public void SetSpeaches(string speaker, string texto)
@@ -123,6 +120,14 @@ namespace Dialog.Manager
             if (PaOuChapeuOuCoco != null)
             {
                 PaOuChapeuOuCoco.gameObject.SetActive(show);
+            }
+        }
+        
+        public void ShowCoqueiro(bool show)
+        {
+            if (coqueiro != null)
+            {
+                coqueiro.SetActive(show);
             }
         }
         
