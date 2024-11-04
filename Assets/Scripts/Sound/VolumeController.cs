@@ -7,6 +7,8 @@ namespace Sound
 {
 	public class VolumeController : MonoBehaviour
 	{
+		const string VolumeKey = "Volume_{0}";
+		
 		const float MinimumValue = .0001f;
 		const float MaximumValue = 1f;
 
@@ -41,7 +43,7 @@ namespace Sound
 				
 				_mixer.GetFloat(_volumeParameter, out float volume);
 				value = (int)Mathf.InverseLerp(MinimumDB, MaximumDB, volume) * 100;
-				Debug.Log(volume);
+
 				return value.Value;
 			}
 			
@@ -53,6 +55,18 @@ namespace Sound
 				SetVolume(volume);
 			}
 		}
+
+		public void Load()
+		{
+			Value = PlayerPrefs.GetInt(GetKey(), Value);
+		}
+
+		public void Save()
+		{
+			PlayerPrefs.SetInt(GetKey(), Value);
+		}
+
+		string GetKey() => string.Format(VolumeKey, _volumeParameter);
 		
 		void SetVolume(float volume)
 		{
