@@ -251,6 +251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8076288028188608072}
     m_Modifications:
+    - target: {fileID: 4312660095690235344, guid: a8cccbe57e30a48e4a37b6fe36488d65, type: 3}
+      propertyPath: _volumeParameter
+      value: sfx
+      objectReference: {fileID: 0}
     - target: {fileID: 4978158086505783436, guid: a8cccbe57e30a48e4a37b6fe36488d65, type: 3}
       propertyPath: m_Name
       value: Efeitos Sonoros
@@ -357,6 +361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8076288028188608072}
     m_Modifications:
+    - target: {fileID: 4312660095690235344, guid: a8cccbe57e30a48e4a37b6fe36488d65, type: 3}
+      propertyPath: _volumeParameter
+      value: music
+      objectReference: {fileID: 0}
     - target: {fileID: 4978158086505783436, guid: a8cccbe57e30a48e4a37b6fe36488d65, type: 3}
       propertyPath: m_Name
       value: "M\xFAsica"

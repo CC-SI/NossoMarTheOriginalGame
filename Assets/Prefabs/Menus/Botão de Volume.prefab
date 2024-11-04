@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 914990798956833632, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_Name
-      value: "Bota\u0303o"
+      value: "Bota\u0303o de Volume"
       objectReference: {fileID: 0}
     - target: {fileID: 2748991288245735795, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_Pivot.x
