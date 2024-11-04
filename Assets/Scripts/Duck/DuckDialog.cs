@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Actors;
-using Dialog;
+﻿using Dialog.Manager;
 using Interaction;
 using UnityEngine;
 
@@ -8,54 +6,38 @@ namespace Duck
 {
     public class DuckDialog : DuckBehavior
     {
-        public static DuckDialog Instance { get; private set; }
+        [SerializeField] private DialogManager dialogManager;
+        [SerializeField] private ObjectToBeCaptured objectToBeCaptured;
         
-        private Dictionary<string, string> mapDialogues = new Dictionary<string, string>()
-        {
-            { "DuckBuriedTag", "patoenterrado" }
-        };
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(this);
-            }
-        }
-
+        public bool isDuckAguaCoco;
+        
         public override void OnPlayerInteraction()
         {
             if (!isFollowing)
             {
-                if (mapDialogues.TryGetValue(tag, out string dialogueId))
+                if (objectToBeCaptured != null && isDuckAguaCoco && objectToBeCaptured.IsAllCapturedCocos)
                 {
-                    DialogManager.Instance.StartDialogue(dialogueId);
-
-                    if (DialogManager.Instance.IsDialogFinshed)
-                    {
-                        StartFollowing();
-                    }
+                    dialogManager.AvancarDialogoSilenciosamente();
                 }
+                dialogManager.StartDialog();
             }
         }
-
-        public void StartFollowing()
+        
+        public override void StartFollowing()
         {
-            base.OnPlayerInteraction();
-            HideCaptureButton();
-
-            var graphicBehavior = GetComponentInChildren<GraphicBehaviour>();
+            if (isDuckAguaCoco)
+            {
+                Debug.Log("Pato agua de coco capturado ");
+            }
             
-            graphicBehavior.BuriedDuck();
+            // Debug.Log("DuckDialog: StartFollowing");
+            base.StartFollowing();
+            HideCaptureButton();
         }
-
-        private void HideCaptureButton()
+        
+        private static void HideCaptureButton()
         {
-            InteractionUIButton interactionUIButton = FindObjectOfType<InteractionUIButton>();
+            var interactionUIButton = FindObjectOfType<InteractionUIButton>();
             if (interactionUIButton != null)
             {
                 interactionUIButton.HideButton();

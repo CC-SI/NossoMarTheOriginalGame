@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Textures/IlhaDeLixo.png.meta
+guid: a9df6a66ae4a5ec4fbeeba24c2c6e610
+========
 guid: f16f75a3a3cd2af4dbea853b0fef03f3
+>>>>>>>> 45a290be36553509ec6361888b010da466ffd1c8:Assets/Textures/Duck/PatoUIBrancoePreto.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

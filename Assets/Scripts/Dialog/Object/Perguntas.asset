@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51a53243b442ae85879ccc42778601, type: 3}
+  m_Name: Perguntas
+  m_EditorClassIdentifier: 
+  dialogosPergunta:
+  - id: 1
+    pergunta: "Quando o navio saiu da China estava com destino para qual país?"
+    respostaCorreta: "Estados Unidos"
+    alternativas:
+      - id: 1
+        alternativa: "Alaska"
+      - id: 2
+        alternativa: "Chile"
+      - id: 3
+        alternativa: "Estados Unidos"
+  - id: 2
+    pergunta: "Os patos de borracha faziam parte de qual empresa?"
+    respostaCorreta: "The first five years"
+    alternativas:
+      - id: 1
+        alternativa: "The fun company"
+      - id: 2
+        alternativa: "The first years"
+      - id: 3
+        alternativa: "The first five years"
+  - id: 3
+    pergunta: "Cerca de quantos brinquedos de plástico caíram no mar?"
+    respostaCorreta: "28800"
+    alternativas:
+      - id: 1
+        alternativa: "29000"
+      - id: 2
+        alternativa: "28800"
+      - id: 3
+        alternativa: "30000"
+  - id: 4
+    pergunta: "Onde caiu o contêiner que transportava os patos de borracha?"
+    respostaCorreta: "Oceano Atlântico"
+    alternativas:
+      - id: 1
+        alternativa: "Oceano Pacífico"
+      - id: 2
+        alternativa: "Oceano Índico"
+      - id: 3
+        alternativa: "Oceano Atlântico"
+  - id: 5
+    pergunta: "Em que ano aconteceu o naufrágio?"
+    respostaCorreta: "1992"
+    alternativas:
+      - id: 1
+        alternativa: "1990"
+      - id: 2
+        alternativa: "1992"
+      - id: 3
+        alternativa: "1994"
+  - id: 6
+    pergunta: "Nos primeiros meses após o acidente, onde os patos começaram a aparecer?"
+    respostaCorreta: "Chile, Alasca e Canadá"
+    alternativas:
+      - id: 1
+        alternativa: "Rússia, China e Japão"
+      - id: 2
+        alternativa: "México, Colômbia e Equador"
+      - id: 3
+        alternativa: "Chile, Alasca e Canadá"
+  - id: 7
+    pergunta: "Qual era o valor da recompensa que a empresa oferecia para quem encontrasse e devolvesse os patos?"
+    respostaCorreta: "US$ 250,00"
+    alternativas:
+      - id: 1
+        alternativa: "US$ 100,00"
+      - id: 2
+        alternativa: "US$ 500,00"
+      - id: 3
+        alternativa: "US$ 250,00"
+  - id: 8
+    pergunta: "Por quanto tempo os patos podem ficar boiando nos oceanos?"
+    respostaCorreta: "Trezentos anos"
+    alternativas:
+      - id: 1
+        alternativa: "Novecentos anos"
+      - id: 2
+        alternativa: "Trezentos anos"
+      - id: 3
+        alternativa: "Quinhentos anos"
+  - id: 9
+    pergunta: "Qual é a cor primária que você obtém ao misturar azul e amarelo?"
+    respostaCorreta: "Verde"
+    alternativas:
+      - id: 1
+        alternativa: "Verde"
+      - id: 2
+        alternativa: "Azul"
+      - id: 3
+        alternativa: "Branco"
+  - id: 10
+    pergunta: "Quantos lados tem um hexágono?"
+    respostaCorreta: "Seis"
+    alternativas:
+      - id: 1
+        alternativa: "Cinco"
+      - id: 2
+        alternativa: "Seis"
+      - id: 3
+        alternativa: "Sete"
+  - id: 11
+    pergunta: "Qual é o nome do artista famoso por pintar a Mona Lisa?"
+    respostaCorreta: "Leonardo da Vinci"
+    alternativas:
+      - id: 1
+        alternativa: "Michelangelo"
+      - id: 2
+        alternativa: "Vincent van Gogh"
+      - id: 3
+        alternativa: "Leonardo da Vinci"
+  - id: 12
+    pergunta: "Qual é o maior planeta do sistema solar?"
+    respostaCorreta: "Júpiter"
+    alternativas:
+      - id: 1
+        alternativa: "Terra"
+      - id: 2
+        alternativa: "Marte"
+      - id: 3
+        alternativa: "Júpiter"
+  - id: 13
+    pergunta: "Quantos dias tem um ano bissexto?"
+    respostaCorreta: "366"
+    alternativas:
+      - id: 1
+        alternativa: "365"
+      - id: 2
+        alternativa: "366"
+      - id: 3
+        alternativa: "364"
+  - id: 14
+    pergunta: "Qual é o oceano que fica na costa leste do Brasil?"
+    respostaCorreta: "Atlântico"
+    alternativas:
+      - id: 1
+        alternativa: "Pacífico"
+      - id: 2
+        alternativa: "Atlântico"
+      - id: 3
+        alternativa: "Índico"
+  - id: 15
+    pergunta: "Qual é o metal precioso usado para fazer joias e tem símbolo Au?"
+    respostaCorreta: "Ouro"
+    alternativas:
+      - id: 1
+        alternativa: "Prata"
+      - id: 2
+        alternativa: "Ouro"
+      - id: 3
+        alternativa: "Platina"
+  - id: 16
+    pergunta: "Qual animal é conhecido como 'o melhor amigo do homem'?"
+    respostaCorreta: "Cachorro"
+    alternativas:
+      - id: 1
+        alternativa: "Gato"
+      - id: 2
+        alternativa: "Cachorro"
+      - id: 3
+        alternativa: "Pássaro"
+  - id: 17
+    pergunta: "Quantos segundos há em um minuto?"
+    respostaCorreta: "60"
+    alternativas:
+      - id: 1
+        alternativa: "50"
+      - id: 2
+        alternativa: "60"
+      - id: 3
+        alternativa: "70"
+  - id: 18
+    pergunta: "Qual é o país conhecido como a 'terra do sol nascente'?"
+    respostaCorreta: "Japão"
+    alternativas:
+      - id: 1
+        alternativa: "China"
+      - id: 2
+        alternativa: "Japão"
+      - id: 3
+        alternativa: "Índia"
+  - id: 19
+    pergunta: "Qual órgão do corpo humano é responsável por bombear sangue?"
+    respostaCorreta: "Coração"
+    alternativas:
+      - id: 1
+        alternativa: "Pulmão"
+      - id: 2
+        alternativa: "Coração"
+      - id: 3
+        alternativa: "Fígado"

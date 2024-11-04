@@ -1,77 +1,87 @@
-using System.Collections.Generic;
-using Actors;
+using System;
+using Dialog;
 using Interaction;
 using Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
-namespace Duck
+public class DuckBehavior : InteractableObject, IInteraction
 {
-    public class DuckBehavior : InteractableObject, IInteraction
-    {
-        [field: Header("Eventos")]
-        [field: SerializeField]
-        public UnityEvent<Vector2> OnMoved { get; private set; }
+    [field: Header("Componentes Externos")] 
+    [SerializeField] private Transform alvo;
 
-        [SerializeField] private TMP_Text countDucks;
-        [SerializeField] private AudioClip clip;
-        
-        private Movement movement;
-        private Collider2D colisor;
-        public GraphicBehaviour playerGraphic;
-        
-        private readonly Dictionary<string, Transform> alvos = new();
+    [SerializeField] private TMP_Text countDucks;
+    [SerializeField] private AudioClip clip;
+    private Movement movement;
 
-        private static int currentDuck = 0;
-        protected bool isFollowing;
-        private AudioSource audioSource;
-        
-        PlayerBehaviour Player => PlayerBehaviour.Instance;
+    [field: Header("Componentes Internos")]
+    private Rigidbody2D rb;
+    private Collider2D colisor;
+    private NavMeshAgent agent;
+
+    [field: Header("Eventos")]
+    [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
+
+    [field: Header("Lógicos")] 
+    private static int currentDuck = 0;
+    public bool isFollowing;
+    private AudioSource audioSource;
     
-        private void Start()
-        {
-            colisor = GetComponent<Collider2D>();
-            movement = GetComponent<Movement>();
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        colisor = GetComponent<Collider2D>();
+        agent = GetComponent<NavMeshAgent>();
+        movement = GetComponent<Movement>();
 
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
+        if (clip != null)
+        {
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.clip = clip;
-
-            AddObject(colisor, this);
         }
 
-        public void StartFollowing(PlayerBehaviour player)
+        AddObject(colisor, this);
+    }
+    public virtual void StartFollowing()
+    {
+        // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
+        if (PlayerBehaviour.Instance)
         {
-            isFollowing = true;
-            alvos.TryAdd("alvodafrente",  player.GetFollowTarget(this));
-            alvos.TryAdd("jogador", player.transform);
-            currentDuck++;
-            countDucks.text = currentDuck.ToString();
-            Grasnar();
-        }
-
-        private void Update()
-        {
-            if (!isFollowing) return;
-        
-            if (playerGraphic.IsMoving)
+            alvo = PlayerBehaviour.Instance.transform;
+            if (movement != null)
             {
-                movement.SetFollowTarget(alvos.GetValueOrDefault("alvodafrente"));
-                return;
+                movement.SetFollowTarget(alvo);
             }
-        
-            movement.SetFollowTarget(alvos.GetValueOrDefault("jogador"));
-        }
 
-        private void Grasnar()
-        {
-            audioSource.Play();
-        }
+            if (CompareTag("Duck"))
+            {
+                currentDuck++;
+            }
+            
+            if (countDucks != null)
+            {
+                countDucks.text = currentDuck.ToString();
+            }
 
-        public virtual void OnPlayerInteraction()
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
+            isFollowing = true;
+        }
+    }
+
+    public virtual void  OnPlayerInteraction()
+    {
+        if (!isFollowing)
         {
-            if (isFollowing) return;
-            StartFollowing(Player); 
+            StartFollowing(); 
             RemoveObject(colisor);
         }
     }
