@@ -20,12 +20,29 @@ namespace Dialog.Manager
                 dialogUIManager.ShowButtonsOfDecision(false);
                 dialogUIManager.ShowZonasDeAvancarDialogo(true);
                 dialogUIManager.ShowPaOuChapeuOuCoco(false);
+                dialogUIManager.ShowCoqueiro(false);
                 
                 switch (dialogId)
                 {
+                    // Coqueiro
+                    case "perguntas_coqueiro":
+                        dialogUIManager.ShowDialog(false);
+                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        
+                        if (perguntasUIManager != null)
+                        {
+                            perguntasUIManager.ShowPainelPerguntas(true);
+                        }
+                        break;
+                    
+                    // Pato agua de coco
+                    case "player_confirmando":
+                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        dialogUIManager.ShowCoqueiro(true);
+                        break;
+                    
                     // Pato Professor
                     case "pergunta":
-                        Debug.Log("Esta aqui");
                         dialogUIManager.ShowDialog(false);
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
                         
