@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Limits
+  - CoqueiroTag
+  - Duck
   layers:
   - Default
   - TransparentFX
