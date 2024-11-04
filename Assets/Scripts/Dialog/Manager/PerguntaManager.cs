@@ -10,13 +10,11 @@ namespace Dialog.Manager
         [SerializeField] private DialogManager dialogManager;
         [SerializeField] private DialogObject perguntaObject;
         [SerializeField] private int numeroMaximoPerguntas = 3; 
-        private List<DialogoPergunta> perguntasEmbaralhadas = new List<DialogoPergunta>();
+        private List<DialogoPergunta> perguntasEmbaralhadas = new();
         
         private int perguntaAtualIndex = 0;
 
         private int acertos = 0;
-
-        public bool IsAprovado;
         
         public void Start()
         {
@@ -37,7 +35,7 @@ namespace Dialog.Manager
             } 
             else
             {
-                Debug.Log($"Fim das perguntas. Total de Acertos: {acertos}/3");
+                Debug.Log($"Fim das perguntas. Total de Acertos: {acertos}/{numeroMaximoPerguntas}");
                 perguntasUIManager.ShowPainelPerguntas(false); 
                 
                 if (acertos >= 2)
