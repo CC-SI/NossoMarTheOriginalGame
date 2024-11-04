@@ -1,4 +1,4 @@
-
+using System;
 using Dialog;
 using Interaction;
 using Player;
@@ -9,8 +9,8 @@ using UnityEngine.Events;
 
 public class DuckBehavior : InteractableObject, IInteraction
 {
-    [field: Header("Componentes Externos")] [SerializeField]
-    private Transform alvo;
+    [field: Header("Componentes Externos")] 
+    [SerializeField] private Transform alvo;
 
     [SerializeField] private TMP_Text countDucks;
     [SerializeField] private AudioClip clip;
@@ -18,15 +18,14 @@ public class DuckBehavior : InteractableObject, IInteraction
 
     [field: Header("Componentes Internos")]
     private Rigidbody2D rb;
-
     private Collider2D colisor;
     private NavMeshAgent agent;
 
     [field: Header("Eventos")]
-    [field: SerializeField]
-    public UnityEvent<Vector2> OnMoved { get; private set; }
+    [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
 
-    [field: Header("Lógicos")] private static int currentDuck = 0;
+    [field: Header("Lógicos")] 
+    private static int currentDuck = 0;
     public bool isFollowing;
     private AudioSource audioSource;
     
@@ -40,23 +39,40 @@ public class DuckBehavior : InteractableObject, IInteraction
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.clip = clip;
+        if (clip != null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.clip = clip;
+        }
 
         AddObject(colisor, this);
     }
-
     public virtual void StartFollowing()
     {
         // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
         if (PlayerBehaviour.Instance)
         {
             alvo = PlayerBehaviour.Instance.transform;
-            movement.SetFollowTarget(alvo);
-            currentDuck++;
-            countDucks.text = currentDuck.ToString();
-            audioSource.Play();
-            movement.SetFollowTarget(alvo);
+            if (movement != null)
+            {
+                movement.SetFollowTarget(alvo);
+            }
+
+            if (CompareTag("Duck"))
+            {
+                currentDuck++;
+            }
+            
+            if (countDucks != null)
+            {
+                countDucks.text = currentDuck.ToString();
+            }
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
             isFollowing = true;
         }
     }
