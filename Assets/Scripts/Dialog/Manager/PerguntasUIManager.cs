@@ -13,9 +13,20 @@ namespace Dialog.Manager
         [SerializeField] private TextMeshProUGUI perguntaText;
         [SerializeField] private List<Button> botoesAlternativas = new() { null, null, null };
 
+        [SerializeField] private bool isShowCoco;
+        
+        [SerializeField] private List<GameObject> cocos;
+
+        [SerializeField] private GameObject mensagemAcertoOuErro;
+        [SerializeField] private TextMeshProUGUI mensagemAcertoOuErroText;
+        
+        private readonly List<int> usedIndices = new();
+        
         private PerguntaManager perguntaManager;
         private DialogoPergunta dialogoAtual;
 
+        // public bool IsCoqueiro;
+        
         public void InitComponent()
         {
             painelPerguntas.SetActive(false);
@@ -27,6 +38,21 @@ namespace Dialog.Manager
                 {
                     botao.gameObject.SetActive(false);
                 }
+            }
+            
+            foreach (var coco in cocos)
+            {
+                coco.SetActive(false);
+            }
+            
+            if (mensagemAcertoOuErro != null)
+            {
+                mensagemAcertoOuErro.SetActive(false);
+            }
+        
+            if (mensagemAcertoOuErroText != null)
+            {
+                mensagemAcertoOuErroText.gameObject.SetActive(false);
             }
         }
 
@@ -93,23 +119,72 @@ namespace Dialog.Manager
 
         private void VerificarResposta(int respostaId, int index)
         {
+            
+            DesabilitaBotao();
+            
             bool correta = dialogoAtual.VerificarResposta(respostaId);
             int indiceCorreto = dialogoAtual.ObterIndiceRespostaCorreta();
 
             if (correta)
             {
+                /*
+                if (IsCoqueiro)
+                {
+                    // ShowMensagemAcertoOuErro(true);
+                    // ShowPainelPerguntas(false); 
+                }
+                */
+        
                 perguntaManager.IncremetarAcertos();
+        
+                if (isShowCoco)
+                {
+                    ShowCocoRandom();
+                }
+            } 
+            /*
+            else
+            {
+                
+                if (IsCoqueiro)
+                {
+                    // ShowMensagemAcertoOuErro(false);
+                    // ShowPainelPerguntas(false); 
+                }
             }
-            
+            */
+    
             AlterarCorBotoes(index, indiceCorreto, correta);
 
-            Debug.Log($"Botão clicado: {index}");
-            Debug.Log($"Resposta Correta: {correta}");
-            Debug.Log($"Índice da Resposta Correta: {indiceCorreto}");
-            
+            // StartCoroutine(OcultarMensagemAcertoOuErro());
             StartCoroutine(EsperarParaProximaPergunta());
         }
 
+        
+        private void ShowMensagemAcertoOuErro(bool acertou)
+        {
+            mensagemAcertoOuErro.SetActive(true);
+            mensagemAcertoOuErroText.gameObject.SetActive(true);
+            mensagemAcertoOuErroText.text = acertou ? "Acertou!" : "Errou!";
+        }
+
+        private void ShowCocoRandom()
+        {
+            if (usedIndices.Count < cocos.Count)
+            {
+                int randomIndex;
+                do
+                {
+                    randomIndex = Random.Range(0, cocos.Count);
+                } while (usedIndices.Contains(randomIndex));
+
+                if (!cocos[randomIndex].activeSelf)
+                {
+                    cocos[randomIndex].SetActive(true);
+                    usedIndices.Add(randomIndex);
+                }
+            }
+        }
         private void AlterarCorBotoes(int indiceClicado, int indiceCorreto, bool correta)
         {
             foreach (var botao in botoesAlternativas)
@@ -149,10 +224,42 @@ namespace Dialog.Manager
             }
         }
 
+        private void HabilitarBotoes()
+        {
+            foreach (var botao in botoesAlternativas)
+            {
+                if (botao != null)
+                {
+                    botao.interactable = true; 
+                }
+            }
+        }
+        
+        private void DesabilitaBotao()
+        {
+            foreach (var botao in botoesAlternativas)
+            {
+                if (botao != null)
+                {
+                    botao.interactable = false;
+                }
+            }
+        }
+
         private IEnumerator EsperarParaProximaPergunta()
         {
             yield return new WaitForSeconds(1f); 
             perguntaManager.AvancarPergunta();
+            HabilitarBotoes();
+        }
+        
+        private IEnumerator OcultarMensagemAcertoOuErro()
+        {
+            yield return new WaitForSeconds(4f); 
+            mensagemAcertoOuErroText.gameObject.SetActive(false);
+            mensagemAcertoOuErro.SetActive(false);
+            
+            ShowPainelPerguntas(true);
         }
     }
 }
