@@ -22,7 +22,7 @@ namespace Menus
 		
 		void NewGame()
 		{
-			// Carregar a cena de gameplay.
+			GameManager.LoadGame();
 		}
 		
 		void Options()
