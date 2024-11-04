@@ -313,6 +313,7 @@ MonoBehaviour:
   dialogObject: {fileID: 11400000, guid: 2727b52aed06b904fa24083f6445b506, type: 2}
   controllerDialogIdSpeeches: {fileID: 7271468900098885895}
   _duckDialog: {fileID: 0}
+  perguntaManager: {fileID: 0}
 --- !u!114 &7271468900098885895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogObject: {fileID: 11400000, guid: 2727b52aed06b904fa24083f6445b506, type: 2}
   dialogUIManager: {fileID: 2839175062942665700}
+  perguntasUIManager: {fileID: 0}
 --- !u!114 &2839175062942665700
 MonoBehaviour:
   m_ObjectHideFlags: 0
