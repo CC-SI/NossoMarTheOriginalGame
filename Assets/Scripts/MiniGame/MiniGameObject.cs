@@ -1,19 +1,17 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace MiniGame
 {
-    public class HiddenObject : ObjectManager
+    public class MiniGameObject : MiniGame
     {
         [SerializeField] private Collider objectCollider;
         [SerializeField] private SpriteRenderer sprite;
-    
+
         private int index;
-        protected override Bounds Bounds => objectCollider.bounds;
+        
+        public Bounds Bounds => objectCollider.bounds;
 
-        //private bool isObjectCollected;
-
-        protected override int Index
+        public int Index
         {
             get => index;
             set
@@ -26,29 +24,19 @@ namespace MiniGame
                 transform.position = offset;
             }
         }
-
+        
         private void Awake()
         {
             Index = GetObjectCount();
             AddObject(this);
         }
-    
-        private void OnMouseDown()
-        {
-            if (IsTrashSuperimposed(Bounds, Index)) return;
-        
-            //isObjectCollected = true;
-            
-            Debug.Log("Object collected");
-            sprite.enabled = false;
 
-            RemoveObject(this);
-        }
-    
+#if UNITY_EDITOR
         private void Reset()
         {
             objectCollider = GetComponent<Collider>();
             sprite = GetComponentInChildren<SpriteRenderer>();
         }
+#endif
     }
 }
