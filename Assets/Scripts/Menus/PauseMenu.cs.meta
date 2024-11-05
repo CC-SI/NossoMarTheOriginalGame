@@ -1,3 +1,17 @@
 fileFormatVersion: 2
 guid: c0d65bf111d141bfb469c310e2e3ae99
-timeCreated: 1730745608
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _pauseAction: {fileID: 3287849944697432654, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
+  - continueButton: {instanceID: 0}
+  - settingsButton: {instanceID: 0}
+  - menuButton: {instanceID: 0}
+  - background: {instanceID: 0}
+  - buttons: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

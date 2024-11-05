@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Serialization;
 using Transitions;
@@ -13,11 +14,12 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	TransitionController transition;
 	[SerializeField]
-	UnityEvent<bool> onGamePausedEvent;
+	UnityEvent<bool> onGamePausedEvent = new();
 
 	static GameManager instance;
 
 	SaveData gameData;
+	bool isGamePaused = false;
 	
 	static readonly List<ISerializable> Serializable = new();
 	
@@ -38,7 +40,30 @@ public class GameManager : MonoBehaviour
 	public static GameState CurrentState { get; private set; }
 
 	public static bool HasGameData => PlayerPrefs.HasKey(GameDataKey);
-	public static UnityEvent<bool> OnGamePaused => Instance.onGamePausedEvent;
+
+	public static bool IsGamePaused
+	{
+		get
+		{
+			if (!Instance)
+				return false;
+			
+			return Instance.isGamePaused;
+		}
+		
+		set
+		{
+			if(!Instance)
+				return;
+			
+			Instance.isGamePaused = value;
+			Instance.onGamePausedEvent.Invoke(value);
+			OnGamePaused?.Invoke(value);
+			Time.timeScale = value ? 0 : 1;
+		}
+	}
+
+	public static event Action<bool> OnGamePaused;
 
 	public static void Exit()
 	{

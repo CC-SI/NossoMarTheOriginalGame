@@ -16,25 +16,19 @@ namespace Menus
 		Button exitButton;
 
 		void Continue()
-		{
-			GameManager.LoadGame(true);
-		}
-		
+			=> ButtonInvoke(() => GameManager.LoadGame(true));
+
 		void NewGame()
-		{
-			GameManager.LoadGame();
-		}
-		
+			=> ButtonInvoke(() => GameManager.LoadGame());
+
 		void Options()
 		{
-			Invoke(nameof(ShowSettings), Delay);
+			ShowSettings();
 		}
 		
 		void Exit()
-		{
-			GameManager.Exit();
-		}
-		
+			=> ButtonInvoke(GameManager.Exit);
+
 		void Awake()
 		{
 			MainMenu = this;

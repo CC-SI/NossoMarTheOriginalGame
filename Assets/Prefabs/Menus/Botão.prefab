@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3209056047527233038}
   - component: {fileID: 5331895441294535040}
   m_Layer: 5
-  m_Name: "Bota\u0303o"
+  m_Name: "Bot\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 50062d90ff50b4c798db964ac6f5d0fa, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

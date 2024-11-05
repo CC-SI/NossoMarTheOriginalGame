@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d65bf111d141bfb469c310e2e3ae99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseAction: {fileID: 3287849944697432654, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
   continueButton: {fileID: 4156378380919598881}
   settingsButton: {fileID: 3514075486334764240}
   menuButton: {fileID: 9101737893402941848}

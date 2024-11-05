@@ -16,10 +16,10 @@ namespace Menus
 			switch (GameManager.CurrentState)
 			{
 				case GameState.Menu:
-					Invoke(nameof(ShowMainMenu), Delay);
+					ShowMainMenu();
 					return;
 				case GameState.Playing:
-					Invoke(nameof(ShowPauseMenu), Delay);
+					ShowPauseMenu();
 					return;
 				default:
 					Debug.Log("Provavelmente falta configurar algo.", this);
