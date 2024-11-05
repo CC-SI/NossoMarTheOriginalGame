@@ -1,5 +1,5 @@
-using System;
-using Dialog;
+using System.Collections.Generic;
+using Actors;
 using Interaction;
 using Player;
 using TMPro;
@@ -20,14 +20,19 @@ public class DuckBehavior : InteractableObject, IInteraction
     private Rigidbody2D rb;
     private Collider2D colisor;
     private NavMeshAgent agent;
+    public GraphicBehaviour playerGraphic;
 
     [field: Header("Eventos")]
     [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
+    
+    readonly Dictionary<string, Transform> alvos = new();
 
     [field: Header("Lógicos")] 
     private static int currentDuck = 0;
     public bool isFollowing;
     private AudioSource audioSource;
+    
+    PlayerBehaviour Player => PlayerBehaviour.Instance;
     
     private void Start()
     {
@@ -47,6 +52,17 @@ public class DuckBehavior : InteractableObject, IInteraction
 
         AddObject(colisor, this);
     }
+    public void StartFollowing(PlayerBehaviour player)
+    {
+        isFollowing = true;
+        alvos.TryAdd("alvodafrente",  player.GetFollowTarget(this));
+        alvos.TryAdd("jogador", player.transform);
+        currentDuck++;
+        if (countDucks)
+            countDucks.text = currentDuck.ToString();
+        Grasnar();
+    }
+    
     public virtual void StartFollowing()
     {
         // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
@@ -76,13 +92,30 @@ public class DuckBehavior : InteractableObject, IInteraction
             isFollowing = true;
         }
     }
+    
+    private void Update()
+    {
+        if (!isFollowing) return;
+        
+        if (playerGraphic.IsMoving)
+        {
+            movement.SetFollowTarget(alvos.GetValueOrDefault("alvodafrente"));
+            return;
+        }
+        
+        movement.SetFollowTarget(alvos.GetValueOrDefault("jogador"));
+    }
+    
+    void Grasnar()
+    {
+        audioSource.Play();
+    }
 
     public virtual void  OnPlayerInteraction()
     {
-        if (!isFollowing)
-        {
-            StartFollowing(); 
-            RemoveObject(colisor);
-        }
+        StartFollowing(); 
+        if (isFollowing) return;
+        StartFollowing(Player); 
+        RemoveObject(colisor);
     }
 }
