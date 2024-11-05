@@ -197,6 +197,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 48117146}
   m_LocalEulerAnglesHint: {x: -12.397, y: 0, z: 0}
+--- !u!1 &8460672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8460673}
+  m_Layer: 0
+  m_Name: Lixeiras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8460673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4493836943066017391}
+  m_Father: {fileID: 450599144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &18598979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,6 +2167,7 @@ Transform:
   - {fileID: 587711074}
   - {fileID: 684695792}
   - {fileID: 444963781}
+  - {fileID: 8460673}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &466758453
@@ -8982,6 +9015,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdad00c76f8b66c4b9be4e24c516885c, type: 3}
+--- !u!1001 &4493836943066017390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8460673}
+    m_Modifications:
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268643278197942473, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+      propertyPath: m_Name
+      value: Lixeira
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+--- !u!4 &4493836943066017391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
+  m_PrefabInstance: {fileID: 4493836943066017390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5369427774916786892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6202745557428619333, guid: 026f922fc242512478810bf595596d80, type: 3}
