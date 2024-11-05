@@ -1,11 +1,13 @@
+using System;
 using System.Collections.Generic;
 using Duck;
 using Interaction;
+using Serialization;
 using UnityEngine;
 
 namespace Player
 {
-    public class PlayerBehaviour : MonoBehaviour
+    public class PlayerBehaviour : MonoBehaviour, ISerializable
     {
         readonly List<DuckBehavior> ducks = new();
         readonly List<ObjectToBeCaptured> objectToBeCaptureds = new(); 
@@ -38,18 +40,32 @@ namespace Player
 
             return ducks[^1].transform; 
         }
+        
+        public void Save(SaveData data){
+	        data.playerPosition = transform.position;
+        }
+        
+        public void Load(SaveData data){
+	        transform.position = data.playerPosition;
+        }
 
 		void Awake()
 		{
 			if (!Instance)
 			{
 				Instance = this;
+				GameManager.Subscribe(this);
 				return;
 			}
-
+			
 			Destroy(gameObject);
 		}
-		
+
+		private void OnDestroy()
+		{
+			GameManager.Unsubscribe(this);
+		}
+
 #if UNITY_EDITOR
 	void Reset()
 	{

@@ -17,7 +17,7 @@ namespace Menus
 
 		void Continue()
 		{
-			// Carregar os dados serializados.
+			GameManager.LoadGame(true);
 		}
 		
 		void NewGame()
