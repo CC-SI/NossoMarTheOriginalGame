@@ -73,10 +73,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -620733219
-  m_SortingLayer: 1
+  m_SortingLayerID: 1669140139
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 852901009, guid: 2f885d60d3b053846b56964f2603e8ef, type: 3}
+  m_Sprite: {fileID: 603998608, guid: 18e5e278be6bce14c9294aaeb60815bb, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3529412}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6181217126740297376}
   - component: {fileID: 359098424608768299}
+  - component: {fileID: 1772942973278333808}
   m_Layer: 0
   m_Name: Grafico
   m_TagString: Untagged
@@ -161,9 +162,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1060417303
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 852901009, guid: 2f885d60d3b053846b56964f2603e8ef, type: 3}
+  m_Sprite: {fileID: 603998608, guid: 18e5e278be6bce14c9294aaeb60815bb, type: 3}
   m_Color: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,6 +175,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1772942973278333808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967004107331181346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342a095590af445684e1b34f48bcce84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2941576963307035420}
+  dragParameter: isDragging
+  trashBinParameter: isOnTrashBin
+  alertTrigger: alertSuperImposing
 --- !u!1 &9124796682831113197
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,9 +200,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4087800760067055220}
-  - component: {fileID: 7520597314045266252}
   - component: {fileID: 2941576963307035420}
   - component: {fileID: 2317814615846680912}
+  - component: {fileID: 7520597314045266252}
+  - component: {fileID: 4615466899146097150}
   m_Layer: 0
   m_Name: Lixo 1
   m_TagString: Draggable
@@ -203,29 +221,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6181217126740297376}
   - {fileID: 3112364340877519091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7520597314045266252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9124796682831113197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc67851d7a782044a5d863238e09588, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectCollider: {fileID: 2317814615846680912}
-  sprite: {fileID: 359098424608768299}
-  shadow: {fileID: 7047172475867240421}
-  animator: {fileID: 2941576963307035420}
 --- !u!95 &2941576963307035420
 Animator:
   serializedVersion: 7
@@ -269,3 +271,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.36, y: 0.75, z: 1}
   m_Center: {x: 0, y: -0.03, z: 0}
+--- !u!114 &7520597314045266252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124796682831113197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc67851d7a782044a5d863238e09588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs: []
+  OnMessageUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  objectCollider: {fileID: 2317814615846680912}
+  sprite: {fileID: 359098424608768299}
+--- !u!114 &4615466899146097150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124796682831113197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313e1cdf4f284d2e962e061ce6cb3fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggableObject: {fileID: 7520597314045266252}
+  <OnTouched>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnSuperimposed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  originalPosition: {x: 0, y: 0, z: 0}

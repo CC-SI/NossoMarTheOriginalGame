@@ -31,7 +31,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1932860397317231122}
-  - {fileID: 58001190838091930}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5189784052210898979
@@ -46,43 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a246e2dfca0924583a316a6c90843d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggableObjectPrefabs:
+  prefabs:
   - {fileID: 7520597314045266252, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
   - {fileID: 1458802171498888950, guid: b9c77d90620ca9e4eab1027e09c94cbd, type: 3}
   - {fileID: 1534944792170592333, guid: d0da2ef153ca432489059896f32726a1, type: 3}
-  hiddenObjectPrefab: {fileID: 4878903419315053159, guid: 1988b09be5722884eb7034f2f193c252, type: 3}
-  objectsParent: {fileID: 58001190838091930}
---- !u!1 &7749297794892292310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 58001190838091930}
-  m_Layer: 0
-  m_Name: Lixos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &58001190838091930
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749297794892292310}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4479088446963290864}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  - {fileID: 695790413277129006, guid: 1988b09be5722884eb7034f2f193c252, type: 3}
+  OnMessageUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &754897005404349945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,6 +61,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4479088446963290864}
     m_Modifications:
+    - target: {fileID: 1201063182330918891, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201063182330918891, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201063182330918891, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.9418964
+      objectReference: {fileID: 0}
     - target: {fileID: 1201063182330918891, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

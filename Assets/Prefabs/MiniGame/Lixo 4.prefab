@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 359098424608768299, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 960722471, guid: 17ffbb3a28cddd840aa4ab982e45bbb3, type: 3}
+      objectReference: {fileID: 1950566415, guid: b3e6f93eb666c3d4995ef15bf7efaa39, type: 3}
     - target: {fileID: 2317814615846680912, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Size.x
       value: 0.6
@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 7047172475867240421, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 960722471, guid: 17ffbb3a28cddd840aa4ab982e45bbb3, type: 3}
+      objectReference: {fileID: 1950566415, guid: b3e6f93eb666c3d4995ef15bf7efaa39, type: 3}
     - target: {fileID: 9124796682831113197, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
       propertyPath: m_Name
       value: Lixo 4

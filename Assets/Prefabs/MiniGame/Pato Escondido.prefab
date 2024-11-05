@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1060417303
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a44bb0c7212794f679a438344509fe0d, type: 3}
   m_Color: {r: 1, g: 0.95964897, b: 0, a: 1}
@@ -97,7 +97,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8138373057722139242}
   - component: {fileID: 5755198025574706738}
-  - component: {fileID: 4878903419315053159}
+  - component: {fileID: 695790413277129006}
+  - component: {fileID: 6241986375338722834}
   m_Layer: 0
   m_Name: Pato Escondido
   m_TagString: Untagged
@@ -142,7 +143,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4878903419315053159
+--- !u!114 &695790413277129006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,8 +152,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8934283668236321391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f82fe4b0a946db4d8cb6141921ac509, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cc67851d7a782044a5d863238e09588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectCollider: {fileID: 5755198025574706738}
+  sprite: {fileID: 4707934757245740575}
+--- !u!114 &6241986375338722834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8934283668236321391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df97c8f5d1c54284a3e25153bff26495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hiddenObject: {fileID: 695790413277129006}
   sprite: {fileID: 4707934757245740575}
