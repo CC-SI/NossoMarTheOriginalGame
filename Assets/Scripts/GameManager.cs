@@ -3,6 +3,7 @@ using Serialization;
 using Transitions;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -11,12 +12,14 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField]
 	TransitionController transition;
-	
+	[SerializeField]
+	UnityEvent<bool> onGamePausedEvent;
+
 	static GameManager instance;
 
-	private SaveData gameData;
+	SaveData gameData;
 	
-	private static readonly List<ISerializable> serializable = new();
+	static readonly List<ISerializable> Serializable = new();
 	
 	static GameManager Instance
 	{
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
 	public static GameState CurrentState { get; private set; }
 
 	public static bool HasGameData => PlayerPrefs.HasKey(GameDataKey);
+	public static UnityEvent<bool> OnGamePaused => Instance.onGamePausedEvent;
 
 	public static void Exit()
 	{
@@ -43,7 +47,7 @@ public class GameManager : MonoBehaviour
 	
 	public static void SaveGameData()
 	{
-		foreach(var save in serializable)
+		foreach(var save in Serializable)
 			save.Save(Instance.gameData);
 		var json = Instance.gameData.ToJson();
 		PlayerPrefs.SetString(GameDataKey, json);
@@ -81,7 +85,7 @@ public class GameManager : MonoBehaviour
 		{
 			operation.completed += _ =>
 			{
-				foreach (var save in serializable)
+				foreach (var save in Serializable)
 					save.Load(Instance.gameData);
 				
 				Instance.CompleteTransition();
@@ -89,6 +93,11 @@ public class GameManager : MonoBehaviour
 		}
 		
 		Instance.transition.Execute(operation);
+	}
+	
+	static void OnActiveSceneChanged(Scene arg0, Scene newScene)
+	{
+		CurrentState = (GameState)newScene.buildIndex;
 	}
 	
 	public void ExitGame()
@@ -110,14 +119,14 @@ public class GameManager : MonoBehaviour
 
 	public static void Subscribe(ISerializable save)
 	{
-		if (serializable.Contains(save)) return;
+		if (Serializable.Contains(save)) return;
 		
-		serializable.Add(save);
+		Serializable.Add(save);
 	}
 	
 	public static void Unsubscribe(ISerializable save)
 	{
-		serializable.Remove(save);
+		Serializable.Remove(save);
 	}
 	
 	void Awake()
@@ -137,8 +146,9 @@ public class GameManager : MonoBehaviour
 		var scene = SceneManager.GetActiveScene();
 		CurrentState = (GameState)scene.buildIndex;
 		gameData = new SaveData();
+		SceneManager.activeSceneChanged += OnActiveSceneChanged;
 	}
-	
+
 #if UNITY_EDITOR
 	void Reset()
 	{

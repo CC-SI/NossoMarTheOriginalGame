@@ -47,9 +47,14 @@ namespace Menus
 			IsOpen = false;
 		}
 
-		void Open()
+		protected virtual void Open()
 		{
 			IsOpen = true;
+		}
+
+		protected static void Open(MenuBehaviour menu)
+		{
+			menu.Open();
 		}
 	}
 }
