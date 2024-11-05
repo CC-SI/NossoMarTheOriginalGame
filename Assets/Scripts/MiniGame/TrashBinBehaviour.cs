@@ -1,24 +1,33 @@
 using UnityEngine;
 
-public class TrashBinBehaviour : MonoBehaviour
+namespace MiniGame
 {
-    public static TrashBinBehaviour Instance { get; private set; }
-    private Collider2D insideTrashBin;
-    
-    private void Awake()
+    public class TrashBinBehaviour : MonoBehaviour
     {
-        if (!Instance)
+        public static TrashBinBehaviour Instance { get; private set; }
+        [SerializeField] private Collider2D insideTrashBin;
+    
+        private void Awake()
         {
-            Instance = this;
-            insideTrashBin = GetComponent<Collider2D>();
-            return;
+            if (!Instance)
+            {
+                Instance = this;
+                return;
+            }
+        
+            Destroy(gameObject);
+        }
+
+        public bool ContainsObject(Bounds bounds)
+        {
+            return insideTrashBin.bounds.Intersects(bounds);
         }
         
-        Destroy(gameObject);
-    }
-
-    public bool ContainsObject(Bounds bounds)
-    {
-        return insideTrashBin.bounds.Intersects(bounds);
+#if UNITY_EDITOR
+        private void Reset()
+        {
+            insideTrashBin = GetComponent<Collider2D>();
+        }
+#endif
     }
 }
