@@ -127,14 +127,6 @@ namespace Dialog.Manager
 
             if (correta)
             {
-                /*
-                if (IsCoqueiro)
-                {
-                    // ShowMensagemAcertoOuErro(true);
-                    // ShowPainelPerguntas(false); 
-                }
-                */
-        
                 perguntaManager.IncremetarAcertos();
         
                 if (isShowCoco)
@@ -142,21 +134,8 @@ namespace Dialog.Manager
                     ShowCocoRandom();
                 }
             } 
-            /*
-            else
-            {
-                
-                if (IsCoqueiro)
-                {
-                    // ShowMensagemAcertoOuErro(false);
-                    // ShowPainelPerguntas(false); 
-                }
-            }
-            */
     
             AlterarCorBotoes(index, indiceCorreto, correta);
-
-            // StartCoroutine(OcultarMensagemAcertoOuErro());
             StartCoroutine(EsperarParaProximaPergunta());
         }
 

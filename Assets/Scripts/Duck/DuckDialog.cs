@@ -33,14 +33,6 @@ namespace Duck
         
         public void StartFollowing()
         {
-            if (isDuckAguaCoco)
-            {
-                Debug.Log("Pato agua de coco capturado ");
-                
-            }
-            
-            // Debug.Log("DuckDialog: StartFollowing");
-            // base.StartFollowing(Player);
             base.OnPlayerInteraction();
         }
     }

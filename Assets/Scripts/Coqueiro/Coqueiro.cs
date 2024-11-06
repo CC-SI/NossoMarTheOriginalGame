@@ -11,7 +11,6 @@ namespace Coqueiro
         {
             if (!isFollowing)
             {
-                Debug.Log("Player interagiu com o coqueiro");
                 dialogManager.StartDialog();
             }
         }

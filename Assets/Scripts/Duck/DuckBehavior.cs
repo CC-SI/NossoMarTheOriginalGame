@@ -71,8 +71,6 @@ public class DuckBehavior : InteractableObject, IInteraction
             if (CompareTag("Duck"))
             {
                 currentDuck++;
-                Debug.Log("Contando");
-                Debug.Log(currentDuck);
                 countDucks.text = currentDuck.ToString();
             }
 

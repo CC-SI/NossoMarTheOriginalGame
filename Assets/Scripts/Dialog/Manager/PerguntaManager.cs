@@ -35,7 +35,6 @@ namespace Dialog.Manager
             } 
             else
             {
-                Debug.Log($"Fim das perguntas. Total de Acertos: {acertos}/{numeroMaximoPerguntas}");
                 perguntasUIManager.ShowPainelPerguntas(false); 
                 
                 if (acertos >= 2)
@@ -51,10 +50,6 @@ namespace Dialog.Manager
             {
                 var dialogoAtual = perguntasEmbaralhadas[perguntaAtualIndex];
                 perguntasUIManager.AtualizarPergunta(dialogoAtual, this);
-            }
-            else
-            {
-                Debug.Log("Todas as perguntas foram respondidas!");
             }
         }
         

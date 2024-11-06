@@ -36,15 +36,16 @@ namespace Dialog.Manager
 
             if (next)
             {
-                Debug.Log("Avançar Dialogo");
                 ShowCurrentDialog();
                 controllerDialogIdSpeeches.ControllerActionsForId(); 
             }
             else
             {
-                Debug.Log("Fim do Dialogo");
                 EndDialog();
-                _duckDialog.StartFollowing();
+                if (_duckDialog != null)
+                {
+                    _duckDialog.StartFollowing();
+                }
             }
         }
 
@@ -60,12 +61,10 @@ namespace Dialog.Manager
 
             if (next)
             {
-                Debug.Log("Avançar Dialogo Silenciosamente");
                 controllerDialogIdSpeeches.ControllerActionsForId(); 
             }
             else
             {
-                Debug.Log("Fim do Dialogo Silenciosamente");
                 EndDialog(); 
             }
         }
