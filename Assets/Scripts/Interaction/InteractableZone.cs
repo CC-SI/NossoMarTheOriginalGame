@@ -26,7 +26,7 @@ namespace Interaction
 
         public void Interact()
         {
-            if (!CanInteract)
+            if (!CanInteract || interactableQueue.Count == 0)
                 return;
     
             interactableQueue[0].OnPlayerInteraction();

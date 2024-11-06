@@ -20,22 +20,27 @@ public class DuckBehavior : InteractableObject, IInteraction
     private Rigidbody2D rb;
     private Collider2D colisor;
     private NavMeshAgent agent;
-    public GraphicBehaviour playerGraphic;
 
     [field: Header("Eventos")]
     [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
-    
-    readonly Dictionary<string, Transform> alvos = new();
 
     [field: Header("Lógicos")] 
     private static int currentDuck = 0;
     public bool isFollowing;
     private AudioSource audioSource;
+    public GraphicBehaviour playerGraphic;
+    
+    private readonly Dictionary<string, Transform> alvos = new();
     
     PlayerBehaviour Player => PlayerBehaviour.Instance;
     
     private void Start()
     {
+        if (countDucks != null)
+        {
+            currentDuck = 0;
+            countDucks.text = currentDuck.ToString();
+        }
         rb = GetComponent<Rigidbody2D>();
         colisor = GetComponent<Collider2D>();
         agent = GetComponent<NavMeshAgent>();
@@ -43,7 +48,7 @@ public class DuckBehavior : InteractableObject, IInteraction
 
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-
+        
         if (clip != null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
@@ -53,17 +58,6 @@ public class DuckBehavior : InteractableObject, IInteraction
         AddObject(colisor, this);
     }
     public void StartFollowing(PlayerBehaviour player)
-    {
-        isFollowing = true;
-        alvos.TryAdd("alvodafrente",  player.GetFollowTarget(this));
-        alvos.TryAdd("jogador", player.transform);
-        currentDuck++;
-        if (countDucks)
-            countDucks.text = currentDuck.ToString();
-        Grasnar();
-    }
-    
-    public virtual void StartFollowing()
     {
         // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
         if (PlayerBehaviour.Instance)
@@ -77,13 +71,14 @@ public class DuckBehavior : InteractableObject, IInteraction
             if (CompareTag("Duck"))
             {
                 currentDuck++;
-            }
-            
-            if (countDucks != null)
-            {
+                Debug.Log("Contando");
+                Debug.Log(currentDuck);
                 countDucks.text = currentDuck.ToString();
             }
 
+            alvos.TryAdd("alvodafrente",  player.GetFollowTarget(this));
+            alvos.TryAdd("jogador", player.transform);
+            
             if (audioSource != null)
             {
                 audioSource.Play();
@@ -92,7 +87,7 @@ public class DuckBehavior : InteractableObject, IInteraction
             isFollowing = true;
         }
     }
-    
+
     private void Update()
     {
         if (!isFollowing) return;
@@ -106,16 +101,12 @@ public class DuckBehavior : InteractableObject, IInteraction
         movement.SetFollowTarget(alvos.GetValueOrDefault("jogador"));
     }
     
-    void Grasnar()
-    {
-        audioSource.Play();
-    }
-
     public virtual void  OnPlayerInteraction()
     {
-        StartFollowing(); 
-        if (isFollowing) return;
-        StartFollowing(Player); 
-        RemoveObject(colisor);
+        if (!isFollowing)
+        {
+            StartFollowing(Player); 
+            RemoveObject(colisor);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Dialog.Manager;
 using Interaction;
+using Player;
 using UnityEngine;
 
 namespace Duck
@@ -11,37 +12,36 @@ namespace Duck
         
         public bool isDuckAguaCoco;
         
+        PlayerBehaviour Player => PlayerBehaviour.Instance;
+        
         public override void OnPlayerInteraction()
         {
             if (!isFollowing)
             {
-                if (objectToBeCaptured != null && isDuckAguaCoco && objectToBeCaptured.IsAllCapturedCocos)
+                if (objectToBeCaptured != null)
                 {
-                    dialogManager.AvancarDialogoSilenciosamente();
+                    if (isDuckAguaCoco && objectToBeCaptured.IsAllCapturedCocos)
+                    {
+                        dialogManager.AvancarDialogoSilenciosamente();
+                    }
                 }
+                
                 dialogManager.StartDialog();
+                
             }
         }
         
-        public override void StartFollowing()
+        public void StartFollowing()
         {
             if (isDuckAguaCoco)
             {
                 Debug.Log("Pato agua de coco capturado ");
+                
             }
             
             // Debug.Log("DuckDialog: StartFollowing");
-            base.StartFollowing();
-            HideCaptureButton();
-        }
-        
-        private static void HideCaptureButton()
-        {
-            var interactionUIButton = FindObjectOfType<InteractionUIButton>();
-            if (interactionUIButton != null)
-            {
-                interactionUIButton.HideButton();
-            }
+            // base.StartFollowing(Player);
+            base.OnPlayerInteraction();
         }
     }
 }
