@@ -78,6 +78,7 @@ namespace Dialog.Manager
                 perguntasEmbaralhadas = perguntasEmbaralhadas.GetRange(0, numeroMaximoPerguntas);
             }
 
+            perguntasUIManager.HabilitarBotoes();
             ExibirPerguntaAtual();
         }
         
