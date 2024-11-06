@@ -224,7 +224,7 @@ namespace Dialog.Manager
             }
         }
 
-        private void HabilitarBotoes()
+        public void HabilitarBotoes()
         {
             foreach (var botao in botoesAlternativas)
             {
