@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 73
-        y: 25
+        y: 23
         width: 93
         height: 64
       alignment: 9
@@ -148,8 +148,8 @@ TextureImporter:
       name: PersonagemNadandoOficial_1
       rect:
         serializedVersion: 2
-        x: 313
-        y: 25
+        x: 309
+        y: 22
         width: 93
         height: 64
       alignment: 9
@@ -170,8 +170,8 @@ TextureImporter:
       name: PersonagemNadandoOficial_2
       rect:
         serializedVersion: 2
-        x: 553
-        y: 25
+        x: 551
+        y: 23
         width: 93
         height: 64
       alignment: 9
@@ -192,8 +192,8 @@ TextureImporter:
       name: PersonagemNadandoOficial_3
       rect:
         serializedVersion: 2
-        x: 790
-        y: 25
+        x: 787
+        y: 24
         width: 93
         height: 64
       alignment: 9
@@ -215,7 +215,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1033
-        y: 25
+        y: 23
         width: 93
         height: 64
       alignment: 9
@@ -236,8 +236,8 @@ TextureImporter:
       name: PersonagemNadandoOficial_5
       rect:
         serializedVersion: 2
-        x: 1273
-        y: 25
+        x: 1269
+        y: 22
         width: 93
         height: 64
       alignment: 9
@@ -258,8 +258,8 @@ TextureImporter:
       name: PersonagemNadandoOficial_6
       rect:
         serializedVersion: 2
-        x: 1513
-        y: 25
+        x: 1511
+        y: 23
         width: 93
         height: 64
       alignment: 9
@@ -280,8 +280,8 @@ TextureImporter:
       name: PersonagemNadandoOficial_7
       rect:
         serializedVersion: 2
-        x: 1750
-        y: 25
+        x: 1747
+        y: 24
         width: 93
         height: 64
       alignment: 9
