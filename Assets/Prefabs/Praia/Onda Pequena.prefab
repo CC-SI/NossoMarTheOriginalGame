@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8697895547843844512}
   - component: {fileID: 2105990044105776915}
   m_Layer: 0
-  m_Name: Onda 1
+  m_Name: Onda Pequena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
