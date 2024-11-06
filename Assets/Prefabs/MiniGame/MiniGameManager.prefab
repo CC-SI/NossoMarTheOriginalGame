@@ -113,6 +113,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2568055228518631663, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568055228518631663, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568055228518631663, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9339623
+      objectReference: {fileID: 0}
     - target: {fileID: 7141927662651248655, guid: 649b3167fe191224fbb24738558f93c7, type: 3}
       propertyPath: m_Name
       value: Lixeira
