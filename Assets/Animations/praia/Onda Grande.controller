@@ -14,7 +14,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 1
+  m_TransitionDuration: 1.2
   m_TransitionOffset: 0
   m_ExitTime: 2
   m_HasExitTime: 1
@@ -53,7 +53,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Onda
+  m_Name: Onda Grande
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -76,7 +76,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: baixa
+  m_Name: mare baixa
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -90,7 +90,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4d5dd7147dfe9459082280c8fb3fe5d3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 268582b7eb12c544697920f0f235c003, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -103,7 +103,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: alta
+  m_Name: mare alta
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -117,7 +117,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4ed39275836b446d6a15d0308c4e18cc, type: 2}
+  m_Motion: {fileID: 7400000, guid: cd20ae037775f504c907376898ab4499, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -137,7 +137,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 1.2
+  m_TransitionDuration: 1.7
   m_TransitionOffset: 0
   m_ExitTime: 1
   m_HasExitTime: 1
