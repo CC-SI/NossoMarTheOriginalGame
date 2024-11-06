@@ -374,9 +374,11 @@ MonoBehaviour:
   - {fileID: 0}
   isShowCoco: 1
   cocos:
-  - {fileID: 8742463021670516910, guid: 0513474701360544990e5755f7743144, type: 3}
-  - {fileID: 4187627238091609942, guid: fb0328bf3b65f3948b7c457a97957741, type: 3}
-  - {fileID: 6227139557497103594, guid: 671b197d827188444ba66de2888aaf2b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   mensagemAcertoOuErro: {fileID: 0}
   mensagemAcertoOuErroText: {fileID: 0}
 --- !u!1 &2509115473935267673
