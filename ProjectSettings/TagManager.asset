@@ -7,6 +7,8 @@ TagManager:
   - Limits
   - CoqueiroTag
   - Duck
+  - DuckDefault
+  - Draggable
   layers:
   - Default
   - TransparentFX
@@ -49,6 +51,12 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MiniGameLixeira
+    uniqueID: 3296178801
+    locked: 0
+  - name: MiniGameLixo
+    uniqueID: 983873535
     locked: 0
   m_RenderingLayers:
   - Default

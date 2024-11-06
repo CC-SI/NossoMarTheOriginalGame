@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b3e6f93eb666c3d4995ef15bf7efaa39
+guid: 6f93872ca429b554c99e669d4cb2a5cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (77)_0
+      name: LataLixo_LixoDentro_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 93
-        width: 210
-        height: 283
+        x: 28
+        y: 28
+        width: 144
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,8 +138,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60216cba29132a54baaa9c0645a50ffb
-      internalID: 1950566415
+      spriteID: 2112f2e2b515264479ce8f02fed05bee
+      internalID: 1049027597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LataLixo_LixoDentro_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 50
+        width: 120
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e4edfac7436484c851124e79c2a31a
+      internalID: -827666899
       vertices: []
       indices: 
       edges: []
@@ -148,7 +170,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f006bd79d5324c148b8b4160d960cdf9
+    spriteID: 14a110f5b7c082945b55b3abb202b56a
     internalID: 0
     vertices: []
     indices: 
@@ -158,7 +180,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixil-frame-0 (77)_0: 1950566415
+      LataLixo_LixoDentro_0: 1049027597
+      LataLixo_LixoDentro_1: -827666899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
