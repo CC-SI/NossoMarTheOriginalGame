@@ -922,7 +922,7 @@ MonoBehaviour:
   dialogUIManager: {fileID: 1606387106059620309}
   dialogObject: {fileID: 11400000, guid: 39c58dac0fedf8444ad3c67fb428a611, type: 2}
   controllerDialogIdSpeeches: {fileID: 8653993732777549009}
-  _duckDialog: {fileID: 0}
+  _duckDialog: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
   perguntaManager: {fileID: 0}
 --- !u!114 &8653993732777549009
 MonoBehaviour:

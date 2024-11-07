@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8091097864528048350}
   - component: {fileID: 6723760320470252523}
   - component: {fileID: 745384246159665616}
-  - component: {fileID: 7794038270438925134}
   m_Layer: 0
   m_Name: Duck Professor
   m_TagString: Duck
@@ -95,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 3859505080687747813}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 532591d1b4b23023d8e69abcf599c4f4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 28c9e965be349e3489ba5f58390101ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -264,61 +263,6 @@ MonoBehaviour:
   dialogManager: {fileID: 0}
   objectToBeCaptured: {fileID: 0}
   isDuckAguaCoco: 0
---- !u!212 &7794038270438925134
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3859505080687747813}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -685873928, guid: 0cc825cbb4139f7468034b3d9e402bd7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.01, y: 2.09}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &6936859719984480920
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,14 +358,14 @@ SpriteRenderer:
   m_SortingLayerID: 2115649195
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1546802861, guid: 76eb5360745952b4a91bea76bfcbe51a, type: 3}
+  m_Sprite: {fileID: 1173138274, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.1, y: 2.18}
+  m_Size: {x: 5.95, y: 6.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
