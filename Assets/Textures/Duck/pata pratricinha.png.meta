@@ -139,10 +139,10 @@ TextureImporter:
       name: pata pratricinha_0
       rect:
         serializedVersion: 2
-        x: 511
-        y: 123
-        width: 181
-        height: 148
+        x: 34
+        y: 130
+        width: 140
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,6 +153,50 @@ TextureImporter:
       bones: []
       spriteID: a9cca84c898409f41bc57f26dd0066f7
       internalID: -263830902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pata pratricinha_1
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 128
+        width: 140
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ca3a8623260c84a8b5e3d1b3283b64
+      internalID: -33186968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pata pratricinha_2
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 138
+        width: 132
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf8371677a44f44fab02146ceaed67c
+      internalID: -1931441507
       vertices: []
       indices: 
       edges: []
@@ -172,6 +216,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       pata pratricinha_0: -263830902
+      pata pratricinha_1: -33186968
+      pata pratricinha_2: -1931441507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

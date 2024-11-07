@@ -121,12 +121,232 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Adere\xE7os_0"
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 101
+        width: 293
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b5145e0887d1841a049a371f2c84e2
+      internalID: 851462289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_1"
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 175
+        width: 221
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495ff25ab7320d140810366ea5e0fd36
+      internalID: 1372938125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_2"
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 83
+        width: 364
+        height: 231
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48400f7ec5713a644aeb87c7174ee3ba
+      internalID: 2014742285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_3"
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 129
+        width: 165
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6702c04aad05b446a4b31ce92a03537
+      internalID: -1210496226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_4"
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 127
+        width: 165
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9c3059d84b532478821f8c675be35d
+      internalID: -1172466478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_5"
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 129
+        width: 158
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2f45105190e604dba32b501eeed952
+      internalID: -952452421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_6"
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 127
+        width: 157
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9583a1ff8515ac748bc32eded9e0ec46
+      internalID: 1029384592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_7"
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 129
+        width: 164
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e7987fa23bd7e4fac127db95a32bf9
+      internalID: 1094966349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_8"
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 127
+        width: 177
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d646adcddaae74ca5e22414e05a357
+      internalID: 81688322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Adere\xE7os_9"
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 165
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cdab6aa391d3ca4a8dc26aacb6d112b
+      internalID: -1768835547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a39936d1338cb72479426bf9d850965f
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +355,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Adere\xE7os_0": 851462289
+      "Adere\xE7os_1": 1372938125
+      "Adere\xE7os_2": 2014742285
+      "Adere\xE7os_3": -1210496226
+      "Adere\xE7os_4": -1172466478
+      "Adere\xE7os_5": -952452421
+      "Adere\xE7os_6": 1029384592
+      "Adere\xE7os_7": 1094966349
+      "Adere\xE7os_8": 81688322
+      "Adere\xE7os_9": -1768835547
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

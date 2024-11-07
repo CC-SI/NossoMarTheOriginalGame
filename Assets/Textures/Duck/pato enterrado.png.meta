@@ -152,10 +152,10 @@ TextureImporter:
       name: pato enterrado_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 59
-        width: 201
-        height: 209
+        x: 77
+        y: 80
+        width: 163
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,6 +166,72 @@ TextureImporter:
       bones: []
       spriteID: 01687efd895824b43b463efd727f2011
       internalID: -685873928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pato enterrado_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 109
+        width: 107
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ae6bb949cacc046b4760a65842f63b
+      internalID: 1557122304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pato enterrado_2
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 108
+        width: 107
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2550876e7d716646af2f40be8fe28a5
+      internalID: 1654121863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pato enterrado_3
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 121
+        width: 100
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5bfc39fdad20bd4696ab456796b3bfc
+      internalID: -47680952
       vertices: []
       indices: 
       edges: []
@@ -185,6 +251,9 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       pato enterrado_0: -685873928
+      pato enterrado_1: 1557122304
+      pato enterrado_2: 1654121863
+      pato enterrado_3: -47680952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

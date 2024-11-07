@@ -127,9 +127,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 26
-        y: 5
+        y: 1
         width: 124
-        height: 86
+        height: 85
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,12 +148,12 @@ TextureImporter:
       name: pato nadando_1
       rect:
         serializedVersion: 2
-        x: 196
+        x: 200
         y: 5
         width: 124
-        height: 86
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 85
+      alignment: 9
+      pivot: {x: 0.423, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: pato nadando_2
       rect:
         serializedVersion: 2
-        x: 360
+        x: 367
         y: 5
         width: 124
-        height: 86
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 85
+      alignment: 9
+      pivot: {x: 0.42, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,10 +193,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 526
-        y: 5
+        y: 1
         width: 124
-        height: 86
-      alignment: 7
+        height: 85
+      alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -214,12 +214,12 @@ TextureImporter:
       name: pato nadando_4
       rect:
         serializedVersion: 2
-        x: 696
+        x: 700
         y: 5
         width: 124
-        height: 86
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 85
+      alignment: 9
+      pivot: {x: 0.422, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,12 +236,12 @@ TextureImporter:
       name: pato nadando_5
       rect:
         serializedVersion: 2
-        x: 860
+        x: 867
         y: 5
         width: 124
-        height: 86
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 85
+      alignment: 9
+      pivot: {x: 0.43, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
