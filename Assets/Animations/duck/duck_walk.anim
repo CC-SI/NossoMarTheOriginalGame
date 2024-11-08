@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: duck_walk_r
+  m_Name: duck_walk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -30,14 +30,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Grafico
+    path: Grafico/Pato
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.07, y: 0.07, z: 0.07}
+        value: {x: 0.07, y: 0.07, z: 0.07}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -47,7 +47,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Grafico
+    path: Grafico/Pato
   m_FloatCurves: []
   m_PPtrCurves:
   - serializedVersion: 2
@@ -61,7 +61,7 @@ AnimationClip:
     - time: 0.3
       value: {fileID: -2102694387, guid: 8c611d5b08b0bad448d208cb62cdb406, type: 3}
     attribute: m_Sprite
-    path: Grafico
+    path: Grafico/Pato
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -73,7 +73,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 888044131
+      path: 1404265086
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -82,7 +82,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 888044131
+      path: 1404265086
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -91,7 +91,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 888044131
+      path: 1404265086
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -142,7 +142,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Grafico
+    path: Grafico/Pato
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -163,7 +163,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Grafico
+    path: Grafico/Pato
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -184,7 +184,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Grafico
+    path: Grafico/Pato
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -194,7 +194,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.07
+        value: 0.07
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -205,7 +205,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Grafico
+    path: Grafico/Pato
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -226,7 +226,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Grafico
+    path: Grafico/Pato
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -247,7 +247,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Grafico
+    path: Grafico/Pato
     classID: 4
     script: {fileID: 0}
     flags: 0
