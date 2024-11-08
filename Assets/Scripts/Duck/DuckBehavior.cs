@@ -1,110 +1,150 @@
+using System;
 using System.Collections.Generic;
-using Actors;
 using Interaction;
 using Player;
-using TMPro;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
-public class DuckBehavior : InteractableObject, IInteraction
+namespace Duck
 {
-    [field: Header("Componentes Externos")] 
-    [SerializeField] private Transform alvo;
-
-    [SerializeField] private TMP_Text countDucks;
-    [SerializeField] private AudioClip clip;
-    private Movement movement;
-
-    [field: Header("Componentes Internos")]
-    private Rigidbody2D rb;
-    private Collider2D colisor;
-    private NavMeshAgent agent;
-
-    [field: Header("Eventos")]
-    [field: SerializeField] public UnityEvent<Vector2> OnMoved { get; private set; }
-
-    [field: Header("Lógicos")] 
-    private static int currentDuck = 0;
-    public bool isFollowing;
-    private AudioSource audioSource;
-    public GraphicBehaviour playerGraphic;
+	public class DuckBehavior : InteractableObject, IInteraction
+	{
+		const float WanderTime = 10;
+		static readonly List<DuckBehavior> Ducks = new();
     
-    private readonly Dictionary<string, Transform> alvos = new();
+		public static event Action<int> OnDuckRescued;
     
-    PlayerBehaviour Player => PlayerBehaviour.Instance;
+		Transform alvo;
+   
+		[field: Header("Componentes")]
+		[field: SerializeField]
+		public Collider2D colisor { get; private set; }
+   
+		[field: SerializeField]
+		public Movement movement { get; private set; }
     
-    private void Start()
-    {
-        if (countDucks != null)
-        {
-            currentDuck = 0;
-            countDucks.text = currentDuck.ToString();
-        }
-        rb = GetComponent<Rigidbody2D>();
-        colisor = GetComponent<Collider2D>();
-        agent = GetComponent<NavMeshAgent>();
-        movement = GetComponent<Movement>();
+		[field: SerializeField]
+		public AudioSource audioSource {get; private set;}
+    
+		protected bool IsFollowing;
+		float originalSpeed;
+    
+		PlayerBehaviour Player => PlayerBehaviour.Instance;
+    
+		public static int Rescued { get; private set; }
+		public static int TotalCount => Ducks.Count;
 
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        
-        if (clip != null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.clip = clip;
-        }
-
-        AddObject(colisor, this);
-    }
-    public void StartFollowing(PlayerBehaviour player)
-    {
-        // Inicia o seguimento do pato ao jogador se a instância do PlayerBehaviour estiver presente.
-        if (PlayerBehaviour.Instance)
-        {
-            alvo = PlayerBehaviour.Instance.transform;
-            if (movement != null)
-            {
-                movement.SetFollowTarget(alvo);
-            }
-
-            if (CompareTag("Duck"))
-            {
-                currentDuck++;
-                countDucks.text = currentDuck.ToString();
-            }
-
-            alvos.TryAdd("alvodafrente",  player.GetFollowTarget(this));
-            alvos.TryAdd("jogador", player.transform);
+		public bool IsRescued
+		{
+			get => IsFollowing;
+			private set
+			{
+				if(value)
+					Rescued++;
+				else if (IsRescued)
+					Rescued--;
             
-            if (audioSource != null)
-            {
-                audioSource.Play();
-            }
-
-            isFollowing = true;
-        }
-    }
-
-    private void Update()
-    {
-        if (!isFollowing) return;
-        
-        if (playerGraphic.IsMoving)
-        {
-            movement.SetFollowTarget(alvos.GetValueOrDefault("alvodafrente"));
-            return;
-        }
-        
-        movement.SetFollowTarget(alvos.GetValueOrDefault("jogador"));
-    }
+				IsFollowing = value;
+				OnDuckRescued?.Invoke(Rescued);
+			}
+		}
     
-    public virtual void  OnPlayerInteraction()
-    {
-        if (!isFollowing)
-        {
-            StartFollowing(Player); 
-            RemoveObject(colisor);
-        }
-    }
+		public int Index { get; private set; }
+
+		public static void Quack()
+		{
+			foreach (DuckBehavior duck in Ducks)
+			{
+				if(!duck.IsRescued)
+					continue;
+            
+				float variation = Random.value;
+
+				duck.audioSource.pitch = Mathf.Lerp(1, 1.1f, variation);;
+				duck.audioSource.volume = Mathf.Lerp(.9f, 1, variation);
+				duck.Invoke(nameof(QuackSound), variation);
+			}
+		}
+
+		void QuackSound()
+		{
+			audioSource.Play();
+		}
+    
+		private void Start()
+		{
+			AddObject(colisor, this);
+			Player.Movement.OnMoved.AddListener(OnPlayerMoved);
+		}
+		void StartFollowing()
+		{
+			alvo = Player.GetFollowTarget(this);
+        
+			if (movement)
+				movement.SetFollowTarget(alvo);
+
+			IsRescued = true;
+		}
+    
+		public virtual void  OnPlayerInteraction()
+		{
+			if (IsFollowing)
+				return;
+        
+			StartFollowing();
+			RemoveObject(colisor);
+		}
+    
+		void OnPlayerMoved(Vector2 direction, bool isSwimming)
+		{
+			if (!IsRescued)
+				return;
+        
+			bool playerStopped = Mathf.Approximately(direction.sqrMagnitude, 0);
+			CancelInvoke();
+			movement.Speed = originalSpeed;
+
+			movement.SetFollowTarget(playerStopped ? Player.transform : alvo);
+        
+			DelayedWander();
+		}
+    
+		void DelayedWander()
+		{
+			Invoke(nameof(Wander), 1 + Random.value * WanderTime);
+		}
+
+		void Wander()
+		{
+			Vector3 position = Random.insideUnitCircle * 5 + (Vector2)Player.transform.position;
+			if (movement.MoveTo(position))
+			{
+				DelayedWander();
+				movement.Speed = originalSpeed + Random.value;
+			}
+			else
+				Wander();
+		}
+
+		void Awake()
+		{
+			Index = TotalCount;
+			Ducks.Add(this);
+			originalSpeed = movement.Speed;
+		}
+
+		void OnDestroy()
+		{
+			Ducks.Remove(this);
+		}
+    
+#if UNITY_EDITOR
+		void Reset()
+		{
+			colisor = GetComponent<Collider2D>();
+			movement = GetComponent<Movement>();
+			audioSource = GetComponent<AudioSource>();
+		}
+#endif
+	}
 }

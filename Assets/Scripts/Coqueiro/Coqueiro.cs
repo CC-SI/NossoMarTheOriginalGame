@@ -1,4 +1,5 @@
 ﻿using Dialog.Manager;
+using Duck;
 using UnityEngine;
 
 namespace Coqueiro
@@ -9,7 +10,7 @@ namespace Coqueiro
         
         public override void OnPlayerInteraction()
         {
-            if (!isFollowing)
+            if (!IsFollowing)
             {
                 dialogManager.StartDialog();
             }

@@ -50,14 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: {fileID: 0}
-  countDucks: {fileID: 5905365837185629282, guid: 5123541a9acd97d42a95aec70418ae57, type: 3}
-  clip: {fileID: 8300000, guid: e5f724ae5e5484a47b087f94ccce8554, type: 3}
-  <OnMoved>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  isFollowing: 0
-  playerGraphic: {fileID: 0}
+  <colisor>k__BackingField: {fileID: 8063682653043679452}
+  <movement>k__BackingField: {fileID: 192423504008066649}
+  <audioSource>k__BackingField: {fileID: 8003984980887760023}
 --- !u!114 &192423504008066649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9ab8c0e84a91b4aa87a79773b7f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Agent>k__BackingField: {fileID: 5077117201620869165}
   <OnMoved>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -129,8 +125,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -516351846788621472, guid: 8b2545d574a98477c835d28489dc3753, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d395acf7fae35fb4aa748dd9434a7ac5, type: 3}
-  m_Resource: {fileID: 8300000, guid: d395acf7fae35fb4aa748dd9434a7ac5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e5f724ae5e5484a47b087f94ccce8554, type: 3}
+  m_Resource: {fileID: 8300000, guid: e5f724ae5e5484a47b087f94ccce8554, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

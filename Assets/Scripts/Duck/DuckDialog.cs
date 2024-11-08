@@ -16,7 +16,7 @@ namespace Duck
         
         public override void OnPlayerInteraction()
         {
-            if (!isFollowing)
+            if (!IsFollowing)
             {
                 if (objectToBeCaptured != null)
                 {

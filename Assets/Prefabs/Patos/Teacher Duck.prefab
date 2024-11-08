@@ -81,6 +81,27 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 379020310191507005}
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+--- !u!82 &1962093772892461573 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8003984980887760023, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 8370252215614617234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2003794712813065806 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8063682653043679452, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 8370252215614617234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8539594700396724427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 192423504008066649, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 8370252215614617234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8633985497449308194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9ab8c0e84a91b4aa87a79773b7f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8633985497449308194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
@@ -98,14 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249b120660266980a8ce2a369e3cf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: {fileID: 0}
-  countDucks: {fileID: 0}
-  clip: {fileID: 8300000, guid: e5f724ae5e5484a47b087f94ccce8554, type: 3}
-  <OnMoved>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  isFollowing: 0
-  playerGraphic: {fileID: 0}
+  <colisor>k__BackingField: {fileID: 2003794712813065806}
+  <movement>k__BackingField: {fileID: 8539594700396724427}
+  <audioSource>k__BackingField: {fileID: 1962093772892461573}
   dialogManager: {fileID: 0}
   objectToBeCaptured: {fileID: 0}
   isDuckAguaCoco: 0
