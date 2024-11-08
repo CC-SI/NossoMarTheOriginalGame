@@ -41,6 +41,11 @@ namespace Dialog.Manager
                         dialogUIManager.ShowCoqueiro(true);
                         break;
                     
+                    // Pato Lixo
+                    case "pato_lixo_agradecendo":
+                        GameManager.LoadMiniGame();
+                        break;
+                    
                     // Pato Professor
                     case "pergunta":
                         dialogUIManager.ShowDialog(false);

@@ -106,7 +106,8 @@ namespace MiniGame
                 OnMessageUpdated.Invoke("Coloque os lixos de volta na lixeira");
                 return;
             }
-            OnMessageUpdated.Invoke("Jogo concluído!");
+
+            GameManager.LoadGame();
         }
 
         public bool IsObjectSuperimposed(Bounds bounds, int index)
