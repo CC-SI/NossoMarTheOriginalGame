@@ -1,4 +1,3 @@
-using System;
 using Sound;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,19 +13,19 @@ namespace Menus
 
 		void Back()
 		{
-            if(GameManager.CurrentState == GameState.Menu)
-            {
-                ShowMainMenu();
-                return;
-            }
-            
-            if(GameManager.CurrentState.HasFlag(GameState.Playing))
-            {
-                ShowPauseMenu();
-                return;
-            }
-            
-			Debug.Log("Provavelmente falta configurar algo.", this);
+			switch (GameManager.CurrentState)
+			{
+				case GameState.Menu:
+					ShowMainMenu();
+					return;
+				case GameState.Praia:
+				case GameState.MiniGame:
+					ShowPauseMenu();
+					return;
+				default:
+					Debug.Log("Provavelmente falta configurar algo.", this);
+					break;
+			}
 		}
 		
 		void Awake()
