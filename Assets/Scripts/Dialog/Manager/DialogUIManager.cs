@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Duck;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,12 @@ namespace Dialog.Manager
     public class DialogUIManager : MonoBehaviour
     {
         [Header("Caixa de Dialogo")]
-        [SerializeField] private GameObject boxDialog;
+        [SerializeField] public GameObject boxDialog;
+        [SerializeField] private Animator boxDialogAnimatorCoqueiro;
         
         [Header("Texto do Dialogo")]
         [SerializeField] private TextMeshProUGUI textSpeaker;
-        [SerializeField] private TextMeshProUGUI textDialog;
+        [SerializeField] public TextMeshProUGUI textDialog;
 
         [Header("Botões")]
         [SerializeField] private Button fecharDialogo;
@@ -30,7 +32,9 @@ namespace Dialog.Manager
         [Header("Mensagem de Objeto pego (Opicional)")]
         [SerializeField] private GameObject mensagemObjetoPego;
         
-        [SerializeField] private GameObject coqueiro;
+        [SerializeField] private GameObject acessorioPato;
+        
+        [SerializeField] private GameObject IconeInteracao;
         
         public void InitComponent()
         {
@@ -47,9 +51,6 @@ namespace Dialog.Manager
             
             fecharDialogo.gameObject.SetActive(show);
             
-            if (coqueiro != null)
-                coqueiro.SetActive(show);
-            
             if (mensagemObjetoPego != null)
                 mensagemObjetoPego.SetActive(show);
 
@@ -61,6 +62,12 @@ namespace Dialog.Manager
 
             if (buttonIgnorarPato != null)
                 buttonIgnorarPato.gameObject.SetActive(show);
+            
+            if (acessorioPato != null)
+                acessorioPato.gameObject.SetActive(show);
+            
+            if (zonasDeAvancarDialogo != null)
+                zonasDeAvancarDialogo.gameObject.SetActive(show);
                 
         }
 
@@ -68,19 +75,20 @@ namespace Dialog.Manager
         {
             zonasDeAvancarDialogo.onClick.AddListener(() =>
             {
+                Debug.Log("Botão de avançar dialogo clicado!");
                 dialogManager.AvancarDialogo();
             });
-            
+
             fecharDialogo.onClick.AddListener(() =>
             {
                 dialogManager.EndDialog();
             });
-            
+
             buttonAjudarPato.onClick.AddListener(() =>
             {
                 dialogManager.AvancarDialogo();
             });
-            
+
             buttonIgnorarPato.onClick.AddListener(() =>
             {
                 dialogManager.EndDialog();
@@ -96,6 +104,11 @@ namespace Dialog.Manager
             
             zonasDeAvancarDialogo.gameObject.SetActive(show);
             fecharDialogo.gameObject.SetActive(show);
+
+            if (show && boxDialogAnimatorCoqueiro)
+            {
+                boxDialogAnimatorCoqueiro.SetBool("isTalking", true);
+            }
         }
         
         public void SetSpeaches(string speaker, string texto)
@@ -123,12 +136,9 @@ namespace Dialog.Manager
             }
         }
         
-        public void ShowCoqueiro(bool show)
+        public void ShowAcessorioPato(bool show)
         {
-            if (coqueiro != null)
-            {
-                coqueiro.SetActive(show);
-            }
+            acessorioPato.SetActive(show);
         }
         
         public void ShowMensagemObjetoPego(bool show)
@@ -139,6 +149,11 @@ namespace Dialog.Manager
             {
                 Invoke(nameof(HideMensagemObjetoPego), 5f);
             }
+        }
+        
+        public void ShowIconeInteracao(bool show)
+        {
+            IconeInteracao.SetActive(show);
         }
         
         private void HideMensagemObjetoPego()
