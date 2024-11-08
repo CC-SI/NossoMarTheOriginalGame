@@ -94,7 +94,12 @@ public class GameManager : MonoBehaviour
 		if (!loadData) 
 			Instance.LoadGameData();
 			
-		LoadScene((int)GameState.Playing, loadData);
+		LoadScene((int)GameState.Praia, loadData);
+	}
+
+	public static void LoadMiniGame()
+	{
+		LoadScene((int)GameState.MiniGame);
 	}
 	
 	static void LoadScene(int index, bool loadData = false)
