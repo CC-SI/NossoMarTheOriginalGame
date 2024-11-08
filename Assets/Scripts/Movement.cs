@@ -1,3 +1,4 @@
+using System;
 using Actors;
 using UnityEngine;
 using UnityEngine.AI;
@@ -5,27 +6,40 @@ using UnityEngine.Events;
 
 public class Movement : MonoBehaviour, IMovement
 {
+    [field: Header("Componentes")]
+    [field: SerializeField]
+    public NavMeshAgent Agent { get; private set; }
+    
     [field: Header("Eventos")]
-    [field: SerializeField] public UnityEvent<Vector2, bool> OnMoved { get; private set; }
+    [field: SerializeField]
+    public UnityEvent<Vector2, bool> OnMoved { get; private set; }
     
-    //[SerializeField] private FixedJoystick joystick;
-
-    private NavMeshAgent navMeshAgent;
-    private Transform followTarget;
-    private bool isInWater;
-    Vector3 direcao;
+    Transform followTarget;
     
-    public void Move(Vector2 direction)
+    bool isInWater;
+    Vector2 direction;
+    Vector3 lastVelocity;
+    
+    public float Speed
     {
-        direcao = direction;
+        get => Agent.speed;
+        set => Agent.speed = value;
+    }
+    
+    public void Move(Vector2 toDirection)
+    { 
+        direction = toDirection;
+        
+        if(!Agent.hasPath)
+            return;
+        
+        Agent.ResetPath();
     }
 
-    private void Start()
+    void Start()
     {
-        // Inicializa o NavMeshAgent e o Animator
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.updateRotation = false;
-        navMeshAgent.updateUpAxis = false;
+        Agent.updateRotation = false;
+        Agent.updateUpAxis = false;
     }
 
     private void FixedUpdate()
@@ -38,56 +52,64 @@ public class Movement : MonoBehaviour, IMovement
             return;
         }
         
-        // if (!joystick) return;
-        // float horizontal = joystick.Horizontal;
-        // float vertical = joystick.Vertical;
-        //
-        // var direcao = new Vector3(horizontal, vertical, 0).normalized;
-
-        if (direcao.magnitude >= 0.1f)
-        {
-            //Vector3 targetPosition = transform.position + direcao;
-            //navMeshAgent.SetDestination(targetPosition);
-            
-            navMeshAgent.velocity = direcao * navMeshAgent.speed;
-        }
-        else
-        {
-            navMeshAgent.ResetPath();
-        }
-        
-        OnMoved.Invoke(navMeshAgent.velocity, isInWater);
+        Agent.velocity = direction * Agent.speed;
+        Moved();
+    }
+    
+    public bool MoveTo(Vector3 position)
+    {
+        StopFollowing();
+        return Agent.SetDestination(position);
     }
 
     public void SetFollowTarget(Transform target)
     {
         followTarget = target;
     }
-
-    public void FollowTarget()
+    
+    public void StopFollowing()
     {
-        var posicaoAlvo = followTarget.position;
-        var posicaoPato = transform.position;
+        followTarget = null;
+        Agent.ResetPath();
+    }
 
-        _ = navMeshAgent.SetDestination(posicaoAlvo);
+    void FollowTarget()
+    {
+        _ = Agent.SetDestination(followTarget.position);
         
-        OnMoved.Invoke(navMeshAgent.velocity, isInWater);
+        Moved();
     }
 
     public bool IsPlayerWalking()
     {
-        return navMeshAgent.velocity.magnitude > 0.1f;
+        return Agent.velocity.magnitude > 0.1f;
     }
     
     private void CheckWaterMask()
     {
         var waterMask = NavMesh.GetAreaFromName("Water");
 
-        isInWater = !NavMesh.SamplePosition(navMeshAgent.transform.position, out _, 0.1f, waterMask);
+        isInWater = !NavMesh.SamplePosition(Agent.transform.position, out _, 0.1f, waterMask);
+    }
+
+    void Moved()
+    {
+        if(Agent.velocity == lastVelocity)
+            return;
+
+        lastVelocity = Agent.velocity;
+        OnMoved.Invoke(Agent.velocity, isInWater);
     }
 
     void OnDisable()
     {
-        direcao = Vector3.zero;
+        direction = Vector3.zero;
     }
+
+#if UNITY_EDITOR
+    void Reset()
+    {
+        Agent = GetComponent<NavMeshAgent>();
+    }
+#endif
 }
