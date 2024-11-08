@@ -1,3 +1,15 @@
 fileFormatVersion: 2
 guid: 9334f740fcdb47cba09af8f7e6bb9bc2
-timeCreated: 1731077154
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _quackAction: {fileID: -7109903973414498103, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
+  - button: {instanceID: 0}
+  - countText: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

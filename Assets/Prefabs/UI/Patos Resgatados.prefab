@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showMax: 1
+  _quackAction: {fileID: -7109903973414498103, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
   button: {fileID: 8934785948176815204}
   countText: {fileID: 5063274943394725405}
   audioSource: {fileID: 663729601183769894}

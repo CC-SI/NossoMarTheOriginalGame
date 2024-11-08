@@ -53,6 +53,9 @@ MonoBehaviour:
   <colisor>k__BackingField: {fileID: 8063682653043679452}
   <movement>k__BackingField: {fileID: 192423504008066649}
   <audioSource>k__BackingField: {fileID: 8003984980887760023}
+  <OnQuacking>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &192423504008066649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,9 +746,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7097082869088709419}
+  duckBehavior: {fileID: 2930147508589281616}
+  movement: {fileID: 192423504008066649}
   _moveParameter: isMoving
   _swimParameter: isSwimming
   _buriedParameter: isBurried
+  _quackParameter: quack
 --- !u!210 &8016910837703771749
 SortingGroup:
   m_ObjectHideFlags: 0

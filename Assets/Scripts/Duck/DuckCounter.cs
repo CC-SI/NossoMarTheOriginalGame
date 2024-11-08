@@ -1,6 +1,7 @@
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Duck
@@ -10,6 +11,9 @@ namespace Duck
 		[Header("Configuração")]
 		[SerializeField]
 		bool showMax = true;
+		[SerializeField]
+		InputActionReference _quackAction;
+		
 		[Header("Componentes")]
 		[SerializeField]
 		Button button;
@@ -18,14 +22,34 @@ namespace Duck
 		[SerializeField]
 		AudioSource audioSource;
 
+		InputAction QuackAction => _quackAction;
+
+		bool CanQuack
+		{
+			get => DuckBehavior.Rescued > 0;
+			set
+			{
+				button.interactable = value;
+				if(value)
+					QuackAction.Enable();
+				else
+					QuackAction.Disable();
+			}
+		}
+		
 		void OnClick()
 		{
 			DuckBehavior.Quack();
 		}
 		
+		void QuackPerformed(InputAction.CallbackContext context)
+		{
+			OnClick();
+		}
+		
 		void UpdateCount(int current)
 		{
-			button.interactable = current > 0;
+			CanQuack = current > 0;
 			int max = DuckBehavior.TotalCount;
 			StringBuilder value = new(current.ToString("D2"));
 			
@@ -40,6 +64,8 @@ namespace Duck
 		{
 			button.onClick.AddListener(OnClick);
 			DuckBehavior.OnDuckRescued += UpdateCount;
+
+			QuackAction.performed += QuackPerformed;
 		}
 
 		void Start()
@@ -54,6 +80,7 @@ namespace Duck
 		{
 			button = GetComponent<Button>();
 			countText = GetComponentInChildren<TMP_Text>(true);
+			audioSource = GetComponent<AudioSource>();
 		}
 #endif
 	}

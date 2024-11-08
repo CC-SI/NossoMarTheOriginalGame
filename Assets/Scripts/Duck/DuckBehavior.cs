@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Interaction;
 using Player;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Duck
@@ -25,6 +26,10 @@ namespace Duck
     
 		[field: SerializeField]
 		public AudioSource audioSource {get; private set;}
+		
+		[field: Header("Eventos")]
+		[field: SerializeField]
+		public UnityEvent OnQuacking { get; private set; }
     
 		protected bool IsFollowing;
 		float originalSpeed;
@@ -55,7 +60,8 @@ namespace Duck
 		{
 			foreach (DuckBehavior duck in Ducks)
 			{
-				if(!duck.IsRescued)
+				if(!duck.IsRescued
+				   || duck.movement.IsOnWater)
 					continue;
             
 				float variation = Random.value;
@@ -68,7 +74,11 @@ namespace Duck
 
 		void QuackSound()
 		{
+			if(movement.IsOnWater)
+				return;
+			
 			audioSource.Play();
+			OnQuacking.Invoke();
 		}
     
 		private void Start()
@@ -95,17 +105,19 @@ namespace Duck
 			RemoveObject(colisor);
 		}
     
-		void OnPlayerMoved(Vector2 direction, bool isSwimming)
+		void OnPlayerMoved(Vector2 direction, bool isMoving)
 		{
 			if (!IsRescued)
 				return;
-        
-			bool playerStopped = Mathf.Approximately(direction.sqrMagnitude, 0);
-			CancelInvoke();
+			
+			CancelInvoke(nameof(Wander));
 			movement.Speed = originalSpeed;
 
-			movement.SetFollowTarget(playerStopped ? Player.transform : alvo);
-        
+			movement.SetFollowTarget(isMoving ? alvo : Player.transform);
+			
+			if(isMoving)
+				return;
+			
 			DelayedWander();
 		}
     
