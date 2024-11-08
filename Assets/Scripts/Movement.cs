@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using Actors;
 using UnityEngine;
 using UnityEngine.AI;
@@ -14,16 +14,63 @@ public class Movement : MonoBehaviour, IMovement
     [field: SerializeField]
     public UnityEvent<Vector2, bool> OnMoved { get; private set; }
     
-    Transform followTarget;
+    [field: SerializeField]
+    public UnityEvent<bool> OnWaterEvent { get; private set; }
     
-    bool isInWater;
+    Transform followTarget;
+
+    bool isOnWater;
+    bool isMoving;
     Vector2 direction;
     Vector3 lastVelocity;
+
+    public bool IsOnWater
+    {
+        get => isOnWater;
+        private set
+        {
+            if (isOnWater == value)
+                return;
+
+            isOnWater = value;
+            OnWaterEvent.Invoke(isOnWater);
+        }
+    }
+    
+    public bool IsMoving
+    {
+        get
+        {
+            if (!Agent
+                || !Agent.enabled
+                || !isActiveAndEnabled)
+                return false;
+            return isMoving;
+        }
+
+        private set
+        {
+            isMoving = value;
+            OnMoved.Invoke(Agent.velocity, isMoving);
+        }
+    }
     
     public float Speed
     {
         get => Agent.speed;
         set => Agent.speed = value;
+    }
+    
+    public void Disable()
+    {
+        Agent.enabled = false;
+        enabled = false;
+    }
+    
+    public void Enable()
+    {
+        Agent.enabled = true;
+        enabled = false;
     }
     
     public void Move(Vector2 toDirection)
@@ -36,13 +83,18 @@ public class Movement : MonoBehaviour, IMovement
         Agent.ResetPath();
     }
 
-    void Start()
+    IEnumerator Start()
     {
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
+
+        yield return new WaitUntil(() => Agent.isOnNavMesh);
+        
+        CheckWaterMask();
+        Moved();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         CheckWaterMask();
         
@@ -79,17 +131,12 @@ public class Movement : MonoBehaviour, IMovement
         
         Moved();
     }
-
-    public bool IsPlayerWalking()
-    {
-        return Agent.velocity.magnitude > 0.1f;
-    }
     
-    private void CheckWaterMask()
+    void CheckWaterMask()
     {
         var waterMask = NavMesh.GetAreaFromName("Water");
 
-        isInWater = !NavMesh.SamplePosition(Agent.transform.position, out _, 0.1f, waterMask);
+        IsOnWater = !NavMesh.SamplePosition(Agent.transform.position, out _, 0.1f, waterMask);
     }
 
     void Moved()
@@ -98,7 +145,7 @@ public class Movement : MonoBehaviour, IMovement
             return;
 
         lastVelocity = Agent.velocity;
-        OnMoved.Invoke(Agent.velocity, isInWater);
+        IsMoving = Agent.velocity.magnitude > 0.1f;
     }
 
     void OnDisable()
