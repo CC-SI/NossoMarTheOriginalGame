@@ -57,5 +57,31 @@ namespace Dialog
         {
             return dialogIndex;
         }
+        
+        public Dialogo GetDialogoPorId(string id)
+        {
+            foreach (var dialogo in Dialogos)
+            {
+                if (dialogo.id == id)
+                {
+                    return dialogo;
+                }
+            }
+            
+            return null;
+        }
+
+        public Dialogo AtualizarShowCocoPorId(string id, bool novoValor)
+        {
+            Dialogo dialogo = GetDialogoPorId(id);
+
+            if (dialogo != null)
+            {
+                dialogo.ShowCoco = novoValor;
+                Debug.Log($"ShowCoco para o diálogo com ID {id} foi atualizado para {novoValor}");
+            }
+    
+            return dialogo; 
+        }
     }
 }
