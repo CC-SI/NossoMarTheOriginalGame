@@ -13,25 +13,24 @@ namespace Dialog.Manager
         [SerializeField] private TextMeshProUGUI perguntaText;
         [SerializeField] private List<Button> botoesAlternativas = new() { null, null, null };
 
-        [SerializeField] private bool isShowCoco;
+        [SerializeField] public bool isShowCoco;
+
+        [SerializeField] private Animator coqueiroAnimator;
         
         [SerializeField] private List<GameObject> cocos;
-
-        [SerializeField] private GameObject mensagemAcertoOuErro;
-        [SerializeField] private TextMeshProUGUI mensagemAcertoOuErroText;
         
         private readonly List<int> usedIndices = new();
         
         private PerguntaManager perguntaManager;
         private DialogoPergunta dialogoAtual;
-
-        // public bool IsCoqueiro;
         
         public void InitComponent()
         {
             painelPerguntas.SetActive(false);
             perguntaText.gameObject.SetActive(false);
 
+            isShowCoco = false;
+            
             foreach (var botao in botoesAlternativas)
             {
                 if (botao != null)
@@ -44,16 +43,6 @@ namespace Dialog.Manager
             {
                 coco.SetActive(false);
             }
-            
-            if (mensagemAcertoOuErro != null)
-            {
-                mensagemAcertoOuErro.SetActive(false);
-            }
-        
-            if (mensagemAcertoOuErroText != null)
-            {
-                mensagemAcertoOuErroText.gameObject.SetActive(false);
-            }
         }
 
         public void ShowPainelPerguntas(bool show)
@@ -61,6 +50,11 @@ namespace Dialog.Manager
             painelPerguntas.SetActive(show);
             perguntaText.gameObject.SetActive(show);
 
+            if (show && coqueiroAnimator != null)
+            {
+                coqueiroAnimator.SetBool("isTalking", true);
+            }
+            
             foreach (var botao in botoesAlternativas)
             {
                 if (botao != null)
@@ -128,7 +122,7 @@ namespace Dialog.Manager
             if (correta)
             {
                 perguntaManager.IncremetarAcertos();
-        
+
                 if (isShowCoco)
                 {
                     ShowCocoRandom();
@@ -139,15 +133,7 @@ namespace Dialog.Manager
             StartCoroutine(EsperarParaProximaPergunta());
         }
 
-        
-        private void ShowMensagemAcertoOuErro(bool acertou)
-        {
-            mensagemAcertoOuErro.SetActive(true);
-            mensagemAcertoOuErroText.gameObject.SetActive(true);
-            mensagemAcertoOuErroText.text = acertou ? "Acertou!" : "Errou!";
-        }
-
-        private void ShowCocoRandom()
+        public void ShowCocoRandom()
         {
             if (usedIndices.Count < cocos.Count)
             {
@@ -230,15 +216,6 @@ namespace Dialog.Manager
             yield return new WaitForSeconds(1f); 
             perguntaManager.AvancarPergunta();
             HabilitarBotoes();
-        }
-        
-        private IEnumerator OcultarMensagemAcertoOuErro()
-        {
-            yield return new WaitForSeconds(4f); 
-            mensagemAcertoOuErroText.gameObject.SetActive(false);
-            mensagemAcertoOuErro.SetActive(false);
-            
-            ShowPainelPerguntas(true);
         }
     }
 }
