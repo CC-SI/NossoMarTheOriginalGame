@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: Coqueiro
   m_EditorClassIdentifier: 
   Dialogos:
-  - id: coqueiro1
-    speaker: Coqueiro
-    texto: "Bem-vindo! Estou aqui para testar seu conhecimento. Responda \xE0s minhas
-      perguntas e receber\xE1 um coco por cada resposta correta."
-    pergunta: {fileID: 0}
-  - id: player_coqueiro_1
-    speaker: Personagem
-    texto: Vamos nessa!
-    pergunta: {fileID: 0}
-  - id: perguntas_coqueiro
-    speaker: 
-    texto: 
-    pergunta: {fileID: 11400000, guid: 7a58e6bf34091654f9f644c4b866fa7a, type: 2}
+    - id: coqueiro1
+      speaker: Coqueiro
+      texto: "Bem-vindo! Estou aqui para testar seu conhecimento. Responda às minhas perguntas e receberá um coco por cada resposta correta."
+      pergunta: {fileID: 0}
+    - id: player_coqueiro_1
+      speaker: Personagem
+      texto: "Vamos nessa!"
+      pergunta: {fileID: 0}
+    - id: perguntas_coqueiro
+      speaker: 
+      texto: 
+      pergunta: {fileID: 11400000, guid: 7a58e6bf34091654f9f644c4b866fa7a, type: 2}

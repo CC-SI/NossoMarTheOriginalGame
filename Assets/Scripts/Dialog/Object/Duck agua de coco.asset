@@ -18,11 +18,14 @@ MonoBehaviour:
     texto: "Ol\xE1! Estou morrendo de sede e preciso de 3 cocos frescos. Por favor,
       v\xE1 at\xE9 o coqueiro e pegue-os para mim."
     pergunta: {fileID: 0}
-  - id: player_confirmando
+    ShowCoco: 0
+  - id: player_confirmando_agua_coco
     speaker: Personagem
     texto: Claro Pato, irei pegar os cocos no coqueiro.
     pergunta: {fileID: 0}
+    ShowCoco: 0
   - id: pato_agradecendo
     speaker: Pato
-    texto: "Obrigadoo!! Voc\xEA conseguiu matar minha sede"
+    texto: "Obrigadoo!! Voc\xEA conseguiu matar minha sede."
     pergunta: {fileID: 0}
+    ShowCoco: 0

@@ -16,15 +16,14 @@ MonoBehaviour:
   Dialogos:
   - id: pata_madame1
     speaker: Pata
-    texto: "Oh n\xE3o! Meu chap\xE9u de praia! Eu o perdi na areia e agora n\xE3o
-      consigo encontr\xE1-lo em lugar nenhum. Voc\xEA pode me ajudar a encontrar?"
+    texto: "Oh não! Meu chapéu de praia! Eu o perdi na areia e agora não consigo encontrá-lo em lugar nenhum. Você pode me ajudar a encontrar?"
     typeDialog: 0
   - id: player_madame1
-    speaker: Player
-    texto: "Claro, Madame! Vamos procurar pelo seu chap\xE9u."
+    speaker: Personagem
+    texto: "Claro, Madame! Vamos procurar pelo seu chapéu."
     typeDialog: 0
   - id: pata_madame_agradecendo
     speaker: Pata
-    texto: "Voc\xEA encontrou! Muito obrigada agora posso continuar minha jornada.
-      Voc\xEA \xE9 um verdadeiro her\xF3i! Aqui est\xE1 uma recompensa\_para\_voc\xEA."
+    texto: "Você encontrou! Muito obrigada, agora posso continuar minha jornada. Você é um verdadeiro herói! Aqui está uma recompensa para você."
     typeDialog: 0
+
