@@ -1,1 +1,1 @@
-# Nosso Mar : Salve os Patinhos 🦆
+# Nosso Mar : Salve os Patinhos 
