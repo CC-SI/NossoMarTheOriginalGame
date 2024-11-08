@@ -10,5 +10,6 @@ namespace Dialog
         public string speaker;
         public string texto;
         public PerguntaObject pergunta;
+        public bool ShowCoco;
     }
 }
