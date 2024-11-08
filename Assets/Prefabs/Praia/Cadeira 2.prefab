@@ -8,33 +8,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3919638248366396415, guid: b71970f3bf4054598b015115f088384d, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3919638248366396415, guid: b71970f3bf4054598b015115f088384d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6c0d430a8556d2949a45039e5d5dacad, type: 3}
-    - target: {fileID: 4462880200983891714, guid: b71970f3bf4054598b015115f088384d, type: 3}
-      propertyPath: m_Size.y
-      value: 0.044882666
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462880200983891714, guid: b71970f3bf4054598b015115f088384d, type: 3}
-      propertyPath: m_Center.y
-      value: 0.06287416
-      objectReference: {fileID: 0}
-    - target: {fileID: 4553224964358436653, guid: b71970f3bf4054598b015115f088384d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4553224964358436653, guid: b71970f3bf4054598b015115f088384d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5608314243924121106, guid: b71970f3bf4054598b015115f088384d, type: 3}
       propertyPath: m_Name
-      value: Cadeira 1 Variant
+      value: Cadeira 2
       objectReference: {fileID: 0}
     - target: {fileID: 5636346760062507955, guid: b71970f3bf4054598b015115f088384d, type: 3}
       propertyPath: m_LocalScale.x

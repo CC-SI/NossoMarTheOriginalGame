@@ -9,6 +9,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7662744582235687652, guid: c5793656ba511114b9be5705dbae8eb7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662744582235687652, guid: c5793656ba511114b9be5705dbae8eb7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662744582235687652, guid: c5793656ba511114b9be5705dbae8eb7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9047559
       objectReference: {fileID: 0}
@@ -78,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9161116019652764471, guid: c5793656ba511114b9be5705dbae8eb7, type: 3}
       propertyPath: m_Name
-      value: Arvore 10 Variant
+      value: Arvore 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
