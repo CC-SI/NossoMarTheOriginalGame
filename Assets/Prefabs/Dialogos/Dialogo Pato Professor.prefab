@@ -56,7 +56,7 @@ MonoBehaviour:
   dialogUIManager: {fileID: 2889538280338308941}
   dialogObject: {fileID: 11400000, guid: 80461611e6add1b4cb8406493d6fe7df, type: 2}
   controllerDialogIdSpeeches: {fileID: 4065724898758996621}
-  _duckDialog: {fileID: 379020310191507005, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
+  _duckDialog: {fileID: 0}
   perguntaManager: {fileID: 8510061469654938181}
 --- !u!114 &4065724898758996621
 MonoBehaviour:
