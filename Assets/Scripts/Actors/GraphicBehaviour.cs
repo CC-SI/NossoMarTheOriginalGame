@@ -9,21 +9,22 @@ namespace Actors
         [SerializeField] private string _moveParameter;
         [SerializeField] private string _swimParameter;
         [SerializeField] private string _buriedParameter;
-        [SerializeField] private string _xParameter;
-        [SerializeField] private string _yParameter;
         
         private IMovement movement;
+        Vector2 direction;
         
         public Vector2 Direction
         {
-            get => new(animator.GetFloat(_xParameter), animator.GetFloat(_yParameter));
+            get => direction;
             set
             {
-                if (value.x != 0)
-                    animator.SetFloat(_xParameter, value.x);
+                if(Mathf.Approximately(value.sqrMagnitude, 0))
+                    return;
                 
-                if (value.x != 0)
-                    animator.SetFloat(_yParameter, value.y);
+                if(!Mathf.Approximately(value.x, 0))
+                    transform.localScale = new Vector3(value.x > 0 ? -1 : 1, 1, 1);
+                
+                direction = value;
             }
         }
 
@@ -45,26 +46,21 @@ namespace Actors
             set => animator.SetBool(_buriedParameter, value);
         }
 
-        public void BuriedDuck()
+        void OnMove(Vector2 velocity, bool isOnWater)
         {
-            IsBuried = true;
-        }
-
-        private void OnMove(Vector2 velocity, bool isOnWater)
-        {
-            IsMoving = velocity.sqrMagnitude != 0;
+            IsMoving = !Mathf.Approximately(velocity.sqrMagnitude, 0);
             IsSwimming = isOnWater;
             Direction = velocity.normalized;
         }
         
-        private void Awake()
+        void Awake()
         {
             movement = GetComponentInParent<IMovement>(true);
             movement?.OnMoved.AddListener(OnMove);
         }
 
 #if UNITY_EDITOR
-        private void Reset()
+        void Reset()
         {
             animator = GetComponentInParent<Animator>(true);
         }
