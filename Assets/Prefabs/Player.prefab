@@ -134,9 +134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3346849043136276075}
+  duckBehavior: {fileID: 0}
+  movement: {fileID: 6398801785595304622}
   _moveParameter: isMoving
   _swimParameter: isSwimming
   _buriedParameter: 
+  _quackParameter: 
 --- !u!1 &4921332446758901547
 GameObject:
   m_ObjectHideFlags: 0
