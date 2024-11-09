@@ -1,3 +1,20 @@
 fileFormatVersion: 2
 guid: 15949dd6d6fa44f2a667de3ed204702b
-timeCreated: 1731147010
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _nextAction: {fileID: -3714341705632562315, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
+  - _closeAction: {fileID: -2161261320098930124, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
+  - speakerBox: {instanceID: 0}
+  - speakerText: {instanceID: 0}
+  - dialogText: {instanceID: 0}
+  - content: {instanceID: 0}
+  - advanceButton: {instanceID: 0}
+  - closeButton: {instanceID: 0}
+  - animator: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

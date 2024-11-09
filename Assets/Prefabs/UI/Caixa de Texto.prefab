@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typingSpeed: 0.05
+  _nextAction: {fileID: -3714341705632562315, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
+  _closeAction: {fileID: -2161261320098930124, guid: eae17ef8b767a4d548392c463abf0472, type: 3}
   _openParameter: open
   speakerBox: {fileID: 6014631584723721678}
   speakerText: {fileID: 7443477753885877524}

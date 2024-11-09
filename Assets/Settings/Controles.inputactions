@@ -283,6 +283,76 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Caixa de Texto",
+            "id": "56fd0298-4419-4af1-8b14-3d6d7b816b28",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "8ef0e777-8fc0-46a3-ad36-7e00baecb63b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Close",
+                    "type": "Button",
+                    "id": "f09822d1-c888-493a-b570-02a0e0e78e4b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1eb8299b-8307-46f8-b7a9-a20a4aae7ae2",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6aa2ee5-c49b-4a2a-903c-0a6bf3d24f97",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f2f1f48-c539-46d0-8d1a-0aa5b22224c5",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "006b4fc9-0443-45ea-875b-2214efa8b716",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

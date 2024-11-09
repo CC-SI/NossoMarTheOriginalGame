@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Dialog
@@ -12,6 +12,10 @@ namespace Dialog
 		[SerializeField]
 		[Min(0)]
 		float typingSpeed = 0.05f;
+		[SerializeField]
+		InputActionReference _nextAction;
+		[SerializeField]
+		InputActionReference _closeAction;
 
 		[Header("Animações")]
 		[SerializeField]
@@ -43,6 +47,9 @@ namespace Dialog
 			get => animator.GetBool(_openParameter);
 			private set => animator.SetBool(_openParameter, value);
 		}
+		
+		InputAction NextAction => _nextAction.action;
+		InputAction CloseAction => _closeAction.action;
 
 		[ContextMenu("Teste")]
 		public void Open()
@@ -66,6 +73,13 @@ namespace Dialog
 
 		void TypingSpeedUp()
 		{
+			// Se tiver terminado de digitar, fecha o dialogo.
+			if (!isTyping)
+			{
+				Close();
+				return;
+			}
+			
 			if (instruction is null)
 			{
 				TypingCancel();
@@ -97,11 +111,47 @@ namespace Dialog
 			
 			isTyping = false;
 		}
+		
+		void NextActionPerformed(InputAction.CallbackContext context)
+		{
+			if(!advanceButton.isActiveAndEnabled)
+				return;
+			
+			TypingSpeedUp();
+		}
+		
+		void CloseActionPerformed(InputAction.CallbackContext context)
+		{
+			if(!closeButton.isActiveAndEnabled)
+				return;
+			
+			Close();
+		}
 
 		void Awake()
 		{
 			advanceButton.onClick.AddListener(TypingSpeedUp);
 			closeButton.onClick.AddListener(Close);
+			NextAction.performed += NextActionPerformed;
+			CloseAction.performed += CloseActionPerformed;
+		}
+
+		void OnDestroy()
+		{
+			NextAction.performed -= NextActionPerformed;
+			CloseAction.performed -= CloseActionPerformed;
+		}
+
+		void OnDisable()
+		{
+			NextAction.Disable();
+			CloseAction.Disable();
+		}
+
+		void OnEnable()
+		{
+			NextAction.Enable();
+			CloseAction.Enable();
 		}
 
 #if UNITY_EDITOR
