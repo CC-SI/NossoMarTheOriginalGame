@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Duck;
 using Interaction;
@@ -7,10 +6,9 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerBehaviour : MonoBehaviour, ISerializable
-    {
-        readonly List<DuckBehavior> ducks = new();
-        readonly List<ObjectToBeCaptured> objectToBeCaptureds = new(); 
+	public class PlayerBehaviour : MonoBehaviour, ISerializable
+	{
+		readonly List<DuckBehavior> ducks = new();
 
 		[field: Header("Componentes")]
 		[field: SerializeField]
@@ -30,24 +28,22 @@ namespace Player
 			return target;
 		}
 
-        public Transform GetFollowTarget()
-        {
-            if (ducks.Count + objectToBeCaptureds.Count < 1)
-                return transform;
+		public Transform GetFollowTarget()
+		{
+			if (ducks.Count < 1
+			    || ducks.Count % 6 == 0)
+				return transform;
 
-            if (objectToBeCaptureds.Count > 0)
-                return objectToBeCaptureds[^1].transform; 
-
-            return ducks[^1].transform; 
-        }
+			return ducks[^1].transform; 
+		}
         
-        public void Save(SaveData data){
-	        data.playerPosition = transform.position;
-        }
+		public void Save(SaveData data){
+			data.playerPosition = transform.position;
+		}
         
-        public void Load(SaveData data){
-	        transform.position = data.playerPosition;
-        }
+		public void Load(SaveData data){
+			transform.position = data.playerPosition;
+		}
 
 		void Awake()
 		{
@@ -67,11 +63,11 @@ namespace Player
 		}
 
 #if UNITY_EDITOR
-	void Reset()
-	{
-		Movement = GetComponent<Movement>();
-		InteractableZone = GetComponentInChildren<InteractableZone>(true);
-	}
+		void Reset()
+		{
+			Movement = GetComponent<Movement>();
+			InteractableZone = GetComponentInChildren<InteractableZone>(true);
+		}
 #endif
 	}
 }
