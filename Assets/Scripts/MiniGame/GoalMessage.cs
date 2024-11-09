@@ -10,17 +10,17 @@ namespace MiniGame
         
         private static MiniGame miniGame => MiniGame.Instance;
         
-        private void OnEnable()
+        void Awake()
         {
-            miniGame.OnMessageUpdated.AddListener(UpdateMessage);
+            miniGame.onMessageUpdated.AddListener(UpdateMessage);
         }
 
-        private void OnDisable()
+        void OnDisable()
         {
-            miniGame.OnMessageUpdated.RemoveListener(UpdateMessage);
+            miniGame.onMessageUpdated.RemoveListener(UpdateMessage);
         }
         
-        private void UpdateMessage(string message)
+        void UpdateMessage(string message)
         {
             messageText.text = message;
         }
