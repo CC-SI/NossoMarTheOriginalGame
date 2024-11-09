@@ -74,14 +74,30 @@ public class GameManager : MonoBehaviour
 	{
 		foreach(var save in Serializable)
 			save.Save(Instance.gameData);
+		
 		var json = Instance.gameData.ToJson();
 		PlayerPrefs.SetString(GameDataKey, json);
 	}
 	
 	public void LoadGameData()
 	{
+		if (!PlayerPrefs.HasKey(GameDataKey))
+		{
+			Debug.LogWarning("Nenhum dado salvo encontrado.");
+			return;
+		}
+		
 		var json = PlayerPrefs.GetString(GameDataKey);
 		gameData.FromJson(json);
+		
+		if (gameData == null)
+		{
+			Debug.LogError("Não tem save pra carregar.");
+			return;
+		}
+		
+		foreach (var save in Serializable)
+			save.Load(gameData);
 	}
 	
 	public static void LoadMainMenu()
@@ -91,7 +107,7 @@ public class GameManager : MonoBehaviour
 	
 	public static void LoadGame(bool loadData = false)
 	{
-		if (!loadData) 
+		if (loadData) 
 			Instance.LoadGameData();
 			
 		LoadScene((int)GameState.Praia, loadData);

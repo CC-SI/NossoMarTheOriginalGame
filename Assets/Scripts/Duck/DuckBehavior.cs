@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using Interaction;
 using Player;
+using Serialization;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Duck
 {
-	public class DuckBehavior : InteractableObject, IInteraction
+	public class DuckBehavior : InteractableObject, IInteraction, ISerializable
 	{
 		const float WanderTime = 10;
 		static readonly List<DuckBehavior> Ducks = new();
@@ -33,7 +35,8 @@ namespace Duck
     
 		protected bool IsFollowing;
 		float originalSpeed;
-    
+		private ISerializable serializableImplementation;
+
 		PlayerBehaviour Player => PlayerBehaviour.Instance;
     
 		public static int Rescued { get; private set; }
@@ -48,7 +51,7 @@ namespace Duck
 					Rescued++;
 				else if (IsRescued)
 					Rescued--;
-            
+				
 				IsFollowing = value;
 				OnDuckRescued?.Invoke(Rescued);
 			}
@@ -103,6 +106,7 @@ namespace Duck
         
 			StartFollowing();
 			RemoveObject(colisor);
+			GameManager.SaveGameData();
 		}
     
 		void OnPlayerMoved(Vector2 direction, bool isMoving)
@@ -138,16 +142,37 @@ namespace Duck
 				Wander();
 		}
 
+		public void Save(SaveData data){
+			foreach(DuckBehavior duck in Ducks){
+				if(duck.IsRescued)
+					data.ducks.Add(duck.Index);
+			}
+		}
+        
+		public void Load(SaveData data)
+		{
+			foreach (int duck in data.ducks)
+			{
+				if (duck < Ducks.Count)
+				{
+					DuckBehavior duckBehavior = Ducks[duck];
+					duckBehavior.IsRescued = true;
+				}
+			}
+		}
+		
 		void Awake()
 		{
+			GameManager.Subscribe(this);
 			Index = TotalCount;
-			Ducks.Add(this);
 			originalSpeed = movement.Speed;
+			Ducks.Add(this);
 		}
 
 		void OnDestroy()
 		{
 			Ducks.Remove(this);
+			GameManager.Unsubscribe(this);
 		}
     
 #if UNITY_EDITOR
