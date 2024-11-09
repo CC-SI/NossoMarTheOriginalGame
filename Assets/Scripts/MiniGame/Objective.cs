@@ -7,6 +7,7 @@ namespace MiniGame
     {
         [SerializeField] private MiniGameObject hiddenObject;
         [SerializeField] private SpriteRenderer sprite;
+        [SerializeField] private AudioSource duckSound;
         
         private bool isCollected;
         private bool isSuperimposed;
@@ -34,7 +35,7 @@ namespace MiniGame
 
                 if (value)
                 {
-                    miniGame.AlertSuperimposing(hiddenObject.Bounds, hiddenObject.Index);
+                    //miniGame.AlertSuperimposing(hiddenObject.Bounds, hiddenObject.Index);
                 }
             }
         }
@@ -44,7 +45,8 @@ namespace MiniGame
             IsSuperimposed = miniGame.IsObjectSuperimposed(hiddenObject.Bounds, hiddenObject.Index);
             
             if (IsSuperimposed) return;
-        
+            
+            duckSound.Play();
             IsCollected = true;
         }
         
@@ -52,6 +54,7 @@ namespace MiniGame
         private void Reset()
         {
             hiddenObject = GetComponent<MiniGameObject>();
+            duckSound = GetComponent<AudioSource>();
         }
 #endif
     }

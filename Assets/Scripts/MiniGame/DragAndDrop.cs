@@ -8,6 +8,8 @@ namespace MiniGame
     public class DragAndDrop : MonoBehaviour, IDragAndDrop
     {
         [SerializeField] private MiniGameObject draggableObject;
+        [SerializeField] private AudioSource trashSound;
+        public AudioClip dragged, dropped;
         [field: SerializeField] public UnityEvent<bool, bool> OnTouched { get; private set; }
         [field: SerializeField] public UnityEvent OnSuperimposed { get; private set; }
         
@@ -39,7 +41,7 @@ namespace MiniGame
 
                 if (value)
                 {
-                    miniGame.AlertSuperimposing(draggableObject.Bounds, draggableObject.Index);
+                    OnSuperimposed.Invoke();
                 }
             }
         }
@@ -63,7 +65,9 @@ namespace MiniGame
             IsSuperimposed = miniGame.IsObjectSuperimposed(draggableObject.Bounds, draggableObject.Index);
             
             if (IsSuperimposed) return;
-        
+            
+            trashSound.PlayOneShot(dragged);
+            
             IsDragging = true;
             
             MiniGame.UpdateTrashIndex(draggableObject);
@@ -72,6 +76,8 @@ namespace MiniGame
         private void OnMouseUp()
         {
             isOnTrashBin = TrashBin.ContainsObject(draggableObject.Bounds);
+            if(!IsSuperimposed)
+                trashSound.PlayOneShot(dropped);
             IsDragging = false;
 
             if (isOnTrashBin)
@@ -89,6 +95,7 @@ namespace MiniGame
         private void Reset()
         {
             draggableObject = GetComponent<MiniGameObject>();
+            trashSound = GetComponent<AudioSource>();
         }
 #endif
     }
