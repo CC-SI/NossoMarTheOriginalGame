@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Serialization;
 using Transitions;
@@ -62,6 +63,8 @@ public class GameManager : MonoBehaviour
 			Time.timeScale = value ? 0 : 1;
 		}
 	}
+	
+	public static bool IsLoadingGameData { get; private set; }
 
 	public static event Action<bool> OnGamePaused;
 
@@ -81,23 +84,11 @@ public class GameManager : MonoBehaviour
 	
 	public void LoadGameData()
 	{
-		if (!PlayerPrefs.HasKey(GameDataKey))
-		{
-			Debug.LogWarning("Nenhum dado salvo encontrado.");
+		if (!HasGameData)
 			return;
-		}
 		
 		var json = PlayerPrefs.GetString(GameDataKey);
 		gameData.FromJson(json);
-		
-		if (gameData == null)
-		{
-			Debug.LogError("Não tem save pra carregar.");
-			return;
-		}
-		
-		foreach (var save in Serializable)
-			save.Load(gameData);
 	}
 	
 	public static void LoadMainMenu()
@@ -128,15 +119,7 @@ public class GameManager : MonoBehaviour
 		if (!loadData)
 			operation.completed += _ => Instance.CompleteTransition();
 		else
-		{
-			operation.completed += _ =>
-			{
-				foreach (var save in Serializable)
-					save.Load(Instance.gameData);
-				
-				Instance.CompleteTransition();
-			};
-		}
+			Instance.StartCoroutine(LoadDataCoroutine(operation));
 		
 		Instance.transition.Execute(operation);
 	}
@@ -161,6 +144,29 @@ public class GameManager : MonoBehaviour
 	void CompleteTransition()
 	{
 		transition.Done();
+	}
+
+	static IEnumerator LoadDataCoroutine(AsyncOperation operation)
+	{
+		IsLoadingGameData = true;
+		yield return new WaitUntil(() => operation.isDone);
+		
+		WaitForEndOfFrame instruction = new();
+
+		// Dá uns 5 frames para os objetos carregarem.
+		for (int i = 0; i < 5; i++)
+			yield return instruction;
+		
+		foreach (var save in Serializable)
+			save.Load(Instance.gameData);
+		
+		IsLoadingGameData = false;
+
+		// Dá uns 5 frames antes de completar a transição.
+		for (int i = 0; i < 5; i++)
+			yield return instruction;
+				
+		Instance.CompleteTransition();
 	}
 
 	public static void Subscribe(ISerializable save)

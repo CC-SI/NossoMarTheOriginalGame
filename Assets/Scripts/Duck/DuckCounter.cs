@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -26,7 +27,7 @@ namespace Duck
 
 		bool CanQuack
 		{
-			get => DuckBehavior.Rescued > 0;
+			get => DuckBehavior.RescuedCount > 0;
 			set
 			{
 				button.interactable = value;
@@ -68,10 +69,16 @@ namespace Duck
 			QuackAction.performed += QuackPerformed;
 		}
 
+		void OnDestroy()
+		{
+			QuackAction.performed -= QuackPerformed;
+			DuckBehavior.OnDuckRescued -= UpdateCount;
+		}
+
 		void Start()
 		{
 			audioSource.enabled = false;
-			UpdateCount(DuckBehavior.Rescued);
+			UpdateCount(DuckBehavior.RescuedCount);
 			audioSource.enabled = true;
 		}
 

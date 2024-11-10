@@ -1,9 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Interaction;
 using Player;
 using Serialization;
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -39,7 +39,7 @@ namespace Duck
 
 		PlayerBehaviour Player => PlayerBehaviour.Instance;
     
-		public static int Rescued { get; private set; }
+		public static int RescuedCount { get; private set; }
 		public static int TotalCount => Ducks.Count;
 
 		public bool IsRescued
@@ -48,12 +48,12 @@ namespace Duck
 			private set
 			{
 				if(value)
-					Rescued++;
+					RescuedCount++;
 				else if (IsRescued)
-					Rescued--;
+					RescuedCount--;
 				
 				IsFollowing = value;
-				OnDuckRescued?.Invoke(Rescued);
+				OnDuckRescued?.Invoke(RescuedCount);
 			}
 		}
     
@@ -84,11 +84,6 @@ namespace Duck
 			OnQuacking.Invoke();
 		}
     
-		private void Start()
-		{
-			AddObject(colisor, this);
-			Player.Movement.OnMoved.AddListener(OnPlayerMoved);
-		}
 		void StartFollowing()
 		{
 			alvo = Player.GetFollowTarget(this);
@@ -142,29 +137,29 @@ namespace Duck
 				Wander();
 		}
 
-		public void Save(SaveData data){
-			foreach(DuckBehavior duck in Ducks){
-				if(duck.IsRescued)
-					data.ducks.Add(duck.Index);
-			}
+		public void Save(SaveData data)
+		{
+			if (!IsRescued)
+				return;
+			
+			data.ducks.Add(Index);
 		}
         
 		public void Load(SaveData data)
 		{
-			foreach (int duck in data.ducks)
-			{
-				if (duck < Ducks.Count)
-				{
-					DuckBehavior duckBehavior = Ducks[duck];
-					duckBehavior.IsRescued = true;
-				}
-			}
+			if(!data.ducks.Contains(Index))
+				return;
+			
+			RemoveObject(colisor);
+			StartFollowing();
 		}
 		
 		void Awake()
 		{
-			GameManager.Subscribe(this);
 			Index = TotalCount;
+#if UNITY_EDITOR
+			name = $"Pato {Index}";
+#endif
 			originalSpeed = movement.Speed;
 			Ducks.Add(this);
 		}
@@ -173,6 +168,29 @@ namespace Duck
 		{
 			Ducks.Remove(this);
 			GameManager.Unsubscribe(this);
+			
+			if(Ducks.Count > 0)
+				return;
+			
+			RescuedCount = 0;
+		}
+		
+		IEnumerator Start()
+		{
+			GameManager.Subscribe(this);
+			AddObject(colisor, this);
+			Player.Movement.OnMoved.AddListener(OnPlayerMoved);
+			
+			if(!GameManager.IsLoadingGameData)
+				yield break;
+			
+			yield return new WaitWhile(() => GameManager.IsLoadingGameData);
+
+			if (!IsRescued)
+				yield break;
+			
+			transform.position = Player.transform.position;
+			Wander();
 		}
     
 #if UNITY_EDITOR
