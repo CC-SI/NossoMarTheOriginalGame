@@ -1115,7 +1115,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -1381,7 +1381,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -1589,7 +1589,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -1901,17 +1901,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7316410269161171810, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
   m_PrefabInstance: {fileID: 160519025}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &424334351 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1426369822758299728, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-  m_PrefabInstance: {fileID: 6730222562224945371}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &434945784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1983,7 +1972,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -4692,7 +4681,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -4895,7 +4884,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -5113,7 +5102,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -6137,7 +6126,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -6414,7 +6403,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -6985,7 +6974,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -7438,7 +7427,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -8015,7 +8004,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -8104,7 +8093,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -8544,7 +8533,7 @@ PrefabInstance:
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: playerGraphic
       value: 
@@ -8804,7 +8793,7 @@ PrefabInstance:
     - target: {fileID: 6662653624113969183, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 6662653624113969183, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
       propertyPath: dialogManager
       value: 
@@ -9502,7 +9491,7 @@ PrefabInstance:
     - target: {fileID: 7298791176430058771, guid: 45087afa81ad8b441b56db0576f9985e, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 7298791176430058771, guid: 45087afa81ad8b441b56db0576f9985e, type: 3}
       propertyPath: dialogManager
       value: 
@@ -9546,7 +9535,7 @@ PrefabInstance:
     - target: {fileID: 379020310191507005, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 379020310191507005, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
       propertyPath: dialogManager
       value: 
@@ -9712,7 +9701,7 @@ PrefabInstance:
     - target: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: countDucks
       value: 
-      objectReference: {fileID: 424334351}
+      objectReference: {fileID: 0}
     - target: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: dialogManager
       value: 
@@ -9942,30 +9931,6 @@ PrefabInstance:
       propertyPath: mensagemObjetoPego
       value: 
       objectReference: {fileID: 1705204190}
-    - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: zonasDeAvancarDialogo.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[2]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[4]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1154124454948882891, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10035,10 +10000,6 @@ PrefabInstance:
       value: 319.3797
       objectReference: {fileID: 0}
     - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: coqueiro
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: acessorioPato
       value: 
       objectReference: {fileID: 0}
@@ -10050,30 +10011,6 @@ PrefabInstance:
       propertyPath: zonasDeAvancarDialogo
       value: 
       objectReference: {fileID: 1949837977}
-    - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: zonasDeAvancarDialogo.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[2]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3317798535139565003, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[4]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3960845545087103740, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10106,10 +10043,6 @@ PrefabInstance:
       propertyPath: _duckDialog
       value: 
       objectReference: {fileID: 1409295525}
-    - target: {fileID: 5969156249355961693, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6208844126948732645, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1908.4
@@ -10154,17 +10087,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7666010877280112637, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1931441507, guid: 13060f36e2b5230408642decb71fa387, type: 3}
     - target: {fileID: 7729233932470718468, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_Name
       value: UI Praia
-      objectReference: {fileID: 0}
-    - target: {fileID: 7734679084028938836, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: IconeInteracao
@@ -10178,62 +10103,10 @@ PrefabInstance:
       propertyPath: mensagemObjetoPego
       value: 
       objectReference: {fileID: 862244416}
-    - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: zonasDeAvancarDialogo.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[2]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[4]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: _isShowCoco
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: boxDialogAnimatorCoqueiro
       value: 
       objectReference: {fileID: 6320722730237277644}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: zonasDeAvancarDialogo.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[2]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[4]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8677124756175264618, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1906.3
@@ -10254,46 +10127,14 @@ PrefabInstance:
       propertyPath: IconeInteracao
       value: 
       objectReference: {fileID: 946185547}
-    - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: zonasDeAvancarDialogo.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[2]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: 'zonasDeAvancarDialogo.Array.data[4]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9018793397821300670, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: duckAguaCoco
       value: 
       objectReference: {fileID: 11400000, guid: dfdaf1b511c08ac4089cecce9282715e, type: 2}
     - target: {fileID: 9199889537326040691, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: coqueiro
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199889537326040691, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: isShowCoco
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9199889537326040691, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: duckAguaCoco
-      value: 
-      objectReference: {fileID: 11400000, guid: dfdaf1b511c08ac4089cecce9282715e, type: 2}
     - target: {fileID: 9199889537326040691, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: cocos.Array.size
       value: 5

@@ -14,7 +14,7 @@ namespace Menus
 		
 		static readonly WaitForSecondsRealtime Delay = new(DelayTime);
 		
-		bool IsOpen
+		protected virtual bool IsOpen
 		{
 			get => gameObject.activeInHierarchy;
 			set => gameObject.SetActive(value);

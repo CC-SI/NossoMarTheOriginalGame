@@ -10,6 +10,14 @@ namespace Menus
 		VolumeController[] volumes;
 		[SerializeField]
 		Button backButton;
+		[SerializeField]
+		RectTransform content;
+
+		protected override bool IsOpen
+		{
+			get => content.gameObject.activeInHierarchy;
+			set => content.gameObject.SetActive(value);
+		}
 
 		void Back()
 		{
@@ -52,6 +60,7 @@ namespace Menus
 		void Reset()
 		{
 			volumes = GetComponentsInChildren<VolumeController>(true);
+			content = transform.GetChild(0) as RectTransform;
 			var buttons = GetComponentsInChildren<Button>(true);
 			
 			backButton = buttons[^1];
