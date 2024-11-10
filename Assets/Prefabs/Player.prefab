@@ -279,6 +279,9 @@ MonoBehaviour:
   <OnMoved>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  <OnWaterEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6934519464119445249
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +442,7 @@ SpriteRenderer:
   m_SortingLayerID: 2115649195
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2145957447, guid: b366c9ca9ff74074795dc96bf7f2cb60, type: 3}
+  m_Sprite: {fileID: -2067889011, guid: c718c46ad5995459f90f65e4795daa7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
