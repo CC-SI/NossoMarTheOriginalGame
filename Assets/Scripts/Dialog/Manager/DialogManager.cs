@@ -6,7 +6,6 @@ namespace Dialog.Manager
 {
     public class DialogManager : MonoBehaviour
     {
-        [SerializeField] private bool isTutorial;
         [SerializeField] private DialogUIManager dialogUIManager;
         [SerializeField] private DialogObject dialogObject;
         [SerializeField] private ControllerDialogIdSpeeches controllerDialogIdSpeeches;
@@ -14,23 +13,11 @@ namespace Dialog.Manager
         [SerializeField] private PerguntaManager perguntaManager;
         [SerializeField] private bool isDuckBuried;
         [SerializeField] private Animator duckAnimator;
-        // private const string TUTORIAL_COMPLETED_KEY = "tutorial_completed";
-
-        private bool isTutorialCompleted = true;
         
         private void Start()
         {
             dialogUIManager.InitComponent();
             ResetDialog();
-            
-            if (isTutorialCompleted)
-            {
-                if (isTutorial)
-                {
-                    StartDialog();
-                }
-            }
-            
             
             if (duckAnimator != null && isDuckBuried)
             {
@@ -77,15 +64,9 @@ namespace Dialog.Manager
                     duckAnimator.SetBool("isBurried", false);
                 }
                 Debug.Log("ACABOU");
-                dialogUIManager.ShowNotCapturedDucksInTutorial(true);
             }
         }
-
-        public void EndDialogAndCaptureDuck()
-        {
-            EndDialog();
-            _duckDialog.StartFollowing();
-        }
+        
 
         public void AvancarDialogoSilenciosamente()
         {
@@ -101,18 +82,6 @@ namespace Dialog.Manager
             }
         }
 
-        /*
-        private IEnumerator TypeText(string text)
-        {
-            dialogUIManager.textDialog.text = ""; 
-            foreach (char letter in text)
-            {
-                dialogUIManager.textDialog.text += letter; 
-                yield return new WaitForSeconds(0.05f); 
-            }
-        }
-        */
-
         private void ShowCurrentDialog()
         {
             var currentDialog = dialogObject.GetDialogoAtual();
@@ -121,7 +90,6 @@ namespace Dialog.Manager
             
             dialogUIManager.ShowDialog(true);
             dialogUIManager.SetSpeaches(currentDialog.speaker, currentDialog.texto);
-            // StartCoroutine(TypeText(currentDialog.texto));
         }
 
         public void EndDialog()
