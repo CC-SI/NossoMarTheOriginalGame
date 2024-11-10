@@ -1,23 +1,43 @@
 ﻿using Duck;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 namespace Dialog.Manager
 {
     public class DialogManager : MonoBehaviour
     {
+        [SerializeField] private bool isTutorial;
         [SerializeField] private DialogUIManager dialogUIManager;
         [SerializeField] private DialogObject dialogObject;
         [SerializeField] private ControllerDialogIdSpeeches controllerDialogIdSpeeches;
         [SerializeField] private DuckDialog _duckDialog;
         [SerializeField] private PerguntaManager perguntaManager;
+        [SerializeField] private bool isDuckBuried;
+        [SerializeField] private Animator duckAnimator;
+        // private const string TUTORIAL_COMPLETED_KEY = "tutorial_completed";
+
+        private bool isTutorialCompleted = true;
         
         private void Start()
         {
             dialogUIManager.InitComponent();
             ResetDialog();
+            
+            if (isTutorialCompleted)
+            {
+                if (isTutorial)
+                {
+                    StartDialog();
+                }
+            }
+            
+            
+            if (duckAnimator != null && isDuckBuried)
+            {
+                duckAnimator.SetBool("isBurried", true);
+            }
         }
-
+        
         public void StartDialog()
         {
             if (dialogObject.Dialogos.Count == 0) return;
@@ -35,8 +55,6 @@ namespace Dialog.Manager
         {
             var next = dialogObject.AvancarDialogo();
             
-            Debug.Log("AA");
-            
             if (next)
             {
                 ShowCurrentDialog();
@@ -53,6 +71,13 @@ namespace Dialog.Manager
                 {
                     _duckDialog.StartFollowing();
                 }
+                
+                if (duckAnimator != null && isDuckBuried)
+                {
+                    duckAnimator.SetBool("isBurried", false);
+                }
+                Debug.Log("ACABOU");
+                dialogUIManager.ShowNotCapturedDucksInTutorial(true);
             }
         }
 
