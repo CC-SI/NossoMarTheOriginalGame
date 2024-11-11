@@ -1,18 +1,19 @@
 
+
 # Nosso Mar : Salve os Patinhos 🦆
 
 ## Integrantes do projeto:
 
 | Nome                           | RA |
 |--------------------------------|----|
-| Ana Carolina Rodrigues Severino | |
+| Ana Carolina Rodrigues Severino |2224201158|
 | Carolina de Andrade Franzolin   |2224105045|
 | Gabriel Matos Alencar           |2223106521|
-| Geovanna Vieira dos Santos      | |
-| Guilherme Augusto Schmidt Pereira| |
+| Geovanna Vieira dos Santos      |2222204887|
+| Guilherme Augusto Schmidt Pereira|423104395|
 | Guilherme Fortunato             |2224106521|
 | João Pedro Miguez               |2224103481|
-| Luis Eduardo Pedro              |     		 |
+| Luis Eduardo Pedro              |2223203182|     		 |
 | Lucas Oliveira Campos           |2223104810|
 | Oliver Christian Souza Santos   |2223202759|
 | Sheila Luiza Soares Cabral      |2224107373|
@@ -24,8 +25,16 @@ Esses patinhos foram levados pelas correntes oceânicas, aparecendo em praias de
 
 ## 📖 Descrição do Jogo
 <i><b>Nosso Mar: </i> <i>Salve os Patinhos</i> é um jogo educativo para conscientizar sobre os impactos da pulição.</b>
-<b>No jogo, o jogador assume o papel de um protetor dos oceanos e precisa localizar e regastar 20 patinhos de borracha espalhados pela praia, enfrentando desafios e aprendendo sobre questões ambientais ao longo do caminho.</b>
+<b>No jogo, o jogador assume o papel de um protetor dos oceanos e precisa localizar e resgatar 20 patinhos de borracha espalhados pela praia, enfrentando desafios e aprendendo sobre questões ambientais ao longo do caminho.</b>
 
 ## 🏫 Cliente: Colégio Emílio de Rousseau
 O cliente desse projeto é a escola Colégio Emílio de Rousseau, que utiliza o jogo <i>Nosso Mar: Salve os Patinhos</i> como uma ferramenta educativa para conscientizar os alunos sobre a importância de preservar os oceanos e combater a poluição.
 Este projeto foi desenvolvido com com intuito de oferecer um recurso didático interativo.
+
+## 🛠️ Ferramentas Utilizadas
+- **Unity**: Motor de jogo usado para o desenvolvimento e design de cenas interativas e objetos 2D.
+-  **C#**: Linguagem de programação usada para a lógica do jogo, como movimentos, interações e criação de eventos.
+- **GitHub**:  Plataforma de versionamento de código e colaboração em equipe, permitindo que os desenvolvedores compartilhem e sincronizem atualizações no código.
+-**PixelArt**: Site utilizado para criar o GameArt do jogo.
+
+## 🎮
