@@ -1,5 +1,4 @@
-﻿using Duck;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +9,7 @@ namespace Dialog.Manager
         [Header("Caixa de Dialogo")]
         [SerializeField] public GameObject boxDialog;
         [SerializeField] private Animator boxDialogAnimatorCoqueiro;
-        
+
         [Header("Texto do Dialogo")]
         [SerializeField] private TextMeshProUGUI textSpeaker;
         [SerializeField] public TextMeshProUGUI textDialog;
@@ -18,147 +17,209 @@ namespace Dialog.Manager
         [Header("Botões")]
         [SerializeField] private Button fecharDialogo;
 
-        [Header("Botões de Avançar Dialogo")] 
+        [Header("Botões de Avançar Dialogo")]
         [SerializeField] private Button zonasDeAvancarDialogo;
         [SerializeField] private DialogManager dialogManager;
 
-        [Header("Botões de Decisão (Opcional)")] 
+        [Header("Botões de Decisão (Opcional)")]
         [SerializeField] private Button buttonAjudarPato;
         [SerializeField] private Button buttonIgnorarPato;
 
-        [Header("Objetos que deve procurar (Opcional)")] 
+        [Header("Objetos que deve procurar (Opcional)")]
         [SerializeField] private GameObject PaOuChapeuOuCoco;
-        
+
         [Header("Mensagem de Objeto pego (Opicional)")]
         [SerializeField] private GameObject mensagemObjetoPego;
-        
+
         [SerializeField] private GameObject acessorioPato;
-        
+
         [SerializeField] private GameObject IconeInteracao;
+
+        [SerializeField] private FixedJoystick joystick;
+        
+        [SerializeField] private GameObject duckCaptured;
+
+        [SerializeField] private GameObject boxTimeText;
+        
+        [SerializeField] private TextMeshProUGUI timeText;
+        
+        
         
         public void InitComponent()
         {
             SetupDialogMain(false);
             SetupOnClick();
         }
-
+        
         private void SetupDialogMain(bool show)
         {
-            boxDialog.SetActive(show);
-            
-            textSpeaker.gameObject.SetActive(show);
-            textDialog.gameObject.SetActive(show);
-            
-            fecharDialogo.gameObject.SetActive(show);
-            
-            if (mensagemObjetoPego != null)
-                mensagemObjetoPego.SetActive(show);
-
-            if (PaOuChapeuOuCoco != null)
-                PaOuChapeuOuCoco.gameObject.SetActive(show);
-
-            if (buttonAjudarPato != null)
-                buttonAjudarPato.gameObject.SetActive(show);
-
-            if (buttonIgnorarPato != null)
-                buttonIgnorarPato.gameObject.SetActive(show);
-            
-            if (acessorioPato != null)
-                acessorioPato.gameObject.SetActive(show);
-            
-            if (zonasDeAvancarDialogo != null)
-                zonasDeAvancarDialogo.gameObject.SetActive(show);
-                
+            SetActive(boxDialog, show);
+            SetActive(textSpeaker, show);
+            SetActive(textDialog, show);
+            SetActive(fecharDialogo, show);
+            SetActive(mensagemObjetoPego, show);
+            SetActive(PaOuChapeuOuCoco, show);
+            SetActive(buttonAjudarPato, show);
+            SetActive(buttonIgnorarPato, show);
+            SetActive(acessorioPato, show);
+            SetActive(zonasDeAvancarDialogo, show);
         }
 
         private void SetupOnClick()
         {
-            zonasDeAvancarDialogo.onClick.AddListener(() =>
+            if (zonasDeAvancarDialogo != null)
             {
-                Debug.Log("Botão de avançar dialogo clicado!");
-                dialogManager.AvancarDialogo();
-            });
+                zonasDeAvancarDialogo.onClick.AddListener(() =>
+                {
+                    Debug.Log("FOI");
+                    dialogManager.AvancarDialogo();
+                });
+            }
 
-            fecharDialogo.onClick.AddListener(() =>
+            if (fecharDialogo != null)
             {
-                dialogManager.EndDialog();
-            });
+                fecharDialogo.onClick.AddListener(() =>
+                {
+                    dialogManager.EndDialog();
+                });
+            }
 
-            buttonAjudarPato.onClick.AddListener(() =>
+            if (buttonAjudarPato != null)
             {
-                dialogManager.AvancarDialogo();
-            });
+                buttonAjudarPato.onClick.AddListener(() =>
+                {
+                    dialogManager.AvancarDialogo();
+                });
+            }
 
-            buttonIgnorarPato.onClick.AddListener(() =>
+            if (buttonIgnorarPato != null)
             {
-                dialogManager.EndDialog();
-            });
+                buttonIgnorarPato.onClick.AddListener(() =>
+                {
+                    dialogManager.EndDialog();
+                });
+            }
         }
 
         public void ShowDialog(bool show)
         {
-            boxDialog.SetActive(show);
-            
-            textSpeaker.gameObject.SetActive(show);
-            textDialog.gameObject.SetActive(show);
-            
-            zonasDeAvancarDialogo.gameObject.SetActive(show);
-            fecharDialogo.gameObject.SetActive(show);
+            SetActive(boxDialog, show);
+            SetActive(textSpeaker, show);
+            SetActive(textDialog, show);
+            SetActive(zonasDeAvancarDialogo, show);
+            SetActive(fecharDialogo, show);
 
-            if (show && boxDialogAnimatorCoqueiro)
+            if (show && boxDialogAnimatorCoqueiro != null)
             {
                 boxDialogAnimatorCoqueiro.SetBool("isTalking", true);
             }
         }
-        
+
         public void SetSpeaches(string speaker, string texto)
         {
-            textSpeaker.text = speaker;
-            textDialog.text = texto;
+            if (textSpeaker != null) textSpeaker.text = speaker;
+            if (textDialog != null) textDialog.text = texto;
         }
-        
+
         public void ShowButtonsOfDecision(bool show)
         {
-            buttonAjudarPato.gameObject.SetActive(show);
-            buttonIgnorarPato.gameObject.SetActive(show);
+            SetActive(buttonAjudarPato, show);
+            SetActive(buttonIgnorarPato, show);
         }
-        
+
         public void ShowZonasDeAvancarDialogo(bool show)
         {
-            zonasDeAvancarDialogo.gameObject.SetActive(show);
+            SetActive(zonasDeAvancarDialogo, show);
         }
 
         public void ShowPaOuChapeuOuCoco(bool show)
         {
-            if (PaOuChapeuOuCoco != null)
-            {
-                PaOuChapeuOuCoco.gameObject.SetActive(show);
-            }
+            SetActive(PaOuChapeuOuCoco, show);
         }
-        
+
         public void ShowAcessorioPato(bool show)
         {
-            acessorioPato.SetActive(show);
+            SetActive(acessorioPato, show);
         }
-        
+
         public void ShowMensagemObjetoPego(bool show)
         {
-            mensagemObjetoPego.SetActive(show);
-            
+            SetActive(mensagemObjetoPego, show);
+
             if (show)
             {
                 Invoke(nameof(HideMensagemObjetoPego), 5f);
             }
         }
-        
+
         public void ShowIconeInteracao(bool show)
         {
-            IconeInteracao.SetActive(show);
+            SetActive(IconeInteracao, show);
         }
-        
+
         private void HideMensagemObjetoPego()
         {
-            mensagemObjetoPego.SetActive(false);
+            SetActive(mensagemObjetoPego, false);
+        }
+        
+        public void ShowJoystick(bool show)
+        {
+            SetActive(joystick, show);
+        }
+        
+        public void ShowDuckCaptured(bool show)
+        {
+            SetActive(duckCaptured, show);
+        }
+        
+        public void ShowBoxTimeText(bool show)
+        {
+            SetActive(boxTimeText, show);
+        }
+        
+        public void ShowTimeText(bool show)
+        {
+            SetActive(timeText, show);
+        }
+        
+        public void SetTimeText(string time)
+        {
+            if (timeText != null)
+            {
+                timeText.text = time;
+            }
+        }
+        
+        private void SetActive(FixedJoystick obj, bool show)
+        {
+            if (obj != null)
+            {
+                obj.gameObject.SetActive(show);
+            }
+        }
+        
+        private void SetActive(GameObject obj, bool show)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(show);
+            }
+        }
+
+        private void SetActive(TextMeshProUGUI obj, bool show)
+        {
+            if (obj != null)
+            {
+                obj.gameObject.SetActive(show);
+            }
+        }
+
+        private void SetActive(Button obj, bool show)
+        {
+            if (obj != null)
+            {
+                obj.gameObject.SetActive(show);
+            }
         }
     }
 }
