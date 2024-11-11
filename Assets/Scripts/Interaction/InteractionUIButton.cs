@@ -20,7 +20,7 @@ namespace Interaction
 
 		public bool IsShowing
 		{
-			get => button.gameObject.activeInHierarchy;
+			get => button.gameObject.activeSelf;
 			set => button.gameObject.SetActive(value);
 		}
         
@@ -45,7 +45,7 @@ namespace Interaction
 
 		void Awake()
 		{
-			IsShowing = false;
+			IsShowing = IsShowing;
 			
 			if (InteractAction is not null)
 				InteractAction.performed += OnInteractActionPerformed;
@@ -98,7 +98,7 @@ namespace Interaction
 #if UNITY_EDITOR
 		void Reset()
 		{
-			button = GetComponentInChildren<Button>(true);
+			button = GetComponent<Button>();
 		}
 #endif
 	}
