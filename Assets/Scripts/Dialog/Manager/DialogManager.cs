@@ -1,24 +1,27 @@
 ﻿using Duck;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Dialog.Manager
 {
     public class DialogManager : MonoBehaviour
     {
         [SerializeField] private DialogUIManager dialogUIManager;
-        [SerializeField] private DialogObject dialogObject;
         [SerializeField] private ControllerDialogIdSpeeches controllerDialogIdSpeeches;
         [SerializeField] private DuckDialog _duckDialog;
         [SerializeField] private PerguntaManager perguntaManager;
         [SerializeField] private bool isDuckBuried;
         [SerializeField] private Animator duckAnimator;
+        [SerializeField] private DialogObject dialogObject;
+        
+        [SerializeField] private bool isTutorial;
+        
+        public bool IsDialogActive;
         
         private void Start()
         {
             dialogUIManager.InitComponent();
             ResetDialog();
-            
+    
             if (duckAnimator != null && isDuckBuried)
             {
                 duckAnimator.SetBool("isBurried", true);
@@ -27,6 +30,8 @@ namespace Dialog.Manager
         
         public void StartDialog()
         {
+            IsDialogActive = true;
+            
             if (dialogObject.Dialogos.Count == 0) return;
             
             ShowCurrentDialog();
@@ -63,7 +68,6 @@ namespace Dialog.Manager
                 {
                     duckAnimator.SetBool("isBurried", false);
                 }
-                Debug.Log("ACABOU");
             }
         }
         
@@ -87,13 +91,41 @@ namespace Dialog.Manager
             var currentDialog = dialogObject.GetDialogoAtual();
             
             if (currentDialog == null) return;
+
+
+            string dialogText = currentDialog.texto;
+            
+            string deviceType = PlayerPrefs.GetString("DeviceType");
+            
+            if (currentDialog.id.Equals("joystick"))
+            {
+                if (deviceType.Equals("Mobile"))
+                {
+                    dialogText = "Olha só, no canto inferior esquerdo está o joystick. Use ele para se mover e explorar!";
+                }
+                else
+                {
+                    dialogText = "Você pode se movimentar usando as teclas \"A,W,S,D\" ou \"\u2190, \u2191, \u2192, \u2193\"";
+                }
+            } else if (currentDialog.id.Equals("button_captured"))
+            {
+                if (deviceType.Equals("Mobile"))
+                {
+                    dialogText = "Veja, ali está um patinho! Vá até ele. Irá aparecer um botão para capturá-lo. Pressione-o para salvar o patinho!";
+                }
+                else
+                {
+                    dialogText = "Veja, ali está um patinho! Vá até ele e pressione \"Espaço\" para capturá-lo e salvar o patinho!";
+                }
+            }
             
             dialogUIManager.ShowDialog(true);
-            dialogUIManager.SetSpeaches(currentDialog.speaker, currentDialog.texto);
+            dialogUIManager.SetSpeaches(currentDialog.speaker, dialogText);
         }
 
         public void EndDialog()
         {
+            IsDialogActive = false;
             dialogUIManager.ShowDialog(false);
         }
 
