@@ -10,7 +10,7 @@ namespace Dialog.DefinitionSoftware
             {
                 PlayerPrefs.SetString("DeviceType", "Mobile");
             } 
-            else if (Input.anyKey)
+            else if (Input.anyKey || Input.GetMouseButtonDown(0))
             {
                 PlayerPrefs.SetString("DeviceType", "Pc");
             }
