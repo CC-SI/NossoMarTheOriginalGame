@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Dialog.Manager
 {
@@ -7,10 +10,14 @@ namespace Dialog.Manager
         [SerializeField] private DialogObject dialogObject;
         [SerializeField] private DialogObject duckAguaCoco;
         [SerializeField] private DialogUIManager dialogUIManager;
+        [SerializeField] private TutorialUI tutorialUI;
         
         [Header("Opcional")]
         [SerializeField] private PerguntasUIManager perguntasUIManager;
+
+        [SerializeField] private TextMeshProUGUI timeText;
         
+        private bool isCountdownRunning = false;
         
         public void ControllerActionsForId()
         {
@@ -27,8 +34,53 @@ namespace Dialog.Manager
                     perguntasUIManager.isShowCoco = false;
                 }
                 
+                string devicyType = PlayerPrefs.GetString("DeviceType", "Unknown");
+                
+                
+                if (devicyType == "Mobile")
+                {
+                    dialogUIManager.ShowJoystick(true);
+                }
+                else
+                {
+                    dialogUIManager.ShowJoystick(false);
+                }
+                
+                
+                dialogUIManager.ShowDuckCaptured(true);
+                dialogUIManager.ShowBoxTimeText(false);
+                
                 switch (dialogId)
                 {
+                    // Tutorial Mobile
+                    case "primeira_instrucao":
+
+                        if (devicyType == "Mobile")
+                        {
+                            dialogUIManager.ShowJoystick(true);
+                        }
+                        
+                        dialogUIManager.ShowDuckCaptured(false);
+                        break;
+                    case "joystick":
+                        dialogUIManager.ShowDuckCaptured(false);
+                        
+                        if (devicyType == "Mobile")
+                        {
+                            dialogUIManager.ShowJoystick(true);
+                        }
+                        break;
+                    case "button_captured":
+                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        break;
+                    case "voce_pega_jeito_rapido":
+                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        if (!isCountdownRunning)
+                        {
+                            StartCoroutine(CountdownAndChangeScene(12f));
+                        }
+                        break;
+                    
                     // Coqueiro
                     case "perguntas_coqueiro":
                         dialogUIManager.ShowDialog(false);
@@ -67,7 +119,6 @@ namespace Dialog.Manager
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
                         Debug.Log("Você esta aqui");
                         duckAguaCoco.AtualizarShowCocoPorId("player_confirmando_agua_coco", true);
-                        
                         break;
                     
                     // Pato Lixo
@@ -113,6 +164,29 @@ namespace Dialog.Manager
                         break;
                 }
             }
+        }
+        private IEnumerator CountdownAndChangeScene(float countdownTime)
+        {
+            dialogUIManager.ShowBoxTimeText(true);
+            isCountdownRunning = true;
+            float remainingTime = countdownTime;
+
+            while (remainingTime > 0)
+            {
+                if (countdownTime != null)
+                {
+                    dialogUIManager.SetTimeText($"Mudando de cena em {remainingTime} segundos");
+                }
+
+                remainingTime -= 1f;
+                yield return new WaitForSeconds(1f);  
+            }
+            ChangeScene();
+        }
+        
+        private void ChangeScene()
+        {
+            SceneManager.LoadScene("Praia");
         }
     }
 }
