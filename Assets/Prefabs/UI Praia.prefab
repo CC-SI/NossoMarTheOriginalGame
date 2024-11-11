@@ -360,10 +360,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pausa
       objectReference: {fileID: 0}
-    - target: {fileID: 7437493473824547707, guid: a29d6d4b8954841ada9c165b0f526b41, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -843,34 +839,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Bot\xE3o de Pausa"
       objectReference: {fileID: 0}
-    - target: {fileID: 3626036376267027541, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626036376267027541, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626036376267027541, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2428145584081687736, guid: a29d6d4b8954841ada9c165b0f526b41, type: 3}
-    - target: {fileID: 3626036376267027541, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626036376267027541, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626036376267027541, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Menus.PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626036376267027541, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4106436946985984808, guid: 72a3afa4da3d6294492394e58853d440, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -972,10 +940,6 @@ PrefabInstance:
     - target: {fileID: 1854144011995724463, guid: 798ef0144c09f471481c50858e647a4b, type: 3}
       propertyPath: m_Name
       value: "Configura\xE7\xF5es"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854144011995724463, guid: 798ef0144c09f471481c50858e647a4b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8076288028188608072, guid: 798ef0144c09f471481c50858e647a4b, type: 3}
       propertyPath: m_Pivot.x
