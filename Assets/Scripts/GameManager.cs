@@ -103,7 +103,15 @@ public class GameManager : MonoBehaviour
 			
 		LoadScene((int)GameState.Praia, loadData);
 	}
-
+	
+	public static void LoadNewGame(bool loadData = false)
+	{
+		if (loadData) 
+			Instance.LoadGameData();
+			
+		LoadScene((int)GameState.Vila, loadData);
+	}
+	
 	public static void LoadMiniGame()
 	{
 		LoadScene((int)GameState.MiniGame);
