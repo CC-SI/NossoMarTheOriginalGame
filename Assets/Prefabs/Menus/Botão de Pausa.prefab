@@ -9,8 +9,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 194835736679163443, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194835736679163443, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194835736679163443, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 194835736679163443, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 14.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 194835736679163443, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 194835736679163443, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 194835736679163443, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -39.75
       objectReference: {fileID: 0}
     - target: {fileID: 914990798956833632, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_Name
@@ -18,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 994034366750715196, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.89
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1131245016372600500, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_Color.b
@@ -126,7 +150,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_fontSize
-      value: 40
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_margin.x
+      value: 36.41636
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_margin.z
+      value: 36.416313
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_fontStyle
@@ -134,15 +166,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_fontSizeBase
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_characterSpacing
-      value: -16.84
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207804824052231311, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207804824052231311, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9207804824052231311, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207804824052231311, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207804824052231311, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
