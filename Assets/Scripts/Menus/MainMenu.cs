@@ -19,7 +19,7 @@ namespace Menus
 			=> ButtonInvoke(() => GameManager.LoadGame(true));
 
 		void NewGame()
-			=> ButtonInvoke(() => GameManager.LoadGame());
+			=> ButtonInvoke(() => GameManager.LoadNewGame());
 
 		void Options()
 		{
