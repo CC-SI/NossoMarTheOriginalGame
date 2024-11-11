@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7097082869088709419}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: DuckDefault
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,12 @@ MonoBehaviour:
   <OnMoved>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  <OnWaterEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  audioSource: {fileID: 0}
+  swimming: {fileID: 0}
+  walking: {fileID: 0}
 --- !u!61 &8063682653043679452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +137,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: e5f724ae5e5484a47b087f94ccce8554, type: 3}
   m_Resource: {fileID: 8300000, guid: e5f724ae5e5484a47b087f94ccce8554, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -140,7 +146,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -150,23 +156,50 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.2
+      value: 0.9964142
+      inSlope: -2.5009959
+      outSlope: -2.5009959
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.4038147
+      value: 1.0510254
+      inSlope: -0.62524897
+      outSlope: -0.62524897
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5847336
+      value: 0.9887161
+      inSlope: -10.0039835
+      outSlope: -10.0039835
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.8
+      value: 0.046020508
+      inSlope: -0.39646307
+      outSlope: -0.39646307
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.49236655
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.10003988
+      outSlope: -0.10003988
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

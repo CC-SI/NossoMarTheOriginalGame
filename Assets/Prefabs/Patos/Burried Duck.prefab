@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4176918193062644200, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: duckBehavior
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
     m_RemovedGameObjects: []
@@ -111,6 +115,9 @@ MonoBehaviour:
   <colisor>k__BackingField: {fileID: 1052906926733360440}
   <movement>k__BackingField: {fileID: 7192523256988871613}
   <audioSource>k__BackingField: {fileID: 1038224908770406771}
+  <OnQuacking>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   dialogManager: {fileID: 0}
   objectToBeCaptured: {fileID: 0}
   isDuckAguaCoco: 0

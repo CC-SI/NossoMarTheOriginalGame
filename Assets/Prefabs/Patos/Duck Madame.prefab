@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.84
+      value: -7.67
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18
+      value: -18.61
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -62,7 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654472185523903136, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176918193062644200, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: duckBehavior
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5907493994882116978, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_IsActive
@@ -122,6 +126,9 @@ MonoBehaviour:
   <colisor>k__BackingField: {fileID: 2289741019015875948}
   <movement>k__BackingField: {fileID: 8253585040205077481}
   <audioSource>k__BackingField: {fileID: 2248107773685432615}
+  <OnQuacking>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
   dialogManager: {fileID: 0}
   objectToBeCaptured: {fileID: 0}
   isDuckAguaCoco: 0
