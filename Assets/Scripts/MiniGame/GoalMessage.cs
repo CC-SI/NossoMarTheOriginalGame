@@ -10,7 +10,7 @@ namespace MiniGame
         
         private static MiniGame miniGame => MiniGame.Instance;
         
-        void Awake()
+        void Start()
         {
             miniGame.onMessageUpdated.AddListener(UpdateMessage);
         }
