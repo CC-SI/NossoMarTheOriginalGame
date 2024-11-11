@@ -35,6 +35,6 @@ Este projeto foi desenvolvido com com intuito de oferecer um recurso didático i
 - **Unity**: Motor de jogo usado para o desenvolvimento e design de cenas interativas e objetos 2D.
 -  **C#**: Linguagem de programação usada para a lógica do jogo, como movimentos, interações e criação de eventos.
 - **GitHub**:  Plataforma de versionamento de código e colaboração em equipe, permitindo que os desenvolvedores compartilhem e sincronizem atualizações no código.
--**PixelArt**: Site utilizado para criar o GameArt do jogo.
+- **PixelArt**: Site utilizado para criar o GameArt do jogo.
 
 ## 🎮
