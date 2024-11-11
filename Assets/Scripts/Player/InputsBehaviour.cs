@@ -1,98 +1,135 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player
 {
-	public class InputsBehaviour : MonoBehaviour
-	{
-		[Header("Inputs")]
-		[SerializeField]
-		InputActionReference _moveAction;
+    public class InputsBehaviour : MonoBehaviour
+    {
+        [Header("Inputs")]
+        [SerializeField]
+        InputActionReference _moveAction; 
 
-		[Header("Componentes")]
-		[SerializeField]
-		FixedJoystick joystick;
+        [Header("Componentes")]
+        [SerializeField]
+        FixedJoystick joystick; 
 
-		bool Interrupted
-		{
-			get => !joystick.isActiveAndEnabled;
-			set
-			{
-				if(Interrupted == value)
-					return;
-				
-				joystick.gameObject.SetActive(!value);
-			}
-		}
+        InputAction MoveAction => _moveAction.action;
 
-		InputAction MoveAction => _moveAction.action;
-		
-		PlayerBehaviour Player => PlayerBehaviour.Instance;
-		
-		void Move(Vector2 direction)
-		{
-			if(!Player)
-			{
-				return;
-			}
-			
-			Player.Movement.Move(direction);
-		}
-		
-		void OnMoveActionPerformed(InputAction.CallbackContext context)
-		{
-			if(!Player)
-			{
-				return;
-			}
-			
-			var direction = context.ReadValue<Vector2>();
-			Interrupted = direction != Vector2.zero;
-			Move(direction);
-		}
+        PlayerBehaviour Player => PlayerBehaviour.Instance;
 
-		void Awake()
-		{
-			if (MoveAction is not null)
-			{
-				MoveAction.performed += OnMoveActionPerformed;
-				MoveAction.canceled += OnMoveActionPerformed;
-			}
-		}
+        private string deviceType; 
 
-		void FixedUpdate()
-		{
-			if(Interrupted)
-				return;
-			
-			Player.Movement.Move(joystick.Direction);
-		}
 
-		void OnDestroy()
-		{
-			if (MoveAction is not null)
-			{
-				MoveAction.performed -= OnMoveActionPerformed;
-				MoveAction.canceled -= OnMoveActionPerformed;
-			}
-		}
+        private void Update()
+        {
+            deviceType = PlayerPrefs.GetString("DeviceType", "Pc");
 
-		void OnDisable()
-		{
-			MoveAction.Disable();
-		}
+            SetupDeviceInputs();
+        }
 
-		void OnEnable()
-		{
-			MoveAction.Enable();
-			Interrupted = false;
-		}
-		
+        void Start()
+        {
+            deviceType = PlayerPrefs.GetString("DeviceType", "Pc");
+
+            SetupDeviceInputs();
+        }
+        
+        void SetupDeviceInputs()
+        {
+            if (deviceType == "Mobile")
+            {
+                // Ativa o joystick e desativa a ação de teclado
+                joystick.gameObject.SetActive(true);
+                joystick.enabled = true;
+                if (MoveAction.enabled)
+                {
+                    MoveAction.Disable(); 
+                    
+                }
+            }
+            else
+            {
+                // Desativa o joystick e habilita a ação do teclado
+                joystick.gameObject.SetActive(false);
+                MoveAction.Enable(); 
+            }
+        }
+
+        void Move(Vector2 direction)
+        {
+            if (!Player)
+            {
+                return;
+            }
+
+            Player.Movement.Move(direction); 
+        }
+        
+        void OnMoveActionPerformed(InputAction.CallbackContext context)
+        {
+            if (!Player)
+            {
+                return;
+            }
+
+            var direction = context.ReadValue<Vector2>();
+            Move(direction); 
+        }
+
+        void Awake()
+        {
+            if (MoveAction != null)
+            {
+                MoveAction.performed += OnMoveActionPerformed;
+                MoveAction.canceled += OnMoveActionPerformed;
+            }
+        }
+
+        void FixedUpdate()
+        {
+            if (deviceType == "Mobile")
+            {
+                Player.Movement.Move(joystick.Direction);
+            }
+            else if (deviceType == "Pc")
+            {
+                var direction = MoveAction.ReadValue<Vector2>();
+                Move(direction);
+            }
+        }
+        
+        void OnDestroy()
+        {
+            if (MoveAction != null)
+            {
+                MoveAction.performed -= OnMoveActionPerformed;
+                MoveAction.canceled -= OnMoveActionPerformed;
+            }
+        }
+        
+        void OnDisable()
+        {
+            if (MoveAction != null)
+            {
+                MoveAction.Disable();
+            }
+        }
+        
+        void OnEnable()
+        {
+            if (MoveAction != null)
+            {
+                MoveAction.Enable();
+            }
+        }
+
 #if UNITY_EDITOR
-		void Reset()
-		{
-			joystick = GetComponentInChildren<FixedJoystick>(true);
-		}
+        // Método para encontrar o joystick automaticamente no editor
+        void Reset()
+        {
+            joystick = GetComponentInChildren<FixedJoystick>(false);
+        }
 #endif
-	}
+    }
 }
