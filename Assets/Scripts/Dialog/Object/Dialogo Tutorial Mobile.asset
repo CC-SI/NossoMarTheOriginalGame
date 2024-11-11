@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51db7c983b74433a6c41ff499e99dd3, type: 3}
+  m_Name: Dialogo Tutorial Mobile
+  m_EditorClassIdentifier: 
+  Dialogos:
+  - id: primeira_instrucao
+    speaker: Sr Pato
+    texto: Oi! Eu sou o Sr. Pato, e estou aqui para te ensinar como salvar os patinhos!
+    pergunta: {fileID: 0}
+    ShowCoco: 0
+  - id: joystick
+    speaker: Sr Pato
+    texto: "Olha s\xF3, no canto inferior esquerdo est\xE1 o joystick. Use ele para
+      se mover e explorar!"
+    pergunta: {fileID: 0}
+    ShowCoco: 0
+  - id: button_captured
+    speaker: Sr Pato
+    texto: "Veja, ali est\xE1 um patinho! V\xE1 at\xE9 ele. Ir\xE1 aparecer um bot\xE3o
+      para captur\xE1-lo. Pressione-o para salvar o patinho!"
+    pergunta: {fileID: 0}
+    ShowCoco: 0
+  - id: voce_pega_jeito_rapido
+    speaker: Sr Pato
+    texto: "Uau! Voc\xEA pegou o jeito rapidinho! Agora \xE9 com voc\xEA, hein! S\xF3
+      falta se divertir e salvar todos os patinhos!"
+    pergunta: {fileID: 0}
+    ShowCoco: 0
