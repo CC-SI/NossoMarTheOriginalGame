@@ -1,19 +1,26 @@
 ﻿using Dialog.Manager;
-using Duck;
+using Interaction;
 using UnityEngine;
 
 namespace Coqueiro
 {
-    public class Coqueiro : DuckBehavior
+    public class Coqueiro : InteractableObject, IInteraction
     {
+        private Rigidbody2D rb;
+        private Collider2D colisor;
+        
         [SerializeField] private DialogManager dialogManager;
         
-        public override void OnPlayerInteraction()
+        void Start()
         {
-            if (!IsFollowing)
-            {
-                dialogManager.StartDialog();
-            }
+            rb = GetComponent<Rigidbody2D>();
+            colisor = GetComponent<Collider2D>();
+            AddObject(colisor, this);
+        }
+        
+        public void OnPlayerInteraction()
+        {
+             dialogManager.StartDialog();
         }
     }
 }
