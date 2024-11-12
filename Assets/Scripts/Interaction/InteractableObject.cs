@@ -12,7 +12,7 @@ namespace Interaction
             interactableObjects.TryAdd(collider, interactable);
         }
 
-        protected static void RemoveObject(Collider2D collider)
+        public void RemoveObject(Collider2D collider)
         {
             interactableObjects.Remove(collider);
         }

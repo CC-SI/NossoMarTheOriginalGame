@@ -9,6 +9,7 @@ namespace Serialization
     {
         public Vector3 playerPosition;
         public List<int> ducks = new();
+        public bool isTrashDuckSaved;
 
         public string ToJson()
         {
