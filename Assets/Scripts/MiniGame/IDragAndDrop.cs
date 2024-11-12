@@ -7,5 +7,6 @@ namespace MiniGame
     {
         UnityEvent<bool, bool> OnTouched { get; }
         UnityEvent OnSuperimposed { get; }
+        UnityEvent OnSuperimposing { get; }
     }
 }

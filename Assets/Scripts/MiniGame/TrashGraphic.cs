@@ -10,7 +10,8 @@ namespace MiniGame
         [Header("Parametros")]
         [SerializeField] private string dragParameter;
         [SerializeField] private string trashBinParameter;
-        [SerializeField] private string alertTrigger;
+        [SerializeField] private string superimposingTrigger;
+        [SerializeField] private string superimposedTrigger;
 
         private IDragAndDrop dragAndDrop;
 
@@ -37,16 +38,22 @@ namespace MiniGame
             IsOnTrashBin = isOnTrashBin;
         }
         
-        private void AlertSuperImposing()
+        private void AlertSuperimposing()
         {
-            animator.SetTrigger(alertTrigger);
+            animator.SetTrigger(superimposingTrigger);
+        }
+        
+        private void AlertSuperimposed()
+        {
+            animator.SetTrigger(superimposedTrigger);
         }
         
         private void Awake()
         {
             dragAndDrop = GetComponentInParent<IDragAndDrop>(true);
             dragAndDrop?.OnTouched.AddListener(OnInteracted);
-            dragAndDrop?.OnSuperimposed.AddListener(AlertSuperImposing);
+            dragAndDrop?.OnSuperimposed.AddListener(AlertSuperimposed);
+            dragAndDrop?.OnSuperimposing.AddListener(AlertSuperimposing);
         }
 
 #if UNITY_EDITOR

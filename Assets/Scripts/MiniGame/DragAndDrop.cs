@@ -9,9 +9,10 @@ namespace MiniGame
     {
         [SerializeField] private MiniGameObject draggableObject;
         [SerializeField] private AudioSource trashSound;
-        public AudioClip dragged, dropped;
+        public AudioClip dragged, dropped, superimposed;
         [field: SerializeField] public UnityEvent<bool, bool> OnTouched { get; private set; }
         [field: SerializeField] public UnityEvent OnSuperimposed { get; private set; }
+        [field: SerializeField] public UnityEvent OnSuperimposing { get; private set; }
         
         public Vector3 originalPosition;
         
@@ -39,10 +40,11 @@ namespace MiniGame
             {
                 isSuperimposed = value;
 
-                if (value)
-                {
-                    OnSuperimposed.Invoke();
-                }
+                if (!value) return;
+                
+                trashSound.PlayOneShot(superimposed);
+                OnSuperimposed.Invoke();
+                miniGame.AlertSuperimposing(draggableObject.Bounds, draggableObject.Index);
             }
         }
 
@@ -63,7 +65,7 @@ namespace MiniGame
         private void OnMouseDown()
         {
             IsSuperimposed = miniGame.IsObjectSuperimposed(draggableObject.Bounds, draggableObject.Index);
-            
+
             if (IsSuperimposed) return;
             
             trashSound.PlayOneShot(dragged);
@@ -76,8 +78,10 @@ namespace MiniGame
         private void OnMouseUp()
         {
             isOnTrashBin = TrashBin.ContainsObject(draggableObject.Bounds);
+            
             if(!IsSuperimposed)
                 trashSound.PlayOneShot(dropped);
+            
             IsDragging = false;
 
             if (isOnTrashBin)

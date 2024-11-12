@@ -35,7 +35,7 @@ namespace MiniGame
 
                 if (value)
                 {
-                    //miniGame.AlertSuperimposing(hiddenObject.Bounds, hiddenObject.Index);
+                    miniGame.AlertSuperimposing(hiddenObject.Bounds, hiddenObject.Index);
                 }
             }
         }
