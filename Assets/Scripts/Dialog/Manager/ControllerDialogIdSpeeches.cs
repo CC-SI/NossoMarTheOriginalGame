@@ -151,8 +151,8 @@ namespace Dialog.Manager
                         break;
                     
                     // Pato Lixo
-                    case "pato_lixo_agradecendo":
-                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                    case "fim_dialogo_lixo":
+                        dialogUIManager.ShowDialog(false);
                         GameManager.LoadMiniGame();
                         break;
                     
