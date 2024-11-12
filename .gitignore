@@ -63,7 +63,8 @@ sysinfo.txt
 *.app
 
 # Video file
-.mp4
+*.mp4
+*.mp4.meta
 
 # Crashlytics generated file
 crashlytics-build.properties
