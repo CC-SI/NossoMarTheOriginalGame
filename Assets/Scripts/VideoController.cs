@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -6,6 +7,7 @@ public class VideoController : MonoBehaviour
 {
     public string videoFileName = "meu_video.mp4";
     private VideoPlayer videoPlayer;
+    [SerializeField] private String sceneTransition;
 
     void Start()
     {
@@ -22,13 +24,29 @@ public class VideoController : MonoBehaviour
 // #elif UNITY_STANDALONE_OSX
 //         videoPath = "file://" + videoPath;
 // #elif UNITY_WEBGL
-//         videoPath = "https://example.com/meu_video.mp4"; // Exemplo de URL online
+//         videoPath = "https://example.com/meu_video.mp4";
 // #endif
         
         if (!File.Exists(videoPath)) return;
         
         videoPlayer.url = videoPath;
         videoPlayer.Play();
+        videoPlayer.loopPointReached += EndReached;
+    }
+    
+    void EndReached(VideoPlayer vp)
+    {
+        vp.Stop();
+        
+        switch (sceneTransition)
+        {
+            case "creditos":
+                GameManager.LoadCredits();
+                return;
+            case "menu":
+                GameManager.LoadMainMenu();
+                break;
+        }
     }
 
     string GetVideoPath()

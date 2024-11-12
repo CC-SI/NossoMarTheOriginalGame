@@ -115,6 +115,11 @@ public class GameManager : MonoBehaviour
 	{
 		LoadScene((int)GameState.MiniGame);
 	}
+
+	public static void LoadCredits()
+	{
+		LoadScene((int)GameState.Creditos);
+	}
 	
 	static void LoadScene(int index, bool loadData = false)
 	{
