@@ -10,12 +10,11 @@ using Random = UnityEngine.Random;
 
 namespace Duck
 {
-	public class DuckBehavior : InteractableObject, IInteraction, ISerializable
+	public class DuckBehavior : InteractableObject, IInteraction
 	{
 		const float WanderTime = 10;
-		static readonly List<DuckBehavior> Ducks = new();
     
-		public static event Action<int> OnDuckRescued;
+		public static event Action OnDuckRescued;
     
 		Transform alvo;
    
@@ -35,47 +34,20 @@ namespace Duck
     
 		protected bool IsFollowing;
 		float originalSpeed;
-		private ISerializable serializableImplementation;
 
 		PlayerBehaviour Player => PlayerBehaviour.Instance;
     
-		public static int RescuedCount { get; private set; }
-		public static int TotalCount => Ducks.Count;
-
 		public bool IsRescued
 		{
 			get => IsFollowing;
 			private set
 			{
-				if(value)
-					RescuedCount++;
-				else if (IsRescued)
-					RescuedCount--;
-				
 				IsFollowing = value;
-				OnDuckRescued?.Invoke(RescuedCount);
-			}
-		}
-    
-		public int Index { get; private set; }
-
-		public static void Quack()
-		{
-			foreach (DuckBehavior duck in Ducks)
-			{
-				if(!duck.IsRescued
-				   || duck.movement.IsOnWater)
-					continue;
-            
-				float variation = Random.value;
-
-				duck.audioSource.pitch = Mathf.Lerp(1, 1.1f, variation);;
-				duck.audioSource.volume = Mathf.Lerp(.9f, 1, variation);
-				duck.Invoke(nameof(QuackSound), variation);
+				OnDuckRescued?.Invoke();
 			}
 		}
 
-		void QuackSound()
+		public void Quack()
 		{
 			if(movement.IsOnWater)
 				return;
@@ -84,7 +56,7 @@ namespace Duck
 			OnQuacking.Invoke();
 		}
     
-		void StartFollowing()
+		public void StartFollowing()
 		{
 			alvo = Player.GetFollowTarget(this);
         
@@ -94,7 +66,7 @@ namespace Duck
 			IsRescued = true;
 		}
     
-		public virtual void  OnPlayerInteraction()
+		public virtual void OnPlayerInteraction()
 		{
 			if (IsFollowing)
 				return;
@@ -136,48 +108,13 @@ namespace Duck
 			else
 				Wander();
 		}
-
-		public void Save(SaveData data)
-		{
-			if (!IsRescued)
-				return;
-			
-			data.ducks.Add(Index);
-		}
-        
-		public void Load(SaveData data)
-		{
-			if(!data.ducks.Contains(Index))
-				return;
-			
-			RemoveObject(colisor);
-			StartFollowing();
-		}
-		
 		void Awake()
 		{
-			Index = TotalCount;
-#if UNITY_EDITOR
-			name = $"Pato {Index}";
-#endif
 			originalSpeed = movement.Speed;
-			Ducks.Add(this);
-		}
-
-		void OnDestroy()
-		{
-			Ducks.Remove(this);
-			GameManager.Unsubscribe(this);
-			
-			if(Ducks.Count > 0)
-				return;
-			
-			RescuedCount = 0;
 		}
 		
 		IEnumerator Start()
 		{
-			GameManager.Subscribe(this);
 			AddObject(colisor, this);
 			Player.Movement.OnMoved.AddListener(OnPlayerMoved);
 			

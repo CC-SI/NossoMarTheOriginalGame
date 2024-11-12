@@ -27,7 +27,7 @@ namespace Duck
 
 		bool CanQuack
 		{
-			get => DuckBehavior.RescuedCount > 0;
+			get => DuckManager.RescuedCount > 0;
 			set
 			{
 				button.interactable = value;
@@ -40,7 +40,7 @@ namespace Duck
 		
 		void OnClick()
 		{
-			DuckBehavior.Quack();
+			DuckManager.Quack();
 		}
 		
 		void QuackPerformed(InputAction.CallbackContext context)
@@ -48,23 +48,32 @@ namespace Duck
 			OnClick();
 		}
 		
-		void UpdateCount(int current)
+		void UpdateCount()
 		{
+			var current = DuckManager.RescuedCount;
 			CanQuack = current > 0;
-			int max = DuckBehavior.TotalCount;
+			int max = DuckManager.TotalCount;
 			StringBuilder value = new(current.ToString("D2"));
 			
 			if(showMax)
 				value.AppendFormat(@"/{0:D2}", max);
 			
 			countText.text = value.ToString();
+			
+			if (GameManager.IsLoadingGameData || !audioSource.isActiveAndEnabled) return;
+			
 			audioSource.Play();
+		}
+
+		void UpdateCountDelayed()
+		{
+			Invoke(nameof(UpdateCount), 0);
 		}
 
 		void Awake()
 		{
 			button.onClick.AddListener(OnClick);
-			DuckBehavior.OnDuckRescued += UpdateCount;
+			DuckBehavior.OnDuckRescued += UpdateCountDelayed;
 
 			QuackAction.performed += QuackPerformed;
 		}
@@ -72,13 +81,13 @@ namespace Duck
 		void OnDestroy()
 		{
 			QuackAction.performed -= QuackPerformed;
-			DuckBehavior.OnDuckRescued -= UpdateCount;
+			DuckBehavior.OnDuckRescued -= UpdateCountDelayed;
 		}
 
 		void Start()
 		{
 			audioSource.enabled = false;
-			UpdateCount(DuckBehavior.RescuedCount);
+			UpdateCount();
 			audioSource.enabled = true;
 		}
 
