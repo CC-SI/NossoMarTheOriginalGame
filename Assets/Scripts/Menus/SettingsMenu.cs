@@ -28,6 +28,7 @@ namespace Menus
 					return;
 				case GameState.Praia:
 				case GameState.MiniGame:
+				case GameState.Vila:
 					ShowPauseMenu();
 					return;
 				default:
