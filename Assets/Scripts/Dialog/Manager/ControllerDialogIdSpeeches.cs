@@ -82,6 +82,37 @@ namespace Dialog.Manager
                         break;
                     
                     // Coqueiro
+                    case "coqueiro1":
+                        var currentDialogo = dialogObject.GetDialogoAtual();
+
+                        string typeTexto = currentDialogo.texto;
+
+                        if (duckAguaCoco != null)
+                        {
+                            var dialogo = duckAguaCoco.GetDialogoPorId("player_confirmando_agua_coco");
+                            if (dialogo != null)
+                            {
+                                Debug.Log($"Dialogo encontrado: {dialogo.id}");
+                                Debug.Log($"Show coco: {dialogo.ShowCoco}");
+
+                                bool showCoco = dialogo.ShowCoco;
+
+                                if (showCoco)
+                                {
+                                    typeTexto = "Bem-vindo! Estou aqui para testar seu conhecimento. Responda às minhas perguntas e receberá um coco por cada resposta correta.";
+                                } 
+                                else
+                                {
+                                    typeTexto = "Bem-vindo! Estou aqui para testar seu conhecimento. Vamos nessa!";
+                                }
+                                
+                            }
+                        }
+                        
+                        dialogUIManager.SetSpeaches("Coqueiro", typeTexto);
+                        
+                        break;
+                    
                     case "perguntas_coqueiro":
                         dialogUIManager.ShowDialog(false);
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
@@ -176,7 +207,7 @@ namespace Dialog.Manager
             {
                 if (countdownTime != null)
                 {
-                    dialogUIManager.SetTimeText($"Mudando de cena em {remainingTime} segundos");
+                    dialogUIManager.SetTimeText($"Saindo do Tutorial em {remainingTime}");
                 }
 
                 remainingTime -= 1f;

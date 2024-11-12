@@ -1,6 +1,4 @@
 ﻿using Dialog.Manager;
-using Interaction;
-using Player;
 using UnityEngine;
 
 namespace Duck
@@ -9,10 +7,11 @@ namespace Duck
     {
         [SerializeField] private DialogManager dialogManager;
         [SerializeField] private ObjectToBeCaptured objectToBeCaptured;
+
+        [SerializeField] private GameObject acessorio;
+        [SerializeField] private GameObject ponto;
         
         public bool isDuckAguaCoco;
-        
-        PlayerBehaviour Player => PlayerBehaviour.Instance;
         
         public override void OnPlayerInteraction()
         {
@@ -33,6 +32,14 @@ namespace Duck
         
         public void StartFollowing()
         {
+            IsRescued = true;
+
+            if (IsRescued)
+            {
+                acessorio.SetActive(true);
+                ponto.SetActive(false);
+            }
+            
             base.OnPlayerInteraction();
         }
     }
