@@ -25,7 +25,6 @@ namespace Lixeira
         {
             duck.gameObject.SetActive(true);
             duck.StartFollowing();
-            duck.RemoveObject(duck.colisor);
             GameManager.SaveGameData();
         }
         

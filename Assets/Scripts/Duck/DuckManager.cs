@@ -68,7 +68,6 @@ namespace Duck
                 var duck = Ducks[index];
                 
                 duck.StartFollowing();
-                duck.RemoveObject(duck.colisor);
             }
         }
         

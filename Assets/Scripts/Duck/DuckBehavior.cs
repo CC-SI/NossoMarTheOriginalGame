@@ -64,6 +64,8 @@ namespace Duck
 				movement.SetFollowTarget(alvo);
 
 			IsRescued = true;
+			
+			RemoveObject(colisor);
 		}
     
 		public virtual void OnPlayerInteraction()
@@ -72,7 +74,6 @@ namespace Duck
 				return;
         
 			StartFollowing();
-			RemoveObject(colisor);
 			GameManager.SaveGameData();
 		}
     
