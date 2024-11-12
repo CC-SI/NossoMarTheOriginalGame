@@ -17,12 +17,14 @@ MonoBehaviour:
     speaker: Pato
     texto: "Tem algu\xE9m a\xED? Por favor, me ajude!"
     pergunta: {fileID: 0}
+    ShowCoco: 0
   - id: player_confirmando_lixo
     speaker: Jogador
     texto: "N\xE3o se preocupe, vou te tirar da\xED!"
     pergunta: {fileID: 0}
+    ShowCoco: 0
   - id: pato_lixo_agradecendo
     speaker: Pato
-    texto: Obrigado! Muito obrigado pro me aju... ehhn, que fedor! Eu definitivamente
-      terei que tomar um belo banho depois.
+    texto: Obrigado!
     pergunta: {fileID: 0}
+    ShowCoco: 0
