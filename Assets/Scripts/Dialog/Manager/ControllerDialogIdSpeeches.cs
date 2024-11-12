@@ -123,6 +123,7 @@ namespace Dialog.Manager
                     
                     // Pato Lixo
                     case "pato_lixo_agradecendo":
+                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
                         GameManager.LoadMiniGame();
                         break;
                     
@@ -186,7 +187,7 @@ namespace Dialog.Manager
         
         private void ChangeScene()
         {
-            SceneManager.LoadScene("Praia");
+            GameManager.LoadGame();
         }
     }
 }
