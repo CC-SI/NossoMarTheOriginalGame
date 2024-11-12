@@ -5,18 +5,13 @@ using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour
 {
-    public string videoFileName;
-    private VideoPlayer videoPlayer;
-    [SerializeField] private string sceneTransition;
-    [SerializeField] private TextMeshProUGUI textoUrl;
+    [SerializeField] private string videoFileName;
+    [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private string nextScene;
 
     void Start()
     {
-        videoPlayer = GetComponent<VideoPlayer>();
-
         var videoPath = GetVideoPath();
-        
-        textoUrl.text = videoPath;
         
         videoPlayer.url = videoPath;
         
@@ -26,19 +21,19 @@ public class VideoController : MonoBehaviour
         videoPlayer.Prepare();
     }
     
-    void PlayVideo(VideoPlayer videoPlayer)
+    void PlayVideo(VideoPlayer video)
     {
-        videoPlayer.Play();
+        video.Play();
     }
     
     void EndReached(VideoPlayer vp)
     {
         vp.Stop();
         
-        switch (sceneTransition)
+        switch (nextScene)
         {
-            case "creditos":
-                GameManager.LoadCredits();
+            case "tutorial":
+                GameManager.LoadTutorial();
                 return;
             case "menu":
                 GameManager.LoadMainMenu();
@@ -51,4 +46,11 @@ public class VideoController : MonoBehaviour
         
         return Path.Combine(Application.streamingAssetsPath, videoFileName);
     }
+    
+#if UNITY_EDITOR
+    void Reset()
+    {
+        videoPlayer = GetComponent<VideoPlayer>();
+    }
+#endif
 }
