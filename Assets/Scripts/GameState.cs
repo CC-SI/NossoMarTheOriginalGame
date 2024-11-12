@@ -1,9 +1,9 @@
 public enum GameState
 {
-	Introducao = 0,
-	Creditos = 1,
-	Menu = 2,
+	Menu = 0,
+	Intro = 1,
+	Vila = 2,
 	Praia = 3,
 	MiniGame = 4,
-	Vila = 5
+	Creditos = 5
 }
