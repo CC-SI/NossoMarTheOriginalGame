@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
+using Lixeira;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace MiniGame
 {
     public class MiniGame : MonoBehaviour
     {
+        [SerializeField] private Button textBox;
         [SerializeField] private List<MiniGameObject> prefabs;
 
         private static readonly List<MiniGameObject> objects = new();
@@ -19,6 +22,7 @@ namespace MiniGame
         public UnityEvent<string> onMessageUpdated;
 
         private bool isDuckCollect = false;
+        public static bool isFinished = false;
         
         private void Awake()
         {
@@ -32,15 +36,11 @@ namespace MiniGame
             Destroy(gameObject);
         }
 
-        private void Start()
-        {
-            onMessageUpdated.Invoke("Arraste os lixos para encontrar e pegar o pato");
-        }
-
         private void StartGame()
         {
             SpawnDraggableObjects();
             SpawnHiddenObject();
+            textBox.onClick.AddListener(FinishGame);
         }
 
         protected static void AddObject(MiniGameObject miniGameObject)
@@ -107,8 +107,15 @@ namespace MiniGame
                 onMessageUpdated.Invoke("Agora coloque os lixos de volta na lixeira");
                 return;
             }
-
-            GameManager.LoadGame();
+            
+            onMessageUpdated.Invoke("Parabéns! Você resgatou o pato.");
+            textBox.gameObject.SetActive(true);
+        }
+        
+        void FinishGame()
+        {
+            isFinished = true;
+            GameManager.LoadGame(true);
         }
 
         public bool IsObjectSuperimposed(Bounds bounds, int index)
@@ -122,17 +129,17 @@ namespace MiniGame
             return false;
         }
         
-        // public void AlertSuperimposing(Bounds bounds, int index)
-        // {
-        //     for (var i = index - 1; i >= 0; i--)
-        //     {
-        //         if (bounds.Intersects(objects[i].Bounds) && objects[i].Bounds != bounds)
-        //         {
-        //             var objectDragAndDrop = objects[i].GetComponent<IDragAndDrop>();
-        //             objectDragAndDrop?.OnSuperimposed.Invoke();
-        //         }
-        //     }
-        // }
+        public void AlertSuperimposing(Bounds bounds, int index)
+        {
+            for (var i = index - 1; i >= 0; i--)
+            {
+                if (bounds.Intersects(objects[i].Bounds) && objects[i].Bounds != bounds)
+                {
+                    var objectDragAndDrop = objects[i].GetComponent<IDragAndDrop>();
+                    objectDragAndDrop?.OnSuperimposing.Invoke();
+                }
+            }
+        }
         
         public bool IsAllTrashsInTrashBin()
         {
