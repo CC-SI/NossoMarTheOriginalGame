@@ -639,7 +639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b><color=#B17720>N</color></b>osso <b><color=#B17720>M</color></b>ar:
+  m_text: '<b><color=#B17720>N</color></b>osso <b><color=#B17720>M</color></b>ar<br>
     <b><color=#B17720>S</color></b>alve os <b><color=#B17720>P</color></b>atinhos
 
 '
