@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: "Assets/Scenes/Introdu\xE7\xE3o.unity"
+    guid: 8465a782bfdcbf249b24bdaec63ae0c8
+  - enabled: 1
+    path: "Assets/Scenes/Cr\xE9ditos.unity"
+    guid: 06141e60927466a4194364a67fad1256
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 3a9f2a2d3f23e478bbc09aa4004f6f4b
   - enabled: 1
@@ -15,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGame.unity
     guid: fcaed91cd26f7e8448d6bedd22730508
   - enabled: 1
-    path: Assets/Scenes/Vila.unity
+    path: Assets/Scenes/vila.unity
     guid: cb412ba1fad97db4f873a91e0c082e6f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
