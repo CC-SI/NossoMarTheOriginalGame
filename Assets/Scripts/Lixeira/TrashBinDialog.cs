@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Lixeira
 {
-    public class TrashBinDialog : InteractableObject, IInteraction, ISerializable
+    public class TrashBinDialog : InteractableObject, IInteraction
     {
         [SerializeField] private DialogManager dialogManager;
         [SerializeField] private DuckBehavior duck;
@@ -28,45 +28,39 @@ namespace Lixeira
             duck.RemoveObject(duck.colisor);
             GameManager.SaveGameData();
         }
-
-        public void Save(SaveData data)
-        {
-            data.isTrashDuckSaved = MiniGame.MiniGame.isFinished;
-        }
-
-        public void Load(SaveData data)
-        {
-            if (!data.isTrashDuckSaved) return;
-            
-            // MiniGame.MiniGame.isFinished = data.isTrashDuckSaved;
-            // duck.gameObject.SetActive(true);
-            // duck.RemoveObject(duck.colisor);
-            // RemoveObject(colisor);
-            // iconeInteracao.SetActive(false);
-        }
         
         void OnDestroy()
         {
-            GameManager.Unsubscribe(this);
             RemoveObject(colisor);
         }
 
         private IEnumerator Start()
         {
-            duck.gameObject.SetActive(false);
-            GameManager.Subscribe(this);
-            AddObject(colisor, this);
-            
+            // É um jogo novo? Se sim, parar processo.
             if(!GameManager.IsLoadingGameData)
                 yield break;
-			
-            yield return new WaitWhile(() => GameManager.IsLoadingGameData);
-
-            if (!MiniGame.MiniGame.isFinished)
-                yield break;
             
-            //RemoveObject(colisor);
-            //iconeInteracao.SetActive(false);
+            yield return new WaitWhile(() => GameManager.IsLoadingGameData);
+            
+            // O pato já está salvo? Se sim, desativar o ícone de interação e parar processo.
+            if (duck.IsRescued)
+            {
+                iconeInteracao.SetActive(false);
+                yield break;
+            }
+            
+            duck.gameObject.SetActive(false);
+            
+            // O minigame já foi finalizado? se sim, soltar o pato, desativar o ícone de interação e parar processo.
+            if (MiniGame.MiniGame.isFinished)
+            {
+                EnableDuck();
+                iconeInteracao.SetActive(false);
+                yield break;
+            }
+            
+            // Adicionar o colisor na lista de objetos interativos.
+            AddObject(colisor, this);
         }
     }
 }
