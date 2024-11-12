@@ -63,11 +63,11 @@ sysinfo.txt
 *.app
 
 # Video files
-*.mp4
-*.mov
-*.avi
-*.mkv
-*.webm
+StreamingAssets/*.mp4
+StreamingAssets/*.mov
+StreamingAssets/*.avi
+StreamingAssets/*.mkv
+StreamingAssets/*.webm
 
 # Crashlytics generated file
 crashlytics-build.properties
