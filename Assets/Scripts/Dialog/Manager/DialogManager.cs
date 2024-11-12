@@ -1,4 +1,5 @@
 ﻿using Duck;
+using Player;
 using UnityEngine;
 
 namespace Dialog.Manager
@@ -41,6 +42,8 @@ namespace Dialog.Manager
             {
                 perguntaManager.StartPerguntas();
             }
+            
+            PlayerBehaviour.Instance.Movement.enabled = false;
         }
         
         public void AvancarDialogo()
@@ -121,6 +124,8 @@ namespace Dialog.Manager
         {
             IsDialogActive = false;
             dialogUIManager.ShowDialog(false);
+
+            PlayerBehaviour.Instance.Movement.enabled = true;
         }
 
     

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Dialog.Pergunta;
+using Player;
 using UnityEngine;
 
 namespace Dialog.Manager
@@ -37,10 +38,13 @@ namespace Dialog.Manager
             {
                 perguntasUIManager.ShowPainelPerguntas(false); 
                 
+                PlayerBehaviour.Instance.Movement.enabled = true;
+                
                 if (acertos >= 2)
                 {
                     dialogManager.AvancarDialogo();
                 } 
+                
             }
         }
         
