@@ -28,3 +28,8 @@ MonoBehaviour:
     texto: Obrigado!
     pergunta: {fileID: 0}
     ShowCoco: 0
+  - id: fim_dialogo_lixo
+    speaker: 
+    texto: 
+    pergunta: {fileID: 0}
+    ShowCoco: 0
