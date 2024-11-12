@@ -1,13 +1,14 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour
 {
-    public string videoFileName = "meu_video.mp4";
+    public string videoFileName;
     private VideoPlayer videoPlayer;
-    [SerializeField] private String sceneTransition;
+    [SerializeField] private string sceneTransition;
+    [SerializeField] private TextMeshProUGUI textoUrl;
 
     void Start()
     {
@@ -15,23 +16,19 @@ public class VideoController : MonoBehaviour
 
         var videoPath = GetVideoPath();
         
-// #if UNITY_ANDROID
-//         videoPath = "jar:file://" + videoPath;
-// #elif UNITY_IOS
-//         videoPath = "file://" + videoPath;
-// #elif UNITY_STANDALONE_WIN
-//         videoPath = "file://" + videoPath;
-// #elif UNITY_STANDALONE_OSX
-//         videoPath = "file://" + videoPath;
-// #elif UNITY_WEBGL
-//         videoPath = "https://example.com/meu_video.mp4";
-// #endif
-        
-        if (!File.Exists(videoPath)) return;
+        textoUrl.text = videoPath;
         
         videoPlayer.url = videoPath;
-        videoPlayer.Play();
+        
         videoPlayer.loopPointReached += EndReached;
+        videoPlayer.prepareCompleted += PlayVideo;
+        
+        videoPlayer.Prepare();
+    }
+    
+    void PlayVideo(VideoPlayer videoPlayer)
+    {
+        videoPlayer.Play();
     }
     
     void EndReached(VideoPlayer vp)
