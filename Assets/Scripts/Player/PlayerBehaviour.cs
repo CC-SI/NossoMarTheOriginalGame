@@ -17,28 +17,7 @@ namespace Player
         [field: SerializeField]
         public InteractableZone InteractableZone { get; private set; }
 
-        [field: SerializeField] private List<DialogManager> dialogManagers;
-
         public static PlayerBehaviour Instance { get; private set; }
-
-        private void Update()
-        {
-            Movement.enabled = !IsAnyDialogActive();
-        }
-        
-        private bool IsAnyDialogActive()
-        {
-            if (dialogManagers == null) return false;
-            
-            foreach (var dialogManager in dialogManagers)
-            {
-                if (dialogManager != null && dialogManager.IsDialogActive)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
 
         public Transform GetFollowTarget(DuckBehavior duckBehavior)
         {
