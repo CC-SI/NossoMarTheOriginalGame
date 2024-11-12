@@ -32,13 +32,13 @@ namespace Duck
         
         public void StartFollowing()
         {
-            IsRescued = true;
-
-            if (IsRescued)
-            {
-                acessorio.SetActive(true);
-                ponto.SetActive(false);
-            }
+            // IsRescued = true;
+            //
+            // if (IsRescued)
+            // {
+            //     acessorio.SetActive(true);
+            //     ponto.SetActive(false);
+            // }
             
             base.OnPlayerInteraction();
         }

@@ -38,11 +38,11 @@ namespace Lixeira
         {
             if (!data.isTrashDuckSaved) return;
             
-            MiniGame.MiniGame.isFinished = data.isTrashDuckSaved;
-            duck.gameObject.SetActive(true);
-            duck.RemoveObject(duck.colisor);
-            RemoveObject(colisor);
-            iconeInteracao.SetActive(false);
+            // MiniGame.MiniGame.isFinished = data.isTrashDuckSaved;
+            // duck.gameObject.SetActive(true);
+            // duck.RemoveObject(duck.colisor);
+            // RemoveObject(colisor);
+            // iconeInteracao.SetActive(false);
         }
         
         void OnDestroy()
