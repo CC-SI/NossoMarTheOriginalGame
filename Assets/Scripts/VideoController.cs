@@ -11,15 +11,29 @@ public class VideoController : MonoBehaviour
     {
         videoPlayer = GetComponent<VideoPlayer>();
 
-        if (!File.Exists(GetVideoPath())) return;
+        var videoPath = GetVideoPath();
         
-        videoPlayer.url = GetVideoPath();
+// #if UNITY_ANDROID
+//         videoPath = "jar:file://" + videoPath;
+// #elif UNITY_IOS
+//         videoPath = "file://" + videoPath;
+// #elif UNITY_STANDALONE_WIN
+//         videoPath = "file://" + videoPath;
+// #elif UNITY_STANDALONE_OSX
+//         videoPath = "file://" + videoPath;
+// #elif UNITY_WEBGL
+//         videoPath = "https://example.com/meu_video.mp4"; // Exemplo de URL online
+// #endif
+        
+        if (!File.Exists(videoPath)) return;
+        
+        videoPlayer.url = videoPath;
         videoPlayer.Play();
     }
 
     string GetVideoPath()
     {
-        var videoPath = Path.Combine(Application.streamingAssetsPath, videoFileName);
-        return videoPath;
+        
+        return Path.Combine(Application.streamingAssetsPath, videoFileName);
     }
 }
