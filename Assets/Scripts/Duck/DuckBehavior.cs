@@ -115,6 +115,7 @@ namespace Duck
 		}
 		
 		IEnumerator Start()
+		protected virtual IEnumerator Start()
 		{
 			AddObject(colisor, this);
 			Player.Movement.OnMoved.AddListener(OnPlayerMoved);
