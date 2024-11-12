@@ -186,6 +186,12 @@ namespace Dialog.Manager
                         dialogUIManager.ShowPaOuChapeuOuCoco(true);
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
                         break;
+                    
+                    // Dialogo Final
+                    case "fim_dialogo_final":
+                        dialogUIManager.ShowDialog(false);
+                        GameManager.LoadCredits();
+                        break;
                 }
             }
         }
