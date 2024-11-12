@@ -190,7 +190,8 @@ MonoBehaviour:
   animator: {fileID: 2941576963307035420}
   dragParameter: isDragging
   trashBinParameter: isOnTrashBin
-  alertTrigger: alertSuperImposing
+  superimposingTrigger: alertSuperimposing
+  superimposedTrigger: alertSuperimposed
 --- !u!1 &9124796682831113197
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +312,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <OnSuperimposed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnSuperimposing>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
   originalPosition: {x: 0, y: 0, z: 0}
