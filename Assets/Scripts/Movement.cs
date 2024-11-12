@@ -18,27 +18,20 @@ public class Movement : MonoBehaviour, IMovement
     [field: SerializeField]
     public UnityEvent<bool> OnWaterEvent { get; private set; }
     
-    [SerializeField] private AudioSource audioSource;
-    
-    [SerializeField] private AudioClip swimming, walking;
-    
     Transform followTarget;
 
     bool isOnWater;
     bool isMoving;
     Vector2 direction;
     Vector3 lastVelocity;
-    double audioTimer;
-    double walkAudioInterval = 0.4;
-    double swimAudioInterval = 0.7;
 
     public bool IsOnWater
     {
         get => isOnWater;
         private set
         {
-            if (isOnWater == value)
-                return;
+            // if (isOnWater == value)
+            //     return;
 
             isOnWater = value;
             OnWaterEvent.Invoke(isOnWater);
@@ -59,18 +52,6 @@ public class Movement : MonoBehaviour, IMovement
         private set
         {
             isMoving = value;
-
-            if (isOnWater && audioTimer >= swimAudioInterval)
-            {
-                playSwimAudio();
-                audioTimer = 0;
-            }
-            
-            if (value && !isOnWater && audioTimer >= walkAudioInterval)
-            {
-                playWalkAudio();
-                audioTimer = 0;
-            }
             
             OnMoved.Invoke(Agent.velocity, isMoving);
         }
@@ -113,16 +94,6 @@ public class Movement : MonoBehaviour, IMovement
         
         CheckWaterMask();
         Moved();
-    }
-    
-    void playWalkAudio()
-    {
-        audioSource.PlayOneShot(walking);
-    }
-
-    void playSwimAudio()
-    {
-        audioSource.PlayOneShot(swimming);
     }
 
     void FixedUpdate()
@@ -179,11 +150,6 @@ public class Movement : MonoBehaviour, IMovement
         IsMoving = Agent.velocity.magnitude > 0.1f;
     }
 
-    private void Update()
-    {
-        audioTimer += Time.deltaTime;
-    }
-
     void OnDisable()
     {
         direction = Vector3.zero;
@@ -193,7 +159,6 @@ public class Movement : MonoBehaviour, IMovement
     void Reset()
     {
         Agent = GetComponent<NavMeshAgent>();
-        audioSource = GetComponent<AudioSource>();
     }
 #endif
 }
