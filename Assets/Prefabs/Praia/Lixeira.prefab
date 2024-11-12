@@ -241,15 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606464497b8944c29a74b399dd15071f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alvo: {fileID: 0}
-  countDucks: {fileID: 0}
-  clip: {fileID: 0}
-  <OnMoved>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  isFollowing: 0
-  playerGraphic: {fileID: 0}
   dialogManager: {fileID: 0}
+  duck: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  colisor: {fileID: 4570041486559037035}
+  iconeInteracao: {fileID: 3216217237715207715}
 --- !u!61 &4570041486559037035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -513,6 +508,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8d6437808c8f0c4d930f32806ac47c6, type: 3}
+--- !u!1 &3216217237715207715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7586403721034584950, guid: e8d6437808c8f0c4d930f32806ac47c6, type: 3}
+  m_PrefabInstance: {fileID: 5037871521322177877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4525434272075415490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8874218866370800279, guid: e8d6437808c8f0c4d930f32806ac47c6, type: 3}
