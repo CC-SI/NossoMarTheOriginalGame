@@ -206,7 +206,7 @@ namespace Dialog.Manager
             {
                 if (countdownTime != null)
                 {
-                    dialogUIManager.SetTimeText($"Saindo do Tutorial em {remainingTime} segundos");
+                    dialogUIManager.SetTimeText($"Saindo do Tutorial em {remainingTime}");
                 }
 
                 remainingTime -= 1f;
