@@ -31,10 +31,6 @@ namespace Dialog.Manager
         [Header("Mensagem de Objeto pego (Opicional)")]
         [SerializeField] private GameObject mensagemObjetoPego;
 
-        [SerializeField] private GameObject acessorioPato;
-
-        [SerializeField] private GameObject IconeInteracao;
-
         [SerializeField] private FixedJoystick joystick;
         
         [SerializeField] private GameObject duckCaptured;
@@ -61,7 +57,6 @@ namespace Dialog.Manager
             SetActive(PaOuChapeuOuCoco, show);
             SetActive(buttonAjudarPato, show);
             SetActive(buttonIgnorarPato, show);
-            SetActive(acessorioPato, show);
             SetActive(zonasDeAvancarDialogo, show);
         }
 
@@ -71,7 +66,6 @@ namespace Dialog.Manager
             {
                 zonasDeAvancarDialogo.onClick.AddListener(() =>
                 {
-                    Debug.Log("FOI");
                     dialogManager.AvancarDialogo();
                 });
             }
@@ -136,12 +130,7 @@ namespace Dialog.Manager
         {
             SetActive(PaOuChapeuOuCoco, show);
         }
-
-        public void ShowAcessorioPato(bool show)
-        {
-            SetActive(acessorioPato, show);
-        }
-
+        
         public void ShowMensagemObjetoPego(bool show)
         {
             SetActive(mensagemObjetoPego, show);
@@ -150,11 +139,6 @@ namespace Dialog.Manager
             {
                 Invoke(nameof(HideMensagemObjetoPego), 5f);
             }
-        }
-
-        public void ShowIconeInteracao(bool show)
-        {
-            SetActive(IconeInteracao, show);
         }
 
         private void HideMensagemObjetoPego()

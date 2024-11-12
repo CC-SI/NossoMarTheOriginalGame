@@ -105,12 +105,10 @@ namespace Dialog.Manager
                                 {
                                     typeTexto = "Bem-vindo! Estou aqui para testar seu conhecimento. Vamos nessa!";
                                 }
-                                
                             }
                         }
                         
                         dialogUIManager.SetSpeaches("Coqueiro", typeTexto);
-                        
                         break;
                     
                     case "perguntas_coqueiro":
@@ -167,8 +165,8 @@ namespace Dialog.Manager
                         {
                             perguntasUIManager.ShowPainelPerguntas(true);
                         }
-                        
                         break;
+                    
                     // Pato Enterrado
                     case "pato1_pedindo_ajuda":
                         dialogUIManager.ShowButtonsOfDecision(true);
@@ -187,12 +185,6 @@ namespace Dialog.Manager
                     case "player_madame1":
                         dialogUIManager.ShowPaOuChapeuOuCoco(true);
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
-                        break;
-                    case "pata_madame_agradecendo":
-                        if (dialogUIManager.boxDialog.activeSelf)
-                        {
-                            dialogUIManager.ShowAcessorioPato(true);
-                        }
                         break;
                 }
             }

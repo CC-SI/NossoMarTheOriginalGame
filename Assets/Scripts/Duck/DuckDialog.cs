@@ -1,5 +1,3 @@
-﻿using Dialog.Manager;
-﻿using Actors;
 ﻿using System.Collections;
 using Actors;
 using Dialog.Manager;
@@ -16,26 +14,19 @@ namespace Duck
         [SerializeField] private GameObject ponto;
         
         [Header("Pato começa enterrado")]
-        [SerializeField] private Animator animator;
         [SerializeField] private GraphicBehaviour graphicBehaviour;
         
         public bool isDuckAguaCoco;
-
         public bool isPatoEnterrado;
         
-        private void Start()
         protected override IEnumerator Start()
         {
             OnDuckRescued += AcessoriosPegos;
+            
             if (isPatoEnterrado)
                 graphicBehaviour.IsBuried = true;
 
             yield return base.Start();
-        }
-        
-        private void Awake()
-        {
-            OnDuckRescued += AcessoriosPegos;
         }
 
         private void OnDestroy()
@@ -46,27 +37,17 @@ namespace Duck
         [ContextMenu("salvar pato")]
         public override void OnPlayerInteraction()
         {
-            if (!IsFollowing)
-            {
-                if (objectToBeCaptured != null)
             if (IsFollowing) return;
             
             if (objectToBeCaptured)
             { 
                 if (isDuckAguaCoco && objectToBeCaptured.IsAllCapturedCocos)
                 {
-                    if (isDuckAguaCoco && objectToBeCaptured.IsAllCapturedCocos)
-                    {
-                        dialogManager.AvancarDialogoSilenciosamente();
-                    }
                     dialogManager.AvancarDialogoSilenciosamente();
                 }
-                
-                dialogManager.StartDialog();
-                
             }
-                
             dialogManager.StartDialog();
+            
         }
         
         private void AcessoriosPegos()
@@ -76,25 +57,12 @@ namespace Duck
                 if (isPatoEnterrado)
                     graphicBehaviour.IsBuried = false;
                 
-                if (acessorio != null)
+                if (acessorio)
                     acessorio.SetActive(true);
                 
-                if (ponto != null)
+                if (ponto)
                     ponto.SetActive(false);
             }
-        }
-        
-        public void StartFollowing()
-        {
-            // IsRescued = true;
-            //
-            // if (IsRescued)
-            // {
-            //     acessorio.SetActive(true);
-            //     ponto.SetActive(false);
-            // }
-            
-            base.OnPlayerInteraction();
         }
     }
 }

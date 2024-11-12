@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Interaction;
 using Player;
-using Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -59,7 +57,7 @@ namespace Duck
 		public void StartFollowing()
 		{
 			alvo = Player.GetFollowTarget(this);
-        
+			
 			if (movement)
 				movement.SetFollowTarget(alvo);
 
@@ -114,7 +112,6 @@ namespace Duck
 			originalSpeed = movement.Speed;
 		}
 		
-		IEnumerator Start()
 		protected virtual IEnumerator Start()
 		{
 			AddObject(colisor, this);

@@ -27,8 +27,6 @@ public class ObjectToBeCaptured : InteractableObject, IInteraction
     
     public void OnPlayerInteraction()
     {
-        Debug.Log(gameObject.name + " foi capturado");
-        
         if (IsCocoCaptured)
         {
             Debug.Log("Coco capturado");
@@ -45,16 +43,13 @@ public class ObjectToBeCaptured : InteractableObject, IInteraction
         {
             dialogUIManager.ShowMensagemObjetoPego(true);
         }
+        
+        RemoveObject(colisor);
     }
 
     private void CocosCapturados()
     {
         cocosCapturadosList.Add(this); 
         Debug.Log("Cocos capturados: " + cocosCapturadosList.Count);
-    }
-    
-    public static List<ObjectToBeCaptured> GetCocosCapturadosList()
-    {
-        return cocosCapturadosList;
     }
 }

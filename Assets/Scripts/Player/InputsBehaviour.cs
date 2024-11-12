@@ -39,13 +39,11 @@ namespace Player
         {
             if (deviceType == "Mobile")
             {
-                // Ativa o joystick e desativa a ação de teclado
                 joystick.gameObject.SetActive(true);
                 joystick.enabled = true;
                 if (MoveAction.enabled)
                 {
                     MoveAction.Disable(); 
-                    
                 }
             }
             else
