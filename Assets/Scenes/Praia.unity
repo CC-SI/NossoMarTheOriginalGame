@@ -273,6 +273,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1068645316652088607, guid: 4cd1c30e033c7554dbb265757a7b54cf, type: 3}
   m_PrefabInstance: {fileID: 161596277}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &70229642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1358960805}
+    m_Modifications:
+    - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Name
+      value: Pato 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+--- !u!4 &70229643 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 70229642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &70229644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 70229642}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &93920205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1056,15 +1129,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (7)
+      value: Pato 15
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.36
+      value: 41.24
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.32
+      value: -10.62
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1290,15 +1363,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (8)
+      value: Pato 2
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: -30.44
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.25
+      value: 7.3
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1466,15 +1539,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (5)
+      value: Pato 14
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.73
+      value: 16.53
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.12
+      value: -13.81
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1817,15 +1890,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (13)
+      value: Pato 7
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.71
+      value: 18.52
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2815,11 +2888,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4256746241582985980, guid: 82c77d65e7354a04faed00d3fbc7725b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.36
+      value: -20.85
       objectReference: {fileID: 0}
     - target: {fileID: 4256746241582985980, guid: 82c77d65e7354a04faed00d3fbc7725b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: -2.28
       objectReference: {fileID: 0}
     - target: {fileID: 4256746241582985980, guid: 82c77d65e7354a04faed00d3fbc7725b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3296,6 +3369,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db4b94459ec4dd34288791e4a2b8de78, type: 3}
+--- !u!114 &675229288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1346698634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &684695791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4067,6 +4151,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
   m_PrefabInstance: {fileID: 1969824054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &920679079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1969824054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &946185547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9081622795703406635, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
@@ -4485,6 +4580,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
   m_PrefabInstance: {fileID: 1047895319}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1046847525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1047895319}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1047063200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7316410269161171810, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
@@ -4500,15 +4606,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (10)
+      value: Pato 4
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.69
+      value: 32.86
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.54
+      value: 11.18
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4547,6 +4653,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+--- !u!114 &1052036190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1782016333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1063710900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4671,15 +4788,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (1)
+      value: Pato 8
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.25
+      value: -24.73
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.57
+      value: 14.18
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4857,15 +4974,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (9)
+      value: Pato 3
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.65
+      value: 28.78
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.56
+      value: -7.96
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4966,6 +5083,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
   m_PrefabInstance: {fileID: 322870081}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1127612558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 322870081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1128036691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5677,6 +5805,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
+--- !u!114 &1306796789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 341123329}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1313467332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5744,15 +5883,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (6)
+      value: Pato 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.81
+      value: 18.62
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.07
+      value: 9.78
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5805,6 +5944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1358960805}
+  - component: {fileID: 1358960806}
   m_Layer: 0
   m_Name: ---- Patos
   m_TagString: Untagged
@@ -5836,6 +5976,8 @@ Transform:
   - {fileID: 1075464553}
   - {fileID: 2105156336}
   - {fileID: 1619567793}
+  - {fileID: 1426993197}
+  - {fileID: 70229643}
   - {fileID: 1469309748}
   - {fileID: 341123330}
   - {fileID: 1610508491}
@@ -5845,6 +5987,39 @@ Transform:
   - {fileID: 1787604637}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1358960806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358960804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ede6f119fe644a4b25defb8801b7714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ducks:
+  - {fileID: 920679079}
+  - {fileID: 675229288}
+  - {fileID: 1127612558}
+  - {fileID: 1756651159}
+  - {fileID: 1046847525}
+  - {fileID: 1727527594}
+  - {fileID: 1052036190}
+  - {fileID: 2084530698}
+  - {fileID: 1868607496}
+  - {fileID: 2105156339}
+  - {fileID: 1619567796}
+  - {fileID: 1426993198}
+  - {fileID: 70229644}
+  - {fileID: 1776823476}
+  - {fileID: 1306796789}
+  - {fileID: 1610508494}
+  - {fileID: 995747331}
+  - {fileID: 189895719}
+  - {fileID: 1409295525}
+  - {fileID: 1787604639}
 --- !u!1001 &1374028159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5933,6 +6108,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249b120660266980a8ce2a369e3cf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1426993196
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1358960805}
+    m_Modifications:
+    - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_Name
+      value: Pato 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+--- !u!4 &1426993197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1426993196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1426993198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1426993196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1431303656
 GameObject:
   m_ObjectHideFlags: 0
@@ -6006,15 +6254,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (4)
+      value: Pato 13
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.20000076
+      value: -29.02
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.04
+      value: -9.56
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6473,6 +6721,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
   m_PrefabInstance: {fileID: 270852368}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610508494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 270852368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1611732834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6545,15 +6804,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (3)
+      value: Pato 10
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.09
+      value: -22.12
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.64
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6597,6 +6856,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
   m_PrefabInstance: {fileID: 1619567792}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1619567796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1619567792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1624133363
 GameObject:
   m_ObjectHideFlags: 0
@@ -6816,6 +7086,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5923287446248116233, guid: df49ce4e327f8c8488c5910e7782fcae, type: 3}
   m_PrefabInstance: {fileID: 796036254}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1727527594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1972819441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1739410493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6878,6 +7159,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1484228678942276928, guid: 39179e1a5bbca4c71aa194db13ea350c, type: 3}
   m_PrefabInstance: {fileID: 1739410493}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1756651159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1116929887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1772386217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6935,6 +7227,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
+--- !u!114 &1776823476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1469309747}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1782016333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6945,15 +7248,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (12)
+      value: Pato 6
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 33.19
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.158
+      value: -17.66
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7189,6 +7492,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1322763129503589628, guid: 3875c06772f654bfdbcf2375ada6b6cf, type: 3}
   m_PrefabInstance: {fileID: 1163061718}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1868607496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 1075464552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1874881877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7479,15 +7793,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck
+      value: Pato 0
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43
+      value: 4.98
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.93
+      value: -18.76
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7536,15 +7850,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (11)
+      value: Pato 5
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.95
+      value: 40.07
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.33
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7736,6 +8050,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5869850988535577470, guid: db4b94459ec4dd34288791e4a2b8de78, type: 3}
   m_PrefabInstance: {fileID: 640371160}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2084530698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 434945784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2099897418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5923287446248116233, guid: df49ce4e327f8c8488c5910e7782fcae, type: 3}
@@ -7813,15 +8138,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_Name
-      value: Duck (2)
+      value: Pato 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.97
+      value: -8.42
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.1159134
+      value: 5.697
       objectReference: {fileID: 0}
     - target: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7865,6 +8194,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1260046280328896352, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
   m_PrefabInstance: {fileID: 2105156335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2105156339 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 2105156335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2129497889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7316410269161171810, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
@@ -8089,11 +8429,11 @@ PrefabInstance:
       objectReference: {fileID: 813355612}
     - target: {fileID: 7015951396230836944, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.67
+      value: -9.71
       objectReference: {fileID: 0}
     - target: {fileID: 7015951396230836944, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.61
+      value: -18.26
       objectReference: {fileID: 0}
     - target: {fileID: 7015951396230836944, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8129,7 +8469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8348046360351963904, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
       propertyPath: m_Name
-      value: Duck Madame
+      value: Pato 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8497,16 +8837,11 @@ PrefabInstance:
       propertyPath: dialogManager
       value: 
       objectReference: {fileID: 1633683673}
-    - target: {fileID: 5182959419189006495, guid: 2770f37350cf45a4f9cb7c16de796291, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9214071795889677974, guid: 2770f37350cf45a4f9cb7c16de796291, type: 3}
       propertyPath: m_Name
       value: Coqueiro
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5182959419189006495, guid: 2770f37350cf45a4f9cb7c16de796291, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8609,13 +8944,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 8460673}
     m_Modifications:
     - target: {fileID: -4716247426406529296, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: duck
+      value: 
+      objectReference: {fileID: 2105156339}
     - target: {fileID: -4716247426406529296, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
       propertyPath: dialogManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1977324080}
     - target: {fileID: 5721375891709474771, guid: 9eb64df826fc8ce478f956bac5c036ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.4
@@ -8725,10 +9060,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Onda
       objectReference: {fileID: 0}
-    - target: {fileID: 6997399594677461707, guid: 93f4d7bb847e6b641898a8b6ca63b149, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -516351846788621472, guid: 8b2545d574a98477c835d28489dc3753, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8744,7 +9075,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5089063670166762499, guid: 45087afa81ad8b441b56db0576f9985e, type: 3}
       propertyPath: m_Name
-      value: Duck Coco
+      value: Pato 17
       objectReference: {fileID: 0}
     - target: {fileID: 6059699959095721427, guid: 45087afa81ad8b441b56db0576f9985e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8820,11 +9151,11 @@ PrefabInstance:
       objectReference: {fileID: 363603705}
     - target: {fileID: 7301893418738575858, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7732267
+      value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 7301893418738575858, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2635667
+      value: -5.48
       objectReference: {fileID: 0}
     - target: {fileID: 7301893418738575858, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8860,7 +9191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8633985497449308194, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
       propertyPath: m_Name
-      value: Teacher Duck
+      value: Pato 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8958,15 +9289,15 @@ PrefabInstance:
       objectReference: {fileID: 2750250554786882451}
     - target: {fileID: 7097763144271727444, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: m_Name
-      value: Burried Duck
+      value: Pato 19
       objectReference: {fileID: 0}
     - target: {fileID: 8072645747391513220, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.08
+      value: -0.99
       objectReference: {fileID: 0}
     - target: {fileID: 8072645747391513220, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.73
+      value: 8.29
       objectReference: {fileID: 0}
     - target: {fileID: 8072645747391513220, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9147,11 +9478,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4256746241582985980, guid: 82c77d65e7354a04faed00d3fbc7725b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.11
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 4256746241582985980, guid: 82c77d65e7354a04faed00d3fbc7725b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.59
+      value: -9.52
       objectReference: {fileID: 0}
     - target: {fileID: 4256746241582985980, guid: 82c77d65e7354a04faed00d3fbc7725b, type: 3}
       propertyPath: m_LocalPosition.z
