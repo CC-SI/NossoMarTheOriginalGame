@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
 	
 	public static void SaveGameData()
 	{
+		Instance.gameData = new SaveData();
+		
 		foreach(var save in Serializable)
 			save.Save(Instance.gameData);
 		
@@ -104,12 +106,9 @@ public class GameManager : MonoBehaviour
 		LoadScene((int)GameState.Praia, loadData);
 	}
 	
-	public static void LoadNewGame(bool loadData = false)
+	public static void LoadTutorial()
 	{
-		if (loadData) 
-			Instance.LoadGameData();
-			
-		LoadScene((int)GameState.Vila, loadData);
+		LoadScene((int)GameState.Vila);
 	}
 	
 	public static void LoadMiniGame()
