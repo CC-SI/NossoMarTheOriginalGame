@@ -4446,6 +4446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1249b120660266980a8ce2a369e3cf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &995747334 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1609187281747860921, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
+  m_PrefabInstance: {fileID: 4854300180949392387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1015347693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7316410269161171810, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
@@ -7097,6 +7102,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438fb5ca6427468a8a24ae1e37852f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1733628265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6380541929259865100, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
+  m_PrefabInstance: {fileID: 5832226668389538910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23495f104e8349b29819231cb1815fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1739410493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8420,6 +8436,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1358960805}
     m_Modifications:
     - target: {fileID: 6662653624113969183, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
+      propertyPath: ponto
+      value: 
+      objectReference: {fileID: 656218549}
+    - target: {fileID: 6662653624113969183, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
+      propertyPath: acessorio
+      value: 
+      objectReference: {fileID: 1524224123}
+    - target: {fileID: 6662653624113969183, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
       propertyPath: dialogManager
       value: 
       objectReference: {fileID: 1955816971}
@@ -9118,6 +9142,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7298791176430058771, guid: 45087afa81ad8b441b56db0576f9985e, type: 3}
+      propertyPath: ponto
+      value: 
+      objectReference: {fileID: 962549388}
+    - target: {fileID: 7298791176430058771, guid: 45087afa81ad8b441b56db0576f9985e, type: 3}
       propertyPath: dialogManager
       value: 
       objectReference: {fileID: 878363367}
@@ -9145,6 +9173,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1358960805}
     m_Modifications:
+    - target: {fileID: 379020310191507005, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
+      propertyPath: ponto
+      value: 
+      objectReference: {fileID: 946185547}
+    - target: {fileID: 379020310191507005, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 995747334}
     - target: {fileID: 379020310191507005, guid: 3012e89368854df4dbdb0d205db49633, type: 3}
       propertyPath: dialogManager
       value: 
@@ -9280,9 +9316,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1358960805}
     m_Modifications:
     - target: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
+      propertyPath: ponto
+      value: 
+      objectReference: {fileID: 1382255340}
+    - target: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: dialogManager
       value: 
       objectReference: {fileID: 1112802405}
+    - target: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
+      propertyPath: isPatoEnterrado
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1733628265}
     - target: {fileID: 5726668257134037495, guid: ea488f433e936cc458c299a37fea8d94, type: 3}
       propertyPath: objectToBeCaptured
       value: 
@@ -9533,6 +9581,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 48117146}
     m_Modifications:
+    - target: {fileID: 203053583874484061, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_Name
+      value: Menagem De Chapeu Coletado
+      objectReference: {fileID: 0}
+    - target: {fileID: 203053583874484061, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 447769572548130760, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: _duckDialog
       value: 
@@ -9565,6 +9621,14 @@ PrefabInstance:
       propertyPath: PaOuChapeuOuCoco
       value: 
       objectReference: {fileID: 813355609}
+    - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: mensagemObjetoPego
+      value: 
+      objectReference: {fileID: 6730222562224945376}
+    - target: {fileID: 1805589475846256669, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1995520184147155653, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9613,6 +9677,10 @@ PrefabInstance:
       propertyPath: IconeInteracao
       value: 
       objectReference: {fileID: 962549388}
+    - target: {fileID: 3403704387196462094, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1369343082, guid: d8f718583b2ffdc44b8600bbe864749f, type: 3}
     - target: {fileID: 4077738922737800097, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: duckAguaCoco
       value: 
@@ -9621,10 +9689,18 @@ PrefabInstance:
       propertyPath: _duckDialog
       value: 
       objectReference: {fileID: 1409295525}
+    - target: {fileID: 6291350625348041867, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6971690318222555586, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: _duckDialog
       value: 
       objectReference: {fileID: 189895719}
+    - target: {fileID: 7094408517130315909, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7370816454081100393, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: _duckDialog
       value: 
@@ -9641,6 +9717,10 @@ PrefabInstance:
       propertyPath: PaOuChapeuOuCoco
       value: 
       objectReference: {fileID: 1903419179044169291}
+    - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: mensagemObjetoPego
+      value: 
+      objectReference: {fileID: 6730222562224945375}
     - target: {fileID: 8209380517871080104, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -9736,6 +9816,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 537565367}
+--- !u!1 &6730222562224945375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6291350625348041867, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+  m_PrefabInstance: {fileID: 6730222562224945371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6730222562224945376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 203053583874484061, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+  m_PrefabInstance: {fileID: 6730222562224945371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8317302396270239741
 PrefabInstance:
   m_ObjectHideFlags: 0
