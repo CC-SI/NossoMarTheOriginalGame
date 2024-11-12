@@ -38,7 +38,11 @@ namespace Lixeira
         {
             // É um jogo novo? Se sim, parar processo.
             if(!GameManager.IsLoadingGameData)
+            {
+                duck.gameObject.SetActive(false);
+                AddObject(colisor, this);
                 yield break;
+            }
             
             yield return new WaitWhile(() => GameManager.IsLoadingGameData);
             
