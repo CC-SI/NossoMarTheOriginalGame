@@ -43,7 +43,6 @@ namespace Duck
                 float variation = Random.value;
 
                 duck.audioSource.pitch = Mathf.Lerp(1, 1.1f, variation);
-                //duck.audioSource.volume = Mathf.Lerp(.9f, 1, variation);
                 duck.Invoke(nameof(duck.Quack), variation);
             }
         }
