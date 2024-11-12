@@ -306,6 +306,7 @@ MonoBehaviour:
   trashSound: {fileID: 5525725406569775756}
   dragged: {fileID: 8300000, guid: 9fef84602d5266e47a16c2f1dac31cac, type: 3}
   dropped: {fileID: 8300000, guid: 6f30ef6a22488c04ca333fc5a98eb405, type: 3}
+  superimposed: {fileID: 8300000, guid: 4286a91fcbe097346a0bad29aa6db260, type: 3}
   <OnTouched>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
