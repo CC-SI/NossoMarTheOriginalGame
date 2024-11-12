@@ -54,9 +54,11 @@ namespace Dialog.Manager
                 controllerDialogIdSpeeches.ControllerActionsForId(); 
                 Debug.Log("Inicio");
                 playerAnimator.SetBool("isMoving", false);
+                return;
             }
             else
             {
+         
                 EndDialog();
                 
                 dialogObject.AtualizarShowCocoPorId("player_confirmando_agua_coco", false);
@@ -70,8 +72,10 @@ namespace Dialog.Manager
                 }
                 
                 if (duckAnimator != null && isDuckBuried)
+                if (_duckDialog)
                 {
                     duckAnimator.SetBool("isBurried", false);
+                    _duckDialog.StartFollowing();
                 }
             }
         }
