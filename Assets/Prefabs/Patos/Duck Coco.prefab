@@ -120,7 +120,11 @@ MonoBehaviour:
       m_Calls: []
   dialogManager: {fileID: 0}
   objectToBeCaptured: {fileID: 0}
+  acessorio: {fileID: 0}
+  ponto: {fileID: 5712129695731434506}
+  graphicBehaviour: {fileID: 8976677485350136667}
   isDuckAguaCoco: 1
+  isPatoEnterrado: 0
 --- !u!114 &5174447147403252970 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 192423504008066649, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
@@ -130,5 +134,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb9ab8c0e84a91b4aa87a79773b7f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5712129695731434506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 730000791277889209, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 5000390229519442611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8976677485350136667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4176918193062644200, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 5000390229519442611}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23495f104e8349b29819231cb1815fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
