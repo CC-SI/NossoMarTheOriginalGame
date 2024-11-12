@@ -26,6 +26,7 @@ namespace Duck
         private void Start()
         protected override IEnumerator Start()
         {
+            OnDuckRescued += AcessoriosPegos;
             if (isPatoEnterrado)
                 graphicBehaviour.IsBuried = true;
 
@@ -48,16 +49,24 @@ namespace Duck
             if (!IsFollowing)
             {
                 if (objectToBeCaptured != null)
+            if (IsFollowing) return;
+            
+            if (objectToBeCaptured)
+            { 
+                if (isDuckAguaCoco && objectToBeCaptured.IsAllCapturedCocos)
                 {
                     if (isDuckAguaCoco && objectToBeCaptured.IsAllCapturedCocos)
                     {
                         dialogManager.AvancarDialogoSilenciosamente();
                     }
+                    dialogManager.AvancarDialogoSilenciosamente();
                 }
                 
                 dialogManager.StartDialog();
                 
             }
+                
+            dialogManager.StartDialog();
         }
         
         private void AcessoriosPegos()
