@@ -14,6 +14,7 @@ namespace Dialog.Manager
         [SerializeField] private DialogObject dialogObject;
         
         [SerializeField] private bool isTutorial;
+        [SerializeField] private Animator playerAnimator;
         
         public bool IsDialogActive;
         
@@ -51,6 +52,8 @@ namespace Dialog.Manager
             {
                 ShowCurrentDialog();
                 controllerDialogIdSpeeches.ControllerActionsForId(); 
+                Debug.Log("Inicio");
+                playerAnimator.SetBool("isMoving", false);
             }
             else
             {
