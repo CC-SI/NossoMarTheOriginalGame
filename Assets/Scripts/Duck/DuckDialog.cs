@@ -1,5 +1,7 @@
 ﻿using Dialog.Manager;
 ﻿using Actors;
+﻿using System.Collections;
+using Actors;
 using Dialog.Manager;
 using UnityEngine;
 
@@ -22,9 +24,12 @@ namespace Duck
         public bool isPatoEnterrado;
         
         private void Start()
+        protected override IEnumerator Start()
         {
             if (isPatoEnterrado)
                 graphicBehaviour.IsBuried = true;
+
+            yield return base.Start();
         }
         
         private void Awake()
