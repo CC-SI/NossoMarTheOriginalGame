@@ -1,8 +1,7 @@
 public enum GameState
 {
-	Menu = 0,
-	Praia = 1,
-	Playing = Praia | MiniGame,
-	MiniGame = 2,
-	Vila = 3
+	Menu = 2,
+	Praia = 3,
+	MiniGame = 4,
+	Vila = 5
 }
