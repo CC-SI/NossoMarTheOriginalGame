@@ -58,6 +58,8 @@ namespace Dialog.Manager
                 
                 dialogObject.AtualizarShowCocoPorId("player_confirmando_agua_coco", false);
                 
+                ResetDialog();
+                
                 dialogUIManager.ShowIconeInteracao(false);
                 if (_duckDialog != null)
                 {
