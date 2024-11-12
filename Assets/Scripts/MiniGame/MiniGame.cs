@@ -14,7 +14,7 @@ namespace MiniGame
         [SerializeField] private Button textBox;
         [SerializeField] private List<MiniGameObject> prefabs;
 
-        private static readonly List<MiniGameObject> objects = new();
+        private readonly List<MiniGameObject> objects = new();
         private static TrashBinBehaviour TrashBin => TrashBinBehaviour.Instance;
 
         public static MiniGame Instance { get; private set; }
@@ -45,27 +45,27 @@ namespace MiniGame
 
         protected static void AddObject(MiniGameObject miniGameObject)
         {
-            objects.Add(miniGameObject);
+            Instance.objects.Add(miniGameObject);
         }
 
         private static void AddObjectByIndex(int index, MiniGameObject miniGameObject)
         {
-            objects.Insert(index, miniGameObject);
+            Instance.objects.Insert(index, miniGameObject);
         }
 
         private static void RemoveObject(MiniGameObject miniGameObject)
         {
-            objects.Remove(miniGameObject);
+            Instance.objects.Remove(miniGameObject);
         }
         
         public static IReadOnlyList<MiniGameObject> GetObjects()
         {
-            return objects.AsReadOnly();
+            return Instance.objects.AsReadOnly();
         }
         
         public static int GetObjectCount()
         {
-            return objects.Count;
+            return Instance.objects.Count;
         }
         
         public static void UpdateTrashIndex(MiniGameObject trash)
@@ -115,6 +115,7 @@ namespace MiniGame
         void FinishGame()
         {
             isFinished = true;
+            Destroy(this);
             GameManager.LoadGame(true);
         }
 
