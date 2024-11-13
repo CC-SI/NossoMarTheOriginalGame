@@ -81,6 +81,8 @@ namespace Duck
             
             Instance = this;
             
+            GameManager.Subscribe(this);
+            
 #if UNITY_EDITOR
             RenameDucksByIndex();
 #endif
@@ -93,11 +95,6 @@ namespace Duck
             GameManager.Unsubscribe(this);
             RescuedCount = 0;
             DuckBehavior.OnDuckRescued -= OnDuckRescued;
-        }
-
-        void Start()
-        {
-            GameManager.Subscribe(this);
         }
         
 #if UNITY_EDITOR
