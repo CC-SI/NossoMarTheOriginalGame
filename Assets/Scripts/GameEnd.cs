@@ -18,7 +18,7 @@ public class GameEnd : MonoBehaviour
 
     void EndGame()
     {
-        if (DuckManager.RescuedCount < DuckManager.TotalCount) return;
+        if (DuckManager.RescuedCount < DuckManager.TotalCount - 1) return;
             
         endQuestText.gameObject.SetActive(true);
         endArea.enabled = true;
