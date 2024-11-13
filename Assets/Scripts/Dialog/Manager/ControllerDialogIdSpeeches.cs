@@ -247,7 +247,6 @@ namespace Dialog.Manager
         {
             dialogUIManager.ShowZonasDeAvancarDialogo(false);
             dialogUIManager.ShowZonaDeFinalizarDialogo(true);
-            dialogUIManager.ShowFecharDialogo(false);
         }
         
         private void ChangeScene()
