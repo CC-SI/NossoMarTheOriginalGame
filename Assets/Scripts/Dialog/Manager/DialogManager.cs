@@ -143,11 +143,38 @@ namespace Dialog.Manager
                 PlayerBehaviour.Instance.Movement.enabled = true;
             }
         }
+        
+        public void FecharDialogoEFinalizar()
+        {
+            IsDialogActive = false;
+            dialogUIManager.ShowDialog(false);
 
+            if (!isTutorial)
+            {
+                PlayerBehaviour.Instance.Movement.enabled = true;
+            }
+            
+            AvancarDialogo();
+        }
     
         private void ResetDialog()
         {
             dialogObject.ResetDialog();
+        }
+        
+        public void FinalizarTutorial()
+        {
+            IsDialogActive = false;
+            dialogUIManager.ShowDialog(false);
+
+            if (!isTutorial)
+            {
+                PlayerBehaviour.Instance.Movement.enabled = true;
+            }
+            
+            ResetDialog();
+            
+            Debug.Log("Dialogo finalizado");
         }
     }
 }
