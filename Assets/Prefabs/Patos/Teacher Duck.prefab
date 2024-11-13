@@ -67,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 4176918193062644200, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: duckBehavior
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379020310191507005}
     - target: {fileID: 4443184291002783393, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 4176918193062644200, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: duckBehavior
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5726668257134037495}
     - target: {fileID: 5077117201620869165, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
       propertyPath: avoidancePriority
       value: 48
