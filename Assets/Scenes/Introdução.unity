@@ -630,6 +630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Bot\xE3o Pular Video"
       objectReference: {fileID: 0}
+    - target: {fileID: 8159831890945231563, guid: d05832ff18c8ca94fa49246f93eded29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
