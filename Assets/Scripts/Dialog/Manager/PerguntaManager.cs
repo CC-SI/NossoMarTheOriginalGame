@@ -12,6 +12,9 @@ namespace Dialog.Manager
         [SerializeField] private DialogObject perguntaObject;
         [SerializeField] private int numeroMaximoPerguntas = 3; 
         private List<DialogoPergunta> perguntasEmbaralhadas = new();
+
+
+        [SerializeField] public bool isTutorialMove;
         
         private int perguntaAtualIndex = 0;
 
@@ -38,7 +41,10 @@ namespace Dialog.Manager
             {
                 perguntasUIManager.ShowPainelPerguntas(false); 
                 
-                PlayerBehaviour.Instance.Movement.enabled = true;
+                if (!isTutorialMove)
+                {
+                    PlayerBehaviour.Instance.Movement.enabled = true;
+                }
                 
                 if (acertos >= 2)
                 {

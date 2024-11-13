@@ -1,6 +1,7 @@
 ﻿using Duck;
 using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Dialog.Manager
 {
@@ -15,6 +16,10 @@ namespace Dialog.Manager
         [SerializeField] private DialogObject dialogObject;
         
         [SerializeField] private bool isTutorial;
+        
+        [SerializeField] private bool isTutorialMove;
+
+        [SerializeField] private bool isTutorialNextScene;
         
         public bool IsDialogActive;
         
@@ -43,7 +48,10 @@ namespace Dialog.Manager
                 perguntaManager.StartPerguntas();
             }
             
-            PlayerBehaviour.Instance.Movement.enabled = false;
+            if (!isTutorial)
+            {
+                PlayerBehaviour.Instance.Movement.enabled = false;
+            }
         }
         
         public void AvancarDialogo()
@@ -57,6 +65,11 @@ namespace Dialog.Manager
                 return;
             }
                 EndDialog();
+
+                if (isTutorialNextScene)
+                {
+                    SceneManager.LoadScene("Praia");
+                }
                 
                 dialogObject.AtualizarShowCocoPorId("player_confirmando_agua_coco", false);
                 
@@ -125,7 +138,10 @@ namespace Dialog.Manager
             IsDialogActive = false;
             dialogUIManager.ShowDialog(false);
 
-            PlayerBehaviour.Instance.Movement.enabled = true;
+            if (!isTutorial)
+            {
+                PlayerBehaviour.Instance.Movement.enabled = true;
+            }
         }
 
     
