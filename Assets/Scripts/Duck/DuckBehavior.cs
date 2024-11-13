@@ -125,7 +125,7 @@ namespace Duck
 			if (!IsRescued)
 				yield break;
 			
-			transform.position = Player.transform.position;
+			movement.WarpTo(Player.transform.position);
 			Wander();
 		}
     

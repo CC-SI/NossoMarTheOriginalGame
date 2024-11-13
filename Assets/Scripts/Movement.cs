@@ -115,6 +115,12 @@ public class Movement : MonoBehaviour, IMovement
         StopFollowing();
         return Agent.SetDestination(position);
     }
+    
+    public bool WarpTo(Vector3 position)
+    {
+        StopFollowing();
+        return Agent.Warp(position);
+    }
 
     public void SetFollowTarget(Transform target)
     {
