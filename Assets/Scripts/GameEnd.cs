@@ -9,6 +9,7 @@ public class GameEnd : MonoBehaviour
     [SerializeField] private DialogManager endDialogText;
     [SerializeField] private GameObject endQuestText;
     [SerializeField] private Collider2D endArea;
+    [SerializeField] private AudioSource praiaSong;
 
     void Awake()
     {
@@ -27,6 +28,7 @@ public class GameEnd : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         
+        praiaSong.Stop();
         AudioController.Instance.PlaySong();
         endArea.enabled = false;
         endQuestText.SetActive(false);
