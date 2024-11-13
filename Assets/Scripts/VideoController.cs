@@ -49,6 +49,7 @@ public class VideoController : MonoBehaviour
                 GameManager.LoadTutorial();
                 return;
             case "menu":
+                AudioController.Instance.StopSong();
                 GameManager.LoadMainMenu();
                 break;
         }

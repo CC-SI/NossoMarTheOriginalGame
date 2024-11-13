@@ -27,6 +27,7 @@ public class GameEnd : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         
+        AudioController.Instance.PlaySong();
         endArea.enabled = false;
         endQuestText.SetActive(false);
         endDialogText.StartDialog();
