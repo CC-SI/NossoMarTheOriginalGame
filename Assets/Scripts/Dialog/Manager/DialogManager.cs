@@ -22,6 +22,7 @@ namespace Dialog.Manager
         [SerializeField] private bool isTutorialNextScene;
         
         public bool IsDialogActive;
+        private bool isDialogOcult;
         
         private void Start()
         {
@@ -131,6 +132,12 @@ namespace Dialog.Manager
             
             dialogUIManager.ShowDialog(true);
             dialogUIManager.SetSpeaches(currentDialog.speaker, dialogText);
+            isDialogOcult = false;
+
+            if (!isDialogOcult)
+            {
+                PlayerBehaviour.Instance.Movement.enabled = false;
+            }
         }
 
         public void EndDialog()
@@ -142,7 +149,22 @@ namespace Dialog.Manager
             {
                 PlayerBehaviour.Instance.Movement.enabled = true;
             }
+            
+            
         }
+        
+        public void OcultarDialogo()
+        {
+            IsDialogActive = false;
+            dialogUIManager.ShowDialog(false);
+            isDialogOcult = true;
+
+            if (isDialogOcult)
+            {
+                PlayerBehaviour.Instance.Movement.enabled = true;
+            }
+        }
+        
         
         public void FecharDialogoEFinalizar()
         {
