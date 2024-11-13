@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
@@ -12,6 +13,14 @@ public class VideoController : MonoBehaviour
     void Start()
     {
         var videoPath = GetVideoPath();
+        
+#if UNITY_EDITOR
+        if (!File.Exists(videoPath))
+        {
+            SwitchScene();
+            return;
+        }
+#endif
         
         videoPlayer.url = videoPath;
         
@@ -29,7 +38,11 @@ public class VideoController : MonoBehaviour
     void EndReached(VideoPlayer vp)
     {
         vp.Stop();
-        
+        SwitchScene();
+    }
+
+    void SwitchScene()
+    {
         switch (nextScene)
         {
             case "tutorial":
@@ -46,7 +59,13 @@ public class VideoController : MonoBehaviour
         
         return Path.Combine(Application.streamingAssetsPath, videoFileName);
     }
-    
+
+    private void OnDestroy()
+    {
+        videoPlayer.loopPointReached -= EndReached;
+        videoPlayer.prepareCompleted -= PlayVideo;
+    }
+
 #if UNITY_EDITOR
     void Reset()
     {

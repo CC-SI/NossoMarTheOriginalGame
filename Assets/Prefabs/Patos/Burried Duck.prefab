@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: duckBehavior
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5077117201620869165, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+      propertyPath: avoidancePriority
+      value: 48
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2930147508589281616, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
     m_RemovedGameObjects: []
@@ -95,6 +99,22 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 8063682653043679452, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
   m_PrefabInstance: {fileID: 7024306875866324452}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4960440434888613195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2714649852207005871, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 7024306875866324452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6380541929259865100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4176918193062644200, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 7024306875866324452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23495f104e8349b29819231cb1815fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7097763144271727444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 286831910162110128, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
@@ -120,7 +140,11 @@ MonoBehaviour:
       m_Calls: []
   dialogManager: {fileID: 0}
   objectToBeCaptured: {fileID: 0}
+  acessorio: {fileID: 4960440434888613195}
+  ponto: {fileID: 7735532939119164253}
+  graphicBehaviour: {fileID: 6380541929259865100}
   isDuckAguaCoco: 0
+  isPatoEnterrado: 1
 --- !u!114 &7192523256988871613 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 192423504008066649, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
@@ -132,3 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9ab8c0e84a91b4aa87a79773b7f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7735532939119164253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 730000791277889209, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 7024306875866324452}
+  m_PrefabAsset: {fileID: 0}

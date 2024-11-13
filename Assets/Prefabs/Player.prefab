@@ -194,7 +194,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Movement>k__BackingField: {fileID: 6398801785595304622}
   <InteractableZone>k__BackingField: {fileID: 4560275314301732795}
-  dialogManagers: []
+  dialogManagers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!50 &7422051366502057700
 Rigidbody2D:
   serializedVersion: 5
@@ -254,7 +261,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 100
   avoidancePriority: 49
   m_AngularSpeed: 0

@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d51db7c983b74433a6c41ff499e99dd3, type: 3}
-  m_Name: Pato Lixo
+  m_Name: Dialogo FInal
   m_EditorClassIdentifier: 
   Dialogos:
-  - id: pato_lixo_pedindo_ajuda
+  - id: pato_final
     speaker: Pato
-    texto: "Tem algu\xE9m a\xED? Por favor, me ajude!"
+    texto: "Muito obrigado por nos ajudar! Agora que estamos todos juntos poderemos
+      seguir at\xE9 o destino que o barco nos levava."
     pergunta: {fileID: 0}
     ShowCoco: 0
-  - id: player_confirmando_lixo
+  - id: jogador_final
     speaker: Jogador
-    texto: "N\xE3o se preocupe, vou te tirar da\xED!"
+    texto: Fico muito feliz com isso, tenham uma boa viagem!
     pergunta: {fileID: 0}
     ShowCoco: 0
-  - id: pato_lixo_agradecendo
+  - id: pato_final
     speaker: Pato
-    texto: Obrigado!
+    texto: "At\xE9 maaaaais..."
     pergunta: {fileID: 0}
     ShowCoco: 0
-  - id: fim_dialogo_lixo
+  - id: fim_dialogo_final
     speaker: 
     texto: 
     pergunta: {fileID: 0}

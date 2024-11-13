@@ -156,8 +156,8 @@ namespace Dialog.Manager
                         break;
                     
                     // Pato Lixo
-                    case "pato_lixo_agradecendo":
-                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                    case "fim_dialogo_lixo":
+                        dialogUIManager.ShowDialog(false);
                         GameManager.LoadMiniGame();
                         break;
                     
@@ -190,6 +190,12 @@ namespace Dialog.Manager
                     case "player_madame1":
                         dialogUIManager.ShowPaOuChapeuOuCoco(true);
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        break;
+                    
+                    // Dialogo Final
+                    case "fim_dialogo_final":
+                        dialogUIManager.ShowDialog(false);
+                        GameManager.LoadCredits();
                         break;
                 }
             }
