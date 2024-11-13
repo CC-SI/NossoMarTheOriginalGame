@@ -8071,6 +8071,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
+--- !u!114 &1879665705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4919716420271960202, guid: d0a37c830f6ba4747a142bf2e22ef566, type: 3}
+  m_PrefabInstance: {fileID: 2986196824405490937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23495f104e8349b29819231cb1815fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1879924688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10116,6 +10127,10 @@ PrefabInstance:
       propertyPath: isDuckBuried
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 447769572548130760, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1879665705}
     - target: {fileID: 905531078333503508, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_SizeDelta.x
       value: -40
@@ -10248,6 +10263,10 @@ PrefabInstance:
       propertyPath: _duckDialog
       value: 
       objectReference: {fileID: 1409295525}
+    - target: {fileID: 5766029312549429597, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1879665705}
     - target: {fileID: 5855607341386249340, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10264,6 +10283,10 @@ PrefabInstance:
       propertyPath: _duckDialog
       value: 
       objectReference: {fileID: 189895719}
+    - target: {fileID: 6971690318222555586, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1879665705}
     - target: {fileID: 7045144707051547208, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_text
       value: "Ch\xE1peu Coletado"
@@ -10276,6 +10299,10 @@ PrefabInstance:
       propertyPath: _duckDialog
       value: 
       objectReference: {fileID: 995747331}
+    - target: {fileID: 7370816454081100393, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1879665705}
     - target: {fileID: 7546204685582607617, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10328,6 +10355,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8374862284189299399, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1879665705}
     - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: zonaDeFinalizarDialogo
       value: 
