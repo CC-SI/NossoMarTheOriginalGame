@@ -1,8 +1,6 @@
-﻿using System;
-using Dialog.Manager;
+﻿using Dialog.Manager;
 using Duck;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class GameEnd : MonoBehaviour
 {
@@ -18,7 +16,7 @@ public class GameEnd : MonoBehaviour
 
     void EndGame()
     {
-        if (DuckManager.RescuedCount < DuckManager.TotalCount - 1) return;
+        if (DuckManager.RescuedCount < DuckManager.TotalCount) return;
             
         endQuestText.gameObject.SetActive(true);
         endArea.enabled = true;
