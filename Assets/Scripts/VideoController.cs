@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour
 {
     [SerializeField] private string videoFileName;
     [SerializeField] private string nextScene;
+    [SerializeField] private Button skipText;
     [SerializeField] private VideoPlayer videoPlayer;
 
     void Awake()
     {
         videoPlayer.loopPointReached += EndReached;
         videoPlayer.prepareCompleted += PlayVideo;
+        skipText.onClick.AddListener(SwitchScene);
     }
 
     void Start()
@@ -48,6 +51,12 @@ public class VideoController : MonoBehaviour
     void PlayVideo(VideoPlayer video)
     {
         video.Play();
+        Invoke(nameof(ShowSkipVideo), 5f);
+    }
+    
+    void ShowSkipVideo()
+    {
+        skipText.gameObject.SetActive(true);
     }
     
     void EndReached(VideoPlayer video)
