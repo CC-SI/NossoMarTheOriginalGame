@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 6398801785595304622}
   - component: {fileID: 3399276620733795899}
   - component: {fileID: 6120170568130876467}
+  - component: {fileID: 5996821400204582052}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -405,6 +406,52 @@ MonoBehaviour:
   swimming: {fileID: 8300000, guid: 958f7ae9961497f45ae27bb5d52d5dad, type: 3}
   walking: {fileID: 8300000, guid: 72ae9b534b14ec8449a7c6859c61fa7c, type: 3}
   movement: {fileID: 6398801785595304622}
+--- !u!61 &5996821400204582052
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921332446758901547}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6934519464119445249
 GameObject:
   m_ObjectHideFlags: 0
