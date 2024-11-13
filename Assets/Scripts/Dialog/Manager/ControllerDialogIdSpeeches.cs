@@ -13,7 +13,8 @@ namespace Dialog.Manager
         
         [Header("Opcional")]
         [SerializeField] private PerguntasUIManager perguntasUIManager;
-
+        
+        
         [SerializeField] private TextMeshProUGUI timeText;
         
         private bool isCountdownRunning = false;
@@ -75,12 +76,6 @@ namespace Dialog.Manager
                         break;
                     case "voce_pega_jeito_rapido":
                         dialogUIManager.ShowZonasDeAvancarDialogo(true);
-
-
-                        if (dialogUIManager)
-                        {
-                            
-                        }
                         
                         if (!isCountdownRunning)
                         {
@@ -110,9 +105,7 @@ namespace Dialog.Manager
                                 } 
                                 else
                                 {
-                                    dialogUIManager.ShowFecharDialogo(false);
-                                    dialogUIManager.ShowZonasDeAvancarDialogo(false);
-                                    dialogUIManager.ShowZonaDeFinalizarDialogo(true);
+                                    FecharDialogo();
                                     
                                     string[] falas = new string[]
                                     {
@@ -197,6 +190,11 @@ namespace Dialog.Manager
                         }
                         break;
                     
+                    case "pato_professor2":
+                        FecharDialogo();
+                        
+                        break;
+                    
                     // Pato Enterrado
                     case "pato1_pedindo_ajuda":
                         dialogUIManager.ShowButtonsOfDecision(true);
@@ -204,7 +202,7 @@ namespace Dialog.Manager
                         break;
                     case "player3_procurando_pa":
                         dialogUIManager.ShowPaOuChapeuOuCoco(true);
-                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        FecharDialogo();
                         break;
                     
                     // Pato Madame
@@ -214,7 +212,7 @@ namespace Dialog.Manager
                         break;
                     case "player_madame1":
                         dialogUIManager.ShowPaOuChapeuOuCoco(true);
-                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        FecharDialogo();
                         break;
                     
                     // Dialogo Final
@@ -244,6 +242,13 @@ namespace Dialog.Manager
             ChangeScene();
         }
         
+        
+        void FecharDialogo()
+        {
+            dialogUIManager.ShowZonasDeAvancarDialogo(false);
+            dialogUIManager.ShowZonaDeFinalizarDialogo(true);
+            dialogUIManager.ShowFecharDialogo(false);
+        }
         
         private void ChangeScene()
         {
