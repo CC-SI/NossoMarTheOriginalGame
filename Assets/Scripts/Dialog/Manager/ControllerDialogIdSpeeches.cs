@@ -27,8 +27,9 @@ namespace Dialog.Manager
                 dialogUIManager.ShowButtonsOfDecision(false);
                 dialogUIManager.ShowZonasDeAvancarDialogo(true);
                 dialogUIManager.ShowPaOuChapeuOuCoco(false);
+                dialogUIManager.ShowZonaDeFinalizarDialogo(false);
                 
-                if (perguntasUIManager != null)
+                if (perguntasUIManager)
                 {
                     perguntasUIManager.isShowCoco = false;
                 }
@@ -105,11 +106,34 @@ namespace Dialog.Manager
 
                                 if (showCoco)
                                 {
-                                    typeTexto = "Bem-vindo! Estou aqui para testar seu conhecimento. Responda às minhas perguntas e receberá um coco por cada resposta correta.";
+                                    typeTexto = "Um pato me contou que você venho aqui pegar cocos para ele, pois bem, responda às minhas perguntas e receberá um coco por cada resposta correta.";
                                 } 
                                 else
                                 {
-                                    typeTexto = "Bem-vindo! Estou aqui para testar seu conhecimento. Vamos nessa!";
+                                    dialogUIManager.ShowFecharDialogo(false);
+                                    dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                                    dialogUIManager.ShowZonaDeFinalizarDialogo(true);
+                                    
+                                    string[] falas = new string[]
+                                    {
+                                        "A natureza é nossa maior riqueza, vamos preservá-la!", "Cada pequena ação faz uma grande diferença para o planeta.",
+                                        "Ame a natureza e ela cuidará de você!", "Vamos juntos construir um mundo mais verde e saudável.",
+                                        "Preservar o meio ambiente é preservar nossa própria existência.", "Plantar uma árvore hoje é garantir o ar puro de amanhã.",
+                                        "Reduza, reutilize e recicle: pequenos gestos que ajudam o planeta!", "A natureza não precisa de nós, mas nós precisamos dela.",
+                                        "Cuidar do meio ambiente é um ato de amor ao próximo.", "Vamos pensar nas próximas gerações e proteger nosso lar.",
+                                        "A vida na Terra depende da nossa relação com o meio ambiente.", "Economizar água é um gesto simples que faz diferença!",
+                                        "A biodiversidade é nosso bem mais precioso, vamos preservá-la.", "O meio ambiente agradece cada atitude consciente.",
+                                        "Cuidar da Terra é garantir um futuro para todos os seres vivos.", "Poluir menos é um compromisso que devemos assumir!",
+                                        "Reduzir o consumo de plástico é um passo importante para um planeta melhor.", "Conservar a natureza é conservar nossa história.",
+                                        "Um mundo sustentável depende de todos nós!", "Proteja os rios, proteja a vida.", "Cada árvore plantada é um futuro garantido.",
+                                        "Vamos ser a mudança que queremos ver no meio ambiente.", "Pequenas atitudes ecoam por todo o planeta.", 
+                                        "Um planeta saudável é o melhor presente para as próximas gerações.", "Adote hábitos que respeitem a natureza!",
+                                        "Proteger o meio ambiente é também cuidar de nós mesmos.", "O futuro verde começa com ações no presente.",
+                                        "Nossa casa é a Terra, vamos tratá-la com respeito.", "Preservar a natureza é um dever de todos.",
+                                        "Cada ser vivo tem seu papel, respeite e proteja todos eles."
+                                    };
+
+                                    typeTexto = falas[Random.Range(0, falas.Length)];
                                 }
                             }
                         }
@@ -120,7 +144,8 @@ namespace Dialog.Manager
                     case "perguntas_coqueiro":
                         dialogUIManager.ShowDialog(false);
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
-                
+                        
+                        
                         if (duckAguaCoco != null)
                         {
                             var dialogo = duckAguaCoco.GetDialogoPorId("player_confirmando_agua_coco");
