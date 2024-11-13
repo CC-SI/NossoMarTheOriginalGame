@@ -169,7 +169,7 @@ namespace Dialog.Manager
                     
                     // Pato agua de coco
                     case "player_confirmando_agua_coco":
-                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        FecharDialogo();
                         duckAguaCoco.AtualizarShowCocoPorId("player_confirmando_agua_coco", true);
                         break;
                     
@@ -184,7 +184,7 @@ namespace Dialog.Manager
                         dialogUIManager.ShowDialog(false);
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
                         
-                        if (perguntasUIManager != null)
+                        if (perguntasUIManager)
                         {
                             perguntasUIManager.ShowPainelPerguntas(true);
                         }
