@@ -39,7 +39,6 @@ namespace Player
 
         public void Save(SaveData data)
         {
-            if (data == null) return;
             data.playerPosition = transform.position;
         }
 
