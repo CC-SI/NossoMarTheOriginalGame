@@ -58,6 +58,7 @@ namespace Dialog.Manager
             SetActive(buttonAjudarPato, show);
             SetActive(buttonIgnorarPato, show);
             SetActive(zonasDeAvancarDialogo, show);
+            SetActive(duckCaptured, false);
         }
 
         private void SetupOnClick()
