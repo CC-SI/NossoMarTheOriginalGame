@@ -1,4 +1,5 @@
-﻿using Duck;
+﻿using Actors;
+using Duck;
 using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,10 +17,10 @@ namespace Dialog.Manager
         [SerializeField] private DialogObject dialogObject;
         
         [SerializeField] private bool isTutorial;
-        
         [SerializeField] private bool isTutorialMove;
-
         [SerializeField] private bool isTutorialNextScene;
+        
+        [SerializeField] private GraphicBehaviour graphicBehaviour;
         
         public bool IsDialogActive;
         private bool isDialogOcult;
@@ -100,6 +101,11 @@ namespace Dialog.Manager
 
         private void ShowCurrentDialog()
         {
+            if (graphicBehaviour)
+            {
+                graphicBehaviour.IsMoving = false;
+            }
+            
             var currentDialog = dialogObject.GetDialogoAtual();
             
             if (currentDialog == null) return;
