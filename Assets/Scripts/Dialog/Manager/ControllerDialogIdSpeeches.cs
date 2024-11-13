@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Dialog.Manager
 {
@@ -74,7 +73,14 @@ namespace Dialog.Manager
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
                         break;
                     case "voce_pega_jeito_rapido":
-                        dialogUIManager.ShowZonasDeAvancarDialogo(false);
+                        dialogUIManager.ShowZonasDeAvancarDialogo(true);
+
+
+                        if (dialogUIManager)
+                        {
+                            
+                        }
+                        
                         if (!isCountdownRunning)
                         {
                             StartCoroutine(CountdownAndChangeScene(12f));
@@ -146,7 +152,6 @@ namespace Dialog.Manager
                     // Pato agua de coco
                     case "player_confirmando_agua_coco":
                         dialogUIManager.ShowZonasDeAvancarDialogo(false);
-                        Debug.Log("Você esta aqui");
                         duckAguaCoco.AtualizarShowCocoPorId("player_confirmando_agua_coco", true);
                         break;
                     
@@ -207,6 +212,7 @@ namespace Dialog.Manager
             }
             ChangeScene();
         }
+        
         
         private void ChangeScene()
         {
