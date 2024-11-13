@@ -70,7 +70,7 @@ namespace Dialog.Manager
 
                 if (isTutorialNextScene)
                 {
-                    SceneManager.LoadScene("Praia");
+                    GameManager.LoadGame();
                 }
                 
                 dialogObject.AtualizarShowCocoPorId("player_confirmando_agua_coco", false);
