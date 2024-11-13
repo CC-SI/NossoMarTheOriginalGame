@@ -37,4 +37,18 @@ Este projeto foi desenvolvido com com intuito de oferecer um recurso didático i
 - **GitHub**:  Plataforma de versionamento de código e colaboração em equipe, permitindo que os desenvolvedores compartilhem e sincronizem atualizações no código.
 - **PixelArt**: Site utilizado para criar o GameArt do jogo.
 
-## 🎮
+## 🎮 Imagens e Clips do Jogo
+
+
+
+## 🧑‍💻 Como Instalar e Rodar o Jogo
+
+1. Antes de clonar o repositório você deve instalar a Unity. Acesse o [site oficial da Unity](https://unity.com/) para baixar a versão mais recente do motor de jogo.
+ 
+2. Clonar o repositório 
+Clone o repositório do projeto para sua máquina local: 
+```bash
+git clone https://github.com/CC-SI/NossoMarTheOriginalGame.git
+```
+3. Abrir na Unity
+- Na Unity, após o projeto ser carregado, clique em **Play** no topo da interface para iniciar o jogo dentro do editor.
