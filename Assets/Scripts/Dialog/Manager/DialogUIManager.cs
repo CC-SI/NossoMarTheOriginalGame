@@ -85,7 +85,7 @@ namespace Dialog.Manager
                     }
                     else
                     {
-                        dialogManager.EndDialog();
+                        dialogManager.OcultarDialogo();
                     }
                 });
             }
