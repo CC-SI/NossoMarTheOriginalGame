@@ -282,7 +282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 761369320151654144, guid: 0e2d7f7331aea624a962f7041761efe5, type: 3}
       propertyPath: m_Name
-      value: Menagem De Pa Coletada 1
+      value: Mensagem de Chapeu Colatado
       objectReference: {fileID: 0}
     - target: {fileID: 5336723937638356024, guid: 0e2d7f7331aea624a962f7041761efe5, type: 3}
       propertyPath: m_Pivot.x
