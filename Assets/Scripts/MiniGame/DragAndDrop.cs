@@ -22,6 +22,7 @@ namespace MiniGame
 
         private static TrashBinBehaviour TrashBin => TrashBinBehaviour.Instance;
         private static MiniGame miniGame => MiniGame.Instance;
+        private static SuperimposingMessage AlertMessage => SuperimposingMessage.Instance;
         
         public bool IsDragging
         {
@@ -42,6 +43,7 @@ namespace MiniGame
 
                 if (!value) return;
                 
+                AlertMessage.Show();
                 trashSound.PlayOneShot(superimposed);
                 OnSuperimposed.Invoke();
                 miniGame.AlertSuperimposing(draggableObject.Bounds, draggableObject.Index);
