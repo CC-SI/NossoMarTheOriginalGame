@@ -6,6 +6,11 @@ namespace Dialog
     [Serializable]
     public class Dialogo
     {
+        void Start()
+        {
+            ShowCoco = false;
+        }
+        
         public string id;
         public string speaker;
         public string texto;
