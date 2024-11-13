@@ -40,6 +40,8 @@ namespace Dialog.Manager
         [SerializeField] private TextMeshProUGUI timeText;
         
         [SerializeField] private Button zonaDeFinalizarDialogo;
+
+        [SerializeField] private bool isAvancarDialogo;
         
         
         public void InitComponent()
@@ -77,7 +79,14 @@ namespace Dialog.Manager
             {
                 zonaDeFinalizarDialogo.onClick.AddListener(() =>
                 {
-                    dialogManager.EndDialog();
+                    if (isAvancarDialogo)
+                    {
+                        dialogManager.AvancarDialogo();
+                    }
+                    else
+                    {
+                        dialogManager.EndDialog();
+                    }
                 });
             }
             
@@ -185,6 +194,8 @@ namespace Dialog.Manager
         
         public void ShowZonaDeFinalizarDialogo(bool show)
         {
+            
+            
             SetActive(zonaDeFinalizarDialogo, show);
         }
         
