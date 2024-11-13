@@ -39,6 +39,7 @@ namespace Dialog.Manager
         
         [SerializeField] private TextMeshProUGUI timeText;
         
+        [SerializeField] private Button zonaDeFinalizarDialogo;
         
         
         public void InitComponent()
@@ -59,11 +60,12 @@ namespace Dialog.Manager
             SetActive(buttonIgnorarPato, show);
             SetActive(zonasDeAvancarDialogo, show);
             SetActive(duckCaptured, false);
+            SetActive(zonaDeFinalizarDialogo, false);
         }
 
         private void SetupOnClick()
         {
-            if (zonasDeAvancarDialogo != null)
+            if (zonasDeAvancarDialogo)
             {
                 zonasDeAvancarDialogo.onClick.AddListener(() =>
                 {
@@ -71,7 +73,15 @@ namespace Dialog.Manager
                 });
             }
 
-            if (fecharDialogo != null)
+            if (zonaDeFinalizarDialogo)
+            {
+                zonaDeFinalizarDialogo.onClick.AddListener(() =>
+                {
+                    dialogManager.EndDialog();
+                });
+            }
+            
+            if (fecharDialogo )
             {
                 fecharDialogo.onClick.AddListener(() =>
                 {
@@ -79,7 +89,7 @@ namespace Dialog.Manager
                 });
             }
 
-            if (buttonAjudarPato != null)
+            if (buttonAjudarPato)
             {
                 buttonAjudarPato.onClick.AddListener(() =>
                 {
@@ -165,6 +175,17 @@ namespace Dialog.Manager
         public void ShowTimeText(bool show)
         {
             SetActive(timeText, show);
+        }
+
+        public void ShowFecharDialogo(bool show)
+        {
+            SetActive(fecharDialogo, show);
+        }
+        
+        
+        public void ShowZonaDeFinalizarDialogo(bool show)
+        {
+            SetActive(zonaDeFinalizarDialogo, show);
         }
         
         public void SetTimeText(string time)
