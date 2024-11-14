@@ -15,13 +15,13 @@ MonoBehaviour:
   Dialogos:
   - id: pato_final
     speaker: Pato
-    texto: "Muito obrigado por nos ajudar! Agora que estamos todos juntos poderemos
-      seguir at\xE9 o destino que o barco nos levava."
+    texto: Muito obrigado por nos ajudar! Agora que estamos juntos novamente podemos
+      seguir ao nosso destino. Partiu barco, patinhos!
     pergunta: {fileID: 0}
     ShowCoco: 0
   - id: jogador_final
     speaker: Jogador
-    texto: Fico muito feliz com isso, tenham uma boa viagem!
+    texto: Fico muito feliz com isso! Tenham uma boa viagem.
     pergunta: {fileID: 0}
     ShowCoco: 0
   - id: pato_final
