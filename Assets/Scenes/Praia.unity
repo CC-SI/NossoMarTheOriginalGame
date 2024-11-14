@@ -8943,6 +8943,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1830395136910138952, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830395136910138952, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 3511839339017686370, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
       propertyPath: praiaSong
       value: 
@@ -10215,6 +10223,10 @@ PrefabInstance:
       propertyPath: IconeInteracao
       value: 
       objectReference: {fileID: 962549388}
+    - target: {fileID: 3388348649532039948, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1879665705}
     - target: {fileID: 3403704387196462094, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10259,6 +10271,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 5105603808358776214, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: graphicBehaviour
+      value: 
+      objectReference: {fileID: 1879665705}
     - target: {fileID: 5766029312549429597, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: _duckDialog
       value: 
