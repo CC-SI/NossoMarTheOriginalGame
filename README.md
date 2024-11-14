@@ -1,5 +1,4 @@
 
-
 # Nosso Mar : Salve os Patinhos 🦆
 
 ## Integrantes do projeto:
@@ -31,15 +30,17 @@ Esses patinhos foram levados pelas correntes oceânicas, aparecendo em praias de
 O cliente desse projeto é a escola Colégio Emílio de Rousseau, que utiliza o jogo <i>Nosso Mar: Salve os Patinhos</i> como uma ferramenta educativa para conscientizar os alunos sobre a importância de preservar os oceanos e combater a poluição.
 Este projeto foi desenvolvido com com intuito de oferecer um recurso didático interativo.
 
-## 🛠️ Ferramentas Utilizadas
-- **Unity**: Motor de jogo usado para o desenvolvimento e design de cenas interativas e objetos 2D.
--  **C#**: Linguagem de programação usada para a lógica do jogo, como movimentos, interações e criação de eventos.
-- **GitHub**:  Plataforma de versionamento de código e colaboração em equipe, permitindo que os desenvolvedores compartilhem e sincronizem atualizações no código.
-- **PixelArt**: Site utilizado para criar o GameArt do jogo.
+## 🛠 Ferramentas Utilizadas
+- *Unity*: Motor de jogo usado para o desenvolvimento e design de cenas interativas e objetos 2D.
+-  *C#*: Linguagem de programação usada para a lógica do jogo, como movimentos, interações e criação de eventos.
+- *GitHub*:  Plataforma de versionamento de código e colaboração em equipe, permitindo que os desenvolvedores compartilhem e sincronizem atualizações no código.
+- *PixelArt*: Site utilizado para criar o GameArt do jogo.
 
-## 🎮 Imagens e Clips do Jogo
-
-
+### Sites Utilizados para Efeitos Sonoros e Música
+- [CDN.pixabay.com](CDN.pixabay.com)
+- [Assets.mixkit.com](Assets.mixkit.com)
+- [fesliyanstudios.com](fesliyanstudios.com)
+- [uppbeat.io](uppbeat.io)
 
 ## 🧑‍💻 Como Instalar e Rodar o Jogo
 
@@ -47,8 +48,11 @@ Este projeto foi desenvolvido com com intuito de oferecer um recurso didático i
  
 2. Clonar o repositório 
 Clone o repositório do projeto para sua máquina local: 
-```bash
+bash
 git clone https://github.com/CC-SI/NossoMarTheOriginalGame.git
-```
+
 3. Abrir na Unity
-- Na Unity, após o projeto ser carregado, clique em **Play** no topo da interface para iniciar o jogo dentro do editor.
+- Na Unity, após o projeto ser carregado, clique em *Play* no topo da interface para iniciar o jogo dentro do editor.
+
+## 📃Licença utilizada no projeto
+Apache-2.0 license
