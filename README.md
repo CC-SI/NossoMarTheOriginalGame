@@ -19,7 +19,7 @@
 | Yago Raiol da Silva             |2224103545|
 
 ## 📽️ Videos
-Video de Apresentação : https://youtu.be/-xPHrMiSaT4
+Video de Apresentação : https://youtu.be/-xPHrMiSaT4 <br>
 Video de Gameplay : https://www.youtube.com/watch?v=fDyu3GRaqsY
 
 ## 🌍 Inspiração do Jogo
