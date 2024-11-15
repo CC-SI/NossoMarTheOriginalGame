@@ -14,9 +14,27 @@ namespace Dialog.Pergunta
     public class DialogoPergunta
     {
         public string id;
+        public bool isRespondida;
         public string pergunta;
         public string respostaCorreta;
         public List<Alternativa> alternativas = new(){null, null, null};
+        
+        
+        public int ContarPerguntasRespondidas(List<DialogoPergunta> perguntas)
+        {
+            int perguntasRespondidas = 0;
+
+            foreach (var pergunta in perguntas)
+            {
+                if (pergunta.isRespondida)
+                {
+                    perguntasRespondidas++;
+                }
+            }
+
+            return perguntasRespondidas;
+        }
+
         
         public bool VerificarResposta(int respostaId)
         {
