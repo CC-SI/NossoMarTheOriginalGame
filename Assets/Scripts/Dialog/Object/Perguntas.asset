@@ -14,302 +14,336 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogosPergunta:
   - id: 1
-    pergunta: "Quando o navio saiu da China estava com destino para qual país?"
-    respostaCorreta: "Estados Unidos"
+    isRespondida: 0
+    pergunta: "Quando o navio saiu da China estava com destino para qual pa\xEDs?"
+    respostaCorreta: Estados Unidos
     alternativas:
-      - id: 1
-        alternativa: "Alaska"
-      - id: 2
-        alternativa: "Chile"
-      - id: 3
-        alternativa: "Estados Unidos"
+    - id: 1
+      alternativa: Alaska
+    - id: 2
+      alternativa: Chile
+    - id: 3
+      alternativa: Estados Unidos
   - id: 2
-    pergunta: "Os patos de borracha faziam parte de qual empresa?"
-    respostaCorreta: "The first five years"
+    isRespondida: 0
+    pergunta: Os patos de borracha faziam parte de qual empresa?
+    respostaCorreta: The first five years
     alternativas:
-      - id: 1
-        alternativa: "The fun company"
-      - id: 2
-        alternativa: "The first years"
-      - id: 3
-        alternativa: "The first five years"
+    - id: 1
+      alternativa: The fun company
+    - id: 2
+      alternativa: The first years
+    - id: 3
+      alternativa: The first five years
   - id: 3
-    pergunta: "Cerca de quantos brinquedos de plástico caíram no mar?"
-    respostaCorreta: "28800"
+    isRespondida: 1
+    pergunta: "Cerca de quantos brinquedos de pl\xE1stico ca\xEDram no mar?"
+    respostaCorreta: 28800
     alternativas:
-      - id: 1
-        alternativa: "29000"
-      - id: 2
-        alternativa: "28800"
-      - id: 3
-        alternativa: "30000"
+    - id: 1
+      alternativa: 29000
+    - id: 2
+      alternativa: 28800
+    - id: 3
+      alternativa: 30000
   - id: 4
-    pergunta: "Onde caiu o contêiner que transportava os patos de borracha?"
-    respostaCorreta: "Oceano Atlântico"
+    isRespondida: 0
+    pergunta: "Onde caiu o cont\xEAiner que transportava os patos de borracha?"
+    respostaCorreta: "Oceano Atl\xE2ntico"
     alternativas:
-      - id: 1
-        alternativa: "Oceano Pacífico"
-      - id: 2
-        alternativa: "Oceano Índico"
-      - id: 3
-        alternativa: "Oceano Atlântico"
+    - id: 1
+      alternativa: "Oceano Pac\xEDfico"
+    - id: 2
+      alternativa: "Oceano \xCDndico"
+    - id: 3
+      alternativa: "Oceano Atl\xE2ntico"
   - id: 5
-    pergunta: "Em que ano aconteceu o naufrágio?"
-    respostaCorreta: "1992"
+    isRespondida: 0
+    pergunta: "Em que ano aconteceu o naufr\xE1gio?"
+    respostaCorreta: 1992
     alternativas:
-      - id: 1
-        alternativa: "1990"
-      - id: 2
-        alternativa: "1992"
-      - id: 3
-        alternativa: "1994"
+    - id: 1
+      alternativa: 1990
+    - id: 2
+      alternativa: 1992
+    - id: 3
+      alternativa: 1994
   - id: 6
-    pergunta: "Nos primeiros meses após o acidente, onde os patos começaram a aparecer?"
-    respostaCorreta: "Chile, Alasca e Canadá"
+    isRespondida: 0
+    pergunta: "Nos primeiros meses ap\xF3s o acidente, onde os patos come\xE7aram
+      a aparecer?"
+    respostaCorreta: "Chile, Alasca e Canad\xE1"
     alternativas:
-      - id: 1
-        alternativa: "Rússia, China e Japão"
-      - id: 2
-        alternativa: "México, Colômbia e Equador"
-      - id: 3
-        alternativa: "Chile, Alasca e Canadá"
+    - id: 1
+      alternativa: "R\xFAssia, China e Jap\xE3o"
+    - id: 2
+      alternativa: "M\xE9xico, Col\xF4mbia e Equador"
+    - id: 3
+      alternativa: "Chile, Alasca e Canad\xE1"
   - id: 7
-    pergunta: "Qual era o valor da recompensa que a empresa oferecia para quem encontrasse e devolvesse os patos?"
-    respostaCorreta: "US$ 250,00"
+    isRespondida: 0
+    pergunta: Qual era o valor da recompensa que a empresa oferecia para quem encontrasse
+      e devolvesse os patos?
+    respostaCorreta: US$ 250,00
     alternativas:
-      - id: 1
-        alternativa: "US$ 100,00"
-      - id: 2
-        alternativa: "US$ 500,00"
-      - id: 3
-        alternativa: "US$ 250,00"
+    - id: 1
+      alternativa: US$ 100,00
+    - id: 2
+      alternativa: US$ 500,00
+    - id: 3
+      alternativa: US$ 250,00
   - id: 8
-    pergunta: "Por quanto tempo os patos podem ficar boiando nos oceanos?"
-    respostaCorreta: "Trezentos anos"
+    isRespondida: 0
+    pergunta: Por quanto tempo os patos podem ficar boiando nos oceanos?
+    respostaCorreta: Trezentos anos
     alternativas:
-      - id: 1
-        alternativa: "Novecentos anos"
-      - id: 2
-        alternativa: "Trezentos anos"
-      - id: 3
-        alternativa: "Quinhentos anos"
+    - id: 1
+      alternativa: Novecentos anos
+    - id: 2
+      alternativa: Trezentos anos
+    - id: 3
+      alternativa: Quinhentos anos
   - id: 9
-    pergunta: "Qual é a cor primária que você obtém ao misturar azul e amarelo?"
-    respostaCorreta: "Verde"
+    isRespondida: 1
+    pergunta: "Qual \xE9 a cor prim\xE1ria que voc\xEA obt\xE9m ao misturar azul
+      e amarelo?"
+    respostaCorreta: Verde
     alternativas:
-      - id: 1
-        alternativa: "Verde"
-      - id: 2
-        alternativa: "Azul"
-      - id: 3
-        alternativa: "Branco"
+    - id: 1
+      alternativa: Verde
+    - id: 2
+      alternativa: Azul
+    - id: 3
+      alternativa: Branco
   - id: 10
-    pergunta: "Quantos lados tem um hexágono?"
-    respostaCorreta: "Seis"
+    isRespondida: 0
+    pergunta: "Quantos lados tem um hex\xE1gono?"
+    respostaCorreta: Seis
     alternativas:
-      - id: 1
-        alternativa: "Cinco"
-      - id: 2
-        alternativa: "Seis"
-      - id: 3
-        alternativa: "Sete"
+    - id: 1
+      alternativa: Cinco
+    - id: 2
+      alternativa: Seis
+    - id: 3
+      alternativa: Sete
   - id: 11
-    pergunta: "Qual é o nome do artista famoso por pintar a Mona Lisa?"
-    respostaCorreta: "Leonardo da Vinci"
+    isRespondida: 1
+    pergunta: "Qual \xE9 o nome do artista famoso por pintar a Mona Lisa?"
+    respostaCorreta: Leonardo da Vinci
     alternativas:
-      - id: 1
-        alternativa: "Michelangelo"
-      - id: 2
-        alternativa: "Vincent van Gogh"
-      - id: 3
-        alternativa: "Leonardo da Vinci"
+    - id: 1
+      alternativa: Michelangelo
+    - id: 2
+      alternativa: Vincent van Gogh
+    - id: 3
+      alternativa: Leonardo da Vinci
   - id: 12
-    pergunta: "Qual é o maior planeta do sistema solar?"
-    respostaCorreta: "Júpiter"
+    isRespondida: 0
+    pergunta: "Qual \xE9 o maior planeta do sistema solar?"
+    respostaCorreta: "J\xFApiter"
     alternativas:
-      - id: 1
-        alternativa: "Terra"
-      - id: 2
-        alternativa: "Marte"
-      - id: 3
-        alternativa: "Júpiter"
+    - id: 1
+      alternativa: Terra
+    - id: 2
+      alternativa: Marte
+    - id: 3
+      alternativa: "J\xFApiter"
   - id: 13
-    pergunta: "Quantos dias tem um ano bissexto?"
-    respostaCorreta: "366"
+    isRespondida: 0
+    pergunta: Quantos dias tem um ano bissexto?
+    respostaCorreta: 366
     alternativas:
-      - id: 1
-        alternativa: "365"
-      - id: 2
-        alternativa: "366"
-      - id: 3
-        alternativa: "364"
+    - id: 1
+      alternativa: 365
+    - id: 2
+      alternativa: 366
+    - id: 3
+      alternativa: 364
   - id: 14
-    pergunta: "Qual é o oceano que fica na costa leste do Brasil?"
-    respostaCorreta: "Atlântico"
+    isRespondida: 0
+    pergunta: "Qual \xE9 o oceano que fica na costa leste do Brasil?"
+    respostaCorreta: "Atl\xE2ntico"
     alternativas:
-      - id: 1
-        alternativa: "Pacífico"
-      - id: 2
-        alternativa: "Atlântico"
-      - id: 3
-        alternativa: "Índico"
+    - id: 1
+      alternativa: "Pac\xEDfico"
+    - id: 2
+      alternativa: "Atl\xE2ntico"
+    - id: 3
+      alternativa: "\xCDndico"
   - id: 15
-    pergunta: "Qual é o metal precioso usado para fazer joias e tem símbolo Au?"
-    respostaCorreta: "Ouro"
+    isRespondida: 0
+    pergunta: "Qual \xE9 o metal precioso usado para fazer joias e tem s\xEDmbolo
+      Au?"
+    respostaCorreta: Ouro
     alternativas:
-      - id: 1
-        alternativa: "Prata"
-      - id: 2
-        alternativa: "Ouro"
-      - id: 3
-        alternativa: "Platina"
+    - id: 1
+      alternativa: Prata
+    - id: 2
+      alternativa: Ouro
+    - id: 3
+      alternativa: Platina
   - id: 16
-    pergunta: "Qual animal é conhecido como 'o melhor amigo do homem'?"
-    respostaCorreta: "Cachorro"
+    isRespondida: 0
+    pergunta: "Qual animal \xE9 conhecido como 'o melhor amigo do homem'?"
+    respostaCorreta: Cachorro
     alternativas:
-      - id: 1
-        alternativa: "Gato"
-      - id: 2
-        alternativa: "Cachorro"
-      - id: 3
-        alternativa: "Pássaro"
+    - id: 1
+      alternativa: Gato
+    - id: 2
+      alternativa: Cachorro
+    - id: 3
+      alternativa: "P\xE1ssaro"
   - id: 17
-    pergunta: "Quantos segundos há em um minuto?"
-    respostaCorreta: "60"
+    isRespondida: 0
+    pergunta: "Quantos segundos h\xE1 em um minuto?"
+    respostaCorreta: 60
     alternativas:
-      - id: 1
-        alternativa: "50"
-      - id: 2
-        alternativa: "60"
-      - id: 3
-        alternativa: "70"
+    - id: 1
+      alternativa: 50
+    - id: 2
+      alternativa: 60
+    - id: 3
+      alternativa: 70
   - id: 18
-    pergunta: "Qual é o país conhecido como a 'terra do sol nascente'?"
-    respostaCorreta: "Japão"
+    isRespondida: 1
+    pergunta: "Qual \xE9 o pa\xEDs conhecido como a 'terra do sol nascente'?"
+    respostaCorreta: "Jap\xE3o"
     alternativas:
-      - id: 1
-        alternativa: "China"
-      - id: 2
-        alternativa: "Japão"
-      - id: 3
-        alternativa: "Índia"
+    - id: 1
+      alternativa: China
+    - id: 2
+      alternativa: "Jap\xE3o"
+    - id: 3
+      alternativa: "\xCDndia"
   - id: 19
-    pergunta: "Qual órgão do corpo humano é responsável por bombear sangue?"
-    respostaCorreta: "Coração"
+    isRespondida: 0
+    pergunta: "Qual \xF3rg\xE3o do corpo humano \xE9 respons\xE1vel por bombear sangue?"
+    respostaCorreta: "Cora\xE7\xE3o"
     alternativas:
-      - id: 1
-        alternativa: "Pulmão"
-      - id: 2
-        alternativa: "Coração"
-      - id: 3
-        alternativa: "Fígado"
-    - id: 20
-    pergunta: "Qual é o planeta mais próximo do Sol?"
-    respostaCorreta: "Mercúrio"
+    - id: 1
+      alternativa: "Pulm\xE3o"
+    - id: 2
+      alternativa: "Cora\xE7\xE3o"
+    - id: 3
+      alternativa: "F\xEDgado"
+  - id: 20
+    isRespondida: 1
+    pergunta: "Qual \xE9 o planeta mais pr\xF3ximo do Sol?"
+    respostaCorreta: "Merc\xFArio"
     alternativas:
-      - id: 1
-        alternativa: "Vênus"
-      - id: 2
-        alternativa: "Mercúrio"
-      - id: 3
-        alternativa: "Terra"
+    - id: 1
+      alternativa: "V\xEAnus"
+    - id: 2
+      alternativa: "Merc\xFArio"
+    - id: 3
+      alternativa: Terra
   - id: 21
-    pergunta: "Qual é o número da metade de 100?"
-    respostaCorreta: "50"
+    isRespondida: 1
+    pergunta: "Qual \xE9 o n\xFAmero da metade de 100?"
+    respostaCorreta: 50
     alternativas:
-      - id: 1
-        alternativa: "25"
-      - id: 2
-        alternativa: "50"
-      - id: 3
-        alternativa: "75"
+    - id: 1
+      alternativa: 25
+    - id: 2
+      alternativa: 50
+    - id: 3
+      alternativa: 75
   - id: 22
-    pergunta: "Qual animal é conhecido por sua habilidade de camuflagem?"
-    respostaCorreta: "Camaleão"
+    isRespondida: 0
+    pergunta: "Qual animal \xE9 conhecido por sua habilidade de camuflagem?"
+    respostaCorreta: "Camale\xE3o"
     alternativas:
-      - id: 1
-        alternativa: "Camaleão"
-      - id: 2
-        alternativa: "Elefante"
-      - id: 3
-        alternativa: "Golfinho"
+    - id: 1
+      alternativa: "Camale\xE3o"
+    - id: 2
+      alternativa: Elefante
+    - id: 3
+      alternativa: Golfinho
   - id: 23
-    pergunta: "Qual é a cor do céu em um dia claro?"
-    respostaCorreta: "Azul"
+    isRespondida: 0
+    pergunta: "Qual \xE9 a cor do c\xE9u em um dia claro?"
+    respostaCorreta: Azul
     alternativas:
-      - id: 1
-        alternativa: "Verde"
-      - id: 2
-        alternativa: "Amarelo"
-      - id: 3
-        alternativa: "Azul"
+    - id: 1
+      alternativa: Verde
+    - id: 2
+      alternativa: Amarelo
+    - id: 3
+      alternativa: Azul
   - id: 24
-    pergunta: "Quantas patas tem uma aranha?"
-    respostaCorreta: "Oito"
+    isRespondida: 1
+    pergunta: Quantas patas tem uma aranha?
+    respostaCorreta: Oito
     alternativas:
-      - id: 1
-        alternativa: "Seis"
-      - id: 2
-        alternativa: "Quatro"
-      - id: 3
-        alternativa: "Oito"
+    - id: 1
+      alternativa: Seis
+    - id: 2
+      alternativa: Quatro
+    - id: 3
+      alternativa: Oito
   - id: 25
-    pergunta: "Qual planeta é conhecido por seus anéis?"
-    respostaCorreta: "Saturno"
+    isRespondida: 0
+    pergunta: "Qual planeta \xE9 conhecido por seus an\xE9is?"
+    respostaCorreta: Saturno
     alternativas:
-      - id: 1
-        alternativa: "Júpiter"
-      - id: 2
-        alternativa: "Saturno"
-      - id: 3
-        alternativa: "Urano"
+    - id: 1
+      alternativa: "J\xFApiter"
+    - id: 2
+      alternativa: Saturno
+    - id: 3
+      alternativa: Urano
   - id: 26
-    pergunta: "Qual é o nome da flor usada para simbolizar o amor?"
-    respostaCorreta: "Rosa"
+    isRespondida: 0
+    pergunta: "Qual \xE9 o nome da flor usada para simbolizar o amor?"
+    respostaCorreta: Rosa
     alternativas:
-      - id: 1
-        alternativa: "Margarida"
-      - id: 2
-        alternativa: "Tulipa"
-      - id: 3
-        alternativa: "Rosa"
+    - id: 1
+      alternativa: Margarida
+    - id: 2
+      alternativa: Tulipa
+    - id: 3
+      alternativa: Rosa
   - id: 27
-    pergunta: "Qual é o maior órgão do corpo humano?"
-    respostaCorreta: "Pele"
+    isRespondida: 0
+    pergunta: "Qual \xE9 o maior \xF3rg\xE3o do corpo humano?"
+    respostaCorreta: Pele
     alternativas:
-      - id: 1
-        alternativa: "Coração"
-      - id: 2
-        alternativa: "Pulmão"
-      - id: 3
-        alternativa: "Pele"
+    - id: 1
+      alternativa: "Cora\xE7\xE3o"
+    - id: 2
+      alternativa: "Pulm\xE3o"
+    - id: 3
+      alternativa: Pele
   - id: 28
-    pergunta: "Qual inseto produz mel?"
-    respostaCorreta: "Abelha"
+    isRespondida: 0
+    pergunta: Qual inseto produz mel?
+    respostaCorreta: Abelha
     alternativas:
-      - id: 1
-        alternativa: "Abelha"
-      - id: 2
-        alternativa: "Formiga"
-      - id: 3
-        alternativa: "Mosca"
+    - id: 1
+      alternativa: Abelha
+    - id: 2
+      alternativa: Formiga
+    - id: 3
+      alternativa: Mosca
   - id: 29
-    pergunta: "Qual animal é conhecido por ser muito lento?"
-    respostaCorreta: "Bicho-preguiça"
+    isRespondida: 1
+    pergunta: "Qual animal \xE9 conhecido por ser muito lento?"
+    respostaCorreta: "Bicho-pregui\xE7a"
     alternativas:
-      - id: 1
-        alternativa: "Gato"
-      - id: 2
-        alternativa: "Cachorro"
-      - id: 3
-        alternativa: "Bicho-preguiça"
+    - id: 1
+      alternativa: Gato
+    - id: 2
+      alternativa: Cachorro
+    - id: 3
+      alternativa: "Bicho-pregui\xE7a"
   - id: 30
-    pergunta: "Qual fruta é conhecida por seu alto teor de potássio?"
-    respostaCorreta: "Banana"
+    isRespondida: 0
+    pergunta: "Qual fruta \xE9 conhecida por seu alto teor de pot\xE1ssio?"
+    respostaCorreta: Banana
     alternativas:
-      - id: 1
-        alternativa: "Maçã"
-      - id: 2
-        alternativa: "Banana"
-      - id: 3
-        alternativa: "Laranja"
+    - id: 1
+      alternativa: "Ma\xE7\xE3"
+    - id: 2
+      alternativa: Banana
+    - id: 3
+      alternativa: Laranja
