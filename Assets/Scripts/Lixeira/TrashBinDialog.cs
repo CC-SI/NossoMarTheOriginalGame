@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using MiniGame;
 using Dialog.Manager;
 using Duck;
 using Interaction;
-using Serialization;
 using UnityEngine;
 
 namespace Lixeira

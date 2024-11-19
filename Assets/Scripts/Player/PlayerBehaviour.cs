@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Dialog.Manager;
 using Duck;
 using Interaction;
 using Serialization;

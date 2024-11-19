@@ -1,6 +1,4 @@
-﻿using System;
-using MiniGame;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace MiniGame

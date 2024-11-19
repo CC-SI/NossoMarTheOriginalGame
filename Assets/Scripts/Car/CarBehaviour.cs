@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CarBehaviour : MonoBehaviour
 {
-    [FormerlySerializedAs("Speed")] [SerializeField] private float speed = 4f;
+    [SerializeField] private float speed = 4f;
 
     private Vector2 startPosition;
 
