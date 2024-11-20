@@ -1,5 +1,6 @@
 ﻿using System;
 using Dialog.Pergunta;
+using UnityEngine;
 
 namespace Dialog
 {
@@ -13,6 +14,7 @@ namespace Dialog
         
         public string id;
         public string speaker;
+        [TextArea(2,10)]
         public string texto;
         public PerguntaObject pergunta;
         public bool ShowCoco;
