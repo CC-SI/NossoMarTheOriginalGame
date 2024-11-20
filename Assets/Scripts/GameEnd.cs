@@ -1,4 +1,5 @@
-﻿using Dialog.Manager;
+﻿using System.Collections;
+using Dialog.Manager;
 using Duck;
 using UnityEngine;
 
@@ -36,5 +37,11 @@ public class GameEnd : MonoBehaviour
     void OnDestroy()
     {
         DuckBehavior.OnDuckRescued -= EndGame;
+    }
+
+    IEnumerator Start()
+    {
+        yield return new WaitWhile(() => GameManager.IsLoadingGameData);
+        EndGame();
     }
 }
