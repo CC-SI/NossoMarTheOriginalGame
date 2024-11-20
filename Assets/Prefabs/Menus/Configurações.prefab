@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Voltar
       objectReference: {fileID: 0}
+    - target: {fileID: 7114005294648793237, guid: 27e314640aa074d0a9ad7ef3d2b4dd34, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -408,6 +412,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Efeitos Sonoros
       objectReference: {fileID: 0}
+    - target: {fileID: 6001196932921647935, guid: a8cccbe57e30a48e4a37b6fe36488d65, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -528,6 +536,10 @@ PrefabInstance:
     - target: {fileID: 6001196932921647935, guid: a8cccbe57e30a48e4a37b6fe36488d65, type: 3}
       propertyPath: m_text
       value: "M\xFAsicas"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001196932921647935, guid: a8cccbe57e30a48e4a37b6fe36488d65, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

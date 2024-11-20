@@ -405,8 +405,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Oi! Eu sou o Sr. Pato, e estou aqui para te ensinar como salvar os patinhos!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73b65e9ab3ca24b49b46dca60cf11b16, type: 2}
+  m_sharedMaterial: {fileID: -4913693412293811044, guid: 73b65e9ab3ca24b49b46dca60cf11b16, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -578,8 +578,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73b65e9ab3ca24b49b46dca60cf11b16, type: 2}
+  m_sharedMaterial: {fileID: -4913693412293811044, guid: 73b65e9ab3ca24b49b46dca60cf11b16, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -829,6 +829,9 @@ MonoBehaviour:
   duckAnimator: {fileID: 0}
   dialogObject: {fileID: 11400000, guid: 2d64b8689fc8c6e4d8ce2905a5373d31, type: 2}
   isTutorial: 1
+  isTutorialMove: 0
+  isTutorialNextScene: 0
+  graphicBehaviour: {fileID: 0}
   IsDialogActive: 0
 --- !u!114 &5194508678709033049
 MonoBehaviour:
@@ -857,6 +860,8 @@ MonoBehaviour:
   duckCaptured: {fileID: 0}
   boxTimeText: {fileID: 6388165361352023713}
   timeText: {fileID: 8930014945561338980}
+  zonaDeFinalizarDialogo: {fileID: 0}
+  isAvancarDialogo: 0
 --- !u!114 &1633631581960239089
 MonoBehaviour:
   m_ObjectHideFlags: 0
