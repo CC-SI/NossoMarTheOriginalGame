@@ -29,7 +29,6 @@ public class ObjectToBeCaptured : InteractableObject, IInteraction
     {
         if (IsCocoCaptured)
         {
-            Debug.Log("Coco capturado");
             gameObject.SetActive(false);
             CocosCapturados();
         }
@@ -50,6 +49,5 @@ public class ObjectToBeCaptured : InteractableObject, IInteraction
     private void CocosCapturados()
     {
         cocosCapturadosList.Add(this); 
-        Debug.Log("Cocos capturados: " + cocosCapturadosList.Count);
     }
 }

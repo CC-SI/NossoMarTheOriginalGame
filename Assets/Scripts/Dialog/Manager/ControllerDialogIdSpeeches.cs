@@ -94,9 +94,6 @@ namespace Dialog.Manager
                             var dialogo = duckAguaCoco.GetDialogoPorId("player_confirmando_agua_coco");
                             if (dialogo != null)
                             {
-                                Debug.Log($"Dialogo encontrado: {dialogo.id}");
-                                Debug.Log($"Show coco: {dialogo.ShowCoco}");
-
                                 bool showCoco = dialogo.ShowCoco;
 
                                 if (showCoco)

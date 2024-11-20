@@ -78,7 +78,6 @@ namespace Dialog
             if (dialogo != null)
             {
                 dialogo.ShowCoco = novoValor;
-                Debug.Log($"ShowCoco para o diálogo com ID {id} foi atualizado para {novoValor}");
             }
     
             return dialogo; 
