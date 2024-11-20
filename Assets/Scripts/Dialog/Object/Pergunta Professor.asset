@@ -1,0 +1,456 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51a53243b442ae85879ccc42778601, type: 3}
+  m_Name: Pergunta Professor
+  m_EditorClassIdentifier: 
+  dialogosPergunta:
+  - id: 1
+    isRespondida: 0
+    pergunta: "Quando o navio saiu da China estava com destino para qual pa\xEDs?"
+    respostaCorreta: Estados Unidos
+    alternativas:
+    - id: 1
+      alternativa: Alaska
+    - id: 2
+      alternativa: Chile
+    - id: 3
+      alternativa: Estados Unidos
+  - id: 2
+    isRespondida: 1
+    pergunta: "Cerca de quantos brinquedos de pl\xE1stico ca\xEDram no mar?"
+    respostaCorreta: 28800
+    alternativas:
+    - id: 1
+      alternativa: 29000
+    - id: 2
+      alternativa: 28800
+    - id: 3
+      alternativa: 30000
+  - id: 3
+    isRespondida: 1
+    pergunta: "Qual \xE9 o planeta mais pr\xF3ximo do Sol?"
+    respostaCorreta: "Merc\xFArio"
+    alternativas:
+    - id: 1
+      alternativa: "V\xEAnus"
+    - id: 2
+      alternativa: "Merc\xFArio"
+    - id: 3
+      alternativa: Terra
+  - id: 4
+    isRespondida: 1
+    pergunta: "Qual \xE9 o n\xFAmero da metade de 100?"
+    respostaCorreta: 50
+    alternativas:
+    - id: 1
+      alternativa: 25
+    - id: 2
+      alternativa: 50
+    - id: 3
+      alternativa: 75
+  - id: 5
+    isRespondida: 0
+    pergunta: "Qual animal \xE9 conhecido por sua habilidade de camuflagem?"
+    respostaCorreta: "Camale\xE3o"
+    alternativas:
+    - id: 1
+      alternativa: "Camale\xE3o"
+    - id: 2
+      alternativa: Elefante
+    - id: 3
+      alternativa: Golfinho
+  - id: 6
+    isRespondida: 0
+    pergunta: "Qual \xE9 a cor do c\xE9u em um dia claro?"
+    respostaCorreta: Azul
+    alternativas:
+    - id: 1
+      alternativa: Verde
+    - id: 2
+      alternativa: Amarelo
+    - id: 3
+      alternativa: Azul
+  - id: 7
+    isRespondida: 1
+    pergunta: Quantas patas tem uma aranha?
+    respostaCorreta: Oito
+    alternativas:
+    - id: 1
+      alternativa: Seis
+    - id: 2
+      alternativa: Quatro
+    - id: 3
+      alternativa: Oito
+  - id: 8
+    isRespondida: 0
+    pergunta: "Qual planeta \xE9 conhecido por seus an\xE9is?"
+    respostaCorreta: Saturno
+    alternativas:
+    - id: 1
+      alternativa: "J\xFApiter"
+    - id: 2
+      alternativa: Saturno
+    - id: 3
+      alternativa: Urano
+  - id: 9
+    isRespondida: 0
+    pergunta: "Qual \xE9 o nome da flor usada para simbolizar o amor?"
+    respostaCorreta: Rosa
+    alternativas:
+    - id: 1
+      alternativa: Margarida
+    - id: 2
+      alternativa: Tulipa
+    - id: 3
+      alternativa: Rosa
+  - id: 10
+    isRespondida: 0
+    pergunta: "Qual \xE9 o maior \xF3rg\xE3o do corpo humano?"
+    respostaCorreta: Pele
+    alternativas:
+    - id: 1
+      alternativa: "Cora\xE7\xE3o"
+    - id: 2
+      alternativa: "Pulm\xE3o"
+    - id: 3
+      alternativa: Pele
+  - id: 11
+    isRespondida: 0
+    pergunta: Qual inseto produz mel?
+    respostaCorreta: Abelha
+    alternativas:
+    - id: 1
+      alternativa: Abelha
+    - id: 2
+      alternativa: Formiga
+    - id: 3
+      alternativa: Mosca
+  - id: 12
+    isRespondida: 1
+    pergunta: "Qual animal \xE9 conhecido por ser muito lento?"
+    respostaCorreta: "Bicho-pregui\xE7a"
+    alternativas:
+    - id: 1
+      alternativa: Gato
+    - id: 2
+      alternativa: Cachorro
+    - id: 3
+      alternativa: "Bicho-pregui\xE7a"
+  - id: 13
+    isRespondida: 0
+    pergunta: "Qual fruta \xE9 conhecida por seu alto teor de pot\xE1ssio?"
+    respostaCorreta: Banana
+    alternativas:
+    - id: 1
+      alternativa: "Ma\xE7\xE3"
+    - id: 2
+      alternativa: Banana
+    - id: 3
+      alternativa: Laranja
+  - id: 14
+    isRespondida: 0
+    pergunta: "Qual é o animal mais rápido do mundo?"
+    respostaCorreta: "Guepardo"
+    alternativas:
+    - id: 1
+      alternativa: "Leão"
+    - id: 2
+      alternativa: "Guepardo"
+    - id: 3
+      alternativa: "Coelho"
+  - id: 15
+    isRespondida: 0
+    pergunta: "Qual é o maior continente?"
+    respostaCorreta: "Ásia"
+    alternativas:
+    - id: 1
+      alternativa: "África"
+    - id: 2
+      alternativa: "Ásia"
+    - id: 3
+      alternativa: "América"
+  - id: 16
+    isRespondida: 0
+    pergunta: "Qual é o animal que pode viver sem água por mais tempo?"
+    respostaCorreta: "Camelo"
+    alternativas:
+    - id: 1
+      alternativa: "Elefante"
+    - id: 2
+      alternativa: "Camelo"
+    - id: 3
+      alternativa: "Canguru"
+  - id: 17
+    isRespondida: 0
+    pergunta: "Quantos dedos uma mão humana tem?"
+    respostaCorreta: 5
+    alternativas:
+    - id: 1
+      alternativa: 4
+    - id: 2
+      alternativa: 5
+    - id: 3
+      alternativa: 6
+  - id: 18
+    isRespondida: 0
+    pergunta: "Qual é o maior oceano do mundo?"
+    respostaCorreta: "Oceano Pacífico"
+    alternativas:
+    - id: 1
+      alternativa: "Oceano Atlântico"
+    - id: 2
+      alternativa: "Oceano Pacífico"
+    - id: 3
+      alternativa: "Oceano Índico"
+  - id: 19
+    isRespondida: 0
+    pergunta: "Em que país fica a Torre Eiffel?"
+    respostaCorreta: "França"
+    alternativas:
+    - id: 1
+      alternativa: "França"
+    - id: 2
+      alternativa: "Alemanha"
+    - id: 3
+      alternativa: "Itália"
+  - id: 20
+    isRespondida: 0
+    pergunta: "O que é um arco-íris?"
+    respostaCorreta: "Fenômeno natural"
+    alternativas:
+    - id: 1
+      alternativa: "Ilusão de ótica"
+    - id: 2
+      alternativa: "Fenômeno natural"
+    - id: 3
+      alternativa: "Reflexo de luz"
+  - id: 21
+    isRespondida: 0
+    pergunta: "Qual é o som emitido por um cachorro?"
+    respostaCorreta: "Latido"
+    alternativas:
+    - id: 1
+      alternativa: "Miado"
+    - id: 2
+      alternativa: "Latido"
+    - id: 3
+      alternativa: "Canto"
+  - id: 22
+    isRespondida: 0
+    pergunta: "Quantos continentes existem no mundo?"
+    respostaCorreta: 7
+    alternativas:
+    - id: 1
+      alternativa: 5
+    - id: 2
+      alternativa: 6
+    - id: 3
+      alternativa: 7
+  - id: 23
+    isRespondida: 0
+    pergunta: "Qual é o principal ingrediente da feijoada?"
+    respostaCorreta: "Feijão"
+    alternativas:
+    - id: 1
+      alternativa: "Arroz"
+    - id: 2
+      alternativa: "Feijão"
+    - id: 3
+      alternativa: "Carne"
+  - id: 24
+    isRespondida: 0
+    pergunta: "Qual é a cor do sol?"
+    respostaCorreta: "Amarelo"
+    alternativas:
+    - id: 1
+      alternativa: "Amarelo"
+    - id: 2
+      alternativa: "Branco"
+    - id: 3
+      alternativa: "Azul"
+  - id: 25
+    isRespondida: 0
+    pergunta: "O que é um unicórnio?"
+    respostaCorreta: "Animal mitológico"
+    alternativas:
+    - id: 1
+      alternativa: "Animal real"
+    - id: 2
+      alternativa: "Animal mitológico"
+    - id: 3
+      alternativa: "Brinquedo"
+  - id: 26
+    isRespondida: 0
+    pergunta: "Quantas cores tem a bandeira do Brasil?"
+    respostaCorreta: 4
+    alternativas:
+    - id: 1
+      alternativa: 3
+    - id: 2
+      alternativa: 4
+    - id: 3
+      alternativa: 5
+  - id: 27
+    isRespondida: 0
+    pergunta: "Qual é o maior mamífero do mundo?"
+    respostaCorreta: "Baleia Azul"
+    alternativas:
+    - id: 1
+      alternativa: "Elefante"
+    - id: 2
+      alternativa: "Baleia Azul"
+    - id: 3
+      alternativa: "Girafa"
+  - id: 28
+    isRespondida: 0
+    pergunta: "Qual é o mês do Natal?"
+    respostaCorreta: "Dezembro"
+    alternativas:
+    - id: 1
+      alternativa: "Novembro"
+    - id: 2
+      alternativa: "Dezembro"
+    - id: 3
+      alternativa: "Outubro"
+  - id: 29
+    isRespondida: 0
+    pergunta: "Qual é o nome do famoso ratinho da Disney?"
+    respostaCorreta: "Mickey Mouse"
+    alternativas:
+    - id: 1
+      alternativa: "Mickey Mouse"
+    - id: 2
+      alternativa: "Pato Donald"
+    - id: 3
+      alternativa: "Goofy"
+  - id: 30
+    isRespondida: 0
+    pergunta: "Quantos quadrados tem uma peça de dominó?"
+    respostaCorreta: 28
+    alternativas:
+    - id: 1
+      alternativa: 24
+    - id: 2
+      alternativa: 28
+    - id: 3
+      alternativa: 32
+  - id: 31
+    isRespondida: 0
+    pergunta: "Qual é o animal que tem o maior cérebro?"
+    respostaCorreta: "Cachalote"
+    alternativas:
+    - id: 1
+      alternativa: "Cachalote"
+    - id: 2
+      alternativa: "Elefante"
+    - id: 3
+      alternativa: "Golfinho"
+  - id: 32
+    isRespondida: 0
+    pergunta: "Qual é a cor do coração?"
+    respostaCorreta: "Vermelho"
+    alternativas:
+    - id: 1
+      alternativa: "Azul"
+    - id: 2
+      alternativa: "Vermelho"
+    - id: 3
+      alternativa: "Rosa"
+  - id: 33
+    isRespondida: 0
+    pergunta: "Qual fruta é a base da bebida 'caipirinha'?"
+    respostaCorreta: "Limão"
+    alternativas:
+    - id: 1
+      alternativa: "Laranja"
+    - id: 2
+      alternativa: "Limão"
+    - id: 3
+      alternativa: "Manga"
+  - id: 34
+    isRespondida: 0
+    pergunta: "Qual é o animal que vive na água e tem concha?"
+    respostaCorreta: "Caramujo"
+    alternativas:
+    - id: 1
+      alternativa: "Caramujo"
+    - id: 2
+      alternativa: "Cavalo-marinho"
+    - id: 3
+      alternativa: "Polvo"
+  - id: 35
+    isRespondida: 0
+    pergunta: "Qual é o nome do famoso super-herói com capa vermelha e S no peito?"
+    respostaCorreta: "Superman"
+    alternativas:
+    - id: 1
+      alternativa: "Superman"
+    - id: 2
+      alternativa: "Homem-Aranha"
+    - id: 3
+      alternativa: "Batman"
+  - id: 36
+    isRespondida: 0
+    pergunta: "Qual é o nome da maior floresta tropical do mundo?"
+    respostaCorreta: "Amazônia"
+    alternativas:
+    - id: 1
+      alternativa: "Amazônia"
+    - id: 2
+      alternativa: "Serra do Mar"
+    - id: 3
+      alternativa: "Taiga"
+  - id: 37
+    isRespondida: 0
+    pergunta: "Qual é o maior pássaro do mundo?"
+    respostaCorreta: "Avestruz"
+    alternativas:
+    - id: 1
+      alternativa: "Avestruz"
+    - id: 2
+      alternativa: "Águia"
+    - id: 3
+      alternativa: "Pavão"
+  - id: 38
+    isRespondida: 0
+    pergunta: "Qual é a cor do céu em um dia claro?"
+    respostaCorreta: "Azul"
+    alternativas:
+    - id: 1
+      alternativa: "Cinza"
+    - id: 2
+      alternativa: "Azul"
+    - id: 3
+      alternativa: "Amarelo"
+  - id: 39
+    isRespondida: 0
+    pergunta: "Quem é o autor de 'Dom Casmurro'?"
+    respostaCorreta: "Machado de Assis"
+    alternativas:
+    - id: 1
+      alternativa: "Machado de Assis"
+    - id: 2
+      alternativa: "José de Alencar"
+    - id: 3
+      alternativa: "Monteiro Lobato"
+  - id: 40
+    isRespondida: 0
+    pergunta: "Qual é o maior peixe do mundo?"
+    respostaCorreta: "Tubarão-baleia"
+    alternativas:
+    - id: 1
+      alternativa: "Tubarão-baleia"
+    - id: 2
+      alternativa: "Baleia Azul"
+    - id: 3
+      alternativa: "Peixe-boi"
+
