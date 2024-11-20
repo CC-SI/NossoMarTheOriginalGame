@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace MiniGame
@@ -46,10 +47,21 @@ namespace MiniGame
                 miniGame.AlertSuperimposing(draggableObject.Bounds, draggableObject.Index);
             }
         }
+        
+        void OnGameFinished()
+        {
+            enabled = false;
+        }
+
+        void OnDestroy()
+        {
+            MiniGame.OnGameFinished -= OnGameFinished;
+        }
 
         private void Start()
         {
             originalPosition = transform.position;
+            MiniGame.OnGameFinished += OnGameFinished;
         }
 
         private void Update()
@@ -63,6 +75,9 @@ namespace MiniGame
         
         private void OnMouseDown()
         {
+            if(!enabled)
+                return;
+            
             IsSuperimposed = miniGame.IsObjectSuperimposed(draggableObject.Bounds, draggableObject.Index);
 
             if (IsSuperimposed) return;
@@ -76,6 +91,9 @@ namespace MiniGame
         
         private void OnMouseUp()
         {
+            if(!enabled)
+                return;
+            
             isOnTrashBin = TrashBin.ContainsObject(draggableObject.Bounds);
             
             if(!IsSuperimposed)

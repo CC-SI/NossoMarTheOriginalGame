@@ -4,7 +4,7 @@ using Dialog.Pergunta;
 namespace Dialog
 {
     [Serializable]
-    public class Dialogo
+    public class Dialogo : IPage
     {
         void Start()
         {
@@ -16,5 +16,8 @@ namespace Dialog
         public string texto;
         public PerguntaObject pergunta;
         public bool ShowCoco;
+        
+        public string Speaker => speaker;
+        public string Text => texto;
     }
 }

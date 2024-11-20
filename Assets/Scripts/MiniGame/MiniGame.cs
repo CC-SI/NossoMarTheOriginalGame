@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Dialog;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,11 +11,13 @@ namespace MiniGame
     {
         [SerializeField] private Button textBox;
         [SerializeField] private List<MiniGameObject> prefabs;
+        [SerializeField] Dialogo duckThanks;
 
         private readonly List<MiniGameObject> objects = new();
         private static TrashBinBehaviour TrashBin => TrashBinBehaviour.Instance;
 
         public static MiniGame Instance { get; private set; }
+        public static event System.Action OnGameFinished;
 
         public UnityEvent<string> onMessageUpdated;
 
@@ -23,21 +26,21 @@ namespace MiniGame
         
         private void Awake()
         {
-            if (!Instance)
+            if (Instance)
             {
-                Instance = this;
-                StartGame();
+                Destroy(gameObject);               
                 return;
             }
-        
-            Destroy(gameObject);
+            
+            Instance = this;
+            StartGame();
+            TextBox.OnTextEnded += FinishGame;
         }
 
         private void StartGame()
         {
             SpawnDraggableObjects();
             SpawnHiddenObject();
-            textBox.onClick.AddListener(FinishGame);
         }
 
         protected static void AddObject(MiniGameObject miniGameObject)
@@ -106,13 +109,14 @@ namespace MiniGame
             }
             
             onMessageUpdated.Invoke("Parabéns! Você resgatou o pato.");
-            textBox.gameObject.SetActive(true);
+            TextBox.Show(duckThanks);
+            OnGameFinished?.Invoke();
         }
         
         void FinishGame()
         {
             isFinished = true;
-            Destroy(this);
+            Instance = null;
             GameManager.LoadGame(true);
         }
 

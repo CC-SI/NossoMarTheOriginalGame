@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -37,10 +38,14 @@ namespace Dialog
 		[SerializeField]
 		Animator animator;
 
+		static TextBox instance;
+		
 		bool isTyping;
 		WaitForSeconds instruction;
 
 		Vector2 originalPosition;
+
+		public static event Action OnTextEnded;
 
 		public bool IsOpen
 		{
@@ -51,16 +56,27 @@ namespace Dialog
 		InputAction NextAction => _nextAction.action;
 		InputAction CloseAction => _closeAction.action;
 
-		[ContextMenu("Teste")]
-		public void Open()
+		public void Open(IPage page)
 		{
 			IsOpen = true;
 			if(isTyping)
 				return;
 			
+			speakerText.text = page.Speaker;
+			dialogText.text = page.Text;
+			
 			StartCoroutine(TypingCoroutine());
 		}
+		
+		public static void Show(IPage page)
+			=> instance.Open(page);
 
+		// Usado pelo Animation Event.
+		void AnimationClose()
+		{
+			OnTextEnded?.Invoke();
+		}
+		
 		void Close()
 		{
 			IsOpen = false;
@@ -130,6 +146,13 @@ namespace Dialog
 
 		void Awake()
 		{
+			if (instance)
+			{
+				Destroy(gameObject);
+				return;
+			}
+			
+			instance = this;
 			advanceButton.onClick.AddListener(TypingSpeedUp);
 			closeButton.onClick.AddListener(Close);
 			NextAction.performed += NextActionPerformed;

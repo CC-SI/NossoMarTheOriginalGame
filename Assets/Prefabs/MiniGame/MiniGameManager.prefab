@@ -46,11 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a246e2dfca0924583a316a6c90843d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
   prefabs:
   - {fileID: 7520597314045266252, guid: ccec77f77c136ad4a89761b9ddd97722, type: 3}
   - {fileID: 1458802171498888950, guid: b9c77d90620ca9e4eab1027e09c94cbd, type: 3}
   - {fileID: 1534944792170592333, guid: d0da2ef153ca432489059896f32726a1, type: 3}
   - {fileID: 695790413277129006, guid: 1988b09be5722884eb7034f2f193c252, type: 3}
+  duckThanks:
+    id: 
+    speaker: Pato
+    texto: "S\xE9rio, muito obrigado por me ajudar! E... ehhn, que fedor. Eu definitivamente
+      terei que tomar um belo banho depois..."
+    pergunta: {fileID: 0}
+    ShowCoco: 0
   onMessageUpdated:
     m_PersistentCalls:
       m_Calls: []
