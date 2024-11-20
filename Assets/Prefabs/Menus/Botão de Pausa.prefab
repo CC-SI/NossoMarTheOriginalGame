@@ -40,10 +40,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Bot\xE3o de Pausa"
       objectReference: {fileID: 0}
-    - target: {fileID: 994034366750715196, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1131245016372600500, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_Color.b
       value: 0.14509805
@@ -178,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_fontSize
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_margin.x
@@ -194,11 +190,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_fontSizeBase
-      value: 50
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7066006045605864319, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_characterSpacing
-      value: -20
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 9207804824052231311, guid: cf454e954892546ac89bb9a71a52c907, type: 3}
       propertyPath: m_SizeDelta.x
