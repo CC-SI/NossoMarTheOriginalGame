@@ -2,27 +2,31 @@
 
 namespace MiniGame
 {
-    public class SuperimposingMessage : MonoBehaviour
-    {
-        [SerializeField] private GameObject messageBox;
-
-        public static SuperimposingMessage Instance { get; private set; }
+	public class SuperimposingMessage : MonoBehaviour
+	{
+		static SuperimposingMessage instance;
         
-        private void Awake()
-        {
-            Instance = this;
-            Hide();
-        }
+		void Awake()
+		{
+			instance = this;
+			Hide();
+		}
 
-        public void Show()
-        {
-            messageBox.SetActive(true);
-            Invoke(nameof(Hide), 1f);
-        }
-        
-        public void Hide()
-        {
-            messageBox.SetActive(false);
-        }
-    }
+		public static void Show() => instance.Show(true);
+
+		public static void Hide() => instance.Show(false);
+
+		// Usado pelo Animation Event.
+		void AnimationHide() => Hide();
+		
+		void Show(bool show)
+		{
+			instance.gameObject.SetActive(show);
+		}
+		
+		void OnDestroy()
+		{
+			instance = null;
+		}
+	}
 }
