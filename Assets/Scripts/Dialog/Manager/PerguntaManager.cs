@@ -66,11 +66,21 @@ public class PerguntaManager : MonoBehaviour
 
     public void AvancarPergunta()
     {
-        if (perguntaAtualIndex < perguntasEmbaralhadas.Count - 1)
+        perguntaAtualIndex++;
+
+        while (perguntaAtualIndex < perguntasEmbaralhadas.Count && perguntasEmbaralhadas[perguntaAtualIndex].isRespondida)
         {
+
+            if (perguntasEmbaralhadas[perguntaAtualIndex].isRespondida)
+            {
+                Debug.Log("Pergunta já respondida: " + perguntasEmbaralhadas[perguntaAtualIndex].id);
+            }
+            
             perguntaAtualIndex++;
-            MarcarComoRespondida(perguntasEmbaralhadas[perguntaAtualIndex]);
-            Debug.Log("Id da pergunta: " + perguntasEmbaralhadas[perguntaAtualIndex].id);
+        }
+
+        if (perguntaAtualIndex < perguntasEmbaralhadas.Count)
+        {
             ExibirPerguntaAtual();
         }
         else
@@ -137,7 +147,6 @@ public class PerguntaManager : MonoBehaviour
         perguntasUIManager.HabilitarBotoes();
         ExibirPerguntaAtual();
 
-        Debug.Log("Perguntas carregadas: " + perguntasEmbaralhadas.Count);
     }
 
     private void EmbaralharPerguntas(List<DialogoPergunta> perguntas)
