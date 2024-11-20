@@ -15,17 +15,6 @@ MonoBehaviour:
   dialogosPergunta:
   - id: 1
     isRespondida: 0
-    pergunta: "Quando o navio saiu da China estava com destino para qual pa\xEDs?"
-    respostaCorreta: Estados Unidos
-    alternativas:
-    - id: 1
-      alternativa: Alaska
-    - id: 2
-      alternativa: Chile
-    - id: 3
-      alternativa: Estados Unidos
-  - id: 2
-    isRespondida: 0
     pergunta: Os patos de borracha faziam parte de qual empresa?
     respostaCorreta: The first five years
     alternativas:
@@ -35,18 +24,7 @@ MonoBehaviour:
       alternativa: The first years
     - id: 3
       alternativa: The first five years
-  - id: 3
-    isRespondida: 1
-    pergunta: "Cerca de quantos brinquedos de pl\xE1stico ca\xEDram no mar?"
-    respostaCorreta: 28800
-    alternativas:
-    - id: 1
-      alternativa: 29000
-    - id: 2
-      alternativa: 28800
-    - id: 3
-      alternativa: 30000
-  - id: 4
+  - id: 2
     isRespondida: 0
     pergunta: "Onde caiu o cont\xEAiner que transportava os patos de borracha?"
     respostaCorreta: "Oceano Atl\xE2ntico"
@@ -57,7 +35,7 @@ MonoBehaviour:
       alternativa: "Oceano \xCDndico"
     - id: 3
       alternativa: "Oceano Atl\xE2ntico"
-  - id: 5
+  - id: 3
     isRespondida: 0
     pergunta: "Em que ano aconteceu o naufr\xE1gio?"
     respostaCorreta: 1992
@@ -68,10 +46,9 @@ MonoBehaviour:
       alternativa: 1992
     - id: 3
       alternativa: 1994
-  - id: 6
+  - id: 4
     isRespondida: 0
-    pergunta: "Nos primeiros meses ap\xF3s o acidente, onde os patos come\xE7aram
-      a aparecer?"
+    pergunta: "Nos primeiros meses ap\xF3s o acidente, onde os patos come\xE7aram a aparecer?"
     respostaCorreta: "Chile, Alasca e Canad\xE1"
     alternativas:
     - id: 1
@@ -80,10 +57,9 @@ MonoBehaviour:
       alternativa: "M\xE9xico, Col\xF4mbia e Equador"
     - id: 3
       alternativa: "Chile, Alasca e Canad\xE1"
-  - id: 7
+  - id: 5
     isRespondida: 0
-    pergunta: Qual era o valor da recompensa que a empresa oferecia para quem encontrasse
-      e devolvesse os patos?
+    pergunta: Qual era o valor da recompensa que a empresa oferecia para quem encontrasse e devolvesse os patos?
     respostaCorreta: US$ 250,00
     alternativas:
     - id: 1
@@ -92,7 +68,7 @@ MonoBehaviour:
       alternativa: US$ 500,00
     - id: 3
       alternativa: US$ 250,00
-  - id: 8
+  - id: 6
     isRespondida: 0
     pergunta: Por quanto tempo os patos podem ficar boiando nos oceanos?
     respostaCorreta: Trezentos anos
@@ -103,10 +79,9 @@ MonoBehaviour:
       alternativa: Trezentos anos
     - id: 3
       alternativa: Quinhentos anos
-  - id: 9
+  - id: 7
     isRespondida: 1
-    pergunta: "Qual \xE9 a cor prim\xE1ria que voc\xEA obt\xE9m ao misturar azul
-      e amarelo?"
+    pergunta: "Qual \xE9 a cor prim\xE1ria que voc\xEA obt\xE9m ao misturar azul e amarelo?"
     respostaCorreta: Verde
     alternativas:
     - id: 1
@@ -115,7 +90,7 @@ MonoBehaviour:
       alternativa: Azul
     - id: 3
       alternativa: Branco
-  - id: 10
+  - id: 8
     isRespondida: 0
     pergunta: "Quantos lados tem um hex\xE1gono?"
     respostaCorreta: Seis
@@ -126,7 +101,7 @@ MonoBehaviour:
       alternativa: Seis
     - id: 3
       alternativa: Sete
-  - id: 11
+  - id: 9
     isRespondida: 1
     pergunta: "Qual \xE9 o nome do artista famoso por pintar a Mona Lisa?"
     respostaCorreta: Leonardo da Vinci
@@ -137,7 +112,7 @@ MonoBehaviour:
       alternativa: Vincent van Gogh
     - id: 3
       alternativa: Leonardo da Vinci
-  - id: 12
+  - id: 10
     isRespondida: 0
     pergunta: "Qual \xE9 o maior planeta do sistema solar?"
     respostaCorreta: "J\xFApiter"
@@ -148,7 +123,7 @@ MonoBehaviour:
       alternativa: Marte
     - id: 3
       alternativa: "J\xFApiter"
-  - id: 13
+  - id: 11
     isRespondida: 0
     pergunta: Quantos dias tem um ano bissexto?
     respostaCorreta: 366
@@ -159,7 +134,7 @@ MonoBehaviour:
       alternativa: 366
     - id: 3
       alternativa: 364
-  - id: 14
+  - id: 12
     isRespondida: 0
     pergunta: "Qual \xE9 o oceano que fica na costa leste do Brasil?"
     respostaCorreta: "Atl\xE2ntico"
@@ -170,10 +145,9 @@ MonoBehaviour:
       alternativa: "Atl\xE2ntico"
     - id: 3
       alternativa: "\xCDndico"
-  - id: 15
+  - id: 13
     isRespondida: 0
-    pergunta: "Qual \xE9 o metal precioso usado para fazer joias e tem s\xEDmbolo
-      Au?"
+    pergunta: "Qual \xE9 o metal precioso usado para fazer joias e tem s\xEDmbolo Au?"
     respostaCorreta: Ouro
     alternativas:
     - id: 1
@@ -182,7 +156,7 @@ MonoBehaviour:
       alternativa: Ouro
     - id: 3
       alternativa: Platina
-  - id: 16
+  - id: 14
     isRespondida: 0
     pergunta: "Qual animal \xE9 conhecido como 'o melhor amigo do homem'?"
     respostaCorreta: Cachorro
@@ -193,7 +167,7 @@ MonoBehaviour:
       alternativa: Cachorro
     - id: 3
       alternativa: "P\xE1ssaro"
-  - id: 17
+  - id: 15
     isRespondida: 0
     pergunta: "Quantos segundos h\xE1 em um minuto?"
     respostaCorreta: 60
@@ -204,7 +178,7 @@ MonoBehaviour:
       alternativa: 60
     - id: 3
       alternativa: 70
-  - id: 18
+  - id: 16
     isRespondida: 1
     pergunta: "Qual \xE9 o pa\xEDs conhecido como a 'terra do sol nascente'?"
     respostaCorreta: "Jap\xE3o"
@@ -215,7 +189,7 @@ MonoBehaviour:
       alternativa: "Jap\xE3o"
     - id: 3
       alternativa: "\xCDndia"
-  - id: 19
+  - id: 17
     isRespondida: 0
     pergunta: "Qual \xF3rg\xE3o do corpo humano \xE9 respons\xE1vel por bombear sangue?"
     respostaCorreta: "Cora\xE7\xE3o"
@@ -226,124 +200,257 @@ MonoBehaviour:
       alternativa: "Cora\xE7\xE3o"
     - id: 3
       alternativa: "F\xEDgado"
+  - id: 18
+    isRespondida: 0
+    pergunta: "Qual é a cor do cavalo branco de Napoleão?"
+    respostaCorreta: Branco
+    alternativas:
+      - id: 1
+        alternativa: Preto
+      - id: 2
+        alternativa: Branco
+      - id: 3
+        alternativa: Marrom
+  - id: 19
+    isRespondida: 0
+    pergunta: "Qual é o maior continente do mundo?"
+    respostaCorreta: Ásia
+    alternativas:
+      - id: 1
+        alternativa: África
+      - id: 2
+        alternativa: América
+      - id: 3
+        alternativa: Ásia
   - id: 20
-    isRespondida: 1
-    pergunta: "Qual \xE9 o planeta mais pr\xF3ximo do Sol?"
-    respostaCorreta: "Merc\xFArio"
+    isRespondida: 0
+    pergunta: "Quantos dedos temos em uma mão?"
+    respostaCorreta: Cinco
     alternativas:
-    - id: 1
-      alternativa: "V\xEAnus"
-    - id: 2
-      alternativa: "Merc\xFArio"
-    - id: 3
-      alternativa: Terra
+      - id: 1
+        alternativa: Quatro
+      - id: 2
+        alternativa: Cinco
+      - id: 3
+        alternativa: Seis
   - id: 21
-    isRespondida: 1
-    pergunta: "Qual \xE9 o n\xFAmero da metade de 100?"
-    respostaCorreta: 50
+    isRespondida: 0
+    pergunta: "Qual é o nome do primeiro homem a pisar na Lua?"
+    respostaCorreta: Neil Armstrong
     alternativas:
-    - id: 1
-      alternativa: 25
-    - id: 2
-      alternativa: 50
-    - id: 3
-      alternativa: 75
+      - id: 1
+        alternativa: Buzz Aldrin
+      - id: 2
+        alternativa: Neil Armstrong
+      - id: 3
+        alternativa: Yuri Gagarin
   - id: 22
     isRespondida: 0
-    pergunta: "Qual animal \xE9 conhecido por sua habilidade de camuflagem?"
-    respostaCorreta: "Camale\xE3o"
+    pergunta: "Em que cidade se encontra a Torre Eiffel?"
+    respostaCorreta: Paris
     alternativas:
-    - id: 1
-      alternativa: "Camale\xE3o"
-    - id: 2
-      alternativa: Elefante
-    - id: 3
-      alternativa: Golfinho
+      - id: 1
+        alternativa: Londres
+      - id: 2
+        alternativa: Paris
+      - id: 3
+        alternativa: Nova York
   - id: 23
     isRespondida: 0
-    pergunta: "Qual \xE9 a cor do c\xE9u em um dia claro?"
-    respostaCorreta: Azul
+    pergunta: "Quantos anos tem um adolescente?"
+    respostaCorreta: Entre 13 e 19 anos
     alternativas:
-    - id: 1
-      alternativa: Verde
-    - id: 2
-      alternativa: Amarelo
-    - id: 3
-      alternativa: Azul
+      - id: 1
+        alternativa: 10 a 15 anos
+      - id: 2
+        alternativa: 13 a 19 anos
+      - id: 3
+        alternativa: 18 a 22 anos
   - id: 24
-    isRespondida: 1
-    pergunta: Quantas patas tem uma aranha?
-    respostaCorreta: Oito
+    isRespondida: 0
+    pergunta: "Qual é o nome do famoso brinquedo de montar peças coloridas?"
+    respostaCorreta: Lego
     alternativas:
-    - id: 1
-      alternativa: Seis
-    - id: 2
-      alternativa: Quatro
-    - id: 3
-      alternativa: Oito
+      - id: 1
+        alternativa: Playmobil
+      - id: 2
+        alternativa: Lego
+      - id: 3
+        alternativa: Mega Bloks
   - id: 25
     isRespondida: 0
-    pergunta: "Qual planeta \xE9 conhecido por seus an\xE9is?"
-    respostaCorreta: Saturno
+    pergunta: "Qual é o planeta mais próximo do Sol?"
+    respostaCorreta: Mercúrio
     alternativas:
-    - id: 1
-      alternativa: "J\xFApiter"
-    - id: 2
-      alternativa: Saturno
-    - id: 3
-      alternativa: Urano
+      - id: 1
+        alternativa: Vênus
+      - id: 2
+        alternativa: Terra
+      - id: 3
+        alternativa: Mercúrio
   - id: 26
     isRespondida: 0
-    pergunta: "Qual \xE9 o nome da flor usada para simbolizar o amor?"
-    respostaCorreta: Rosa
+    pergunta: "Quantos estados tem o Brasil?"
+    respostaCorreta: 26
     alternativas:
-    - id: 1
-      alternativa: Margarida
-    - id: 2
-      alternativa: Tulipa
-    - id: 3
-      alternativa: Rosa
+      - id: 1
+        alternativa: 26
+      - id: 2
+        alternativa: 25
+      - id: 3
+        alternativa: 27
   - id: 27
     isRespondida: 0
-    pergunta: "Qual \xE9 o maior \xF3rg\xE3o do corpo humano?"
-    respostaCorreta: Pele
+    pergunta: "Qual é o nome do atual presidente dos Estados Unidos?"
+    respostaCorreta: Donald Trump
     alternativas:
-    - id: 1
-      alternativa: "Cora\xE7\xE3o"
-    - id: 2
-      alternativa: "Pulm\xE3o"
-    - id: 3
-      alternativa: Pele
+      - id: 1
+        alternativa: Donald Trump
+      - id: 2
+        alternativa: Joe Biden
+      - id: 3
+        alternativa: Barack Obama
   - id: 28
     isRespondida: 0
-    pergunta: Qual inseto produz mel?
-    respostaCorreta: Abelha
+    pergunta: "Em qual estação do ano as folhas das árvores caem?"
+    respostaCorreta: Outono
     alternativas:
-    - id: 1
-      alternativa: Abelha
-    - id: 2
-      alternativa: Formiga
-    - id: 3
-      alternativa: Mosca
+      - id: 1
+        alternativa: Inverno
+      - id: 2
+        alternativa: Outono
+      - id: 3
+        alternativa: Primavera
   - id: 29
-    isRespondida: 1
-    pergunta: "Qual animal \xE9 conhecido por ser muito lento?"
-    respostaCorreta: "Bicho-pregui\xE7a"
+    isRespondida: 0
+    pergunta: "Quantos anos dura um ciclo olímpico?"
+    respostaCorreta: 4
     alternativas:
-    - id: 1
-      alternativa: Gato
-    - id: 2
-      alternativa: Cachorro
-    - id: 3
-      alternativa: "Bicho-pregui\xE7a"
+      - id: 1
+        alternativa: 2
+      - id: 2
+        alternativa: 4
+      - id: 3
+        alternativa: 8
   - id: 30
     isRespondida: 0
-    pergunta: "Qual fruta \xE9 conhecida por seu alto teor de pot\xE1ssio?"
-    respostaCorreta: Banana
+    pergunta: "Qual é a cor do símbolo de stop no trânsito?"
+    respostaCorreta: Vermelho
     alternativas:
-    - id: 1
-      alternativa: "Ma\xE7\xE3"
-    - id: 2
-      alternativa: Banana
-    - id: 3
-      alternativa: Laranja
+      - id: 1
+        alternativa: Verde
+      - id: 2
+        alternativa: Amarelo
+      - id: 3
+        alternativa: Vermelho
+  - id: 31
+    isRespondida: 0
+    pergunta: "Qual é o nome do maior animal terrestre?"
+    respostaCorreta: Elefante
+    alternativas:
+      - id: 1
+        alternativa: Girafa
+      - id: 2
+        alternativa: Elefante
+      - id: 3
+        alternativa: Rinoceronte
+  - id: 32
+    isRespondida: 0
+    pergunta: "Qual é o oceano que cobre a maior parte da Terra?"
+    respostaCorreta: Oceano Pacífico
+    alternativas:
+      - id: 1
+        alternativa: Oceano Atlântico
+      - id: 2
+        alternativa: Oceano Pacífico
+      - id: 3
+        alternativa: Oceano Índico
+  - id: 33
+    isRespondida: 0
+    pergunta: "Qual é o número de horas em um dia?"
+    respostaCorreta: 24
+    alternativas:
+      - id: 1
+        alternativa: 12
+      - id: 2
+        alternativa: 24
+      - id: 3
+        alternativa: 48
+  - id: 34
+    isRespondida: 0
+    pergunta: "Quem é o criador do Facebook?"
+    respostaCorreta: Mark Zuckerberg
+    alternativas:
+      - id: 1
+        alternativa: Steve Jobs
+      - id: 2
+        alternativa: Mark Zuckerberg
+      - id: 3
+        alternativa: Bill Gates
+  - id: 35
+    isRespondida: 0
+    pergunta: "Qual é o nome da princesa da Disney que perde o sapato de cristal?"
+    respostaCorreta: Cinderela
+    alternativas:
+      - id: 1
+        alternativa: Branca de Neve
+      - id: 2
+        alternativa: Rapunzel
+      - id: 3
+        alternativa: Cinderela
+  - id: 36
+    isRespondida: 0
+    pergunta: "Qual é o maior órgão do corpo humano?"
+    respostaCorreta: Pele
+    alternativas:
+      - id: 1
+        alternativa: Coração
+      - id: 2
+        alternativa: Pele
+      - id: 3
+        alternativa: Fígado
+  - id: 37
+    isRespondida: 0
+    pergunta: "Qual é a capital do Japão?"
+    respostaCorreta: Tóquio
+    alternativas:
+      - id: 1
+        alternativa: Pequim
+      - id: 2
+        alternativa: Seul
+      - id: 3
+        alternativa: Tóquio
+  - id: 38
+    isRespondida: 0
+    pergunta: "Qual é o animal que faz o som 'miau'?"
+    respostaCorreta: Gato
+    alternativas:
+      - id: 1
+        alternativa: Gato
+      - id: 2
+        alternativa: Cachorro
+      - id: 3
+        alternativa: Pássaro
+  - id: 39
+    isRespondida: 0
+    pergunta: "Em qual planeta encontramos o famoso Monte Olimpo?"
+    respostaCorreta: Marte
+    alternativas:
+      - id: 1
+        alternativa: Vênus
+      - id: 2
+        alternativa: Marte
+      - id: 3
+        alternativa: Júpiter
+  - id: 40
+    isRespondida: 0
+    pergunta: "Qual é o nome da famosa ponte que atravessa o rio Tâmisa, em Londres?"
+    respostaCorreta: Torre de Londres
+    alternativas:
+      - id: 1
+        alternativa: Ponte de Londres
+      - id: 2
+        alternativa: Torre de Londres
+      - id: 3
+        alternativa: Ponte Golden Gate
+
