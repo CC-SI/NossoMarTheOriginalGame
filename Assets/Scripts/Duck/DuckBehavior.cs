@@ -15,6 +15,7 @@ namespace Duck
 		public static event Action OnDuckRescued;
     
 		Transform alvo;
+		Transform endTarget;
    
 		[field: Header("Componentes")]
 		[field: SerializeField]
