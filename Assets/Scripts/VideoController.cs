@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,17 +8,18 @@ using UnityEngine.Video;
 public class VideoController : MonoBehaviour
 {
     [SerializeField] private string videoFileName;
-    [SerializeField] private string nextScene;
+    [SerializeField] private bool switchSceneAfterStop;
     [SerializeField] private Button skipText;
     [SerializeField] private VideoPlayer videoPlayer;
+
+    public static event Action OnVideoEnd;
 
     void Awake()
     {
         videoPlayer.loopPointReached += EndReached;
         videoPlayer.prepareCompleted += PlayVideo;
-        skipText.onClick.AddListener(SwitchScene);
+        skipText.onClick.AddListener(SkipVideoToEnd);
     }
-
     void Start()
     {
         var videoPath = GetVideoPath();
@@ -34,7 +36,7 @@ public class VideoController : MonoBehaviour
         float videoStartTime = Time.realtimeSinceStartup;
         bool isVideoReady = false;
         
-        while (Time.realtimeSinceStartup - videoStartTime < 5f && !isVideoReady)
+        while (Time.realtimeSinceStartup - videoStartTime < 3f && !isVideoReady)
         {
             if (videoPlayer.isPrepared)
             {
@@ -59,24 +61,23 @@ public class VideoController : MonoBehaviour
         skipText.gameObject.SetActive(true);
     }
     
+    void SkipVideoToEnd()
+    {
+        videoPlayer.time = videoPlayer.length;
+        skipText.gameObject.SetActive(false);
+    }
+    
     void EndReached(VideoPlayer video)
     {
-        video.Stop();
-        SwitchScene();
-    }
-
-    void SwitchScene()
-    {
-        switch (nextScene)
+        if (!switchSceneAfterStop)
         {
-            case "tutorial":
-                GameManager.LoadTutorial();
-                return;
-            case "menu":
-                AudioController.Instance.StopSong();
-                GameManager.LoadMainMenu();
-                break;
+            video.Pause();
+            OnVideoEnd?.Invoke();
+            return;
         }
+        
+        AudioController.StopSong();
+        GameManager.LoadMainMenu();
     }
 
     string GetVideoPath()
