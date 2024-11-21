@@ -667,8 +667,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 256528733}
-  - {fileID: 873686387}
   - {fileID: 765267659}
+  - {fileID: 873686387}
   - {fileID: 1088194086}
   - {fileID: 117324698}
   m_Father: {fileID: 1321855594}
@@ -851,6 +851,8 @@ PlayableDirector:
     value: {fileID: 117324694}
   - key: {fileID: -8193020205212775212, guid: 8f6ce7de9bedfac4e9844b0dd6915c41, type: 2}
     value: {fileID: 1088194085}
+  - key: {fileID: 8588685756199928480, guid: 8f6ce7de9bedfac4e9844b0dd6915c41, type: 2}
+    value: {fileID: 873686388}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &732019247
@@ -1087,6 +1089,11 @@ PrefabInstance:
 --- !u!224 &873686387 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3010898279456076861, guid: d7da360d5e08148c99214c1d8c96ce7a, type: 3}
+  m_PrefabInstance: {fileID: 873686386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &873686388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1711395095441512573, guid: d7da360d5e08148c99214c1d8c96ce7a, type: 3}
   m_PrefabInstance: {fileID: 873686386}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1088194085
