@@ -606,6 +606,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1322763129503589628, guid: 3875c06772f654bfdbcf2375ada6b6cf, type: 3}
   m_PrefabInstance: {fileID: 123774522}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &149131177 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1797434818695822254, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
+  m_PrefabInstance: {fileID: 2666872267039189285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &161596277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9820,6 +9825,10 @@ PrefabInstance:
       propertyPath: boxDialogAnimatorCoqueiro
       value: 
       objectReference: {fileID: 6320722730237277644}
+    - target: {fileID: 8598136668827240815, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: finalPoint
+      value: 
+      objectReference: {fileID: 149131177}
     - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: IconeInteracao
       value: 
