@@ -64,13 +64,13 @@ public class VideoController : MonoBehaviour
     void SkipVideoToEnd()
     {
         videoPlayer.time = videoPlayer.length;
-        skipText.gameObject.SetActive(false);
     }
     
     void EndReached(VideoPlayer video)
     {
         if (!nextScene.Equals("menu"))
         {
+            skipText.gameObject.SetActive(false);
             video.Pause();
             OnVideoEnd?.Invoke();
             return;
