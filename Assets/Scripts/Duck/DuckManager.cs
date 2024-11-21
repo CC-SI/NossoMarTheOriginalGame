@@ -29,6 +29,17 @@ namespace Duck
             RescuedCount++;
         }
         
+        public static void SetEndDestination(Transform endPoint)
+        {
+            foreach (var duck in Instance.Ducks)
+            {
+                if(!duck.IsRescued)
+                    continue;
+                
+                duck.EndTarget = endPoint;
+            }
+        }
+        
         public static void Quack()
         {
             if (!Instance) return;

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Duck;
 using TMPro;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace Dialog.Manager
         
         [Header("Opcional")]
         [SerializeField] private PerguntasUIManager perguntasUIManager;
+        [SerializeField] private Transform finalPoint;
         
         
         [SerializeField] private TextMeshProUGUI timeText;
@@ -215,7 +217,7 @@ namespace Dialog.Manager
                     // Dialogo Final
                     case "fim_dialogo_final":
                         dialogUIManager.ShowDialog(false);
-                        GameManager.LoadCredits();
+                        DuckManager.SetEndDestination(finalPoint);
                         break;
                 }
             }

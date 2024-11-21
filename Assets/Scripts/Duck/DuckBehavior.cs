@@ -45,6 +45,18 @@ namespace Duck
 			}
 		}
 
+		public Transform EndTarget
+		{
+			get => endTarget;
+			set
+			{
+				endTarget = value;
+				endTarget.position = new Vector3(value.position.x, transform.position.y, 0);
+				
+				movement.SetFollowTarget(value);
+			}
+		}
+
 		public void Quack()
 		{
 			if(movement.IsOnWater)
