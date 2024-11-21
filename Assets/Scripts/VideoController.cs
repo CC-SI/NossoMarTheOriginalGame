@@ -8,7 +8,7 @@ using UnityEngine.Video;
 public class VideoController : MonoBehaviour
 {
     [SerializeField] private string videoFileName;
-    [SerializeField] private bool switchSceneAfterStop;
+    [SerializeField] private string nextScene;
     [SerializeField] private Button skipText;
     [SerializeField] private VideoPlayer videoPlayer;
 
@@ -69,20 +69,32 @@ public class VideoController : MonoBehaviour
     
     void EndReached(VideoPlayer video)
     {
-        if (!switchSceneAfterStop)
+        if (!nextScene.Equals("menu"))
         {
             video.Pause();
             OnVideoEnd?.Invoke();
             return;
         }
         
-        AudioController.StopSong();
-        GameManager.LoadMainMenu();
+        SwitchScene();
+    }
+
+    void SwitchScene()
+    {
+        switch (nextScene)
+        {
+            case "tutorial":
+                GameManager.LoadTutorial();
+                return;
+            case "menu":
+                AudioController.StopSong();
+                GameManager.LoadMainMenu();
+                break;
+        }
     }
 
     string GetVideoPath()
     {
-        
         return Path.Combine(Application.streamingAssetsPath, videoFileName);
     }
 
