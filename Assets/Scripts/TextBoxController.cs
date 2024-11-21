@@ -5,6 +5,7 @@ using UnityEngine;
 public class TextBoxController : MonoBehaviour
 {
     [SerializeField] private List<Dialogo> duckIntroduction;
+    [SerializeField] private string currentScene;
     
     private int dialogCount = 0;
 
@@ -28,6 +29,8 @@ public class TextBoxController : MonoBehaviour
         }
         
         TextBox.OnTextEnded -= NextDialog;
-        GameManager.LoadTutorial();
+        
+        if (currentScene.Equals("intro"))
+            GameManager.LoadTutorial();
     }
 }
