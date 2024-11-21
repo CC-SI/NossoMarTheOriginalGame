@@ -424,6 +424,7 @@ MonoBehaviour:
     texto: "Antes de mais nada eu te darei uma aulinha de como jogar. Vamos l\xE1?"
     pergunta: {fileID: 0}
     ShowCoco: 0
+  currentScene: intro
 --- !u!1 &421586841
 GameObject:
   m_ObjectHideFlags: 0
