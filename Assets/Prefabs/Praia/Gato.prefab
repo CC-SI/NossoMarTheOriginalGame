@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 819568070984094172}
   - component: {fileID: 1899838534125698213}
   - component: {fileID: 964184804816388710}
+  - component: {fileID: 4255556174446559080}
   m_Layer: 0
   m_Name: Gato
   m_TagString: Untagged
@@ -69,7 +70,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 7127423edc6859844b15956226d4c238, type: 3}
   m_Resource: {fileID: 8300000, guid: 7127423edc6859844b15956226d4c238, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -78,7 +79,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -140,7 +141,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -180,6 +181,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4255556174446559080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688325334646088067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfa48590d86b1249840f193887a2a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 964184804816388710}
 --- !u!1 &5442260304570658548
 GameObject:
   m_ObjectHideFlags: 0
