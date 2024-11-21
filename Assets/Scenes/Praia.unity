@@ -8376,6 +8376,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1797434818695822254, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830395136910138952, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417507776024869731, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3511839339017686370, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
       propertyPath: praiaSong
       value: 
@@ -8390,7 +8402,7 @@ PrefabInstance:
       objectReference: {fileID: 1796676251}
     - target: {fileID: 7541542195998524314, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.46
+      value: 6.34
       objectReference: {fileID: 0}
     - target: {fileID: 7541542195998524314, guid: 495cc2b0359ac554d953faef23b97542, type: 3}
       propertyPath: m_LocalPosition.y
