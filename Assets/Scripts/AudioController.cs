@@ -3,7 +3,7 @@
 public class AudioController : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-    public static AudioController Instance { get; private set; }
+    private static AudioController Instance;
 
     void Awake()
     {
@@ -22,14 +22,14 @@ public class AudioController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
     
-    public void PlaySong()
+    public static void PlaySong()
     {
-        audioSource.Play();
+        Instance.audioSource.Play();
     }
     
-    public void StopSong()
+    public static void StopSong()
     {
-        audioSource.Stop();
+        Instance.audioSource.Stop();
     }
 
 #if UNITY_EDITOR
