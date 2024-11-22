@@ -1,4 +1,6 @@
 
+<img src="./Assets/Textures/Capa_Site.jpg" height="490px" width="100%" />
+
 # Nosso Mar : Salve os Patinhos 🦆
 
 ## Integrantes do projeto:
