@@ -7670,6 +7670,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1953879982}
     m_Modifications:
+    - target: {fileID: 556487077856153872, guid: 9870b20d8fb4ff945aaf8bd4c9a2b226, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 556487077856153872, guid: 9870b20d8fb4ff945aaf8bd4c9a2b226, type: 3}
+      propertyPath: m_margin.w
+      value: -60.79361
+      objectReference: {fileID: 0}
+    - target: {fileID: 556487077856153872, guid: 9870b20d8fb4ff945aaf8bd4c9a2b226, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240480646837468797, guid: 9870b20d8fb4ff945aaf8bd4c9a2b226, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240480646837468797, guid: 9870b20d8fb4ff945aaf8bd4c9a2b226, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 91
+      objectReference: {fileID: 0}
     - target: {fileID: 2284751526378011338, guid: 9870b20d8fb4ff945aaf8bd4c9a2b226, type: 3}
       propertyPath: fadeImage
       value: 
