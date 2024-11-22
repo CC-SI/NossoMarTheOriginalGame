@@ -66,18 +66,11 @@ public class PerguntaManager : MonoBehaviour
 
     public void AvancarPergunta()
     {
-        perguntaAtualIndex++;
-
-        while (perguntaAtualIndex < perguntasEmbaralhadas.Count && perguntasEmbaralhadas[perguntaAtualIndex].isRespondida)
+        do
         {
-
-            if (perguntasEmbaralhadas[perguntaAtualIndex].isRespondida)
-            {
-                Debug.Log("Pergunta já respondida: " + perguntasEmbaralhadas[perguntaAtualIndex].id);
-            }
-            
             perguntaAtualIndex++;
-        }
+        } 
+        while (perguntaAtualIndex < perguntasEmbaralhadas.Count && perguntasEmbaralhadas[perguntaAtualIndex].isRespondida);
 
         if (perguntaAtualIndex < perguntasEmbaralhadas.Count)
         {
@@ -96,12 +89,11 @@ public class PerguntaManager : MonoBehaviour
             {
                 dialogManager.AvancarDialogo();
             }
-
-            MarcarComoRespondida(perguntasEmbaralhadas[perguntaAtualIndex]);
         }
 
         AtualizarPerguntasRespondidas();
     }
+
 
     private void AtualizarPerguntasRespondidas()
     {
@@ -114,7 +106,10 @@ public class PerguntaManager : MonoBehaviour
         if (perguntaAtualIndex < perguntasEmbaralhadas.Count)
         {
             var dialogoAtual = perguntasEmbaralhadas[perguntaAtualIndex];
-            perguntasUIManager.AtualizarPergunta(dialogoAtual, this);
+            if (perguntasEmbaralhadas[perguntaAtualIndex].isRespondida == false)
+            {
+                perguntasUIManager.AtualizarPergunta(dialogoAtual, this); 
+            }
         }
     }
 
