@@ -986,10 +986,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caixa de Texto
       objectReference: {fileID: 0}
-    - target: {fileID: 1842832249650210802, guid: d7da360d5e08148c99214c1d8c96ce7a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3010898279456076861, guid: d7da360d5e08148c99214c1d8c96ce7a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
