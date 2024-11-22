@@ -15,17 +15,24 @@ MonoBehaviour:
   Dialogos:
   - id: pato_professor1
     speaker: Pato Professor
-    texto: "Ah, um novo aluno! Estou ansioso para testar seu conhecimento. Estou preparado para fazer três perguntas. Se você acertar pelo menos duas, você será recompensado!"
+    texto: "Ah, um novo aluno! Estou ansioso para testar seu conhecimento. Estou
+      preparado para fazer tr\xEAs perguntas. Se voc\xEA acertar pelo menos duas,
+      voc\xEA ser\xE1 recompensado!"
     pergunta: {fileID: 0}
+    ShowCoco: 0
   - id: player
     speaker: Personagem
-    texto: "Eba, adoro ganhar recompensas. Vamos nessa!"
+    texto: Eba, adoro ganhar recompensas. Vamos nessa!
     pergunta: {fileID: 0}
+    ShowCoco: 0
   - id: pergunta
     speaker: 
     texto: 
-    pergunta: {fileID: 11400000, guid: 7a58e6bf34091654f9f644c4b866fa7a, type: 2}
+    pergunta: {fileID: 11400000, guid: 962e4560e33a6b14990785242437b959, type: 2}
+    ShowCoco: 0
   - id: pato_professor2
     speaker: 'Pato Professor '
-    texto: "Parabéns!! Você conseguiu acertar as questões! A recompensa sou EU! Irei te dar ótimos conselhos daqui em diante."
+    texto: "Parab\xE9ns!! Voc\xEA conseguiu acertar as quest\xF5es! A recompensa
+      sou EU! Irei te dar \xF3timos conselhos daqui em diante."
     pergunta: {fileID: 11400000, guid: 7a58e6bf34091654f9f644c4b866fa7a, type: 2}
+    ShowCoco: 0

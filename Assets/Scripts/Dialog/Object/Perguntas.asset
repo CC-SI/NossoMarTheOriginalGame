@@ -233,17 +233,6 @@ MonoBehaviour:
         alternativa: Cinco
       - id: 3
         alternativa: Seis
-  - id: 21
-    isRespondida: 0
-    pergunta: "Qual é o nome do primeiro homem a pisar na Lua?"
-    respostaCorreta: Neil Armstrong
-    alternativas:
-      - id: 1
-        alternativa: Buzz Aldrin
-      - id: 2
-        alternativa: Neil Armstrong
-      - id: 3
-        alternativa: Yuri Gagarin
   - id: 22
     isRespondida: 0
     pergunta: "Em que cidade se encontra a Torre Eiffel?"
@@ -299,17 +288,6 @@ MonoBehaviour:
         alternativa: 25
       - id: 3
         alternativa: 27
-  - id: 27
-    isRespondida: 0
-    pergunta: "Qual é o nome do atual presidente dos Estados Unidos?"
-    respostaCorreta: Donald Trump
-    alternativas:
-      - id: 1
-        alternativa: Donald Trump
-      - id: 2
-        alternativa: Joe Biden
-      - id: 3
-        alternativa: Barack Obama
   - id: 28
     isRespondida: 0
     pergunta: "Em qual estação do ano as folhas das árvores caem?"
