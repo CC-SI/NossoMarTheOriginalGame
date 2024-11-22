@@ -120,7 +120,7 @@ MonoBehaviour:
       m_Calls: []
   dialogManager: {fileID: 0}
   objectToBeCaptured: {fileID: 0}
-  acessorio: {fileID: 0}
+  acessorio: {fileID: 5394684717892179152}
   ponto: {fileID: 5712129695731434506}
   graphicBehaviour: {fileID: 8976677485350136667}
   isDuckAguaCoco: 1
@@ -136,6 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9ab8c0e84a91b4aa87a79773b7f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5394684717892179152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1132990934454515299, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
+  m_PrefabInstance: {fileID: 5000390229519442611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5712129695731434506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 730000791277889209, guid: 908fc9d2521559240a9775f8099ce428, type: 3}
