@@ -1,5 +1,5 @@
 
-<img src="./Assets/Textures/Capa_Site.jpg" height="490px" width="100%" />
+<img src="./Assets/Textures/Capa_Site.jpg" height="auto" width="100%" />
 
 # Nosso Mar : Salve os Patinhos 🦆
 
