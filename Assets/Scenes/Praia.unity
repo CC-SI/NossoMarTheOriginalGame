@@ -5779,17 +5779,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0093bf7592011f64e8d3484c05ef9aa3, type: 3}
---- !u!114 &1324309090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2807660890269707833, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-  m_PrefabInstance: {fileID: 6730222562224945371}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1346698634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9777,6 +9766,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 188.72
       objectReference: {fileID: 0}
+    - target: {fileID: 2090755019411119740, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2271590059291417072, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -9933,30 +9926,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
-    - target: {fileID: 4828730170650610606, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828730170650610606, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828730170650610606, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828730170650610606, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828730170650610606, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -86.10571
-      objectReference: {fileID: 0}
-    - target: {fileID: 4828730170650610606, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -680.3241
-      objectReference: {fileID: 0}
     - target: {fileID: 5105603808358776214, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: graphicBehaviour
       value: 
@@ -10038,14 +10007,6 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6304576698854956087, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6525918595407549952, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_fontSize
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6525918595407549952, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_fontSizeBase
       value: 50
       objectReference: {fileID: 0}
@@ -10161,6 +10122,10 @@ PrefabInstance:
       propertyPath: graphicBehaviour
       value: 
       objectReference: {fileID: 1879665705}
+    - target: {fileID: 7397927328151293968, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7546204685582607617, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10212,6 +10177,10 @@ PrefabInstance:
     - target: {fileID: 7729233932470718468, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_Name
       value: UI Praia
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765461157360546329, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: IconeInteracao
@@ -10289,10 +10258,6 @@ PrefabInstance:
       propertyPath: graphicBehaviour
       value: 
       objectReference: {fileID: 1879665705}
-    - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: zonaDeFinalizarDialogo
-      value: 
-      objectReference: {fileID: 1324309090}
     - target: {fileID: 8442500961135423662, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: boxDialogAnimatorCoqueiro
       value: 
@@ -10373,10 +10338,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
-    - target: {fileID: 9018793397821300670, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: duckAguaCoco
-      value: 
-      objectReference: {fileID: 11400000, guid: dfdaf1b511c08ac4089cecce9282715e, type: 2}
     - target: {fileID: 9064600027483008273, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_SizeDelta.y
       value: 297.1771
@@ -10416,14 +10377,6 @@ PrefabInstance:
     - target: {fileID: 9102741412095986467, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_text
       value: "P\xE1 Coletada"
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199889537326040691, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: isShowCoco
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199889537326040691, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: cocos.Array.size
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9199889537326040691, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: coqueiroAnimator
