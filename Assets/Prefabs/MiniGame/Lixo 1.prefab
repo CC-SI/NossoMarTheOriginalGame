@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1669140139
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -998788495
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 603998608, guid: 18e5e278be6bce14c9294aaeb60815bb, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3529412}
   m_FlipX: 0
@@ -286,6 +286,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs: []
+  duckThanks:
+    id: 
+    speaker: 
+    texto: 
+    pergunta: {fileID: 0}
+    ShowCoco: 0
+  <Limit>k__BackingField: {fileID: 0}
   onMessageUpdated:
     m_PersistentCalls:
       m_Calls: []
