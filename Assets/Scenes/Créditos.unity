@@ -852,7 +852,7 @@ PlayableDirector:
   - key: {fileID: -8193020205212775212, guid: 8f6ce7de9bedfac4e9844b0dd6915c41, type: 2}
     value: {fileID: 1088194085}
   - key: {fileID: 8588685756199928480, guid: 8f6ce7de9bedfac4e9844b0dd6915c41, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1037078365}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &732019247
@@ -985,6 +985,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1037078365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1587949179280389546, guid: 6be304fa07ea2a2498c17710eba95f5c, type: 3}
+  m_PrefabInstance: {fileID: 2050371740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1088194085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1175,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3972454721685754350, guid: 6be304fa07ea2a2498c17710eba95f5c, type: 3}
   m_PrefabInstance: {fileID: 2050371740}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1037078365}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd218f767a98435d92082f3eb75a3187, type: 3}
