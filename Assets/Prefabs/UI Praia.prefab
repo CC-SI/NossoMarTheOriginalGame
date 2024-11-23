@@ -717,6 +717,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e2d7f7331aea624a962f7041761efe5, type: 3}
+--- !u!1 &203053583874484061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 761369320151654144, guid: 0e2d7f7331aea624a962f7041761efe5, type: 3}
+  m_PrefabInstance: {fileID: 594907759241099357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4777847862462671973 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5336723937638356024, guid: 0e2d7f7331aea624a962f7041761efe5, type: 3}
@@ -2133,6 +2138,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8545125501602377467}
     m_Modifications:
+    - target: {fileID: 1606387106059620309, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
+      propertyPath: mensagemObjetoPego
+      value: 
+      objectReference: {fileID: 203053583874484061}
+    - target: {fileID: 1606387106059620309, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
+      propertyPath: zonasDeAvancarDialogo
+      value: 
+      objectReference: {fileID: 1880794502196247291}
     - target: {fileID: 2449727820016109608, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2213,6 +2226,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3111745486836292733, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6878975892555346199, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
       propertyPath: m_Name
       value: Dialogo Pato Enterrado
@@ -2226,6 +2243,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
+--- !u!114 &1880794502196247291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7461854499331824343, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
+  m_PrefabInstance: {fileID: 9048920787854614572}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6659442838466144260 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2449727820016109608, guid: 33a32980dcf320247b6a2c09e812b63b, type: 3}
