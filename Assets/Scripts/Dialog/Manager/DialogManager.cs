@@ -45,12 +45,12 @@ namespace Dialog.Manager
             ShowCurrentDialog();
             controllerDialogIdSpeeches.ControllerActionsForId(); 
             
-            if (perguntaManager != null)
+            if (perguntaManager)
             {
                 perguntaManager.StartPerguntas();
             }
             
-            if (!isTutorial)
+            if (PlayerBehaviour.Instance && !isTutorial)
             {
                 PlayerBehaviour.Instance.Movement.enabled = false;
             }
@@ -140,12 +140,14 @@ namespace Dialog.Manager
             dialogUIManager.SetSpeaches(currentDialog.speaker, dialogText);
             isDialogOcult = false;
 
-            if (!isDialogOcult)
+            if (PlayerBehaviour.Instance && !isDialogOcult && !isTutorial)
             {
                 PlayerBehaviour.Instance.Movement.enabled = false;
             }
 
-            if (isTutorial)
+            if (!isTutorial) return;
+            
+            if (PlayerBehaviour.Instance)
             {
                 PlayerBehaviour.Instance.Movement.enabled = true;
             }
@@ -156,12 +158,10 @@ namespace Dialog.Manager
             IsDialogActive = false;
             dialogUIManager.ShowDialog(false);
 
-            if (!isTutorial)
+            if (PlayerBehaviour.Instance && !isTutorial)
             {
                 PlayerBehaviour.Instance.Movement.enabled = true;
             }
-            
-            
         }
         
         public void OcultarDialogo()
@@ -170,7 +170,7 @@ namespace Dialog.Manager
             dialogUIManager.ShowDialog(false);
             isDialogOcult = true;
 
-            if (isDialogOcult)
+            if (isDialogOcult && PlayerBehaviour.Instance)
             {
                 PlayerBehaviour.Instance.Movement.enabled = true;
             }
