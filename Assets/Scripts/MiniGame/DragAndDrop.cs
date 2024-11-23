@@ -69,8 +69,12 @@ namespace MiniGame
             if (!IsDragging) return;
         
             var mousePosition = GetMousePosition();
+            mousePosition.z = transform.position.z;
+            
+            if(!MiniGame.Instance.Limit.bounds.Contains(mousePosition))
+                return;
 
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+            transform.position = mousePosition;
         }
         
         private void OnMouseDown()

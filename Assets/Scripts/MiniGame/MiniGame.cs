@@ -9,10 +9,12 @@ namespace MiniGame
 {
     public class MiniGame : MonoBehaviour
     {
-        [SerializeField] private Button textBox;
         [SerializeField] private List<MiniGameObject> prefabs;
         [SerializeField] Dialogo duckThanks;
 
+        [field: SerializeField]
+        public Collider Limit { get; private set; }
+        
         private readonly List<MiniGameObject> objects = new();
         private static TrashBinBehaviour TrashBin => TrashBinBehaviour.Instance;
 
