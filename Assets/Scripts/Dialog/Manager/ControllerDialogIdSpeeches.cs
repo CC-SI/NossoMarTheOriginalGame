@@ -219,6 +219,17 @@ namespace Dialog.Manager
                         dialogUIManager.ShowDialog(false);
                         DuckManager.SetEndDestination(finalPoint);
                         break;
+                    
+                    // Introducao
+                    case "fim_introducao":
+                        dialogUIManager.ShowDialog(false);
+                        GameManager.LoadTutorial();
+                        break;
+                    
+                    // Créditos
+                    case "creditos_despedida":
+                        dialogUIManager.ShowDialog(false);
+                        break;
                 }
             }
         }
