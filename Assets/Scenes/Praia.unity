@@ -4377,17 +4377,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5996180103891352761, guid: b97f05d24d053460c86217caf22a2cb8, type: 3}
   m_PrefabInstance: {fileID: 948842013}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &949503639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2228063454620205401, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-  m_PrefabInstance: {fileID: 6730222562224945371}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &953613679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5647,7 +5636,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 464249939}
-  m_Father: {fileID: 1494348972}
+  m_Father: {fileID: 6730222562224945372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6232,11 +6221,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1805589475846256669, guid: df8f99af93542dd458068912d43bf3af, type: 3}
   m_PrefabInstance: {fileID: 6730222562224945371}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1494348972 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7547035678662300942, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-  m_PrefabInstance: {fileID: 6730222562224945371}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1501566018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6418,17 +6402,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4798150968053233424, guid: c9f87c77fa9d33f4aa99a8023b8c8a75, type: 3}
   m_PrefabInstance: {fileID: 2701062564368490751}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1525506259 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4780206013683964329, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-  m_PrefabInstance: {fileID: 6730222562224945371}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1529291260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6042842778284693646, guid: 194a542edf215bd4b84f3e171448ad1b, type: 3}
@@ -9673,7 +9646,7 @@ PrefabInstance:
     - target: {fileID: 1052848354211476353, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: zonaDeFinalizarDialogo
       value: 
-      objectReference: {fileID: 949503639}
+      objectReference: {fileID: 0}
     - target: {fileID: 1154124454948882891, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9858,10 +9831,6 @@ PrefabInstance:
       propertyPath: duckAguaCoco
       value: 
       objectReference: {fileID: 11400000, guid: dfdaf1b511c08ac4089cecce9282715e, type: 2}
-    - target: {fileID: 4098117560362092050, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4151364391422123428, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -10010,38 +9979,6 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1024.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659442838466144260, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.0018310547
-      objectReference: {fileID: 0}
     - target: {fileID: 6664428844925893173, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -10178,10 +10115,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Praia
       objectReference: {fileID: 0}
-    - target: {fileID: 7765461157360546329, guid: df8f99af93542dd458068912d43bf3af, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7772985412507365369, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: IconeInteracao
       value: 
@@ -10313,7 +10246,7 @@ PrefabInstance:
     - target: {fileID: 8751386635985851594, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: zonaDeFinalizarDialogo
       value: 
-      objectReference: {fileID: 1525506259}
+      objectReference: {fileID: 0}
     - target: {fileID: 8953209816446264704, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -10406,7 +10339,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7622346921064724974, guid: df8f99af93542dd458068912d43bf3af, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7547035678662300942, guid: df8f99af93542dd458068912d43bf3af, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1995520184147155653, guid: df8f99af93542dd458068912d43bf3af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1285589655}
     m_AddedComponents:
