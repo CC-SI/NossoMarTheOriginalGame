@@ -365,17 +365,6 @@ MonoBehaviour:
       alternativa: "Vermelho"
     - id: 3
       alternativa: "Rosa"
-  - id: 33
-    isRespondida: 0
-    pergunta: "Qual fruta é a base da bebida 'caipirinha'?"
-    respostaCorreta: "Limão"
-    alternativas:
-    - id: 1
-      alternativa: "Laranja"
-    - id: 2
-      alternativa: "Limão"
-    - id: 3
-      alternativa: "Manga"
   - id: 34
     isRespondida: 0
     pergunta: "Qual é o animal que vive na água e tem concha?"
