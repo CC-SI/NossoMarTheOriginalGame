@@ -25,7 +25,7 @@ Video de Apresentação : https://youtu.be/-xPHrMiSaT4 <br>
 Video de Gameplay : https://www.youtube.com/watch?v=fDyu3GRaqsY
 
 ## 🌍 Inspiração do Jogo
-Este jogo foi inspirado em um evento real onde ocorrido em 1992, quando um navio cargueiro derrubou um container com 28.000 patinhos de borracha no Oceano Índico.
+Este jogo foi inspirado em um evento real onde ocorrido em 1992, quando um navio cargueiro derrubou um container com 28.000 patinhos de borracha no Oceano Pacífico.
 Esses patinhos foram levados pelas correntes oceânicas, aparecendo em praias de diversos países e chamando a atenção para os efeitos da poluição nos oceanos e para a circulação de resíduos em escala global.
 
 ## 📖 Descrição do Jogo
