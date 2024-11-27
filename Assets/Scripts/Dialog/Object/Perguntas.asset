@@ -16,7 +16,7 @@ MonoBehaviour:
   - id: 1
     isRespondida: 0
     pergunta: Os patos de borracha faziam parte de qual empresa?
-    respostaCorreta: The first five years
+    respostaCorreta: The first years
     alternativas:
     - id: 1
       alternativa: The fun company
@@ -27,7 +27,7 @@ MonoBehaviour:
   - id: 2
     isRespondida: 0
     pergunta: "Onde caiu o cont\xEAiner que transportava os patos de borracha?"
-    respostaCorreta: "Oceano Atl\xE2ntico"
+    respostaCorreta: "Oceano Pac\xEDfico"
     alternativas:
     - id: 1
       alternativa: "Oceano Pac\xEDfico"
@@ -60,7 +60,7 @@ MonoBehaviour:
   - id: 5
     isRespondida: 0
     pergunta: Qual era o valor da recompensa que a empresa oferecia para quem encontrasse e devolvesse os patos?
-    respostaCorreta: US$ 250,00
+    respostaCorreta: US$ 100,00
     alternativas:
     - id: 1
       alternativa: US$ 100,00
@@ -71,7 +71,7 @@ MonoBehaviour:
   - id: 6
     isRespondida: 0
     pergunta: Por quanto tempo os patos podem ficar boiando nos oceanos?
-    respostaCorreta: Trezentos anos
+    respostaCorreta: Quinhentos anos
     alternativas:
     - id: 1
       alternativa: Novecentos anos
