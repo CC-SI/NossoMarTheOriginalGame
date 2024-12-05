@@ -21,19 +21,11 @@ namespace Assets.Scripts.Dialogos.Services
         protected override void ShowDialogo()
         {
             base.ShowDialogo();
-            
-            if (dialogoObject.GetDialogoAt(index).TipoDialogoEnum == TipoDialogoEnum.Decisao)
-            {
-                btnSim.gameObject.SetActive(true);
-                btnNao.gameObject.SetActive(true);
-                botaoProximo.gameObject.SetActive(false);
-            } 
-            else
-            {
-                btnSim.gameObject.SetActive(false);
-                btnNao.gameObject.SetActive(false);
-                botaoProximo.gameObject.SetActive(true);
-            }
+
+            bool isDecision = dialogoObject.GetDialogoAt(index).TipoDialogoEnum == TipoDialogoEnum.Decisao;
+            btnSim.gameObject.SetActive(isDecision);
+            btnNao.gameObject.SetActive(isDecision);
+            botaoProximo.gameObject.SetActive(!isDecision);
         }
 
         protected override void ListenToEvents()
