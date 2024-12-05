@@ -16,7 +16,7 @@ namespace Assets.Scripts.Dialogos.Modal
 
         protected DialogoObject dialogoObject;
         protected int index = 0;
-        bool dialogoAtivo = false;
+        private bool dialogoAtivo = false;
         
         protected virtual void Start()
         {
@@ -32,20 +32,24 @@ namespace Assets.Scripts.Dialogos.Modal
         
         public void StartDialogo()
         {
-            index = 0;
             ShowDialogo();
         }
         
         protected void NextDialogo()
         {
-            index++;
-            ShowDialogo();
+            if (!dialogoAtivo) return;
             
-            if (index >= dialogoObject.dialogos.Count)
+            var dialogo = dialogoObject.GetDialogoAt(index);
+            if (index < dialogoObject.dialogos.Count - 1)
+            {
+                index++;
+                ShowDialogo();
+            }
+            else
             {
                 FinishedDialogo();
-                return;
             }
+            
         }
         
         protected virtual void ShowDialogo()
@@ -67,6 +71,7 @@ namespace Assets.Scripts.Dialogos.Modal
             dialogoPainel.SetActive(false);
             dialogoAtivo = false;
             index = 0;
+            Debug.Log("Dialogo finalizado");
         }
         
         protected virtual void ListenToEvents()
