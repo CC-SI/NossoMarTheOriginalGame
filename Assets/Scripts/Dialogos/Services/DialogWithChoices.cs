@@ -1,11 +1,10 @@
 ﻿using Assets.Scripts.Dialogos.Enum;
-using Assets.Scripts.Dialogos.Modal;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Dialogos.Services
+namespace Dialogos.Services
 {
-    public class DialogWithChoices : DialogoBase
+    public class DialogWithChoices : DuckDialogBase
     {
         [SerializeField] private Button btnSim;
         [SerializeField] private Button btnNao;
