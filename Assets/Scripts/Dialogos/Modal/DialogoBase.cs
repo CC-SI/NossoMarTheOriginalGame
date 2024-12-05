@@ -39,7 +39,6 @@ namespace Assets.Scripts.Dialogos.Modal
         {
             if (!dialogoAtivo) return;
             
-            var dialogo = dialogoObject.GetDialogoAt(index);
             if (index < dialogoObject.dialogos.Count - 1)
             {
                 index++;
@@ -66,7 +65,7 @@ namespace Assets.Scripts.Dialogos.Modal
             dialogoAtivo = false;
         }
         
-        void FinishedDialogo()
+        protected virtual void FinishedDialogo()
         {
             dialogoPainel.SetActive(false);
             dialogoAtivo = false;
